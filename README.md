@@ -41,4 +41,10 @@ make tests
 To run tests from a specific file in `tests` directory, type:
 
 ```shell
-make test FILE={filename.py}
+make test_file FILE={filename.py}
+```
+
+substituting `{filename.py}` with name of the file containing tests.
+
+Alternatively, you can run tests via either `pytest` command or PyCharm GUI. If you choose one of these options, 
+remember to make sure that the tests are invoked from `test` directory.
