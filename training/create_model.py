@@ -4,7 +4,7 @@ import optuna.integration.lightgbm as opt_lgb
 import pandas as pd
 from lightgbm import early_stopping, log_evaluation
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.linear_model import RidgeCV
+from sklearn.linear_model import LassoCV, LinearRegression, RidgeCV
 from sklearn.model_selection import KFold, RandomizedSearchCV
 
 from training.constants import RANDOM_STATE
@@ -41,7 +41,11 @@ def create_model(classifier_name: str):
     """
     match classifier_name:
         case "linear_regression":
+            model = LinearRegression()
+        case "linear_regression_ridge":
             model = RidgeCV(alphas=np.linspace(1e-3, 1, 10000))
+        case "linear_regression_lasso":
+            model = LassoCV(n_alphas=1000, random_state=0)
         case "random_forest":
             rf = RandomForestRegressor(random_state=RANDOM_STATE, n_jobs=-1)
             hyper_params = {

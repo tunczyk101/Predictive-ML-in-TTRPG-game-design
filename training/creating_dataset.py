@@ -5,6 +5,8 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
+from training.constants import ORDERED_CHARACTERISTICS_FULL
+
 
 OTHER_SPEEDS = {
     "fly",
@@ -62,13 +64,13 @@ CHARACTERISTICS_RENAME = {
     "wis": "system.abilities.wis.mod",
     "ac": "system.attributes.ac.value",
     "hp": "system.attributes.hp.value",
-    "perception": "system.attributes.perception.value",
+    "perception": "system.perception.mod",
     "fortitude": "system.saves.fortitude.value",
     "reflex": "system.saves.reflex.value",
     "will": "system.saves.will.value",
     "focus": "system.resources.focus.value",
     "level": "system.details.level.value",
-    "book": "system.details.source.value",
+    "book": "system.details.publication.title",
     "land_speed": "system.attributes.speed.value",
     "num_immunities": "system.attributes.immunities",
 }
@@ -187,7 +189,7 @@ def get_nr_of_spells_with_lvl(items_list: list[dict], spell_level: int) -> int:
     spells = [
         i
         for i in items_list
-        if i["type"] == "spell" and i["system"]["category"]["value"] == "spell"
+        if i["type"] == "spell"  # and i["system"]["category"]["value"] == "spell"
         # skip cantrip spells
         and "cantrip" not in i["system"]["traits"]["value"]
         and i["system"]["level"]["value"] == spell_level
@@ -297,6 +299,17 @@ def load_data(paths_to_books: list[str]) -> pd.DataFrame:
     return bestiary
 
 
+def sort_preprocessed_data(bestiary: pd.DataFrame) -> pd.DataFrame:
+    bestiary = bestiary[
+        [
+            col
+            for col in ["level", "book"] + ORDERED_CHARACTERISTICS_FULL
+            if col in bestiary.columns
+        ]
+    ]
+    return bestiary
+
+
 def preprocess_data(bestiary: pd.DataFrame, characteristics: list[str]) -> pd.DataFrame:
     """
     Creates dataframe containing chosen characteristics, level and source book of monsters from given bestiary.
@@ -391,7 +404,7 @@ def preprocess_data(bestiary: pd.DataFrame, characteristics: list[str]) -> pd.Da
 
     pd.reset_option("mode.chained_assignment")
 
-    return df
+    return sort_preprocessed_data(df)
 
 
 def load_and_preprocess_data(

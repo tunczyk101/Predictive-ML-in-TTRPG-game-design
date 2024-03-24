@@ -25,7 +25,7 @@ def train_set() -> tuple[pd.DataFrame, pd.Series]:
 def test_create_linear_regression(train_set):
     X_train, y_train = train_set
 
-    model = get_fitted_model("linear_regression", X_train, y_train)
+    model = get_fitted_model("linear_regression_ridge", X_train, y_train)
 
     assert type(model) == RidgeCV
 

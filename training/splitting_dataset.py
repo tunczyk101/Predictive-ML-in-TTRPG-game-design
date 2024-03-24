@@ -114,6 +114,13 @@ def split_dataframe(
         raise ValueError('Dataframe must contain "level" column.')
 
     if chronological_split:
-        return get_chronological_split_results(df, test_size)
+        X_train, X_test, y_train, y_test = get_chronological_split_results(
+            df, test_size
+        )
+    else:
+        X_train, X_test, y_train, y_test = get_random_split_results(df, test_size)
 
-    return get_random_split_results(df, test_size)
+    X_train.drop(columns=["book"], inplace=True)
+    X_test.drop(columns=["book"], inplace=True)
+
+    return X_train, X_test, y_train, y_test
