@@ -16,6 +16,7 @@ COLORS = {
     "linear_regression_ridge": mcolors.CSS4_COLORS["greenyellow"],
     "linear_regression_lasso": mcolors.CSS4_COLORS["khaki"],
     "lad_regression": mcolors.CSS4_COLORS["yellowgreen"],
+    "huber_regression": mcolors.CSS4_COLORS["gold"],
     "random_forest": mcolors.CSS4_COLORS["thistle"],
     "lightgbm": mcolors.CSS4_COLORS["turquoise"],
 }
@@ -25,6 +26,7 @@ MODEL_LABEL = {
     "linear_regression_ridge": "Ridge regression",
     "linear_regression_lasso": "Lasso regression",
     "lad_regression": "LAD regression",
+    "huber_regression": "Huber regression",
     "random_forest": "Random Forest",
     "lightgbm": "LightGBM",
 }

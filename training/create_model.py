@@ -4,7 +4,13 @@ import optuna.integration.lightgbm as opt_lgb
 import pandas as pd
 from lightgbm import early_stopping, log_evaluation
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.linear_model import LassoCV, LinearRegression, QuantileRegressor, RidgeCV
+from sklearn.linear_model import (
+    HuberRegressor,
+    LassoCV,
+    LinearRegression,
+    QuantileRegressor,
+    RidgeCV,
+)
 from sklearn.model_selection import GridSearchCV, KFold, RandomizedSearchCV
 
 from training.constants import RANDOM_STATE
@@ -61,6 +67,8 @@ def create_model(classifier_name: str):
                 return_train_score=True,
                 n_jobs=-1,
             )
+        case "huber_regression":
+            model = HuberRegressor()
         case "random_forest":
             rf = RandomForestRegressor(random_state=RANDOM_STATE, n_jobs=-1)
             hyper_params = {
