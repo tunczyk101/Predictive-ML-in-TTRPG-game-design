@@ -1,12 +1,75 @@
+import matplotlib.colors as mcolors
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
+from matplotlib.axes import Axes
 from sklearn.metrics import (
     ConfusionMatrixDisplay,
     confusion_matrix,
     mean_absolute_error,
     mean_squared_error,
 )
+
+
+COLORS = {
+    "linear_regression": mcolors.CSS4_COLORS["papayawhip"],
+    "linear_regression_ridge": mcolors.CSS4_COLORS["greenyellow"],
+    "linear_regression_lasso": mcolors.CSS4_COLORS["khaki"],
+    "lad_regression": mcolors.CSS4_COLORS["yellowgreen"],
+    "random_forest": mcolors.CSS4_COLORS["thistle"],
+    "lightgbm": mcolors.CSS4_COLORS["turquoise"],
+}
+
+MODEL_LABEL = {
+    "linear_regression": "Linear regression",
+    "linear_regression_ridge": "Ridge regression",
+    "linear_regression_lasso": "Lasso regression",
+    "lad_regression": "LAD regression",
+    "random_forest": "Random Forest",
+    "lightgbm": "LightGBM",
+}
+
+
+def get_single_plot_bar(
+    results: dict[str, float], measure_type: str, axis: Axes, bar_width: float = 0.1
+):
+    for i, (model, value) in enumerate(results.items()):
+        axis.bar(
+            x=i * bar_width,
+            height=value,
+            width=bar_width,
+            color=COLORS[model],
+            label=MODEL_LABEL[model],
+            linewidth=1,
+            edgecolor="black",
+        )
+
+    axis.set_ylabel(measure_type, fontweight="bold")
+    axis.set_xticklabels([])
+    axis.legend(title="Models", loc="upper center", bbox_to_anchor=(0.5, -0.05))
+
+
+def plot_results(
+    results: dict[str, dict[str, float]],
+    sets: list[str] = ["train", "test"],
+    measure_types: list[str] = ["mae", "mse"],
+):
+    models = results.keys()
+    rows = len(sets)
+    columns = len(measure_types)
+
+    figure, axis = plt.subplots(nrows=rows, ncols=columns)
+    plt.subplots_adjust(hspace=1.5, wspace=0.7)
+
+    for i, set_type in enumerate(sets):
+        for j, measure_type in enumerate(measure_types):
+            measure_results = {m: results[m][set_type][measure_type] for m in models}
+            get_single_plot_bar(
+                measure_results, measure_type=measure_type, axis=axis[i][j]
+            )
+            axis[i][j].set_title(f"{set_type}", fontweight="bold")
+
+    plt.show()
 
 
 def print_check_predictions(y: pd.Series, y_pred: np.ndarray) -> None:
@@ -93,7 +156,7 @@ def plot_mae_by_level(
         mae_by_level.loc[lvl + 1] = [lvl, mae]
 
     fig, ax = plt.subplots(figsize=figsize)
-    # plt.figure(figsize=figsize)
+    plt.figure(figsize=figsize)
     plt.bar(mae_by_level["level"], mae_by_level["mae"])
     plt.xlabel("Level", fontweight="bold", fontsize=20)
     plt.ylabel("Mean Absolute Error (MAE)", fontweight="bold", fontsize=20)

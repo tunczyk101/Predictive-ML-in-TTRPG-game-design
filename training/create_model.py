@@ -4,8 +4,8 @@ import optuna.integration.lightgbm as opt_lgb
 import pandas as pd
 from lightgbm import early_stopping, log_evaluation
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.linear_model import LassoCV, LinearRegression, RidgeCV
-from sklearn.model_selection import KFold, RandomizedSearchCV
+from sklearn.linear_model import LassoCV, LinearRegression, QuantileRegressor, RidgeCV
+from sklearn.model_selection import GridSearchCV, KFold, RandomizedSearchCV
 
 from training.constants import RANDOM_STATE
 
@@ -46,6 +46,21 @@ def create_model(classifier_name: str):
             model = RidgeCV(alphas=np.linspace(1e-3, 1, 10000))
         case "linear_regression_lasso":
             model = LassoCV(n_alphas=1000, random_state=0)
+        case "lad_regression":
+            folds = KFold(n_splits=5, shuffle=True, random_state=0)
+            hyper_params = [{"alpha": np.linspace(0.0, 1e-3, 100)}]
+
+            reg_lad = QuantileRegressor(quantile=0.5, solver="highs")
+
+            model = GridSearchCV(
+                estimator=reg_lad,
+                param_grid=hyper_params,
+                scoring="neg_mean_squared_error",
+                cv=folds,
+                verbose=2,
+                return_train_score=True,
+                n_jobs=-1,
+            )
         case "random_forest":
             rf = RandomForestRegressor(random_state=RANDOM_STATE, n_jobs=-1)
             hyper_params = {
@@ -60,8 +75,7 @@ def create_model(classifier_name: str):
                 param_distributions=hyper_params,
                 n_iter=100,
                 scoring="neg_mean_absolute_error",
-                cv=3,
-                verbose=2,
+                cv=5,
                 random_state=RANDOM_STATE,
                 return_train_score=True,
             )
