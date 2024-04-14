@@ -12,6 +12,7 @@ from sklearn.linear_model import (
     RidgeCV,
 )
 from sklearn.model_selection import GridSearchCV, KFold, RandomizedSearchCV
+from sklearn.svm import LinearSVR
 
 from training.constants import RANDOM_STATE
 
@@ -53,13 +54,45 @@ def create_model(classifier_name: str):
         case "linear_regression_lasso":
             model = LassoCV(n_alphas=1000, random_state=0)
         case "lad_regression":
-            folds = KFold(n_splits=5, shuffle=True, random_state=0)
             hyper_params = [{"alpha": np.linspace(0.0, 1e-3, 100)}]
 
             reg_lad = QuantileRegressor(quantile=0.5, solver="highs")
 
-            model = GridSearchCV(
+            model = RandomizedSearchCV(
                 estimator=reg_lad,
+                param_distributions=hyper_params,
+                scoring="neg_mean_squared_error",
+                cv=5,
+                verbose=2,
+                return_train_score=True,
+                n_iter=100,
+                random_state=RANDOM_STATE,
+                n_jobs=-1,
+            )
+        case "huber_regression":
+            huber = HuberRegressor(max_iter=1000)
+            hyper_params = {"alpha": np.linspace(1e-3, 1, 10000)}
+
+            model = RandomizedSearchCV(
+                estimator=huber,
+                param_distributions=hyper_params,
+                scoring="neg_mean_squared_error",
+                cv=5,
+                verbose=2,
+                return_train_score=True,
+                n_iter=100,
+                random_state=RANDOM_STATE,
+                n_jobs=-1,
+            )
+        case "linear_svm":
+            clf_linear_svr = LinearSVR(
+                loss="epsilon_insensitive", max_iter=10000, random_state=0
+            )
+            folds = KFold(n_splits=5, shuffle=True, random_state=0)
+            hyper_params = {"C": np.linspace(90, 150, num=120)}
+
+            model = GridSearchCV(
+                estimator=clf_linear_svr,
                 param_grid=hyper_params,
                 scoring="neg_mean_squared_error",
                 cv=folds,
@@ -67,8 +100,6 @@ def create_model(classifier_name: str):
                 return_train_score=True,
                 n_jobs=-1,
             )
-        case "huber_regression":
-            model = HuberRegressor()
         case "random_forest":
             rf = RandomForestRegressor(random_state=RANDOM_STATE, n_jobs=-1)
             hyper_params = {

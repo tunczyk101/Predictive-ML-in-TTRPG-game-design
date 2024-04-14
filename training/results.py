@@ -17,6 +17,7 @@ COLORS = {
     "linear_regression_lasso": mcolors.CSS4_COLORS["khaki"],
     "lad_regression": mcolors.CSS4_COLORS["yellowgreen"],
     "huber_regression": mcolors.CSS4_COLORS["gold"],
+    "linear_svm": mcolors.CSS4_COLORS["paleturquoise"],
     "random_forest": mcolors.CSS4_COLORS["thistle"],
     "lightgbm": mcolors.CSS4_COLORS["turquoise"],
 }
@@ -27,6 +28,7 @@ MODEL_LABEL = {
     "linear_regression_lasso": "Lasso regression",
     "lad_regression": "LAD regression",
     "huber_regression": "Huber regression",
+    "linear_svm": "Linear SVM",
     "random_forest": "Random Forest",
     "lightgbm": "LightGBM",
 }
@@ -61,7 +63,7 @@ def plot_results(
     columns = len(measure_types)
 
     figure, axis = plt.subplots(nrows=rows, ncols=columns)
-    plt.subplots_adjust(hspace=1.5, wspace=0.7)
+    plt.subplots_adjust(hspace=0.5 + len(models) * 0.25, wspace=0.7)
 
     for i, set_type in enumerate(sets):
         for j, measure_type in enumerate(measure_types):
