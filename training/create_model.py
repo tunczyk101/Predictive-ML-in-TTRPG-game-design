@@ -11,7 +11,7 @@ from sklearn.linear_model import (
     QuantileRegressor,
     RidgeCV,
 )
-from sklearn.model_selection import GridSearchCV, KFold, RandomizedSearchCV
+from sklearn.model_selection import GridSearchCV, KFold
 from sklearn.svm import LinearSVR
 
 from training.constants import RANDOM_STATE
@@ -21,7 +21,7 @@ def get_fitted_model(
     classifier_name: str,
     X_train: pd.DataFrame,
     y_train: pd.Series,
-) -> RidgeCV | RandomizedSearchCV | lightgbm.Booster:
+) -> RidgeCV | GridSearchCV | lightgbm.Booster:
     """
     Creates chosen model, performs tuning and fits\n
     :param X_train: train set with features to use during fitting
@@ -58,30 +58,26 @@ def create_model(classifier_name: str):
 
             reg_lad = QuantileRegressor(quantile=0.5, solver="highs")
 
-            model = RandomizedSearchCV(
+            model = GridSearchCV(
                 estimator=reg_lad,
-                param_distributions=hyper_params,
+                param_grid=hyper_params,
                 scoring="neg_mean_squared_error",
                 cv=5,
                 verbose=2,
                 return_train_score=True,
-                n_iter=100,
-                random_state=RANDOM_STATE,
                 n_jobs=-1,
             )
         case "huber_regression":
             huber = HuberRegressor(max_iter=1000)
             hyper_params = {"alpha": np.linspace(1e-3, 1, 10000)}
 
-            model = RandomizedSearchCV(
+            model = GridSearchCV(
                 estimator=huber,
-                param_distributions=hyper_params,
+                param_grid=hyper_params,
                 scoring="neg_mean_squared_error",
                 cv=5,
                 verbose=2,
                 return_train_score=True,
-                n_iter=100,
-                random_state=RANDOM_STATE,
                 n_jobs=-1,
             )
         case "linear_svm":
@@ -109,14 +105,13 @@ def create_model(classifier_name: str):
                 "max_features": [0.1, 0.2, 0.3, 0.4, 0.5],
                 "max_depth": list(range(10, 111, 10)) + [None],
             }
-            model = RandomizedSearchCV(
+            model = GridSearchCV(
                 estimator=rf,
-                param_distributions=hyper_params,
-                n_iter=100,
+                param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
                 cv=5,
-                random_state=RANDOM_STATE,
                 return_train_score=True,
+                n_jobs=-1,
             )
         case _:
             raise ValueError(f"Classifier {classifier_name} is unsupported")

@@ -2,7 +2,13 @@ import lightgbm as lightgbm
 import pandas as pd
 import pytest
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.linear_model import RidgeCV
+from sklearn.linear_model import (
+    HuberRegressor,
+    LassoCV,
+    LinearRegression,
+    QuantileRegressor,
+    RidgeCV,
+)
 
 from training.create_model import create_model, get_fitted_model
 
@@ -25,9 +31,41 @@ def train_set() -> tuple[pd.DataFrame, pd.Series]:
 def test_create_linear_regression(train_set):
     X_train, y_train = train_set
 
+    model = get_fitted_model("linear_regression", X_train, y_train)
+
+    assert type(model) == LinearRegression
+
+
+def test_create_linear_regression_ridge(train_set):
+    X_train, y_train = train_set
+
     model = get_fitted_model("linear_regression_ridge", X_train, y_train)
 
     assert type(model) == RidgeCV
+
+
+def test_create_linear_regression_lasso(train_set):
+    X_train, y_train = train_set
+
+    model = get_fitted_model("linear_regression_lasso", X_train, y_train)
+
+    assert type(model) == LassoCV
+
+
+def test_create_lad_regression(train_set):
+    X_train, y_train = train_set
+
+    model = get_fitted_model("lad_regression", X_train, y_train)
+
+    assert type(model.best_estimator_) == QuantileRegressor
+
+
+def test_create_huber_regression(train_set):
+    X_train, y_train = train_set
+
+    model = get_fitted_model("huber_regression", X_train, y_train)
+
+    assert type(model.best_estimator_) == HuberRegressor
 
 
 def test_create_random_forest(train_set):
