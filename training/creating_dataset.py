@@ -8,6 +8,9 @@ import pandas as pd
 from training.constants import ORDERED_CHARACTERISTICS_FULL
 
 
+MAX_SPELL_LVL = 9
+"""maximum sells' level"""
+
 OTHER_SPEEDS = {
     "fly",
     "swim",
@@ -377,7 +380,6 @@ def preprocess_data(bestiary: pd.DataFrame, characteristics: list[str]) -> pd.Da
     )
 
     if "spells" in characteristics_groups.special_characteristics:
-        MAX_SPELL_LVL = 9
         for i in range(1, MAX_SPELL_LVL + 1):
             df[f"spells_nr_lvl_{i}"] = bestiary["items"].apply(
                 lambda x: get_nr_of_spells_with_lvl(x, i)
