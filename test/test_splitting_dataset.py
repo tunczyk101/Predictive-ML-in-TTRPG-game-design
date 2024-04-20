@@ -15,7 +15,7 @@ from training.splitting_dataset import (
 # get_grouped_book_names
 def test_get_date_books_mapping():
     grouped_books = get_date_books_mapping()
-    assert grouped_books.shape == (49, 2)
+    assert grouped_books.shape == (50, 2)
 
 
 # get_dataframe_with_oldest_books
@@ -41,7 +41,7 @@ def test_get_dataframe_with_oldest_books():
 
     books = sorted(oldest_books_df.book.unique())
     expected_books = sorted(
-        ["Pathfinder Bestiary", "Pathfinder Core Rulebook", "Pathfinder Bestiary 2"]
+        ["Pathfinder Bestiary", "Pathfinder Player Core", "Pathfinder Bestiary 2"]
     )
     assert books == expected_books
 

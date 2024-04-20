@@ -96,6 +96,7 @@ def split_dataframe(
     df: pd.DataFrame,
     test_size: float = DEFAULT_TEST_SIZE,
     chronological_split: bool = True,
+    drop_book_column: bool = True,
 ) -> tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
     """
     Splits dataframe to dataframes allowing training and testing of ML models. Requires "level" column to be
@@ -120,7 +121,8 @@ def split_dataframe(
     else:
         X_train, X_test, y_train, y_test = get_random_split_results(df, test_size)
 
-    X_train.drop(columns=["book"], inplace=True)
-    X_test.drop(columns=["book"], inplace=True)
+    if drop_book_column:
+        X_train.drop(columns=["book"], inplace=True)
+        X_test.drop(columns=["book"], inplace=True)
 
     return X_train, X_test, y_train, y_test
