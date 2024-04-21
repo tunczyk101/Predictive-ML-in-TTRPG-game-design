@@ -12,7 +12,7 @@ from sklearn.linear_model import (
     RidgeCV,
 )
 from sklearn.model_selection import GridSearchCV, KFold
-from sklearn.svm import LinearSVR
+from sklearn.svm import SVR, LinearSVR
 
 from training.constants import RANDOM_STATE
 
@@ -88,6 +88,19 @@ def create_model(classifier_name: str):
                 estimator=clf_linear_svr,
                 param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
+                verbose=2,
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "kernel_svm":
+            svm = SVR(kernel="rbf", max_iter=10000)
+            hyper_params = {"C": np.linspace(1, 100, num=100)}
+
+            model = GridSearchCV(
+                estimator=svm,
+                param_grid=hyper_params,
+                scoring="neg_mean_squared_error",
+                cv=5,
                 verbose=2,
                 return_train_score=True,
                 n_jobs=-1,
