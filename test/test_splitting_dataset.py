@@ -124,6 +124,16 @@ def test_split_dataframe():
         X_train, X_test, y_train, y_test = split_dataframe(df, test_size)
 
     test_size = 0.5
+
+    # test drop column
+    X_train, X_test, y_train, y_test = split_dataframe(df, test_size)
+    assert X_train.shape[1] == X_test.shape[1] == 10
+
+    X_train, X_test, y_train, y_test = split_dataframe(
+        df, test_size, drop_book_column=False
+    )
+    assert X_train.shape[1] == X_test.shape[1] == 11
+
     df = df.drop(columns="level")
     with pytest.raises(ValueError):
         X_train, X_test, y_train, y_test = split_dataframe(df, test_size)

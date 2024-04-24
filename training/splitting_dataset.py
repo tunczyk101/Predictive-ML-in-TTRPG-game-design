@@ -122,7 +122,7 @@ def split_dataframe(
         X_train, X_test, y_train, y_test = get_random_split_results(df, test_size)
 
     if drop_book_column:
-        X_train.drop(columns=["book"], inplace=True)
-        X_test.drop(columns=["book"], inplace=True)
+        X_train = X_train.drop(columns=["book"])
+        X_test = X_test.drop(columns=["book"])
 
     return X_train, X_test, y_train, y_test

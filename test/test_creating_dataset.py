@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from training.analysis_functions import get_merged_bestiaries, get_subcolumn
 from training.creating_dataset import (
     count_damage_expected_value,
     extract_and_assign_chars,
@@ -15,9 +14,6 @@ from training.creating_dataset import (
     load_and_preprocess_data,
     split_characteristics_into_groups,
 )
-
-
-BESTIARY = get_merged_bestiaries(DATASET_PATHS)
 
 
 def test_is_path_correct():

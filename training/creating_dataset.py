@@ -9,7 +9,6 @@ from training.constants import ORDERED_CHARACTERISTICS_FULL
 
 
 MAX_SPELL_LVL = 9
-"""maximum sells' level"""
 
 OTHER_SPEEDS = {
     "fly",
@@ -192,7 +191,7 @@ def get_nr_of_spells_with_lvl(items_list: list[dict], spell_level: int) -> int:
     spells = [
         i
         for i in items_list
-        if i["type"] == "spell"  # and i["system"]["category"]["value"] == "spell"
+        if i["type"] == "spell"
         # skip cantrip spells
         and "cantrip" not in i["system"]["traits"]["value"]
         and i["system"]["level"]["value"] == spell_level
