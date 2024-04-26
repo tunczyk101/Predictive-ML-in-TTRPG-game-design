@@ -9,6 +9,7 @@ from sklearn.linear_model import (
     QuantileRegressor,
     RidgeCV,
 )
+from sklearn.svm import LinearSVR
 
 from training.create_model import create_model, get_fitted_model
 
@@ -28,51 +29,33 @@ def train_set() -> tuple[pd.DataFrame, pd.Series]:
     return X_train, y_train
 
 
-def test_create_linear_regression(train_set):
+def test_create_model(train_set):
+    models_to_test = {
+        "linear_regression": LinearRegression,
+        "linear_regression_ridge": RidgeCV,
+        "linear_regression_lasso": LassoCV,
+    }
+
     X_train, y_train = train_set
 
-    model = get_fitted_model("linear_regression", X_train, y_train)
+    for name, model_type in models_to_test.items():
+        model = get_fitted_model(name, X_train, y_train)
+        assert type(model) == model_type
 
-    assert type(model) == LinearRegression
 
+def test_create_model_gridsearch(train_set):
+    models_to_test = {
+        "lad_regression": QuantileRegressor,
+        "huber_regression": HuberRegressor,
+        "linear_svm": LinearSVR,
+        "random_forest": RandomForestRegressor,
+    }
 
-def test_create_linear_regression_ridge(train_set):
     X_train, y_train = train_set
 
-    model = get_fitted_model("linear_regression_ridge", X_train, y_train)
-
-    assert type(model) == RidgeCV
-
-
-def test_create_linear_regression_lasso(train_set):
-    X_train, y_train = train_set
-
-    model = get_fitted_model("linear_regression_lasso", X_train, y_train)
-
-    assert type(model) == LassoCV
-
-
-def test_create_lad_regression(train_set):
-    X_train, y_train = train_set
-
-    model = get_fitted_model("lad_regression", X_train, y_train)
-
-    assert type(model.best_estimator_) == QuantileRegressor
-
-
-def test_create_huber_regression(train_set):
-    X_train, y_train = train_set
-
-    model = get_fitted_model("huber_regression", X_train, y_train)
-
-    assert type(model.best_estimator_) == HuberRegressor
-
-
-def test_create_random_forest(train_set):
-    X_train, y_train = train_set
-    model = get_fitted_model("random_forest", X_train, y_train)
-
-    assert type(model.best_estimator_) == RandomForestRegressor
+    for name, model_type in models_to_test.items():
+        model = get_fitted_model(name, X_train, y_train)
+        assert type(model.best_estimator_) == model_type
 
 
 def test_create_lightgbm(train_set):
