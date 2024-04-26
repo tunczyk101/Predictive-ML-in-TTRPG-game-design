@@ -1,5 +1,45 @@
 RANDOM_STATE = 42
 
+DATASET_FILES = [
+    "abomination-vaults-bestiary.json",
+    "age-of-ashes-bestiary.json",
+    "agents-of-edgewatch-bestiary.json",
+    # "april-fools-bestiary.json",
+    "blog-bestiary.json",
+    "blood-lords-bestiary.json",
+    "book-of-the-dead-bestiary.json",
+    "crown-of-the-kobold-king-bestiary.json",
+    "extinction-curse-bestiary.json",
+    "fall-of-plaguestone.json",
+    "fists-of-the-ruby-phoenix-bestiary.json",
+    "gatewalkers-bestiary.json",
+    "impossible-lands-bestiary.json",
+    "kingmaker-bestiary.json",
+    "malevolence-bestiary.json",
+    "menace-under-otari-bestiary.json",
+    "monsters-of-myth-bestiary.json",
+    "mwangi-expanse-bestiary.json",
+    "night-of-the-gray-death-bestiary.json",
+    "npc-gallery.json",
+    "one-shot-bestiary.json",
+    "outlaws-of-alkenstar-bestiary.json",
+    "pathfinder-bestiary-2.json",
+    "pathfinder-bestiary-3.json",
+    "pathfinder-bestiary.json",
+    "pathfinder-dark-archive.json",
+    "pfs-introductions-bestiary.json",
+    "pfs-season-1-bestiary.json",
+    "pfs-season-2-bestiary.json",
+    "pfs-season-3-bestiary.json",
+    "pfs-season-4-bestiary.json",
+    "quest-for-the-frozen-flame-bestiary.json",
+    "shadows-at-sundown-bestiary.json",
+    "strength-of-thousands-bestiary.json",
+    "the-slithering-bestiary.json",
+    "travel-guide-bestiary.json",
+    "troubles-in-otari-bestiary.json",
+]
+
 FEATURES = [
     "cha",
     "con",
@@ -111,4 +151,5 @@ ORDERED_CHARACTERISTICS_FULL = [
     "slashing_weakness",
     "splash-damage_weakness",
 ]
+
 THRESHOLD = 0.33

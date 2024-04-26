@@ -26,4 +26,5 @@ pytest = "7.1.*"
 jupyter = "1.0.*"
 matplotlib = "3.8.*"
 
+# poetry lock --no-update
 # poetry export --without-hashes --format=requirements.txt --with="style,test,notebooks" --output=requirements.txt

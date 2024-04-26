@@ -15,7 +15,7 @@ from training.splitting_dataset import (
 # get_grouped_book_names
 def test_get_date_books_mapping():
     grouped_books = get_date_books_mapping()
-    assert grouped_books.shape == (49, 2)
+    assert grouped_books.shape == (50, 2)
 
 
 # get_dataframe_with_oldest_books
@@ -41,7 +41,7 @@ def test_get_dataframe_with_oldest_books():
 
     books = sorted(oldest_books_df.book.unique())
     expected_books = sorted(
-        ["Pathfinder Bestiary", "Pathfinder Core Rulebook", "Pathfinder Bestiary 2"]
+        ["Pathfinder Bestiary", "Pathfinder Player Core", "Pathfinder Bestiary 2"]
     )
     assert books == expected_books
 
@@ -124,6 +124,16 @@ def test_split_dataframe():
         X_train, X_test, y_train, y_test = split_dataframe(df, test_size)
 
     test_size = 0.5
+
+    # test drop column
+    X_train, X_test, y_train, y_test = split_dataframe(df, test_size)
+    assert X_train.shape[1] == X_test.shape[1] == 10
+
+    X_train, X_test, y_train, y_test = split_dataframe(
+        df, test_size, drop_book_column=False
+    )
+    assert X_train.shape[1] == X_test.shape[1] == 11
+
     df = df.drop(columns="level")
     with pytest.raises(ValueError):
         X_train, X_test, y_train, y_test = split_dataframe(df, test_size)

@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from training.analysis_functions import get_merged_bestiaries, get_subcolumn
 from training.creating_dataset import (
     count_damage_expected_value,
     extract_and_assign_chars,
@@ -15,9 +14,6 @@ from training.creating_dataset import (
     load_and_preprocess_data,
     split_characteristics_into_groups,
 )
-
-
-BESTIARY = get_merged_bestiaries(DATASET_PATHS)
 
 
 def test_is_path_correct():
@@ -102,7 +98,6 @@ def test_get_nr_of_spells_with_lvl():
             [
                 {
                     "system": {
-                        "category": {"value": "spell"},
                         "traits": {"value": []},
                         "level": {"value": 1},
                     },
@@ -111,17 +106,14 @@ def test_get_nr_of_spells_with_lvl():
                 {"type": "melee"},
             ],
             [
-                {"system": {"category": {"value": "not spell"}}, "type": "spell"},
                 {
                     "system": {
-                        "category": {"value": "spell"},
                         "traits": {"value": ["cantrip"]},
                     },
                     "type": "spell",
                 },
                 {
                     "system": {
-                        "category": {"value": "spell"},
                         "traits": {"value": []},
                         "level": {"value": 2},
                     },
@@ -205,37 +197,10 @@ def test_get_max_melee_bonus_damage():
 
 
 def test_load_and_preprocess_data():
-    test_dataframe = pd.read_json("../preprocessed_bestiaries/old_bestiary_basic.json")
-
-    column_paths = {
-        "book": "system/details/source",
-        "focus": "system/resources/focus",
-        "fortitude": "system/saves/fortitude",
-    }
-
-    for colum_name, path in column_paths.items():
-        test_dataframe[colum_name] = get_subcolumn(BESTIARY, path)["value"]
-
-    test_dataframe["num_immunities"] = get_subcolumn(
-        BESTIARY, "system/attributes"
-    ).immunities.apply(lambda x: 0 if x is np.nan else len(x))
-
-    test_dataframe["good_weakness"] = get_subcolumn(
-        BESTIARY, "system/attributes"
-    ).weaknesses.apply(lambda x: get_characteristic_from_list(x, "good"))
-    test_dataframe["fire_resistance"] = get_subcolumn(
-        BESTIARY, "system/attributes"
-    ).resistances.apply(lambda x: get_characteristic_from_list(x, "fire"))
-    test_dataframe["fly"] = get_subcolumn(
-        BESTIARY, "system/attributes/speed"
-    ).otherSpeeds.apply(lambda x: get_characteristic_from_list(x, "fly"))
-
-    test_dataframe["focus"] = test_dataframe["focus"].fillna(0)
-    test_dataframe.loc[test_dataframe["level"] > 20, "level"] = 21
-    test_dataframe = test_dataframe.reset_index(drop=True)
+    test_dataframe = pd.read_csv("./test_data/expected_bestiary.csv", index_col=0)
 
     bestiary_dataframe = load_and_preprocess_data(
-        DATASET_PATHS,
+        ["./test_data/example_bestiary.json"],
         characteristics=[
             "cha",
             "con",
