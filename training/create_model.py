@@ -61,8 +61,7 @@ def create_model(classifier_name: str):
             model = GridSearchCV(
                 estimator=reg_lad,
                 param_grid=hyper_params,
-                scoring="neg_mean_squared_error",
-                cv=5,
+                scoring="neg_mean_absolute_error",
                 verbose=2,
                 return_train_score=True,
                 n_jobs=-1,
@@ -74,8 +73,7 @@ def create_model(classifier_name: str):
             model = GridSearchCV(
                 estimator=huber,
                 param_grid=hyper_params,
-                scoring="neg_mean_squared_error",
-                cv=5,
+                scoring="neg_mean_absolute_error",
                 verbose=2,
                 return_train_score=True,
                 n_jobs=-1,
@@ -84,14 +82,12 @@ def create_model(classifier_name: str):
             clf_linear_svr = LinearSVR(
                 loss="epsilon_insensitive", max_iter=10000, random_state=0
             )
-            folds = KFold(n_splits=5, shuffle=True, random_state=0)
-            hyper_params = {"C": np.linspace(90, 150, num=120)}
+            hyper_params = {"C": np.linspace(10, 30, num=20)}
 
             model = GridSearchCV(
                 estimator=clf_linear_svr,
                 param_grid=hyper_params,
-                scoring="neg_mean_squared_error",
-                cv=folds,
+                scoring="neg_mean_absolute_error",
                 verbose=2,
                 return_train_score=True,
                 n_jobs=-1,
@@ -109,7 +105,6 @@ def create_model(classifier_name: str):
                 estimator=rf,
                 param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
-                cv=5,
                 return_train_score=True,
                 n_jobs=-1,
             )

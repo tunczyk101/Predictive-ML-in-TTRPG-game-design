@@ -36,12 +36,10 @@ def train_and_evaluate_models(
         model_results = {
             "train": {
                 "rmse": mean_squared_error(y_train, y_pred_train, squared=False),
-                "mse": mean_squared_error(y_train, y_pred_train, squared=True),
                 "mae": mean_absolute_error(y_train, y_pred_train),
             },
             "test": {
                 "rmse": mean_squared_error(y_test, y_pred_test, squared=False),
-                "mse": mean_squared_error(y_test, y_pred_test, squared=True),
                 "mae": mean_absolute_error(y_test, y_pred_test),
             },
         }
