@@ -4,8 +4,15 @@ import optuna.integration.lightgbm as opt_lgb
 import pandas as pd
 from lightgbm import early_stopping, log_evaluation
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.linear_model import LassoCV, LinearRegression, RidgeCV
-from sklearn.model_selection import KFold, RandomizedSearchCV
+from sklearn.linear_model import (
+    HuberRegressor,
+    LassoCV,
+    LinearRegression,
+    QuantileRegressor,
+    RidgeCV,
+)
+from sklearn.model_selection import GridSearchCV, KFold
+from sklearn.svm import LinearSVR
 
 from training.constants import RANDOM_STATE
 
@@ -14,7 +21,7 @@ def get_fitted_model(
     classifier_name: str,
     X_train: pd.DataFrame,
     y_train: pd.Series,
-) -> RidgeCV | RandomizedSearchCV | lightgbm.Booster:
+) -> RidgeCV | GridSearchCV | lightgbm.Booster:
     """
     Creates chosen model, performs tuning and fits\n
     :param X_train: train set with features to use during fitting
@@ -46,6 +53,45 @@ def create_model(classifier_name: str):
             model = RidgeCV(alphas=np.linspace(1e-3, 1, 10000))
         case "linear_regression_lasso":
             model = LassoCV(n_alphas=1000, random_state=0)
+        case "lad_regression":
+            hyper_params = [{"alpha": np.linspace(0.0, 1e-3, 100)}]
+
+            reg_lad = QuantileRegressor(quantile=0.5, solver="highs")
+
+            model = GridSearchCV(
+                estimator=reg_lad,
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                verbose=2,
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "huber_regression":
+            huber = HuberRegressor(max_iter=1000)
+            hyper_params = {"alpha": np.linspace(1e-3, 1, 10000)}
+
+            model = GridSearchCV(
+                estimator=huber,
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                verbose=2,
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "linear_svm":
+            clf_linear_svr = LinearSVR(
+                loss="epsilon_insensitive", max_iter=10000, random_state=0
+            )
+            hyper_params = {"C": np.linspace(10, 30, num=20)}
+
+            model = GridSearchCV(
+                estimator=clf_linear_svr,
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                verbose=2,
+                return_train_score=True,
+                n_jobs=-1,
+            )
         case "random_forest":
             rf = RandomForestRegressor(random_state=RANDOM_STATE, n_jobs=-1)
             hyper_params = {
@@ -55,15 +101,12 @@ def create_model(classifier_name: str):
                 "max_features": [0.1, 0.2, 0.3, 0.4, 0.5],
                 "max_depth": list(range(10, 111, 10)) + [None],
             }
-            model = RandomizedSearchCV(
+            model = GridSearchCV(
                 estimator=rf,
-                param_distributions=hyper_params,
-                n_iter=100,
+                param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
-                cv=3,
-                verbose=2,
-                random_state=RANDOM_STATE,
                 return_train_score=True,
+                n_jobs=-1,
             )
         case _:
             raise ValueError(f"Classifier {classifier_name} is unsupported")
