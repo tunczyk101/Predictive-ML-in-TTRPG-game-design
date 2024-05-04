@@ -1,12 +1,7 @@
-import os
-
 import pandas as pd
-from sklearn.metrics import mean_absolute_error, mean_squared_error
+from sklearn.metrics import mean_absolute_error, root_mean_squared_error
 
-from training.constants import DATASET_FILES, FEATURES
 from training.create_model import get_fitted_model
-from training.creating_dataset import load_and_preprocess_data
-from training.splitting_dataset import split_dataframe
 
 
 def print_results(model_name: str, results: dict):
@@ -35,11 +30,11 @@ def train_and_evaluate_models(
 
         model_results = {
             "train": {
-                "rmse": mean_squared_error(y_train, y_pred_train, squared=False),
+                "rmse": root_mean_squared_error(y_train, y_pred_train),
                 "mae": mean_absolute_error(y_train, y_pred_train),
             },
             "test": {
-                "rmse": mean_squared_error(y_test, y_pred_test, squared=False),
+                "rmse": root_mean_squared_error(y_test, y_pred_test),
                 "mae": mean_absolute_error(y_test, y_pred_test),
             },
         }
