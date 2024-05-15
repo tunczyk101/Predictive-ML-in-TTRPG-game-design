@@ -12,6 +12,7 @@ from sklearn.linear_model import (
     RidgeCV,
 )
 from sklearn.model_selection import GridSearchCV, KFold
+from sklearn.neighbors import KNeighborsRegressor
 from sklearn.svm import SVR, LinearSVR
 
 from training.constants import RANDOM_STATE
@@ -94,13 +95,30 @@ def create_model(classifier_name: str):
             )
         case "kernel_svm":
             svm = SVR(kernel="rbf", max_iter=10000)
-            hyper_params = {"C": np.linspace(1, 100, num=100)}
+            hyper_params = {"C": np.linspace(1, 10, num=100)}
 
             model = GridSearchCV(
                 estimator=svm,
                 param_grid=hyper_params,
-                scoring="neg_mean_squared_error",
-                cv=5,
+                scoring="neg_mean_absolute_error",
+                verbose=2,
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "knn":
+            clf = KNeighborsRegressor()
+
+            hyper_params = {
+                "leaf_size": list(range(50, 100, 10)),
+                "weights": ["uniform", "distance"],
+                "metric": ["minkowski", "manhattan", "euclidean"],
+                "n_neighbors": list(range(1, 51)),
+            }
+
+            model = GridSearchCV(
+                estimator=clf,
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
                 verbose=2,
                 return_train_score=True,
                 n_jobs=-1,
@@ -108,11 +126,9 @@ def create_model(classifier_name: str):
         case "random_forest":
             rf = RandomForestRegressor(random_state=RANDOM_STATE, n_jobs=-1)
             hyper_params = {
-                "n_estimators": [
-                    int(x) for x in np.linspace(start=100, stop=800, num=8)
-                ],
-                "max_features": [0.1, 0.2, 0.3, 0.4, 0.5],
-                "max_depth": list(range(10, 111, 10)) + [None],
+                "max_features": [0.3],
+                "n_estimators": [100, 200, 500],
+                "criterion": ["squared_error", "absolute_error", "friedman_mse"],
             }
             model = GridSearchCV(
                 estimator=rf,
