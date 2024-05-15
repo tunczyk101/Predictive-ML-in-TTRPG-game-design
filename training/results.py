@@ -9,8 +9,6 @@ from sklearn.metrics import (
     mean_absolute_error,
 )
 
-from training.train_and_evaluate_models import round_results
-
 
 COLORS = {
     "linear_regression": mcolors.CSS4_COLORS["papayawhip"],
@@ -167,7 +165,7 @@ def plot_confusion_matrix(
     :param export: If true, saves plot to results_diagrams file. Default is False.
     :return: None
     """
-    round_predict = round_results(predict, threshold)
+    round_predict = round_single_threshold_results(predict, threshold)
     cm = confusion_matrix(y, round_predict)
 
     # min possible level: -1, max possible level: 21
