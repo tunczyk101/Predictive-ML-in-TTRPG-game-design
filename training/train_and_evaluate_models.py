@@ -4,6 +4,7 @@ from sklearn.metrics import accuracy_score, mean_absolute_error, root_mean_squar
 from training.create_model import get_fitted_model
 from training.rounging import (
     find_best_thresholds,
+    find_graph_rounding,
     find_single_best_threshold,
     round_results_multiple_threshold,
     round_single_threshold_results,
@@ -37,7 +38,14 @@ def calculate_results(y_true, y_pred, accuracy=True):
 
 
 def get_model_results(
-    model, y_train, X_train, y_test, X_test, thresholds, multiple_thresholds
+    model,
+    y_train,
+    X_train,
+    y_test,
+    X_test,
+    thresholds,
+    multiple_thresholds,
+    graph_thresholds,
 ):
     y_pred_train = model.predict(X_train)
     y_pred_test = model.predict(X_test)
@@ -74,8 +82,26 @@ def get_model_results(
         }
 
     if multiple_thresholds:
-        best_thresholds = find_best_thresholds(list(y_train), list(y_pred_train))
+        best_thresholds = find_best_thresholds(
+            list(y_train),
+            list(y_pred_train),
+            thresholds=(min(thresholds), max(thresholds)),
+        )
         model_results["best_multiple_thresholds"] = {
+            "thresholds": best_thresholds,
+            "train": calculate_results(
+                y_train, round_results_multiple_threshold(y_pred_train, best_thresholds)
+            ),
+            "test": calculate_results(
+                y_test, round_results_multiple_threshold(y_pred_test, best_thresholds)
+            ),
+        }
+
+    if graph_thresholds:
+        best_thresholds = find_graph_rounding(
+            list(y_pred_train), list(y_train), thresholds
+        )
+        model_results["best_graph_thresholds"] = {
             "thresholds": best_thresholds,
             "train": calculate_results(
                 y_train, round_results_multiple_threshold(y_pred_train, best_thresholds)
@@ -96,6 +122,7 @@ def train_and_evaluate_models(
     y_test: pd.Series,
     thresholds: list[float],
     multiple_thresholds: bool = True,
+    graph_thresholds: bool = True,
     print_summary: bool = False,
     return_models: bool = True,
 ) -> dict:
@@ -105,7 +132,14 @@ def train_and_evaluate_models(
         model = get_fitted_model(model_name, X_train, y_train)
 
         results[model_name] = get_model_results(
-            model, y_train, X_train, y_test, X_test, thresholds, multiple_thresholds
+            model,
+            y_train,
+            X_train,
+            y_test,
+            X_test,
+            thresholds,
+            multiple_thresholds,
+            graph_thresholds,
         )
 
         if return_models:
@@ -125,6 +159,7 @@ def evaluate_models(
     y_test: pd.Series,
     thresholds: list[float],
     multiple_thresholds: bool = True,
+    graph_thresholds: bool = True,
     print_summary: bool = False,
 ):
     results = {}
@@ -132,10 +167,19 @@ def evaluate_models(
     for model_name, model in models.items():
 
         results[model_name] = get_model_results(
-            model, y_train, X_train, y_test, X_test, thresholds, multiple_thresholds
+            model,
+            y_train,
+            X_train,
+            y_test,
+            X_test,
+            thresholds,
+            multiple_thresholds,
+            graph_thresholds,
         )
 
         if print_summary:
             print_results(model_name, results[model_name])
+
+        results[model_name]["model"] = model
 
     return results

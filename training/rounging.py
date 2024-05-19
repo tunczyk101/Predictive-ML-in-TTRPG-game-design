@@ -1,3 +1,5 @@
+from queue import PriorityQueue
+
 import numpy as np
 import optuna
 import pandas as pd
@@ -43,7 +45,7 @@ def round_prediction(predicted, threshold):
 
 
 def round_prediction_error(predicted, true, threshold):
-    return true - round_prediction(predicted, threshold)
+    return abs(true - round_prediction(predicted, threshold))
 
 
 def round_results_multiple_threshold(y_predicted, thresholds):
@@ -78,3 +80,41 @@ def find_best_thresholds(y_true, y_predicted, thresholds=(0, 1)):
         lambda trial: objective(trial, y_true, y_predicted, thresholds), n_trials=100
     )
     return {i - 1: threshold for i, threshold in enumerate(study.best_params.values())}
+
+
+def get_edges_cost(level, thresholds, y_pred, y_true):
+    lvl_pred = [pred for pred in range(len(y_pred)) if y_pred[pred] // 1 == level]
+    n = len(lvl_pred)
+    moves = []
+    for threshold in thresholds:
+        moves.append(
+            (
+                threshold,
+                sum(
+                    [
+                        round_prediction_error(y_pred[i], y_true[i], threshold)
+                        for i in lvl_pred
+                    ]
+                )
+                / n,
+            )
+        )
+
+    return moves
+
+
+def find_graph_rounding(y_pred, y_true, thresholds):
+    q = PriorityQueue()
+    final_thresholds = {}
+    q.put((0, -1))
+
+    while not q.empty():
+        cost, level = q.get()
+
+        if level == 21:
+            return final_thresholds
+
+        edges_cost = get_edges_cost(level, thresholds, y_pred, y_true)
+        threshold, next_edge_cost = min(edges_cost, key=lambda x: x[1])
+        final_thresholds[level] = threshold
+        q.put((cost + next_edge_cost, level + 1))
