@@ -23,6 +23,8 @@ COLORS = {
     "knn": mcolors.CSS4_COLORS["purple"],
     "random_forest": mcolors.CSS4_COLORS["thistle"],
     "lightgbm": mcolors.CSS4_COLORS["turquoise"],
+    "ordered_model_probit": mcolors.CSS4_COLORS["orangered"],
+    "ordered_model_logit": mcolors.CSS4_COLORS["chocolate"],
 }
 
 MODEL_LABEL = {
@@ -36,6 +38,8 @@ MODEL_LABEL = {
     "knn": "KNeighbours",
     "random_forest": "Random Forest",
     "lightgbm": "LightGBM",
+    "ordered_model_probit": "Ordered Model [probit]",
+    "ordered_model_logit": "Ordered Model [logit]",
 }
 
 

@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.metrics import accuracy_score, mean_absolute_error, root_mean_squared_error
+from statsmodels.miscmodels.ordinal_model import OrderedResultsWrapper
 
 from training.create_model import get_fitted_model
 from training.rounging import (
@@ -47,8 +48,20 @@ def get_model_results(
     multiple_thresholds,
     graph_thresholds,
 ):
-    y_pred_train = model.predict(X_train)
-    y_pred_test = model.predict(X_test)
+    if type(model) != OrderedResultsWrapper:
+        y_pred_train = model.predict(X_train)
+        y_pred_test = model.predict(X_test)
+    else:
+        y_pred_train = (
+            model.predict(X_train)
+            .rename(columns={i + 1: i for i in range(-1, 22)})
+            .idxmax(axis=1)
+        )
+        y_pred_test = (
+            model.predict(X_test)
+            .rename(columns={i + 1: i for i in range(-1, 22)})
+            .idxmax(axis=1)
+        )
 
     model_results = {
         "no_rounding": {
