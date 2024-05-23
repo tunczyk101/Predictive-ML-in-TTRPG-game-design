@@ -45,6 +45,7 @@ def get_model_results(
     y_test,
     X_test,
     thresholds,
+    single_threshold,
     multiple_thresholds,
     graph_thresholds,
 ):
@@ -78,51 +79,65 @@ def get_model_results(
         },
     }
 
-    if len(thresholds) > 0:
-        best_single_threshold = find_single_best_threshold(
-            y_pred_train, y_train, thresholds
-        )[0]
-        model_results["best_single_threshold"] = {
-            "threshold": best_single_threshold,
-            "train": calculate_results(
-                y_train,
-                round_single_threshold_results(y_pred_train, best_single_threshold),
-            ),
-            "test": calculate_results(
-                y_test,
-                round_single_threshold_results(y_pred_test, best_single_threshold),
-            ),
-        }
+    for threshold_list in thresholds:
+        min_threshold = min(threshold_list)
+        max_threshold = max(threshold_list)
 
-    if multiple_thresholds:
-        best_thresholds = find_best_thresholds(
-            list(y_train),
-            list(y_pred_train),
-            thresholds=(min(thresholds), max(thresholds)),
-        )
-        model_results["best_multiple_thresholds"] = {
-            "thresholds": best_thresholds,
-            "train": calculate_results(
-                y_train, round_results_multiple_threshold(y_pred_train, best_thresholds)
-            ),
-            "test": calculate_results(
-                y_test, round_results_multiple_threshold(y_pred_test, best_thresholds)
-            ),
-        }
+        if single_threshold:
+            best_single_threshold = find_single_best_threshold(
+                y_pred_train, y_train, threshold_list
+            )[0]
+            model_results[
+                f"best_single_threshold_{min_threshold:.2f}_{max_threshold:.2f}"
+            ] = {
+                "threshold": best_single_threshold,
+                "train": calculate_results(
+                    y_train,
+                    round_single_threshold_results(y_pred_train, best_single_threshold),
+                ),
+                "test": calculate_results(
+                    y_test,
+                    round_single_threshold_results(y_pred_test, best_single_threshold),
+                ),
+            }
 
-    if graph_thresholds:
-        best_thresholds = find_graph_rounding(
-            list(y_pred_train), list(y_train), thresholds
-        )
-        model_results["best_graph_thresholds"] = {
-            "thresholds": best_thresholds,
-            "train": calculate_results(
-                y_train, round_results_multiple_threshold(y_pred_train, best_thresholds)
-            ),
-            "test": calculate_results(
-                y_test, round_results_multiple_threshold(y_pred_test, best_thresholds)
-            ),
-        }
+        if multiple_thresholds:
+            best_thresholds = find_best_thresholds(
+                list(y_train),
+                list(y_pred_train),
+                thresholds=(min_threshold, max_threshold),
+            )
+            model_results[
+                f"best_multiple_thresholds_{min_threshold:.2f}_{max_threshold:.2f}"
+            ] = {
+                "thresholds": best_thresholds,
+                "train": calculate_results(
+                    y_train,
+                    round_results_multiple_threshold(y_pred_train, best_thresholds),
+                ),
+                "test": calculate_results(
+                    y_test,
+                    round_results_multiple_threshold(y_pred_test, best_thresholds),
+                ),
+            }
+
+        if graph_thresholds:
+            best_thresholds = find_graph_rounding(
+                list(y_pred_train), list(y_train), threshold_list
+            )
+            model_results[
+                f"best_graph_thresholds_{min_threshold:.2f}_{max_threshold:.2f}"
+            ] = {
+                "thresholds": best_thresholds,
+                "train": calculate_results(
+                    y_train,
+                    round_results_multiple_threshold(y_pred_train, best_thresholds),
+                ),
+                "test": calculate_results(
+                    y_test,
+                    round_results_multiple_threshold(y_pred_test, best_thresholds),
+                ),
+            }
 
     return model_results
 
@@ -133,7 +148,8 @@ def train_and_evaluate_models(
     y_train: pd.Series,
     X_test: pd.DataFrame,
     y_test: pd.Series,
-    thresholds: list[float],
+    thresholds: list[list[float]],
+    single_threshold: bool = True,
     multiple_thresholds: bool = True,
     graph_thresholds: bool = True,
     print_summary: bool = False,
@@ -151,6 +167,7 @@ def train_and_evaluate_models(
             y_test,
             X_test,
             thresholds,
+            single_threshold,
             multiple_thresholds,
             graph_thresholds,
         )
@@ -171,6 +188,7 @@ def evaluate_models(
     X_test: pd.DataFrame,
     y_test: pd.Series,
     thresholds: list[float],
+    single_threshold: bool = True,
     multiple_thresholds: bool = True,
     graph_thresholds: bool = True,
     print_summary: bool = False,
@@ -186,6 +204,7 @@ def evaluate_models(
             y_test,
             X_test,
             thresholds,
+            single_threshold,
             multiple_thresholds,
             graph_thresholds,
         )
