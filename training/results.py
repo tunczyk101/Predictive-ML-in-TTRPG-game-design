@@ -209,3 +209,31 @@ def plot_confusion_matrix(
         )
 
     plt.show()
+
+
+def compare_models_thresholds(results: dict, rounding_type: str):
+    for model_name, model_result in results.items():
+        for round_type, rounded_results in model_result.items():
+            if round_type == rounding_type:
+                for set_name, value in rounded_results.items():
+                    if set_name == "thresholds":
+                        plt.plot(value.keys(), value.values(), label=model_name)
+    plt.legend()
+    plt.show()
+
+
+def compare_different_thresholds(results: dict, moodel_to_compare: str):
+    plt.title(moodel_to_compare)
+    for model_name, model_result in results.items():
+        if model_name == moodel_to_compare:
+            for round_type, rounded_results in model_result.items():
+                if round_type == "model":
+                    continue
+                for set_name, value in rounded_results.items():
+                    if set_name == "thresholds":
+                        plt.plot(value.keys(), value.values(), label=round_type)
+                    elif set_name == "threshold":
+                        levels = [i for i in range(-1, 21)]
+                        plt.plot(levels, [value] * len(levels), label=round_type)
+    plt.legend()
+    plt.show()

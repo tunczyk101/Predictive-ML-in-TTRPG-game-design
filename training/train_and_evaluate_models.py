@@ -13,6 +13,12 @@ from training.rounging import (
 
 
 def print_results(model_name: str, results: dict):
+    """
+    Prints results and model name summary.
+
+    :param model_name: Model name
+    :param results: Results of a given model
+    """
     print(f"==== {model_name} ====")
     for round_type, rounded_results in results.items():
         if round_type == "model":
@@ -28,7 +34,15 @@ def print_results(model_name: str, results: dict):
     print()
 
 
-def calculate_results(y_true, y_pred, accuracy=True):
+def calculate_results(y_true, y_pred, accuracy=True) -> dict[str, float]:
+    """
+    Calculates evaluation metrics for predicted values compared to true values.
+
+    :param y_true: List of true values
+    :param y_pred: List of predicted values
+    :param accuracy: Whether to compute the accuracy score
+    :return: Dictionary containing evaluation metrics
+    """
     results = {
         "rmse": root_mean_squared_error(y_true, y_pred),
         "mae": mean_absolute_error(y_true, y_pred),
@@ -48,7 +62,21 @@ def get_model_results(
     single_threshold,
     multiple_thresholds,
     graph_thresholds,
-):
+) -> dict:
+    """
+    Calculates and compares evaluation metrics for different rounding strategies based on a machine learning model.
+
+    :param model: Model to evaluate
+    :param y_train: True target values for the training set
+    :param X_train: Feature matrix for the training set
+    :param y_test: True target values for the test set
+    :param X_test: Feature matrix for the test set
+    :param thresholds: List of threshold values to consider for rounding
+    :param single_threshold: Whether to find the single best threshold
+    :param multiple_thresholds: Whether to find the multiple thresholds
+    :param graph_thresholds: Whether to find the graph-based threshold
+    :return: Dictionary containing evaluation metrics for different rounding strategies
+    """
     if type(model) != OrderedResultsWrapper:
         y_pred_train = model.predict(X_train)
         y_pred_test = model.predict(X_test)
@@ -103,8 +131,8 @@ def get_model_results(
 
         if multiple_thresholds:
             best_thresholds = find_best_thresholds(
-                list(y_train),
                 list(y_pred_train),
+                list(y_train),
                 thresholds=(min_threshold, max_threshold),
             )
             model_results[
@@ -155,6 +183,22 @@ def train_and_evaluate_models(
     print_summary: bool = False,
     return_models: bool = True,
 ) -> dict:
+    """
+    Trains and evaluates multiple machine learning models and compares different rounding strategies.
+
+    :param models: List of model names to train and evaluate
+    :param X_train: Feature matrix for the training set
+    :param y_train: True target values for the training set
+    :param X_test: Feature matrix for the test set
+    :param y_test: True target values for the test set
+    :param thresholds: List of threshold values to consider for rounding
+    :param single_threshold: Whether to find the single best threshold
+    :param multiple_thresholds: Whether to find the multiple thresholds
+    :param graph_thresholds: Whether to find the graph-based threshold
+    :param print_summary: Whether to print summary results for each model
+    :param return_models: Whether to return trained models in the results
+    :return: Dictionary containing evaluation metrics for each model and rounding strategy
+    """
     results = {}
 
     for model_name in models:
@@ -192,7 +236,22 @@ def evaluate_models(
     multiple_thresholds: bool = True,
     graph_thresholds: bool = True,
     print_summary: bool = False,
-):
+) -> dict:
+    """
+    Evaluates multiple models using different rounding strategies.
+
+    :param models: Dictionary mapping model names to trained models
+    :param X_train: Feature matrix for the training set
+    :param y_train: True target values for the training set
+    :param X_test: Feature matrix for the test set
+    :param y_test: True target values for the test set
+    :param thresholds: List of threshold values to consider for rounding
+    :param single_threshold: Whether to find the single best threshold
+    :param multiple_thresholds: Whether to find the multiple thresholds
+    :param graph_thresholds: Whether to find the graph-based threshold
+    :param print_summary: Whether to print summary results for each model
+    :return: Dictionary containing evaluation metrics for each model and rounding strategy
+    """
     results = {}
 
     for model_name, model in models.items():

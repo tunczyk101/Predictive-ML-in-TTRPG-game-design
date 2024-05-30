@@ -14,6 +14,7 @@ from sklearn.linear_model import (
 from sklearn.model_selection import GridSearchCV, KFold
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.svm import SVR, LinearSVR
+from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 from training.constants import RANDOM_STATE
 
@@ -33,6 +34,9 @@ def get_fitted_model(
     """
     if classifier_name == "lightgbm":
         return lightgbm_fit(X_train, y_train)
+
+    if "ordered_model" in classifier_name:
+        return fit_ordered_model(classifier_name, X_train, y_train)
 
     model = create_model(classifier_name)
     model.fit(X_train, y_train)
@@ -173,3 +177,14 @@ def lightgbm_fit(X_train, y_train) -> lightgbm.Booster:
         num_boost_round=10000,
     )
     return lgb_tuned
+
+
+def fit_ordered_model(
+    model_name: str, X_train: pd.DataFrame, y_train: pd.Series
+) -> OrderedModel:
+    distr = model_name.split("ordered_model_")[1]
+
+    model = OrderedModel(y_train, X_train, distr=distr)
+    model = model.fit(method="bfgs")
+
+    return model

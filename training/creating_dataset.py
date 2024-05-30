@@ -436,7 +436,7 @@ def load_and_preprocess_data(
     return preprocess_data(bestiary, characteristics)
 
 
-def min_max_scale_data(df: pd.DataFrame):
+def min_max_scale_data(df: pd.DataFrame) -> pd.DataFrame:
     columns = [col for col in df.columns if col not in ["book", "level"]]
     scaler = MinMaxScaler()
     min_max_df = pd.DataFrame()
