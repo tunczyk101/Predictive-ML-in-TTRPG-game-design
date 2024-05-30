@@ -36,8 +36,11 @@ def get_index(thresholds: list[tuple[float, float]]):
     """
     Create a pandas MultiIndex based on provided thresholds.
 
-    :param thresholds: A list of tuples, where each tuple contains two float values representing the start and end of a threshold range.
-    :return: A MultiIndex object with headers for no rounded results, classic (0.5) rounding and for each given threshold pair round for single_threshold, multiple_threshold, graph_threshold. For each rounding type there is returned a group metrices.
+    :param thresholds: A list of tuples, where each tuple contains two float values representing the start
+                        and end of a threshold range.
+    :return: A MultiIndex object with headers for no rounded results, classic (0.5) rounding
+                and for each given threshold pair round for single_threshold, multiple_threshold, graph_threshold.
+                For each rounding type there is returned a group metrices.
     """
     iterables = [
         ["no_rounding", "round 0.5"]
@@ -173,7 +176,8 @@ def train_and_evaluate_models(
     :param X_test: Feature matrix for the test set
     :param y_test: True target values for the test set
     :param thresholds: List of threshold values to consider for rounding
-    :return: Pandas DataFrames containing evaluation metrics for each model and rounding strategy. One for test results and another one for train results.
+    :return: Pandas DataFrames containing evaluation metrics for each model and rounding strategy.
+                One for test results and another one for train results.
     """
     all_train_results = []
     all_test_results = []
