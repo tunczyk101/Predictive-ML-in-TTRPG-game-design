@@ -23,8 +23,10 @@ COLORS = {
     "knn": mcolors.CSS4_COLORS["purple"],
     "random_forest": mcolors.CSS4_COLORS["thistle"],
     "lightgbm": mcolors.CSS4_COLORS["turquoise"],
-    "ordered_model_probit": mcolors.CSS4_COLORS["orangered"],
-    "ordered_model_logit": mcolors.CSS4_COLORS["chocolate"],
+    "ordered_model_probit_bfgs": mcolors.CSS4_COLORS["orangered"],
+    "ordered_model_logit_bfgs": mcolors.CSS4_COLORS["chocolate"],
+    "ordered_model_probit_lbfgs": mcolors.CSS4_COLORS["salmon"],
+    "ordered_model_logit_lbfgs": mcolors.CSS4_COLORS["sandybrown"],
 }
 
 MODEL_LABEL = {
@@ -38,8 +40,10 @@ MODEL_LABEL = {
     "knn": "KNeighbours",
     "random_forest": "Random Forest",
     "lightgbm": "LightGBM",
-    "ordered_model_probit": "Ordered Model [probit]",
-    "ordered_model_logit": "Ordered Model [logit]",
+    "ordered_model_probit_bfgs": "Ordered Model [probit, bfgs]",
+    "ordered_model_logit_bfgs": "Ordered Model [logit, bfgs]",
+    "ordered_model_probit_lbfgs": "Ordered Model [probit, lbfgs]",
+    "ordered_model_logit_lbfgs": "Ordered Model [logit, lbfgs]",
 }
 
 

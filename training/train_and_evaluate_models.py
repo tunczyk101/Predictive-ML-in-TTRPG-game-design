@@ -107,11 +107,11 @@ def get_model_results(
         },
     }
 
-    for threshold_list in thresholds:
-        min_threshold = min(threshold_list)
-        max_threshold = max(threshold_list)
+    if single_threshold:
+        for threshold_list in thresholds:
+            min_threshold = min(threshold_list)
+            max_threshold = max(threshold_list)
 
-        if single_threshold:
             best_single_threshold = find_single_best_threshold(
                 y_pred_train, y_train, threshold_list
             )[0]
