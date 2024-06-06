@@ -17,6 +17,7 @@ from sklearn.svm import SVR, LinearSVR
 from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 from training.constants import RANDOM_STATE
+from training.ordered_models import LinearOrdinalModel
 
 
 def get_fitted_model(
@@ -34,9 +35,6 @@ def get_fitted_model(
     """
     if classifier_name == "lightgbm":
         return lightgbm_fit(X_train, y_train)
-
-    if "ordered_model" in classifier_name:
-        return fit_ordered_model(classifier_name, X_train, y_train)
 
     model = create_model(classifier_name)
     model.fit(X_train, y_train)
@@ -141,6 +139,18 @@ def create_model(classifier_name: str):
                 return_train_score=True,
                 n_jobs=-1,
             )
+        case "linear_ordinal_model":
+            model = LinearOrdinalModel()
+            hyper_params = {
+                "alpha": [0, 1e-2, 1e-1, 1, 10, 100]
+            }
+            model = GridSearchCV(
+                estimator=model,
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
+            )
         case _:
             raise ValueError(f"Classifier {classifier_name} is unsupported")
 
@@ -177,15 +187,3 @@ def lightgbm_fit(X_train, y_train) -> lightgbm.Booster:
         num_boost_round=10000,
     )
     return lgb_tuned
-
-
-def fit_ordered_model(
-    model_name: str, X_train: pd.DataFrame, y_train: pd.Series
-) -> OrderedModel:
-    model_params = model_name.split("ordered_model_")[1]
-    distr, method = model_params.split("_")
-
-    model = OrderedModel(y_train, X_train, distr=distr)
-    model = model.fit(method=method)
-
-    return model
