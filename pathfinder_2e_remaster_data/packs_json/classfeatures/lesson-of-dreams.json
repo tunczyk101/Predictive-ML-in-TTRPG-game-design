@@ -1,0 +1,39 @@
+{
+    "_id": "evKUM58ymuuypRn9",
+    "img": "systems/pf2e/icons/spells/veil-of-dreams.webp",
+    "name": "Lesson of Dreams",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>You gain the @UUID[Compendium.pf2e.spells-srd.Item.Veil of Dreams] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Sleep].</p>"
+        },
+        "level": {
+            "value": 2
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "rules": [],
+        "traits": {
+            "otherTags": [
+                "witch-lesson"
+            ],
+            "rarity": "common",
+            "value": [
+                "witch"
+            ]
+        }
+    },
+    "type": "feat"
+}

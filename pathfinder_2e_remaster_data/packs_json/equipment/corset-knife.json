@@ -1,0 +1,78 @@
+{
+    "_id": "mSOYAQb8iq1N1S1I",
+    "img": "icons/weapons/daggers/dagger-straight-thin-black.webp",
+    "name": "Corset Knife",
+    "system": {
+        "baseItem": "corset-knife",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d4"
+        },
+        "description": {
+            "value": "<p>A favored self-defense weapon among bar and tavern workers, the corset knife has a weighted hilt and a cylindrical, needlelike blade designed to be easily hidden in clothing, but quickly retrieved in a pinch.</p>"
+        },
+        "group": "knife",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "sp": 3
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "agile",
+                "concealable",
+                "finesse",
+                "thrown-10"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

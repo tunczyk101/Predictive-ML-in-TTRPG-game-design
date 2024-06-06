@@ -1,0 +1,50 @@
+{
+    "_id": "sG5JfXmH9wqmqW3w",
+    "img": "systems/pf2e/icons/equipment/worn-items/other-worn-items/hearing-aid.webp",
+    "name": "Enhanced Hearing Aids",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>These hearing aids work like <em>magical hearing aids</em>, but they're designed with a more potent and focused magic.</p>\n<hr />\n<p><strong>Activate</strong> <span class=\"action-glyph\">f</span> envision</p>\n<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> Your hearing aids are currently on</p>\n<hr />\n<p><strong>Effect</strong> You mentally increase the input of your hearing aids. You gain a +1 item bonus to all hearing-based Perception checks for 10 minutes.</p>\n<p>@UUID[Compendium.pf2e.equipment-effects.Item.Effect: Enhanced Hearing Aids]</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 3
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 50
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: The Grand Bazaar"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "worn"
+        }
+    },
+    "type": "equipment"
+}

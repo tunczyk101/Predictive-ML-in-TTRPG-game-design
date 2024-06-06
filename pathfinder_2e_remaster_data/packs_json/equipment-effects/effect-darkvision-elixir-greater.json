@@ -1,0 +1,42 @@
+{
+    "_id": "7vCenP9j6FuHRv5C",
+    "img": "systems/pf2e/icons/equipment/alchemical-items/alchemical-elixirs/darkvision-elixir.webp",
+    "name": "Effect: Darkvision Elixir (Greater)",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.equipment-srd.Item.Darkvision Elixir (Greater)]</p>\n<p>You gain Darkvision</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "hours",
+            "value": 24
+        },
+        "level": {
+            "value": 8
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder GM Core"
+        },
+        "rules": [
+            {
+                "key": "Sense",
+                "selector": "darkvision"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

@@ -1,0 +1,63 @@
+{
+    "_id": "TyW1XOWYMM2xHGaI",
+    "img": "icons/equipment/shield/heater-wooden-antlers-blue.webp",
+    "name": "Medusa's Scream (Greater)",
+    "system": {
+        "acBonus": 2,
+        "baseItem": "steel-shield",
+        "bulk": {
+            "value": 1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>The ghastly visage of a slain medusa's head stares out from this steel shield (Hardness 15, HP 60, BT 30). The shield comes with a thick leather cover to conceal the head.</p>\n<hr />\n<p><strong>Activate</strong> <span class=\"action-glyph\">2</span> Interact (visual)</p>\n<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Effect</strong> You reveal the medusa's face, focusing its gaze on one creature within 30 feet. The shield casts @UUID[Compendium.pf2e.spells-srd.Item.Petrify] with a range of 30 feet and a DC of 35.</p>\n<hr />\n<p><strong>Craft Requirements</strong> The initial raw materials must include the head of a medusa.</p>\n<table class=\"pf2e\">\n<thead>\n<tr>\n<th>Hardness</th>\n<th>HP</th>\n<th>BT</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>15</td>\n<td>60</td>\n<td>30</td>\n</tr>\n</tbody>\n</table>"
+        },
+        "hardness": 15,
+        "hp": {
+            "max": 60,
+            "value": 60
+        },
+        "level": {
+            "value": 16
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 9000
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "reinforcing": 0
+        },
+        "size": "med",
+        "specific": {
+            "integrated": null,
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "reinforcing": 0
+            }
+        },
+        "speedPenalty": 0,
+        "traits": {
+            "integrated": null,
+            "rarity": "common",
+            "value": [
+                "magical"
+            ]
+        }
+    },
+    "type": "shield"
+}

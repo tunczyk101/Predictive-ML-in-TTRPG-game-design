@@ -1,0 +1,60 @@
+{
+    "_id": "emh9kvqSJtxTX8He",
+    "img": "systems/pf2e/icons/equipment/armor/buckle-armor.webp",
+    "name": "Buckle Armor",
+    "system": {
+        "acBonus": 2,
+        "baseItem": "buckle-armor",
+        "bulk": {
+            "value": 1
+        },
+        "category": "light",
+        "checkPenalty": -1,
+        "containerId": null,
+        "description": {
+            "value": "<p>Absalom style once led famous adventurers to wear clothing with an unusual number of buckles, pouches, and straps. This fashion birthed a trend that led to \"buckle armor,\" a colloquial name for chic armor with spacious tool storage. Buckle armor comes with the storage armor adjustment.</p>"
+        },
+        "dexCap": 3,
+        "group": "leather",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 4
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "resilient": 0
+        },
+        "size": "med",
+        "speedPenalty": 0,
+        "strength": 1,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "adjusted",
+                "noisy"
+            ]
+        }
+    },
+    "type": "armor"
+}

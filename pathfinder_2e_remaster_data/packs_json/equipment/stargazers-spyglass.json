@@ -1,0 +1,50 @@
+{
+    "_id": "GuVgH50cUeytM68r",
+    "img": "systems/pf2e/icons/equipment/adventuring-gear/spyglass.webp",
+    "name": "Stargazer's Spyglass",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This ornate spyglass has a brass tube inscribed with constellations and green-tinted lens. It's often used by field astronomers to pick out greater details among stars and other celestial bodies. Like a typical spyglass, you can see eight times farther while looking through a stargazer's spyglass.</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> (envision)</p>\n<p><strong>Requirements</strong> You are viewing the night sky with the spyglass.</p>\n<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> You set your eye upon a star and think of someone to cast @UUID[Compendium.pf2e.spells-srd.Item.Guiding Star].</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 4
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 80
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder #188: They Watched the Stars"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "held-in-two-hands"
+        }
+    },
+    "type": "equipment"
+}

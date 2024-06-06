@@ -1,0 +1,43 @@
+{
+    "_id": "d5CJgabylXtTD2qj",
+    "folder": "nNaDTkXGZyawxKA6",
+    "img": "icons/magic/control/debuff-chains-shackles-movement-blue.webp",
+    "name": "Pinned",
+    "system": {
+        "description": {
+            "value": "<p>The army and cannot move freely. It has the @UUID[Compendium.pf2e.kingmaker-features.Item.Outflanked] condition and cannot use any maneuver war actions. A pinned army cannot be @UUID[Compendium.pf2e.kingmaker-features.Item.Deploy Army]{deployed}.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "unlimited",
+            "value": -1
+        },
+        "level": {
+            "value": 0
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Kingmaker"
+        },
+        "rules": [
+            {
+                "key": "GrantItem",
+                "uuid": "ibcMcEGRbPRtk9Pu"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "target": null,
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

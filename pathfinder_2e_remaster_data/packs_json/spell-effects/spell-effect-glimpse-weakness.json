@@ -1,0 +1,64 @@
+{
+    "_id": "VJpRUgSDtAO2TSRR",
+    "img": "systems/pf2e/icons/spells/glimpse-weakness.webp",
+    "name": "Spell Effect: Glimpse Weakness",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Glimpse Weakness]</p>\n<p>You deal additional precision damage equal to 1 + this spell's rank, and then the spell ends.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "unlimited",
+            "value": -1
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Dark Archive"
+        },
+        "rules": [
+            {
+                "damageCategory": "precision",
+                "key": "FlatModifier",
+                "selector": "strike-damage",
+                "slug": "glimpse-weakness",
+                "value": "1+@item.level"
+            },
+            {
+                "category": "precision",
+                "diceNumber": "@item.level",
+                "dieSize": "d4",
+                "key": "DamageDice",
+                "predicate": [
+                    "parent:origin:item:tag:amped"
+                ],
+                "selector": "strike-damage"
+            },
+            {
+                "key": "AdjustModifier",
+                "mode": "add",
+                "predicate": [
+                    "parent:origin:item:tag:amped"
+                ],
+                "selector": "strike-damage",
+                "slug": "glimpse-weakness",
+                "value": -1
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

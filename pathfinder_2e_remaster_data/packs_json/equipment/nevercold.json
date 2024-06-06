@@ -1,0 +1,59 @@
+{
+    "_id": "dEU38O24zT6JCfEZ",
+    "img": "systems/pf2e/icons/default-icons/consumable.svg",
+    "name": "Nevercold",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "catalyst",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p><strong>Activate</strong> Cast a Spell (add 1 action)</p>\n<p>Nevercold, sometimes mistakenly referred to as nevercoal, is the charcoal left after wildfires in the First World. True to its name, nevercold remains warm to the touch. If you use nevercold to cast @UUID[Compendium.pf2e.spells-srd.Item.Fire Shield], the spell's duration increases by 1 minute, the cold resistance you gain from it lasts 1 hour, and you're protected from the effects of severe cold for 8 hours.</p>\n<p>The catalyst affects 4th-rank <em>fire shield</em>.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 10
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 180
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "catalyst",
+                "consumable",
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

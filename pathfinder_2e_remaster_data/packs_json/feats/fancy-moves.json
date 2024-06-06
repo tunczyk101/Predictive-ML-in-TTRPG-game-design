@@ -1,0 +1,44 @@
+{
+    "_id": "mwZzcwYVcTvxbXDl",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Fancy Moves",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "skill",
+        "description": {
+            "value": "<p>You show off your fighting style to discourage your foes. You can use Performance to @UUID[Compendium.pf2e.actionspf2e.Item.Demoralize].</p>"
+        },
+        "level": {
+            "value": 4
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "Gladiator Dedication"
+                },
+                {
+                    "value": "expert in Performance"
+                }
+            ]
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "archetype",
+                "skill"
+            ]
+        }
+    },
+    "type": "feat"
+}

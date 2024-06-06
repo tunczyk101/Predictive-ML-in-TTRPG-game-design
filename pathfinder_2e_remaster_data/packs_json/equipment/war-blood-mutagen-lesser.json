@@ -1,0 +1,61 @@
+{
+    "_id": "H3KAt7cHJ6ZLTJQE",
+    "img": "icons/consumables/potions/potion-flask-corked-shiny-red.webp",
+    "name": "War Blood Mutagen (Lesser)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "elixir",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p>Upon drinking this mutagen, you can feel your blood surge through your body and hear a low-pitched humming in your ears. These sensations subside as the flesh and muscles of your arm loosen and stretch, the fibers of your very being reaching out to combine with the base of one melee weapon you're holding.</p>\n<p><strong>Benefit</strong> Choose one melee weapon you're holding in one or both hands. You gain a +1 item bonus to your attack rolls with this weapon and to Will saves against fear effects for 1 minute. Any attempt to @UUID[Compendium.pf2e.actionspf2e.Item.Disarm] or otherwise remove the weapon from your hands must exceed DC 25 or the attempt fails.</p>\n<p>@UUID[Compendium.pf2e.equipment-effects.Item.Effect: War Blood Mutagen (Lesser)]</p>\n<p><strong>Drawback</strong> You can't voluntarily remove the weapon unless you succeed at a @Check[type:athletics|dc:25], which ends the war blood mutagen's effects; this check takes a single action. If you perform an action with the concentrate trait, you must succeed at a @Check[type:flat|dc:5] or the action is lost.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 1
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 4
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder #178: Punks in a Powder Keg"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "alchemical",
+                "consumable",
+                "elixir",
+                "mutagen",
+                "polymorph"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

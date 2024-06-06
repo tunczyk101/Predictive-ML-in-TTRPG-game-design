@@ -1,0 +1,62 @@
+{
+    "_id": "IxcUx7trxUdhF9DQ",
+    "img": "icons/commodities/treasure/medal-ribbon-gold-red.webp",
+    "name": "Brooch of Inspiration (Major)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This finely cut garnet brooch fills your mind with vigor and occasional bursts of mental clarity. While wearing the brooch, you gain a +3 item bonus to checks to Recall Knowledge with any skill.</p>\n<hr />\n<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> envision (fortune)</p>\n<p><strong>Frequency</strong> once per 10 minutes</p>\n<hr />\n<p><strong>Effect</strong> You think hard on a topic and receive a sudden inspiration. You attempt to Recall Knowledge with any skill. On this check, you roll twice and take the higher result.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 17
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 12500
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: The Grand Bazaar"
+        },
+        "quantity": 1,
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "action:recall-knowledge"
+                ],
+                "selector": "skill-check",
+                "type": "item",
+                "value": 3
+            }
+        ],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "divine",
+                "invested",
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "worn"
+        }
+    },
+    "type": "equipment"
+}

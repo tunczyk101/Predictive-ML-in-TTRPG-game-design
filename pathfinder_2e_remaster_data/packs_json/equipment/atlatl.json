@@ -1,0 +1,75 @@
+{
+    "_id": "Ka49l6JYNi41tgVi",
+    "img": "icons/weapons/clubs/club-barbed-square-black.webp",
+    "name": "Atlatl",
+    "system": {
+        "baseItem": "atlatl",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 1
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d6"
+        },
+        "description": {
+            "value": "<p>Atlatls are long, narrow pieces of shaped wood or antler used as levers to hurl darts faster and farther than would otherwise be possible. An atlatl uses darts as ammunition.</p>"
+        },
+        "group": "dart",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "sp": 2
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "range": 60,
+        "reload": {
+            "value": "1"
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "propulsive"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

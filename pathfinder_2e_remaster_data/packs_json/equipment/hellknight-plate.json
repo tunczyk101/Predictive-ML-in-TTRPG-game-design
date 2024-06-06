@@ -1,0 +1,59 @@
+{
+    "_id": "lCgXeV52eYYl5cUX",
+    "img": "systems/pf2e/icons/equipment/armor/hellknight-plate.webp",
+    "name": "Hellknight Plate",
+    "system": {
+        "acBonus": 6,
+        "baseItem": "hellknight-plate",
+        "bulk": {
+            "value": 4
+        },
+        "category": "heavy",
+        "checkPenalty": -3,
+        "containerId": null,
+        "description": {
+            "value": "<p>Few armors in the Inner Sea region are as memorable as the iconic Hellknight plate. While each order has its own flourishes, Hellknight plate is instantly recognizable to any who know of the Hellknights. Hellknights go to extreme measures to punish non-Hellknights who get their hands on Hellknight plate, and the reward is not usually worth the risk, since for non-Hellknights, the armor is functionally similar to @UUID[Compendium.pf2e.equipment-srd.Item.Full Plate].</p>"
+        },
+        "dexCap": 0,
+        "group": "plate",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 2
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 35
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Character Guide"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "resilient": 0
+        },
+        "size": "med",
+        "speedPenalty": -10,
+        "strength": 4,
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "bulwark"
+            ]
+        }
+    },
+    "type": "armor"
+}

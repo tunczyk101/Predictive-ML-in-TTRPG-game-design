@@ -1,0 +1,88 @@
+{
+    "_id": "1eiaTQo9SKiybP8G",
+    "img": "systems/pf2e/icons/equipment/weapons/scizore.webp",
+    "name": "Scizore of the Crab",
+    "system": {
+        "baseItem": "scizore",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "slashing",
+            "dice": 1,
+            "die": "d6"
+        },
+        "description": {
+            "value": "<p>A <em>scizore of the crab</em> is a <em>+1 scizore</em> that has the grapple trait in addition to its normal weapon traits.</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> Interact</p>\n<p><strong>Requirements</strong> Your last action was a successful Strike with this weapon, or you have a creature @UUID[Compendium.pf2e.conditionitems.Item.Grabbed] with this weapon</p>\n<hr />\n<p><strong>Effect</strong> The target is grabbed until the end of your next turn. A grabbed creature can use the @UUID[Compendium.pf2e.actionspf2e.Item.Escape] action to get out of the Grab, and the Grab ends for a grabbed creature if you move away from it. This functions as the Grab creature ability.</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> Interact</p>\n<p><strong>Frequency</strong> once per round</p>\n<p><strong>Requirements</strong> You have a creature grabbed with this weapon</p>\n<hr />\n<p><strong>Effect</strong> The crab claw animates and pinches open and shut, dealing slashing damage equal to the scizore of the crab's number of damage dice.</p>\n<hr />\n<p><strong>Craft Requirements</strong> The initial raw materials must include a claw from a giant crab or similar creature.</p>"
+        },
+        "group": "knife",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 5
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 150
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 1,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 1,
+                "property": [],
+                "striking": 0
+            }
+        },
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "disarm",
+                "grapple",
+                "parry"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

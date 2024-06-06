@@ -1,0 +1,93 @@
+{
+    "_id": "APZJC0A469gBozf1",
+    "img": "systems/pf2e/icons/equipment/weapons/specific-magic-weapons/blade-of-the-rabbit-prince.webp",
+    "name": "Blade of the Rabbit Prince",
+    "system": {
+        "baseItem": "shortsword",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d6"
+        },
+        "description": {
+            "value": "<p>This +2 greater striking @UUID[Compendium.pf2e.equipment-srd.Item.Animated]{Dancing} shortsword has a golden handguard resembling a bird with outstretched wings. The sword's blade is broken halfway up its length, but this doesn't impair the sword's function.</p>\n<hr />\n<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> command, Interact</p>\n<hr />\n<p><strong>Effect</strong> You attempt to @UUID[Compendium.pf2e.actionspf2e.Item.Trip] or @UUID[Compendium.pf2e.actionspf2e.Item.Disarm] an opponent using Thievery instead of Athletics, and you add the <em>blade of the Rabbit Prince's</em> item bonus to the check. You do not need to have a hand free if you're wielding the <em>blade of the Rabbit Prince</em>, and your target can be up to two sizes larger than you.</p>\n<p><strong>Craft Requirements</strong> You must craft the blade in the Harrowed Realm.</p>"
+        },
+        "group": "sword",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 15
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 6250
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder #160: Assault on Hunting Lodge Seven"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 2,
+            "property": [
+                "dancing"
+            ],
+            "striking": 2
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 2,
+                "property": [
+                    "dancing"
+                ],
+                "striking": 2
+            }
+        },
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "rare",
+            "value": [
+                "agile",
+                "finesse",
+                "magical",
+                "versatile-s"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

@@ -1,0 +1,48 @@
+{
+    "_id": "5j5KyZsGOfbrJNUZ",
+    "img": "icons/sundries/misc/ladder.webp",
+    "name": "Ladder (10-foot)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 3
+        },
+        "containerId": null,
+        "description": {
+            "value": ""
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "cp": 3
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": []
+        },
+        "usage": {
+            "value": "held-in-two-hands"
+        }
+    },
+    "type": "equipment"
+}

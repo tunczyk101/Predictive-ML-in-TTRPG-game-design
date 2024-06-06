@@ -1,0 +1,51 @@
+{
+    "_id": "fXD42N5cGUYCtvp2",
+    "img": "systems/pf2e/icons/equipment/worn-items/other-worn-items/cloak-of-feline-rest.webp",
+    "name": "Cloak of Feline Rest",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This black velvet cloak is featureless and very soft to the touch. Upon wearing it for the first time, you're momentarily overwhelmed with a sense of comfort and coziness. While wearing this cloak you can comfortably rest in any space, so long as it's not wet or particularly hazardous. While sleeping in this cloak you only take a -2 status penalty to auditory Perception checks, rather than a -4 status penalty.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 1
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 20
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Secrets of Magic"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "invested",
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "worncloak"
+        }
+    },
+    "type": "equipment"
+}

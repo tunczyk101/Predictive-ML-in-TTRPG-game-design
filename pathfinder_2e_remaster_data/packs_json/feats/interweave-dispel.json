@@ -1,0 +1,41 @@
+{
+    "_id": "bjNeSAldeTzRcEaQ",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Interweave Dispel",
+    "system": {
+        "actionType": {
+            "value": "action"
+        },
+        "actions": {
+            "value": 1
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>You weave dispelling energy into a spell, sending both effects at a foe.</p>\n<p>If your next action is to cast a single-target spell against a creature, and you either hit the foe with the spell attack roll or the foe fails its saving throw, you can cast @UUID[Compendium.pf2e.spells-srd.Item.Dispel Magic] on the foe as a free action, expending a spell slot as normal and targeting one spell effect affecting the foe.</p>"
+        },
+        "level": {
+            "value": 14
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "dispel magic in your spell repertoire"
+                }
+            ]
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Core Rulebook"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "sorcerer",
+                "spellshape"
+            ]
+        }
+    },
+    "type": "feat"
+}

@@ -1,0 +1,75 @@
+{
+    "_id": "T5ojw0tuXiAajhZx",
+    "img": "icons/weapons/crossbows/crossbow-golden-bolt.webp",
+    "name": "Rotary Bow",
+    "system": {
+        "baseItem": "rotary-bow",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d8"
+        },
+        "description": {
+            "value": "<p>This one-handed crossbow has four arms instead of two, and four rotating chambers that can be pre-loaded with bolts for more efficient firing. The chamber can be swapped and the arms redrawn with a simple crank device built into the crossbow.</p>"
+        },
+        "group": "crossbow",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 8
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "range": 80,
+        "reload": {
+            "value": "1"
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "capacity-4"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

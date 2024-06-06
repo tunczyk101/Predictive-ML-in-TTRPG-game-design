@@ -1,0 +1,57 @@
+{
+    "_id": "sqhr1crb184s3Vnd",
+    "img": "systems/pf2e/icons/equipment/consumables/ammunition/blowgun-darts.webp",
+    "name": "Blowgun Darts",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "category": "ammo",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p>These thin, light darts are typically made of hardwood and stabilized with fletching of down or fur. They are often hollow so they can be used to deliver poison.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "per": 10,
+            "value": {
+                "cp": 5
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "quantity": 10,
+        "rules": [],
+        "size": "med",
+        "stackGroup": "blowgunDarts",
+        "traits": {
+            "rarity": "common",
+            "value": []
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

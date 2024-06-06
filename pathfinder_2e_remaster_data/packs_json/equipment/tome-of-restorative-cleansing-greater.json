@@ -1,0 +1,51 @@
+{
+    "_id": "m9v1YKUvQuFGVZ10",
+    "img": "icons/sundries/books/book-embossed-spiral-purple-white.webp",
+    "name": "Tome of Restorative Cleansing (Greater)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This book is dark blue on the night of the new moon, gradually shifting to bright red as the moon waxes.</p>\n<hr />\n<p><strong>Activate</strong> <span class=\"action-glyph\">F</span> envision (healing, necromancy, vitality)</p>\n<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> Your last action was to cast a spell prepared from this grimoire, and the spell removed a harmful condition or affliction from yourself or an ally</p>\n<p><strong>Effect</strong> Choose one creature whose condition was removed by the required spell. That creature gains 3d8 temporary Hit Points that last for 1 hour.</p>\n<p>@UUID[Compendium.pf2e.equipment-effects.Item.Effect: Tome of Restorative Cleansing (Greater)]</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 14
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 3750
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "grimoire",
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "equipment"
+}

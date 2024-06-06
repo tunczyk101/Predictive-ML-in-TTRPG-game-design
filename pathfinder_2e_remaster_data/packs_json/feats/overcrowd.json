@@ -1,0 +1,36 @@
+{
+    "_id": "LK6niBb38mEraYRS",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Overcrowd",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "ancestry",
+        "description": {
+            "value": "<p>Your physiology is slight, and you can pack into small spaces with others of similar stature.</p>\n<p>As long as you are Small, you can end your movement in the same square as a Small ally. Only two creatures total can share the same space when using this ability or a similar one.</p>"
+        },
+        "level": {
+            "value": 9
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "ratfolk"
+            ]
+        }
+    },
+    "type": "feat"
+}

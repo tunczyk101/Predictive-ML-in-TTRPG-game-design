@@ -1,0 +1,64 @@
+{
+    "_id": "BSInwFNVBVkfFK0B",
+    "img": "systems/pf2e/icons/equipment/consumables/oils/oil-of-unlife.webp",
+    "name": "Oil of Unlife (Lesser)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "oil",
+        "containerId": null,
+        "damage": {
+            "formula": "2d8+5",
+            "kind": "healing",
+            "type": "void"
+        },
+        "description": {
+            "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> (manipulate)</p>\n<hr />\n<p>This thin, black liquid imparts a bone-deep chill while rapidly repairing an undead creature's physical or spiritual form. When you dash <em>oil of unlife</em> onto an undead creature, or a living creature with void healing, the oil absorbs quickly into its body, and the creature regains [[/r (2d8+5)[healing]]]{2d8+5 Hit Points}. You can pour <em>oil of unlife</em> on an incorporeal undead; in this case, the creature absorbs the oil into itself.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 3
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 12
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder GM Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "consumable",
+                "magical",
+                "oil",
+                "void"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

@@ -1,0 +1,50 @@
+{
+    "_id": "bJORQsO9E1JCJh6i",
+    "img": "systems/pf2e/icons/equipment/runes/weapon-property-runes/weapon-property-runes.webp",
+    "name": "Extending",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>An <em>extending</em> rune allows you to extend your weapon to impossible lengths.</p>\n<hr />\n<p><strong>Activate—Extend</strong> <span class=\"action-glyph\">2</span> (manipulate)</p>\n<hr />\n<p><strong>Effect</strong> You extend your weapon, giving you an impossible reach. You Strike with the weapon, and you have reach 60 feet for the Strike.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 9
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 700
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder GM Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "etched-onto-melee-weapon"
+        }
+    },
+    "type": "equipment"
+}

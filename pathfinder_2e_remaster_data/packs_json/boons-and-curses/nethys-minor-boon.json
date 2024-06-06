@@ -1,0 +1,34 @@
+{
+    "_id": "jVeuBZsa4iFg0wC6",
+    "img": "systems/pf2e/icons/deity/Nethys.webp",
+    "name": "Nethys - Minor Boon",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "deityboon",
+        "description": {
+            "value": "<p><strong>Minor Boon (Single Use)</strong> Nethys casts a powerful spell to help you in a pinch.</p>\n<p>Once, Nethys casts a spell 1 rank higher than the highest-rank spell you can cast. If you can't cast spells, Nethys casts a 1st-rank spell to help you.</p>"
+        },
+        "level": {
+            "value": 0
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Gods & Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "feat"
+}

@@ -1,0 +1,34 @@
+{
+    "_id": "xrSgGobm5QtTcABQ",
+    "img": "systems/pf2e/icons/deity/Pharasma.webp",
+    "name": "Pharasma - Moderate Boon",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "deityboon",
+        "description": {
+            "value": "<p><strong>Moderate Boon</strong> You gain a greater mastery over the energies of life and death.</p>\n<p>Your Strikes deal 1 vitality damage to undead.</p>\n<p>Your spells that deal vitality damage to undead gain a +1 status bonus to damage per spell rank, and your spells that heal the living gain a +1 status bonus to the Hit Points restored per spell rank.</p>"
+        },
+        "level": {
+            "value": 0
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Gods & Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "feat"
+}

@@ -1,0 +1,77 @@
+{
+    "_id": "TQ3kT9pUFQNkH2dG",
+    "img": "systems/pf2e/icons/equipment/weapons/spiral-rapier.webp",
+    "name": "Spiral Rapier",
+    "system": {
+        "baseItem": "spiral-rapier",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 1
+        },
+        "category": "advanced",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d6"
+        },
+        "description": {
+            "value": "<p>An old Taldan dueling weapon from the empire's height, this rapier has a thicker blade than normal, which is shaped into a corkscrew-like spiral well suited to catching enemy weapons. Characters from Taldor have access to the spiral rapier.</p>"
+        },
+        "group": "sword",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 5
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: The Grand Bazaar"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "disarm",
+                "finesse",
+                "parry"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

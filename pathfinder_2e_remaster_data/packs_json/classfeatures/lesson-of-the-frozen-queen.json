@@ -1,0 +1,39 @@
+{
+    "_id": "29ynmOCdtIFDzrWx",
+    "img": "icons/magic/water/heart-ice-freeze.webp",
+    "name": "Lesson of the Frozen Queen",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>You gain the @UUID[Compendium.pf2e.spells-srd.Item.Glacial Heart] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Wall of Ice].</p>"
+        },
+        "level": {
+            "value": 10
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "rules": [],
+        "traits": {
+            "otherTags": [
+                "witch-lesson"
+            ],
+            "rarity": "rare",
+            "value": [
+                "witch"
+            ]
+        }
+    },
+    "type": "feat"
+}

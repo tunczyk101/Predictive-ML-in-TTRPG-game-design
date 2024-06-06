@@ -1,0 +1,76 @@
+{
+    "_id": "vRCH0cQJMllWvpfU",
+    "img": "systems/pf2e/icons/equipment/weapons/polytool.webp",
+    "name": "Polytool",
+    "system": {
+        "baseItem": "polytool",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "bludgeoning",
+            "dice": 1,
+            "die": "d6"
+        },
+        "description": {
+            "value": "<p>The polytool is a small metal rod with a number of simple tools folded inside. The user can extend a long ceramic blade, as well as an awl, a chisel, a file, flint and steel, a hook, an inkpen, a magnifying glass, pliers, scissors, and a small saw. The flint and steel can be used up to 10 times before needing to be replaced. Though inspired by advanced Numerian technology, the polytool is a simple enough feat of metalworking that any blacksmith could produce it- perfect for the goddess @UUID[Compendium.pf2e.deities.Item.Casandalee] to spread innovation farther than actual Numerian tech could reach.</p>"
+        },
+        "group": "sword",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 1
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 10
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Gods & Magic"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": null
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "agile",
+                "modular"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

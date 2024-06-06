@@ -1,0 +1,107 @@
+{
+    "_id": "RQH6vigvhmiYKKjg",
+    "img": "systems/pf2e/icons/features/classes/precise-strike.webp",
+    "name": "Precise Strike",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>You Strike with flair. When you have panache and you Strike with an agile or finesse melee weapon or agile or finesse unarmed attack, you deal 2 additional precision damage. If the strike is part of a finisher, the additional damage is 2d6 precision damage instead.</p>\n<p>As your swashbuckler level increases, so does your additional damage for precise strike. Increase the amount of additional damage on a Strike and the number of additional dice on a finisher by one at 5th, 9th, 13th, and 17th levels.</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "rules": [
+            {
+                "key": "ActiveEffectLike",
+                "mode": "override",
+                "path": "flags.pf2e.swashbuckler.preciseStrike",
+                "predicate": [
+                    "class:swashbuckler"
+                ],
+                "value": "ceil(@actor.level/4) + 1"
+            },
+            {
+                "damageCategory": "precision",
+                "key": "FlatModifier",
+                "predicate": [
+                    "self:effect:panache",
+                    {
+                        "or": [
+                            "item:melee",
+                            {
+                                "and": [
+                                    "feat:flying-blade",
+                                    "item:thrown",
+                                    "target:range-increment:1"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "or": [
+                            "item:trait:agile",
+                            "item:trait:finesse"
+                        ]
+                    },
+                    {
+                        "not": "finisher"
+                    }
+                ],
+                "selector": "strike-damage",
+                "slug": "precise-strike",
+                "value": "@actor.flags.pf2e.swashbuckler.preciseStrike"
+            },
+            {
+                "category": "precision",
+                "diceNumber": "@actor.flags.pf2e.swashbuckler.preciseStrike",
+                "dieSize": "d6",
+                "key": "DamageDice",
+                "predicate": [
+                    "self:effect:panache",
+                    "finisher",
+                    {
+                        "or": [
+                            "item:melee",
+                            {
+                                "and": [
+                                    "feat:flying-blade",
+                                    "item:thrown",
+                                    "target:range-increment:1"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "or": [
+                            "item:trait:agile",
+                            "item:trait:finesse"
+                        ]
+                    }
+                ],
+                "selector": "strike-damage",
+                "slug": "finisher"
+            }
+        ],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "swashbuckler"
+            ]
+        }
+    },
+    "type": "feat"
+}

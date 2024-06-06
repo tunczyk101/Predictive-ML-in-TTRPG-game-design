@@ -1,0 +1,98 @@
+{
+    "_id": "atB2ewbcBMWvhjNT",
+    "img": "systems/pf2e/icons/equipment/weapons/specific-magic-weapons/guiding-star.webp",
+    "name": "Guiding Star",
+    "system": {
+        "baseItem": "starknife",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d4"
+        },
+        "description": {
+            "value": "<p>This +1 striking returning starknife is made of dark blue metal overlaid with smoky flecks of fused quartz. When you Cast an evocation Spell, your next attack this turn with this starknife reduces the target's cover, changing greater cover to standard cover or ignoring standard and lesser cover.</p>\n<hr />\n<p><strong>Activate</strong> <span class=\"action-glyph\">r</span> envision</p>\n<p><strong>Frequency</strong> once per 10 minutes</p>\n<p><strong>Trigger</strong> You successfully Strike a creature with a thrown Strike with guiding star</p>\n<hr />\n<p><strong>Effect</strong> Soft light outlines the target. At the beginning of your next turn, the guiding star's blades detach and form into darts of starlight, flying up to 40 feet and striking the target unerringly, collectively dealing @Damage[4[piercing]] damage and @Damage[1[spirit]] damage before re-forming. The piercing damage increases to @Damage[6[piercing]] damage with a greater striking rune and @Damage[8[piercing]] damage with a major striking rune.</p>"
+        },
+        "group": "knife",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 7
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 325
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Secrets of Magic"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": "-"
+        },
+        "rules": [],
+        "runes": {
+            "potency": 1,
+            "property": [
+                "returning"
+            ],
+            "striking": 1
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 1,
+                "property": [
+                    "returning"
+                ],
+                "striking": 1
+            }
+        },
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "agile",
+                "chaotic",
+                "deadly-d6",
+                "divine",
+                "finesse",
+                "good",
+                "holy",
+                "thrown-20",
+                "versatile-s"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

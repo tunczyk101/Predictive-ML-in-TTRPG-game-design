@@ -1,0 +1,43 @@
+{
+    "_id": "46vCC77mBNBWtmx3",
+    "img": "icons/magic/holy/saint-glass-portrait-halo.webp",
+    "name": "Spell Effect: Litany of Righteousness",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Litany of Righteousness].</p>\n<p>You gain weakness 7 to holy.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The weakness increases by 1.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "rounds",
+            "value": 1
+        },
+        "level": {
+            "value": 7
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Core Rulebook"
+        },
+        "rules": [
+            {
+                "key": "Weakness",
+                "type": "holy",
+                "value": "@item.level"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

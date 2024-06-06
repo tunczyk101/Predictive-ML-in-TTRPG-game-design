@@ -1,0 +1,71 @@
+{
+    "_id": "TJsmB2aHk9Yogqup",
+    "img": "icons/equipment/chest/breastplate-collared-steel-green.webp",
+    "name": "Fungal Armor",
+    "system": {
+        "acBonus": 2,
+        "baseItem": "studded-leather-armor",
+        "bulk": {
+            "value": 1
+        },
+        "category": "light",
+        "checkPenalty": -1,
+        "containerId": null,
+        "description": {
+            "value": "<p>This <em>+2 greater resilient @UUID[Compendium.pf2e.equipment-srd.Item.Studded Leather Armor]</em> is made of hardened fungus. Every day the armor grows dozens of unusual mushrooms that can be used for cooking, infused reagents, or common spell material components.</p>\n<hr />\n<p><strong>Activate</strong> <span class=\"action-glyph\">r</span> or <span class=\"action-glyph\">a</span> Envision</p>\n<p><strong>Frequency</strong> once per day</p>\n<p><strong>Trigger</strong> You are hit by a melee, ranged, or spell attack</p>\n<hr />\n<p><strong>Effect</strong> The attack misses you, dealing no damage as you transform into a cloud of spores. You gain the benefits of a @UUID[Compendium.pf2e.spells-srd.Item.Vapor Form] spell for 1 minute.</p>\n<p>For the duration, a cloud of deadly spores surrounds you. Each breathing creature that begins its turn within 10 feet of you takes @Damage[6d8[poison]] damage (@Check[type:fortitude|dc:35|basic:true|name:Fungal Armor Spores]).</p>\n<p>You can @UUID[Compendium.pf2e.actionspf2e.Item.Dismiss] the cloud form.</p>\n<hr />\n<p><strong>Craft Requirements</strong> Supply a casting of @UUID[Compendium.pf2e.spells-srd.Item.Toxic Cloud] and <em>gaseous form</em>.</p>"
+        },
+        "dexCap": 3,
+        "group": "leather",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 15
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 7200
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder #161: Belly of the Black Whale"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "potency": 2,
+            "property": [],
+            "resilient": 2
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 2,
+                "property": [],
+                "resilient": 2
+            }
+        },
+        "speedPenalty": 0,
+        "strength": 1,
+        "traits": {
+            "rarity": "rare",
+            "value": [
+                "invested",
+                "magical"
+            ]
+        }
+    },
+    "type": "armor"
+}

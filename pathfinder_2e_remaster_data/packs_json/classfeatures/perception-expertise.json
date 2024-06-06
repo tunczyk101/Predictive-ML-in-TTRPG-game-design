@@ -1,0 +1,41 @@
+{
+    "_id": "JCqACxgrm5ixX0Jy",
+    "img": "icons/creatures/eyes/human-single-blue.webp",
+    "name": "Perception Expertise",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>You remain alert to threats around you. Your proficiency rank for Perception increases to expert.</p>"
+        },
+        "level": {
+            "value": 3
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": true,
+            "title": "Pathfinder Rage of Elements"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {
+                "perception": {
+                    "rank": 2
+                }
+            }
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "feat"
+}

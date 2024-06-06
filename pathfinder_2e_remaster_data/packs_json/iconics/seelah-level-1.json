@@ -1,0 +1,3024 @@
+{
+    "_id": "Gq53oll31r1ZgJzK",
+    "img": "systems/pf2e/icons/iconics/SeelahFull.webp",
+    "items": [
+        {
+            "_id": "SgRI5fYWoxnoCnWy",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.backgrounds.Item.moVRsnpjB5THCwxE"
+                }
+            },
+            "img": "systems/pf2e/icons/default-icons/mystery-man.svg",
+            "name": "Street Urchin",
+            "sort": 900000,
+            "system": {
+                "boosts": {
+                    "0": {
+                        "selected": "con",
+                        "value": [
+                            "con",
+                            "dex"
+                        ]
+                    },
+                    "1": {
+                        "selected": "cha",
+                        "value": [
+                            "cha",
+                            "con",
+                            "dex",
+                            "int",
+                            "str",
+                            "wis"
+                        ]
+                    }
+                },
+                "description": {
+                    "value": "<p>You eked out a living by picking pockets on the streets of a major city, never knowing where you'd find your next meal. While some folk adventure for the glory, you do so to survive.</p>\n<p>Choose two ability boosts. One must be to <strong>Dexterity</strong> or <strong>Constitution</strong>, and one is a free ability boost.</p>\n<p>You're trained in the Thievery skill and a Lore skill for the city you lived in as a street urchin (such as Absalom Lore or Magnimar Lore). You gain the @UUID[Compendium.pf2e.feats-srd.Item.Pickpocket] skill feat.</p>"
+                },
+                "items": {
+                    "jpni5": {
+                        "img": "icons/sundries/books/book-red-exclamation.webp",
+                        "level": 1,
+                        "name": "Pickpocket",
+                        "uuid": "Compendium.pf2e.feats-srd.Item.Pickpocket"
+                    }
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slug": "street-urchin",
+                "trainedLore": "<City> Lore",
+                "trainedSkills": {
+                    "value": [
+                        "thi"
+                    ]
+                },
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                }
+            },
+            "type": "background"
+        },
+        {
+            "_id": "FGX3IHdm8EyaO98M",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.feats-srd.Item.jDdOqFmZLwE4dblQ"
+                }
+            },
+            "img": "icons/sundries/books/book-red-exclamation.webp",
+            "name": "Pickpocket",
+            "sort": 1000000,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "skill",
+                "description": {
+                    "value": "<p>You can Steal or Palm an Object that's closely guarded, such as in a pocket, without taking the -5 penalty. You can't steal objects that would be extremely noticeable or time consuming to remove (like worn shoes or armor or actively wielded objects). If you're a master in Thievery, you can attempt to Steal from a creature in combat or otherwise on guard. When doing so, Stealing requires 2 manipulate actions instead of 1, and you take a -5 penalty.</p>"
+                },
+                "level": {
+                    "taken": 1,
+                    "value": 1
+                },
+                "location": "SgRI5fYWoxnoCnWy",
+                "prerequisites": {
+                    "value": [
+                        {
+                            "value": "trained in Thievery"
+                        }
+                    ]
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "rules": [],
+                "slug": "pickpocket",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "general",
+                        "skill"
+                    ]
+                }
+            },
+            "type": "feat"
+        },
+        {
+            "_id": "8MpvI60ecSRl7lhz",
+            "img": "systems/pf2e/icons/default-icons/lore.svg",
+            "name": "Absalom Lore",
+            "sort": 1100000,
+            "system": {
+                "description": {
+                    "value": ""
+                },
+                "mod": {
+                    "value": 0
+                },
+                "proficient": {
+                    "value": 1
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slug": null
+            },
+            "type": "lore"
+        },
+        {
+            "_id": "OucS7hjUxDkN3PrP",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.feats-srd.Item.Rfyhlyql1GSoDkI2"
+                }
+            },
+            "img": "icons/sundries/books/book-red-exclamation.webp",
+            "name": "Natural Skill",
+            "sort": 1200000,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "ancestry",
+                "description": {
+                    "value": "<p>Your ingenuity allows you to learn a wide variety of skills. You gain the trained proficiency rank in two skills of your choice.</p>"
+                },
+                "level": {
+                    "taken": 1,
+                    "value": 1
+                },
+                "location": "ancestry-1",
+                "prerequisites": {
+                    "value": []
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slug": "natural-skill",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "human"
+                    ]
+                }
+            },
+            "type": "feat"
+        },
+        {
+            "_id": "NC0DWQ90hsKCrFCV",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.feats-srd.Item.iTdbkP07UFMOo1rI"
+                }
+            },
+            "img": "icons/sundries/books/book-red-exclamation.webp",
+            "name": "Ranged Reprisal",
+            "sort": 1400000,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "class",
+                "description": {
+                    "value": "<p>You can use Retributive Strike with a ranged weapon. In addition, if the foe that triggered your reaction is within 5 feet of your reach but not in your reach, as part of your reaction you can Step to put the foe in your reach before making a melee Retributive Strike.</p>"
+                },
+                "level": {
+                    "taken": 1,
+                    "value": 1
+                },
+                "location": "class-1",
+                "prerequisites": {
+                    "value": [
+                        {
+                            "value": "paladin cause"
+                        }
+                    ]
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "rules": [],
+                "slug": "ranged-reprisal",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "champion"
+                    ]
+                }
+            },
+            "type": "feat"
+        },
+        {
+            "_id": "PZwexFB6fnpgIWHq",
+            "img": "systems/pf2e/icons/default-icons/spellcastingEntry.svg",
+            "name": "Focus Spells",
+            "sort": 1700000,
+            "system": {
+                "ability": {
+                    "value": "cha"
+                },
+                "autoHeightenLevel": {
+                    "value": null
+                },
+                "description": {
+                    "value": ""
+                },
+                "prepared": {
+                    "value": "focus"
+                },
+                "proficiency": {
+                    "value": 1
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slots": {},
+                "slug": null,
+                "spelldc": {
+                    "dc": 16,
+                    "item": 0,
+                    "mod": 3,
+                    "value": 6
+                },
+                "tradition": {
+                    "value": "divine"
+                }
+            },
+            "type": "spellcastingEntry"
+        },
+        {
+            "_id": "DcWzGz3oZTaMsPoD",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.spells-srd.Item.zNN9212H2FGfM7VS"
+                }
+            },
+            "img": "systems/pf2e/icons/spells/lay-on-hands.webp",
+            "name": "Lay on Hands",
+            "sort": -100000,
+            "system": {
+                "area": null,
+                "cost": {
+                    "value": ""
+                },
+                "counteraction": false,
+                "damage": {},
+                "defense": null,
+                "description": {
+                    "value": "<p>Your hands become infused with vitality energy, healing a living creature or damaging an undead creature with a touch.</p>\n<p>If you use lay on hands on a willing living target, you restore 6 Hit Points; if the target is one of your allies, they also gain a +2 status bonus to AC for 1 round.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Spell Effect: Lay on Hands]</p>\n<p>Against an undead target, you deal 1d6 damage and it must attempt a basic Fortitude save; if it fails, it also takes a -2 status penalty to AC for 1 round.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Spell Effect: Lay on Hands (Vs. Undead)]</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The amount of healing increases by 6, and the damage to an undead target increases by 1d6.</p>"
+                },
+                "duration": {
+                    "sustained": false,
+                    "value": ""
+                },
+                "level": {
+                    "value": 1
+                },
+                "location": {
+                    "value": "PZwexFB6fnpgIWHq"
+                },
+                "overlays": {
+                    "a33QUFoKgoOprovO": {
+                        "name": "Lay on Hands (Vs. Undead)",
+                        "overlayType": "override",
+                        "sort": 2,
+                        "system": {
+                            "damage": {
+                                "37YW4ZGhxx7Y2mdI": {
+                                    "applyMod": false,
+                                    "category": null,
+                                    "formula": "1d6",
+                                    "kinds": [
+                                        "damage"
+                                    ],
+                                    "materials": [],
+                                    "type": "vitality"
+                                }
+                            },
+                            "defense": {
+                                "save": {
+                                    "basic": true,
+                                    "statistic": "fortitude"
+                                }
+                            },
+                            "heightening": {
+                                "damage": {
+                                    "37YW4ZGhxx7Y2mdI": "1d6"
+                                },
+                                "interval": 1,
+                                "type": "interval"
+                            }
+                        }
+                    },
+                    "uLuOg62dVyxvbW66": {
+                        "name": "Lay on Hands (Healing)",
+                        "overlayType": "override",
+                        "sort": 1,
+                        "system": {
+                            "damage": {
+                                "b39tbePoPlJSzLku": {
+                                    "applyMod": false,
+                                    "category": null,
+                                    "formula": "6",
+                                    "kinds": [
+                                        "healing"
+                                    ],
+                                    "materials": [],
+                                    "type": "vitality"
+                                }
+                            },
+                            "heightening": {
+                                "damage": {
+                                    "b39tbePoPlJSzLku": "6"
+                                },
+                                "interval": 1,
+                                "type": "interval"
+                            }
+                        }
+                    }
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "range": {
+                    "value": "touch"
+                },
+                "requirements": "",
+                "rules": [],
+                "slug": "lay-on-hands",
+                "target": {
+                    "value": "1 willing living creature or 1 undead creature"
+                },
+                "time": {
+                    "value": "1"
+                },
+                "traits": {
+                    "rarity": "uncommon",
+                    "traditions": [],
+                    "value": [
+                        "champion",
+                        "focus",
+                        "healing",
+                        "manipulate",
+                        "vitality"
+                    ]
+                }
+            },
+            "type": "spell"
+        },
+        {
+            "_id": "PtzSHcdBxGZq7WCw",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.3lgwjrFEsQVKzhh7"
+                }
+            },
+            "img": "icons/containers/bags/pack-leather-white-tan.webp",
+            "name": "Backpack",
+            "sort": 2000000,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "capacity": 4,
+                    "heldOrStowed": 0.1,
+                    "ignored": 2,
+                    "value": 0
+                },
+                "collapsed": false,
+                "containerId": null,
+                "description": {
+                    "value": "<p>A backpack holds up to 4 Bulk of items and the first 2 Bulk of these items don't count against your Bulk limits. If you're carrying or stowing the pack rather than wearing it on your back, its Bulk is light instead of negligible</p>"
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0,
+                    "inSlot": true,
+                    "invested": null
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "sp": 1
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "size": "med",
+                "slug": "backpack",
+                "stowing": true,
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                },
+                "usage": {
+                    "value": "wornbackpack"
+                }
+            },
+            "type": "backpack"
+        },
+        {
+            "_id": "noCJzHmoWdBYtWt9",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.fyYnQf1NAx9fWFaS"
+                }
+            },
+            "img": "icons/sundries/survival/rope-wrapped-brown.webp",
+            "name": "Rope",
+            "sort": 2100000,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 0.1
+                },
+                "containerId": "PtzSHcdBxGZq7WCw",
+                "description": {
+                    "value": "<p>50 feet of rope.</p>"
+                },
+                "equipped": {
+                    "carryType": "stowed",
+                    "handsHeld": 0,
+                    "invested": null
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "sp": 5
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "size": "med",
+                "slug": "rope",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                },
+                "usage": {
+                    "value": "held-in-two-hands"
+                }
+            },
+            "type": "equipment"
+        },
+        {
+            "_id": "oabU4aVd8yGCRPGa",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.VnPh324pKwd2ZB66"
+                }
+            },
+            "img": "systems/pf2e/icons/equipment/adventuring-gear/waterskin.webp",
+            "name": "Waterskin",
+            "sort": 2200000,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 0.1
+                },
+                "containerId": "PtzSHcdBxGZq7WCw",
+                "description": {
+                    "value": "<p>When it's full, a waterskin contains roughly 1 day's worth of water for a Small or Medium creature.</p>"
+                },
+                "equipped": {
+                    "carryType": "stowed",
+                    "handsHeld": 0,
+                    "invested": null
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "cp": 5
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "size": "med",
+                "slug": "waterskin",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                },
+                "usage": {
+                    "value": "held-in-one-hand"
+                }
+            },
+            "type": "equipment"
+        },
+        {
+            "_id": "KbggvCVCidlwHKNX",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.UlIxxLm71UdRgCFE"
+                }
+            },
+            "img": "icons/commodities/stone/geode-raw-tan.webp",
+            "name": "Flint and Steel",
+            "sort": 2400000,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 0
+                },
+                "containerId": "PtzSHcdBxGZq7WCw",
+                "description": {
+                    "value": "<p>Flint and steel are useful in creating a fire if you have the time to catch a spark, though using them is typically too time-consuming to be practical during an encounter. Even in ideal conditions, using flint and steel to light a flame requires using at least 3 actions, and often significantly longer.</p>"
+                },
+                "equipped": {
+                    "carryType": "stowed",
+                    "handsHeld": 0,
+                    "invested": null
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "cp": 5
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "size": "med",
+                "slug": "flint-and-steel",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                },
+                "usage": {
+                    "value": "held-in-two-hands"
+                }
+            },
+            "type": "equipment"
+        },
+        {
+            "_id": "sNAZT40Y64R9rFBO",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.fagzYdmfYyMQ6J77"
+                }
+            },
+            "img": "icons/containers/ammunition/quiver-simple-brown.webp",
+            "name": "Bedroll",
+            "sort": 2700000,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 0.1
+                },
+                "containerId": "PtzSHcdBxGZq7WCw",
+                "description": {
+                    "value": "<p>A rolled up bed.</p>"
+                },
+                "equipped": {
+                    "carryType": "stowed",
+                    "handsHeld": 0,
+                    "invested": null
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "cp": 2
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "size": "med",
+                "slug": "bedroll",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                },
+                "usage": {
+                    "value": "other"
+                }
+            },
+            "type": "equipment"
+        },
+        {
+            "_id": "WTb3VDgG85c66wF8",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.81aHsD27HFGnq1Nt"
+                }
+            },
+            "img": "icons/sundries/survival/soap.webp",
+            "name": "Soap",
+            "sort": 2800000,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 0
+                },
+                "containerId": "PtzSHcdBxGZq7WCw",
+                "description": {
+                    "value": "<p>Bar of soap.</p>"
+                },
+                "equipped": {
+                    "carryType": "stowed",
+                    "handsHeld": 0,
+                    "invested": null
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "cp": 2
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "size": "med",
+                "slug": "soap",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                },
+                "usage": {
+                    "value": "held-in-one-hand"
+                }
+            },
+            "type": "equipment"
+        },
+        {
+            "_id": "MbzvRYDV9XGWJPrr",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.vLGDUFrg4yGzpTQX"
+                }
+            },
+            "img": "systems/pf2e/icons/equipment/adventuring-gear/repair-kit.webp",
+            "name": "Repair Toolkit",
+            "sort": 2900000,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 1
+                },
+                "containerId": "PtzSHcdBxGZq7WCw",
+                "description": {
+                    "value": "<p>A repair kit allows you to perform simple repairs while traveling. It contains a portable anvil, tongs, woodworking tools, a whetstone, and oils for conditioning leather and wood. You can use a repair kit to Repair items using the Crafting skill. You can draw and replace a worn repair toolkit as part of the action that uses it.</p>"
+                },
+                "equipped": {
+                    "carryType": "stowed",
+                    "handsHeld": 0,
+                    "invested": null
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "gp": 2
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "size": "med",
+                "slug": "repair-toolkit",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                },
+                "usage": {
+                    "value": "held-in-two-hands"
+                }
+            },
+            "type": "equipment"
+        },
+        {
+            "_id": "mEnniAmzu7rZcK39",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.YMQr577asquZIP65"
+                }
+            },
+            "img": "icons/equipment/chest/breastplate-metal-scaled-grey.webp",
+            "name": "Scale Mail",
+            "sort": 3000000,
+            "system": {
+                "acBonus": 3,
+                "baseItem": "scale-mail",
+                "bulk": {
+                    "value": 2
+                },
+                "category": "medium",
+                "checkPenalty": -2,
+                "containerId": null,
+                "description": {
+                    "value": "<p>Scale mail consists of many metal scales sewn onto a reinforced leather backing, often in the form of a long shirt that protects the torso, arms, and legs.</p>"
+                },
+                "dexCap": 2,
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0,
+                    "inSlot": true,
+                    "invested": null
+                },
+                "group": "composite",
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "gp": 4
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "runes": {
+                    "potency": 0,
+                    "property": [],
+                    "resilient": 0
+                },
+                "size": "med",
+                "slug": "scale-mail",
+                "speedPenalty": -5,
+                "strength": 2,
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                }
+            },
+            "type": "armor"
+        },
+        {
+            "_id": "YmJaBI7Zc64UM3pE",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.hDLbR56Id2OtU318"
+                }
+            },
+            "img": "systems/pf2e/icons/equipment/alchemical-items/alchemical-elixirs/elixir-of-life.webp",
+            "name": "Elixir of Life (Minor)",
+            "sort": 3100000,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 0.1
+                },
+                "category": "elixir",
+                "containerId": null,
+                "damage": {
+                    "formula": "1d6",
+                    "kind": "healing",
+                    "type": "untyped"
+                },
+                "description": {
+                    "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> (manipulate)</p>\n<hr />\n<p>Elixirs of life accelerate a living creature's natural healing processes and immune system. Upon drinking this elixir, you regain [[/r 1d6[healing]]]{1d6 Hit Points} and gain +1 item bonus to saving throws against diseases and poisons for 10 minutes.</p>\n<p>@UUID[Compendium.pf2e.equipment-effects.Item.Effect: Elixir of Life (Minor)]</p>"
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 1
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "gp": 3
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder GM Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "size": "med",
+                "slug": "elixir-of-life-minor",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "alchemical",
+                        "consumable",
+                        "elixir",
+                        "healing"
+                    ]
+                },
+                "usage": {
+                    "value": "held-in-one-hand"
+                },
+                "uses": {
+                    "autoDestroy": true,
+                    "max": 1,
+                    "value": 1
+                }
+            },
+            "type": "consumable"
+        },
+        {
+            "_id": "xNoakPRbRnpdNbUN",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.LJdbVTOZog39EEbi"
+                }
+            },
+            "img": "icons/weapons/swords/sword-guard-blue.webp",
+            "name": "Longsword",
+            "sort": 3200000,
+            "system": {
+                "baseItem": "longsword",
+                "bonus": {
+                    "value": 0
+                },
+                "bonusDamage": {
+                    "value": 0
+                },
+                "bulk": {
+                    "value": 1
+                },
+                "category": "martial",
+                "containerId": null,
+                "damage": {
+                    "damageType": "slashing",
+                    "dice": 1,
+                    "die": "d8"
+                },
+                "description": {
+                    "value": "<p>Longswords, also known as arming swords, can be one-edged or two-edged swords. Their blades are heavy and they're between 3 and 4 feet in length.</p>"
+                },
+                "equipped": {
+                    "carryType": "held",
+                    "handsHeld": 1,
+                    "invested": null
+                },
+                "group": "sword",
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "gp": 1
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 1,
+                "range": null,
+                "reload": {
+                    "value": ""
+                },
+                "rules": [],
+                "runes": {
+                    "potency": 0,
+                    "property": [],
+                    "striking": 0
+                },
+                "size": "med",
+                "slug": "longsword",
+                "splashDamage": {
+                    "value": 0
+                },
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "versatile-p"
+                    ]
+                },
+                "usage": {
+                    "value": "held-in-one-hand"
+                }
+            },
+            "type": "weapon"
+        },
+        {
+            "_id": "v1TglYClNbKvS6fr",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.Yr9yCuJiAlFh3QEB"
+                }
+            },
+            "img": "systems/pf2e/icons/equipment/shields/steel-shield.webp",
+            "name": "Steel Shield",
+            "sort": 3300000,
+            "system": {
+                "acBonus": 2,
+                "baseItem": "steel-shield",
+                "bulk": {
+                    "value": 1
+                },
+                "containerId": null,
+                "description": {
+                    "value": "<p>Like wooden shields, steel shields come in a variety of shapes and sizes. Though more expensive than wooden shields, they are much more durable.</p>\n<table class=\"pf2e\">\n<thead>\n<tr>\n<th>Hardness</th>\n<th>HP</th>\n<th>BT</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>5</td>\n<td>20</td>\n<td>10</td>\n</tr>\n</tbody>\n</table>"
+                },
+                "equipped": {
+                    "carryType": "held",
+                    "handsHeld": 1,
+                    "invested": null
+                },
+                "hardness": 5,
+                "hp": {
+                    "max": 20,
+                    "value": 20
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "gp": 2
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 1,
+                "rules": [],
+                "runes": {
+                    "reinforcing": 0
+                },
+                "size": "med",
+                "slug": "steel-shield",
+                "speedPenalty": 0,
+                "traits": {
+                    "integrated": null,
+                    "rarity": "common",
+                    "value": []
+                }
+            },
+            "type": "shield"
+        },
+        {
+            "_id": "xXTjTbvNbDIn0iZC",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.hIgqLgH3YcLZBeoT"
+                }
+            },
+            "img": "icons/weapons/bows/shortbow-leather.webp",
+            "name": "Shortbow",
+            "sort": 3400000,
+            "system": {
+                "baseItem": "shortbow",
+                "bonus": {
+                    "value": 0
+                },
+                "bonusDamage": {
+                    "value": 0
+                },
+                "bulk": {
+                    "value": 1
+                },
+                "category": "martial",
+                "containerId": null,
+                "damage": {
+                    "damageType": "piercing",
+                    "dice": 1,
+                    "die": "d6"
+                },
+                "description": {
+                    "value": "<p>This smaller bow is made of a single piece of wood and favored by skirmishers and cavalry.</p>"
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0,
+                    "invested": null
+                },
+                "group": "bow",
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "gp": 3
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 1,
+                "range": 60,
+                "reload": {
+                    "value": "0"
+                },
+                "rules": [],
+                "runes": {
+                    "potency": 0,
+                    "property": [],
+                    "striking": 0
+                },
+                "size": "med",
+                "slug": "shortbow",
+                "splashDamage": {
+                    "value": 0
+                },
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "deadly-d10"
+                    ]
+                },
+                "usage": {
+                    "value": "held-in-one-plus-hands"
+                }
+            },
+            "type": "weapon"
+        },
+        {
+            "_id": "9UpbwRyDxC6sEoaP",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.w2ENw2VMPcsbif8g"
+                }
+            },
+            "img": "icons/weapons/ammunition/arrows-broadhead-white.webp",
+            "name": "Arrows",
+            "sort": 3500000,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 0.1
+                },
+                "category": "ammo",
+                "containerId": null,
+                "damage": null,
+                "description": {
+                    "value": "<p>These projectiles are the ammunition for bows. The shaft of an arrow is made of wood. It is stabilized in flight by fletching at one end and bears a metal head on the other.</p>"
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "per": 10,
+                    "value": {
+                        "sp": 1
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 20,
+                "rules": [],
+                "size": "med",
+                "slug": "arrows",
+                "stackGroup": "arrows",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                },
+                "usage": {
+                    "value": "held-in-one-hand"
+                },
+                "uses": {
+                    "autoDestroy": true,
+                    "max": 1,
+                    "value": 1
+                }
+            },
+            "type": "consumable"
+        },
+        {
+            "_id": "HqvlB0UWhWNdGQjt",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz"
+                }
+            },
+            "img": "systems/pf2e/icons/equipment/treasure/currency/gold-pieces.webp",
+            "name": "Gold Pieces",
+            "sort": 3600000,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 1
+                },
+                "containerId": null,
+                "description": {
+                    "value": ""
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "gp": 1
+                    }
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "quantity": 2,
+                "rules": [],
+                "size": "med",
+                "slug": "gold-pieces",
+                "stackGroup": "coins",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                }
+            },
+            "type": "treasure"
+        },
+        {
+            "_id": "Rq3QhgJNsHKezuQ0",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.5Ew82vBF9YfaiY9f"
+                }
+            },
+            "img": "systems/pf2e/icons/equipment/treasure/currency/silver-pieces.webp",
+            "name": "Silver Pieces",
+            "sort": 3700000,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 1
+                },
+                "containerId": null,
+                "description": {
+                    "value": ""
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "sp": 1
+                    }
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "quantity": 3,
+                "rules": [],
+                "size": "med",
+                "slug": "silver-pieces",
+                "stackGroup": "coins",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                }
+            },
+            "type": "treasure"
+        },
+        {
+            "_id": "tUqR1e5UCYyBCOsL",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.actionspf2e.Item.xjGwis0uaC2305pm"
+                }
+            },
+            "img": "systems/pf2e/icons/actions/OneAction.webp",
+            "name": "Raise a Shield",
+            "sort": 3800000,
+            "system": {
+                "actionType": {
+                    "value": "action"
+                },
+                "actions": {
+                    "value": 1
+                },
+                "category": null,
+                "description": {
+                    "value": "<p><strong>Requirements</strong> You are wielding a shield</p>\n<hr />\n<p>You position your shield to protect yourself. When you have Raised a Shield, you gain its listed circumstance bonus to AC. Your shield remains raised until the start of your next turn.</p>\n<p>@UUID[Compendium.pf2e.equipment-effects.Item.Effect: Raise a Shield]</p>"
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slug": "raise-a-shield",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "general"
+                    ]
+                }
+            },
+            "type": "action"
+        },
+        {
+            "_id": "JovSlwornJBavu3v",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.L9ZV076913otGtiB"
+                }
+            },
+            "img": "systems/pf2e/icons/equipment/adventuring-gear/rations.webp",
+            "name": "Rations",
+            "sort": 2500000,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 0.1
+                },
+                "category": "other",
+                "containerId": "PtzSHcdBxGZq7WCw",
+                "damage": null,
+                "description": {
+                    "value": ""
+                },
+                "equipped": {
+                    "carryType": "stowed",
+                    "handsHeld": 0
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "sp": 4
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 2,
+                "rules": [],
+                "size": "med",
+                "slug": "rations",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                },
+                "usage": {
+                    "value": "held-in-one-hand"
+                },
+                "uses": {
+                    "autoDestroy": true,
+                    "max": 7,
+                    "value": 7
+                }
+            },
+            "type": "consumable"
+        },
+        {
+            "_id": "6dxfnsdqwlu93wog",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.heritages.Item.zVf0Hlp5xG0Q7kmc"
+                }
+            },
+            "img": "systems/pf2e/icons/features/ancestry/skilled-heritage.webp",
+            "name": "Skilled Heritage",
+            "sort": 1300000,
+            "system": {
+                "ancestry": {
+                    "name": "Human",
+                    "slug": "human",
+                    "uuid": "Compendium.pf2e.ancestries.Item.IiG7DgeLWYrSNXuX"
+                },
+                "description": {
+                    "value": "<p>Your ingenuity allows you to train in a wide variety of skills. You become trained in one skill of your choice. At 5th level, you become an expert in the chosen skill.</p>"
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slug": "skilled-heritage",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                }
+            },
+            "type": "heritage"
+        },
+        {
+            "_id": "8EOw9lDjWUTDFTgi",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.8Jdw4yAzWYylGePS"
+                }
+            },
+            "img": "icons/sundries/lights/torch-brown.webp",
+            "name": "Torch",
+            "sort": 0,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 0.1
+                },
+                "containerId": "PtzSHcdBxGZq7WCw",
+                "description": {
+                    "value": "<p>A torch sheds bright light in a 20-foot radius (and dim light to the next 20 feet) for 1 hour. It can be used as an improvised weapon that deals 1d4 bludgeoning damage plus 1 fire damage.</p>"
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0,
+                    "invested": null
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "value": {
+                        "cp": 1
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 5,
+                "rules": [
+                    {
+                        "key": "TokenLight",
+                        "predicate": [
+                            "lit-torch"
+                        ],
+                        "value": {
+                            "alpha": 0.45,
+                            "animation": {
+                                "intensity": 1,
+                                "speed": 2,
+                                "type": "flame"
+                            },
+                            "attenuation": 0.4,
+                            "bright": 20,
+                            "color": "#ffae3d",
+                            "dim": 40,
+                            "shadows": 0.2
+                        }
+                    },
+                    {
+                        "category": "simple",
+                        "damage": {
+                            "base": {
+                                "damageType": "bludgeoning",
+                                "dice": 1,
+                                "die": "d4"
+                            }
+                        },
+                        "key": "Strike",
+                        "otherTags": [
+                            "improvised"
+                        ],
+                        "predicate": [
+                            {
+                                "not": "lit-torch"
+                            }
+                        ]
+                    },
+                    {
+                        "category": "simple",
+                        "damage": {
+                            "base": {
+                                "damageType": "bludgeoning",
+                                "dice": 1,
+                                "die": "d4"
+                            }
+                        },
+                        "img": "icons/sundries/lights/torch-brown-lit.webp",
+                        "key": "Strike",
+                        "otherTags": [
+                            "improvised"
+                        ],
+                        "predicate": [
+                            "lit-torch"
+                        ]
+                    },
+                    {
+                        "damageType": "fire",
+                        "key": "FlatModifier",
+                        "predicate": [
+                            "lit-torch"
+                        ],
+                        "selector": "{item|_id}-damage",
+                        "value": 1
+                    },
+                    {
+                        "domain": "all",
+                        "key": "RollOption",
+                        "label": "PF2E.SpecificRule.LitTorch",
+                        "option": "lit-torch",
+                        "toggleable": true
+                    },
+                    {
+                        "key": "TokenEffectIcon",
+                        "predicate": [
+                            "lit-torch"
+                        ],
+                        "value": "icons/sundries/lights/torch-brown-lit.webp"
+                    }
+                ],
+                "size": "med",
+                "slug": "torch",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                },
+                "usage": {
+                    "value": "held-in-one-hand"
+                }
+            },
+            "type": "equipment"
+        },
+        {
+            "_id": "qltrKf6Ha70ld86K",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.classes.Item.x8iwnpdLbfcoZkHA"
+                }
+            },
+            "img": "systems/pf2e/icons/classes/champion.webp",
+            "name": "Champion",
+            "sort": 0,
+            "system": {
+                "ancestryFeatLevels": {
+                    "value": [
+                        1,
+                        5,
+                        9,
+                        13,
+                        17
+                    ]
+                },
+                "attacks": {
+                    "advanced": 0,
+                    "martial": 1,
+                    "other": {
+                        "name": "",
+                        "rank": 0
+                    },
+                    "simple": 1,
+                    "unarmed": 1
+                },
+                "classFeatLevels": {
+                    "value": [
+                        1,
+                        2,
+                        4,
+                        6,
+                        8,
+                        10,
+                        12,
+                        14,
+                        16,
+                        18,
+                        20
+                    ]
+                },
+                "defenses": {
+                    "heavy": 1,
+                    "light": 1,
+                    "medium": 1,
+                    "unarmored": 1
+                },
+                "description": {
+                    "value": "<p><em>You are an emissary of a deity, a devoted servant who has taken up a weighty mantle, and you adhere to a code that holds you apart from those around you. While champions exist for every alignment, as a champion of good, you provide certainty and hope to the innocent. You have powerful defenses that you share freely with your allies and innocent bystanders, as well as holy power you use to end the threat of evil. Your devotion even attracts the attention of holy spirits who aid you on your journey.</em></p>\n<p><em>@UUID[Compendium.pf2e.journals.JournalEntry.kzxu2dI7tFxv6Ix6.JournalEntryPage.rebppVgBVi8J6TT2]{Champion}</em></p>"
+                },
+                "generalFeatLevels": {
+                    "value": [
+                        3,
+                        7,
+                        11,
+                        15,
+                        19
+                    ]
+                },
+                "hp": 10,
+                "items": {
+                    "06620": {
+                        "img": "systems/pf2e/icons/features/classes/armor-expertise.webp",
+                        "level": 7,
+                        "name": "Armor Expertise",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Armor Expertise"
+                    },
+                    "0drpq": {
+                        "img": "systems/pf2e/icons/features/classes/juggerenaut.webp",
+                        "level": 9,
+                        "name": "Juggernaut",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Juggernaut"
+                    },
+                    "0yuhb": {
+                        "img": "systems/pf2e/icons/features/classes/deity.webp",
+                        "level": 1,
+                        "name": "Deity and Cause",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Deity and Cause"
+                    },
+                    "2k5lc": {
+                        "img": "icons/sundries/documents/document-sealed-white-red.webp",
+                        "level": 1,
+                        "name": "Champion's Code",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Champion's Code"
+                    },
+                    "371js": {
+                        "img": "systems/pf2e/icons/features/classes/deific-weapon.webp",
+                        "level": 1,
+                        "name": "Deific Weapon",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Deific Weapon"
+                    },
+                    "467es": {
+                        "img": "icons/equipment/head/greathelm-banded-steel.webp",
+                        "level": 17,
+                        "name": "Legendary Armor",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Legendary Armor"
+                    },
+                    "4s92m": {
+                        "img": "systems/pf2e/icons/default-icons/feat.svg",
+                        "level": 1,
+                        "name": "Champion's Reaction",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Champion's Reaction"
+                    },
+                    "5u86v": {
+                        "img": "systems/pf2e/icons/features/classes/devotion-spells.webp",
+                        "level": 1,
+                        "name": "Devotion Spells",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Devotion Spells"
+                    },
+                    "5z8hr": {
+                        "img": "systems/pf2e/icons/features/classes/weapon-specialization.webp",
+                        "level": 7,
+                        "name": "Weapon Specialization",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Weapon Specialization"
+                    },
+                    "6ye0b": {
+                        "img": "icons/equipment/shield/round-wooden-boss-gold-brown.webp",
+                        "level": 1,
+                        "name": "Shield Block",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Shield Block"
+                    },
+                    "967sh": {
+                        "img": "icons/magic/nature/symbol-sun-yellow.webp",
+                        "level": 17,
+                        "name": "Champion Mastery",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Champion Mastery"
+                    },
+                    "d0us1": {
+                        "img": "systems/pf2e/icons/features/classes/divine-will.webp",
+                        "level": 11,
+                        "name": "Divine Will",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Divine Will"
+                    },
+                    "gzf67": {
+                        "img": "icons/magic/holy/prayer-hands-glowing-yellow-white.webp",
+                        "level": 9,
+                        "name": "Champion Expertise",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Champion Expertise"
+                    },
+                    "h4ydl": {
+                        "img": "icons/skills/melee/hand-grip-sword-orange.webp",
+                        "level": 15,
+                        "name": "Greater Weapon Specialization (Level 15)",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Greater Weapon Specialization"
+                    },
+                    "ht0g6": {
+                        "img": "systems/pf2e/icons/default-icons/feat.svg",
+                        "level": 9,
+                        "name": "Divine Smite",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Divine Smite"
+                    },
+                    "l74fn": {
+                        "img": "icons/magic/symbols/symbol-lightning-bolt.webp",
+                        "level": 9,
+                        "name": "Lightning Reflexes",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Reflex Expertise"
+                    },
+                    "m8rj4": {
+                        "img": "systems/pf2e/icons/features/classes/weapon-expertise.webp",
+                        "level": 5,
+                        "name": "Weapon Expertise",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Weapon Expertise"
+                    },
+                    "pgk3u": {
+                        "img": "icons/equipment/chest/breastplate-sculpted-grey.webp",
+                        "level": 13,
+                        "name": "Armor Mastery",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Armor Mastery"
+                    },
+                    "qqwd4": {
+                        "img": "icons/creatures/eyes/human-single-blue.webp",
+                        "level": 11,
+                        "name": "Alertness",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Alertness"
+                    },
+                    "r4pcs": {
+                        "img": "systems/pf2e/icons/features/classes/heros-defiance.webp",
+                        "level": 19,
+                        "name": "Hero's Defiance",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Hero's Defiance"
+                    },
+                    "rwf2s": {
+                        "img": "systems/pf2e/icons/features/classes/weapon-mastery.webp",
+                        "level": 13,
+                        "name": "Weapon Mastery",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Martial Weapon Mastery"
+                    },
+                    "tlo7a": {
+                        "img": "systems/pf2e/icons/features/classes/divine-ally.webp",
+                        "level": 3,
+                        "name": "Divine Ally",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Divine Ally"
+                    },
+                    "w0m0r": {
+                        "img": "systems/pf2e/icons/default-icons/feat.svg",
+                        "level": 11,
+                        "name": "Exalt",
+                        "uuid": "Compendium.pf2e.classfeatures.Item.Exalt"
+                    }
+                },
+                "keyAbility": {
+                    "selected": "str",
+                    "value": [
+                        "dex",
+                        "str"
+                    ]
+                },
+                "perception": 1,
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "rules": [],
+                "savingThrows": {
+                    "fortitude": 2,
+                    "reflex": 1,
+                    "will": 2
+                },
+                "skillFeatLevels": {
+                    "value": [
+                        2,
+                        4,
+                        6,
+                        8,
+                        10,
+                        12,
+                        14,
+                        16,
+                        18,
+                        20
+                    ]
+                },
+                "skillIncreaseLevels": {
+                    "value": [
+                        3,
+                        5,
+                        7,
+                        9,
+                        11,
+                        13,
+                        15,
+                        17,
+                        19
+                    ]
+                },
+                "slug": "champion",
+                "spellcasting": 1,
+                "trainedSkills": {
+                    "additional": 2,
+                    "value": [
+                        "rel"
+                    ]
+                },
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                }
+            },
+            "type": "class"
+        },
+        {
+            "_id": "rSGaCJbxTNa8FKf4",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.ancestries.Item.IiG7DgeLWYrSNXuX"
+                }
+            },
+            "img": "systems/pf2e/icons/default-icons/alternatives/ancestries/human.svg",
+            "name": "Human",
+            "sort": 0,
+            "system": {
+                "additionalLanguages": {
+                    "count": 1,
+                    "custom": "",
+                    "value": []
+                },
+                "boosts": {
+                    "0": {
+                        "selected": "str",
+                        "value": [
+                            "cha",
+                            "con",
+                            "dex",
+                            "int",
+                            "str",
+                            "wis"
+                        ]
+                    },
+                    "1": {
+                        "selected": "cha",
+                        "value": [
+                            "str",
+                            "dex",
+                            "con",
+                            "int",
+                            "wis",
+                            "cha"
+                        ]
+                    },
+                    "2": {
+                        "value": []
+                    }
+                },
+                "description": {
+                    "value": "<p><em>As unpredictable and varied as any of Golarion's peoples, humans have exceptional drive and the capacity to endure and expand. Though many civilizations thrived before humanity rose to prominence, humans have built some of the greatest and the most terrible societies throughout the course of history, and today they are the most populous people in the realms around the Inner Sea.</em></p>\n<p><em>@UUID[Compendium.pf2e.journals.JournalEntry.45SK8rdbbxvEHfMn.JournalEntryPage.7pU8yM7yPMw92SY3]{Human}</em></p>"
+                },
+                "flaws": {
+                    "0": {
+                        "value": []
+                    }
+                },
+                "hp": 8,
+                "items": {},
+                "languages": {
+                    "custom": "",
+                    "value": [
+                        "common"
+                    ]
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "reach": 5,
+                "rules": [],
+                "size": "med",
+                "slug": "human",
+                "speed": 25,
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "human",
+                        "humanoid"
+                    ]
+                },
+                "vision": "normal"
+            },
+            "type": "ancestry"
+        },
+        {
+            "_id": "UUovk2Kg0ehVzFte",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.classfeatures.Item.ehL7mnkqxN5wIkgu"
+                },
+                "pf2e": {
+                    "itemGrants": {
+                        "iomedae": {
+                            "id": "7uCkjK9F1wlntyR6",
+                            "onDelete": "detach"
+                        },
+                        "paladin": {
+                            "id": "v3Z1v7ImLzju58xF",
+                            "onDelete": "detach"
+                        }
+                    }
+                }
+            },
+            "img": "systems/pf2e/icons/features/classes/deity.webp",
+            "name": "Deity and Cause",
+            "sort": 0,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "classfeature",
+                "description": {
+                    "value": "<p>Champions are divine servants of a deity. Choose a deity to follow; your alignment must be one allowed for followers of your deity. Actions fundamentally opposed to your deity's ideals or alignment are anathema to your faith. A few examples of acts that would be considered anathema appear in each deity's entry. You and your GM determine whether other acts are anathema. You have one of the following causes. Your cause must match your alignment exactly. Your cause determines your champion's reaction, grants you a devotion spell, and defines part of your champion's code.</p>\n<ul>\n<li>LG @UUID[Compendium.pf2e.classfeatures.Item.Paladin]</li>\n<li>NG @UUID[Compendium.pf2e.classfeatures.Item.Redeemer]</li>\n<li>CG @UUID[Compendium.pf2e.classfeatures.Item.Liberator]</li>\n<li>LE @UUID[Compendium.pf2e.classfeatures.Item.Tyrant]</li>\n<li>NE @UUID[Compendium.pf2e.classfeatures.Item.Desecrator]</li>\n<li>CE @UUID[Compendium.pf2e.classfeatures.Item.Antipaladin]</li>\n</ul>"
+                },
+                "level": {
+                    "value": 1
+                },
+                "location": "qltrKf6Ha70ld86K",
+                "prerequisites": {
+                    "value": []
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "rules": [
+                    {
+                        "adjustName": false,
+                        "choices": {
+                            "filter": [
+                                {
+                                    "or": [
+                                        "item:category:deity",
+                                        "item:category:pantheon"
+                                    ]
+                                },
+                                {
+                                    "not": "item:sanctification:none"
+                                }
+                            ],
+                            "itemType": "deity"
+                        },
+                        "flag": "deity",
+                        "key": "ChoiceSet",
+                        "prompt": "PF2E.SpecificRule.Prompt.Deity",
+                        "selection": "Compendium.pf2e.deities.Item.Iomedae"
+                    },
+                    {
+                        "allowDuplicate": false,
+                        "flag": "iomedae",
+                        "key": "GrantItem",
+                        "uuid": "{item|flags.pf2e.rulesSelections.deity}"
+                    },
+                    {
+                        "adjustName": false,
+                        "choices": {
+                            "filter": [
+                                "item:type:feature",
+                                "item:tag:champion-cause",
+                                {
+                                    "or": [
+                                        {
+                                            "and": [
+                                                "item:tag:holy",
+                                                {
+                                                    "or": [
+                                                        "deity:primary:sanctification:can:holy",
+                                                        "deity:primary:sanctification:must:holy"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "and": [
+                                                "item:tag:unholy",
+                                                {
+                                                    "or": [
+                                                        "deity:primary:sanctification:can:unholy",
+                                                        "deity:primary:sanctification:must:unholy"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "flag": "cause",
+                        "key": "ChoiceSet",
+                        "prompt": "PF2E.SpecificRule.DeityAndCause.Prompt",
+                        "selection": "Compendium.pf2e.classfeatures.Item.Paladin"
+                    },
+                    {
+                        "allowDuplicate": false,
+                        "flag": "paladin",
+                        "key": "GrantItem",
+                        "uuid": "{item|flags.pf2e.rulesSelections.cause}"
+                    }
+                ],
+                "slug": "deity-and-cause",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "champion"
+                    ]
+                }
+            },
+            "type": "feat"
+        },
+        {
+            "_id": "mHkH4ZH281Wx5bnQ",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.classfeatures.Item.fykh5pE99O3I2sOI"
+                },
+                "pf2e": {
+                    "itemGrants": {
+                        "theTenetsOfGood": {
+                            "id": "c7MhuSa6hhxPRDVG",
+                            "onDelete": "detach"
+                        }
+                    }
+                }
+            },
+            "img": "icons/sundries/documents/document-sealed-white-red.webp",
+            "name": "Champion's Code",
+            "sort": 0,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "classfeature",
+                "description": {
+                    "value": "<p>You follow a code of conduct, beginning with tenets shared by all champions of an alignment (such as good), and continuing with tenets of your cause. Deities often add additional strictures (for instance, @UUID[Compendium.pf2e.deities.Item.Torag] champions can't show mercy to enemies of their people, making it almost impossible for them to follow the redeemer cause). Only rules for good champions appear in this book. Tenets are listed in order of importance, starting with the most important. If a situation places two tenets in conflict, you aren't in a no-win situation; instead, follow the more important tenet. For instance, as a paladin, if an evil king asked you if you're hiding refugees so he could execute them, you could lie to him, since the tenet against lying is less important than preventing harm to innocents. Trying to subvert your code by creating a situation that forces a higher tenet to override a lower tenet (for example, promising not to respect authorities and then, to keep your word, disrespecting authorities) is a violation of the champion code.</p>\n<p>If you stray from your alignment or violate your code of conduct, you lose your focus pool and divine ally until you demonstrate your repentance by conducting an @UUID[Compendium.pf2e.spells-srd.Item.Atone] ritual, but you keep any other champion abilities that don't require those class features. If your alignment shifts but is still one allowed by your deity, your GM might let you retrain your cause while still following the same deity.</p>"
+                },
+                "level": {
+                    "value": 1
+                },
+                "location": "qltrKf6Ha70ld86K",
+                "prerequisites": {
+                    "value": []
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "rules": [
+                    {
+                        "flag": "theTenetsOfGood",
+                        "key": "GrantItem",
+                        "predicate": [
+                            {
+                                "or": [
+                                    "deity:primary:sanctification:can:holy",
+                                    "deity:primary:sanctification:must:holy"
+                                ]
+                            }
+                        ],
+                        "uuid": "Compendium.pf2e.classfeatures.Item.The Tenets of Good"
+                    },
+                    {
+                        "flag": "theTenetsOfEvil",
+                        "key": "GrantItem",
+                        "predicate": [
+                            {
+                                "or": [
+                                    "deity:primary:sanctification:can:unholy",
+                                    "deity:primary:sanctification:must:unholy"
+                                ]
+                            }
+                        ],
+                        "uuid": "Compendium.pf2e.classfeatures.Item.The Tenets of Evil"
+                    }
+                ],
+                "slug": "champions-code",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "champion"
+                    ]
+                }
+            },
+            "type": "feat"
+        },
+        {
+            "_id": "xDjLcW9L08cD9Spd",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.classfeatures.Item.sXVX4ARUuo8Egrz5"
+                }
+            },
+            "img": "icons/magic/defensive/shield-barrier-deflect-teal.webp",
+            "name": "Champion's Reaction",
+            "sort": 0,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "classfeature",
+                "description": {
+                    "value": "<p>Your cause gives you a special reaction. See specific causes for more information.</p>"
+                },
+                "level": {
+                    "value": 1
+                },
+                "location": "qltrKf6Ha70ld86K",
+                "prerequisites": {
+                    "value": []
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "rules": [],
+                "slug": "champions-reaction",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "champion"
+                    ]
+                }
+            },
+            "type": "feat"
+        },
+        {
+            "_id": "SDmmsmHsnVnbWegU",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.classfeatures.Item.FeBsYn2mHfMVDZvw"
+                }
+            },
+            "img": "icons/skills/melee/weapons-crossed-swords-purple.webp",
+            "name": "Deific Weapon",
+            "sort": 0,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "classfeature",
+                "description": {
+                    "value": "<p>You zealously bear your deity's favored weapon. If it's uncommon, you gain access to it. If it's an unarmed attack with a d4 damage die or a simple weapon, increase the damage die by one step (d4 to d6, d6 to d8, d8 to d10, d10 to d12).</p>"
+                },
+                "level": {
+                    "value": 1
+                },
+                "location": "qltrKf6Ha70ld86K",
+                "prerequisites": {
+                    "value": []
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "rules": [
+                    {
+                        "fist": true,
+                        "key": "Strike",
+                        "predicate": [
+                            "deity:primary:favored-weapon:fist"
+                        ],
+                        "priority": 99
+                    },
+                    {
+                        "key": "DamageDice",
+                        "override": {
+                            "upgrade": true
+                        },
+                        "predicate": [
+                            "item:deity-favored",
+                            {
+                                "or": [
+                                    "item:category:simple",
+                                    {
+                                        "and": [
+                                            "item:category:unarmed",
+                                            "item:damage:die:faces:4"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "selector": "strike-damage"
+                    }
+                ],
+                "slug": "deific-weapon",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "champion"
+                    ]
+                }
+            },
+            "type": "feat"
+        },
+        {
+            "_id": "tipqIoZoR2TBlwJf",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.classfeatures.Item.Q1VfQZp49hkhY0HY"
+                }
+            },
+            "img": "icons/magic/light/explosion-star-glow-orange.webp",
+            "name": "Devotion Spells",
+            "sort": 0,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "classfeature",
+                "description": {
+                    "value": "<p>Your deity's power grants you special divine spells called devotion spells, which are a type of focus spell. It costs 1 Focus Point to cast a focus spell, and you start with a focus pool of 1 Focus Point. You refill your focus pool during your daily preparations, and you regain 1 Focus Point by spending 10 minutes using the Refocus activity to pray to your deity or do service toward their causes.</p>\n<p>Focus spells are automatically heightened to half your level rounded up. Certain feats can give you more focus spells and increase the size of your focus pool, though your focus pool can never hold more than 3 Focus Points. You gain a devotion spell depending on your cause, and you are trained in divine spell attack rolls and spell DCs. Your spellcasting ability is Charisma.</p>"
+                },
+                "level": {
+                    "value": 1
+                },
+                "location": "qltrKf6Ha70ld86K",
+                "prerequisites": {
+                    "value": []
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "rules": [],
+                "slug": "devotion-spells",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "champion"
+                    ]
+                }
+            },
+            "type": "feat"
+        },
+        {
+            "_id": "uOeAD6XyhvHBpHWF",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.classfeatures.Item.eZNCckLzbH3GyncH"
+                },
+                "pf2e": {
+                    "itemGrants": {
+                        "shieldBlock": {
+                            "id": "mkG9YzvaeLmTx0jm",
+                            "onDelete": "detach"
+                        }
+                    }
+                }
+            },
+            "img": "icons/equipment/shield/round-wooden-boss-gold-brown.webp",
+            "name": "Shield Block",
+            "sort": 0,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "classfeature",
+                "description": {
+                    "value": "<p>You gain the @UUID[Compendium.pf2e.feats-srd.Item.Shield Block] general feat, a reaction that lets you reduce damage with your shield.</p>"
+                },
+                "level": {
+                    "value": 1
+                },
+                "location": "qltrKf6Ha70ld86K",
+                "prerequisites": {
+                    "value": []
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "rules": [
+                    {
+                        "flag": "shieldBlock",
+                        "key": "GrantItem",
+                        "uuid": "Compendium.pf2e.feats-srd.Item.Shield Block"
+                    }
+                ],
+                "slug": "shield-block",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "champion",
+                        "druid",
+                        "fighter"
+                    ]
+                }
+            },
+            "type": "feat"
+        },
+        {
+            "_id": "7uCkjK9F1wlntyR6",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.deities.Item.eErEiVmBqltYXFJ6"
+                },
+                "pf2e": {
+                    "grantedBy": {
+                        "id": "UUovk2Kg0ehVzFte",
+                        "onDelete": "cascade"
+                    }
+                }
+            },
+            "img": "systems/pf2e/icons/deity/Iomedae.webp",
+            "name": "Iomedae",
+            "sort": 0,
+            "system": {
+                "attribute": [
+                    "con",
+                    "str"
+                ],
+                "category": "deity",
+                "description": {
+                    "value": "<p>Prior to her ascension and inheritance of many of the god of humanity's worshippers, Iomedae was a holy warrior in wars against the undead. The Inheritor upholds the values of virtue, fighting against the wicked and unjust.</p>\n<p><strong>Edicts</strong> be temperate, fight for justice and honor, hold valor in your heart</p>\n<p><strong>Anathema</strong> abandon a companion in need, dishonor yourself, refuse a challenge from an equal</p>\n<p><strong>Areas of Concern</strong> honor, justice, rulership, and valor</p>"
+                },
+                "domains": {
+                    "alternate": [
+                        "duty"
+                    ],
+                    "primary": [
+                        "confidence",
+                        "might",
+                        "truth",
+                        "zeal"
+                    ]
+                },
+                "font": [
+                    "heal"
+                ],
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "rules": [],
+                "sanctification": {
+                    "modal": "must",
+                    "what": [
+                        "holy"
+                    ]
+                },
+                "skill": [
+                    "intimidation"
+                ],
+                "slug": "iomedae",
+                "spells": {
+                    "1": "Compendium.pf2e.spells-srd.Item.Gb7SeieEvd0pL2Eh",
+                    "2": "Compendium.pf2e.spells-srd.Item.wzctak6BxOW8xvFV",
+                    "4": "Compendium.pf2e.spells-srd.Item.YrzBLPLd3r9m6t1p"
+                },
+                "traits": {},
+                "weapons": [
+                    "longsword"
+                ]
+            },
+            "type": "deity"
+        },
+        {
+            "_id": "XjiTdHzBNqCsF1yX",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.actionspf2e.Item.EAP98XaChJEbgKcK"
+                },
+                "pf2e": {
+                    "grantedBy": {
+                        "id": "v3Z1v7ImLzju58xF",
+                        "onDelete": "cascade"
+                    }
+                }
+            },
+            "img": "systems/pf2e/icons/actions/Reaction.webp",
+            "name": "Retributive Strike",
+            "sort": 0,
+            "system": {
+                "actionType": {
+                    "value": "reaction"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "offensive",
+                "description": {
+                    "value": "<p><strong>Trigger</strong> An enemy damages your ally, and both are within 15 feet of you</p>\n<hr />\n<p>You protect your ally and strike your foe. The ally gains resistance to all damage against the triggering damage equal to 2 + your level. If the foe is within reach, make a melee Strike against it.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.Effect: Champion's Resistance]</p>"
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "rules": [],
+                "slug": "retributive-strike",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "champion"
+                    ]
+                }
+            },
+            "type": "action"
+        },
+        {
+            "_id": "v3Z1v7ImLzju58xF",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.classfeatures.Item.peEXunfbSD8WcMFk"
+                },
+                "pf2e": {
+                    "grantedBy": {
+                        "id": "UUovk2Kg0ehVzFte",
+                        "onDelete": "cascade"
+                    },
+                    "itemGrants": {
+                        "retributiveStrike": {
+                            "id": "XjiTdHzBNqCsF1yX",
+                            "onDelete": "detach"
+                        }
+                    }
+                }
+            },
+            "img": "icons/skills/melee/sword-winged-holy-orange.webp",
+            "name": "Paladin",
+            "sort": 0,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "classfeature",
+                "description": {
+                    "value": "<p>You're honorable, forthright, and committed to pushing back the forces of cruelty. You gain the @UUID[Compendium.pf2e.actionspf2e.Item.Retributive Strike] champion's reaction and the @UUID[Compendium.pf2e.spells-srd.Item.Lay on Hands] devotion spell. Your code gains the follow edicts and anathema:</p>\n<p><strong>Edicts</strong> follow the law, respect legitimate authorities or leadership</p>\n<p><strong>Anathema</strong> take advantage of another, cheat</p>\n<h2 class=\"title\">Divine Smite<span style=\"float:right\">Level 9</span></h2>\n<p>You surround evil targets in a punishing halo. If you hit with your Retributive Strike, the target takes persistent spirit damage equal to your Charisma modifier.</p>\n<h2 class=\"title\">Exalt<span style=\"float:right\">Level 11</span></h2>\n<p>When you use Retributive Strike, each ally within 15 feet of you with the target in their melee reach can spend a reaction to Strike the target with a -5 penalty.</p>"
+                },
+                "level": {
+                    "value": 1
+                },
+                "location": null,
+                "prerequisites": {
+                    "value": []
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "rules": [
+                    {
+                        "flag": "retributiveStrike",
+                        "key": "GrantItem",
+                        "uuid": "Compendium.pf2e.actionspf2e.Item.Retributive Strike"
+                    },
+                    {
+                        "domain": "all",
+                        "key": "RollOption",
+                        "label": "PF2E.SpecificRule.Champion.DivineSmite.Label",
+                        "option": "divine-smite",
+                        "predicate": [
+                            "feature:divine-smite"
+                        ],
+                        "toggleable": true
+                    },
+                    {
+                        "damageCategory": "persistent",
+                        "damageType": "spirit",
+                        "key": "FlatModifier",
+                        "label": "PF2E.SpecificRule.Champion.DivineSmite.Label",
+                        "predicate": [
+                            "divine-smite"
+                        ],
+                        "selector": "strike-damage",
+                        "value": "@actor.system.abilities.cha.mod"
+                    }
+                ],
+                "slug": "paladin",
+                "traits": {
+                    "otherTags": [
+                        "champion-cause",
+                        "holy"
+                    ],
+                    "rarity": "common",
+                    "value": [
+                        "champion"
+                    ]
+                }
+            },
+            "type": "feat"
+        },
+        {
+            "_id": "c7MhuSa6hhxPRDVG",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.classfeatures.Item.nxZYP3KGfTSkaW6J"
+                },
+                "pf2e": {
+                    "grantedBy": {
+                        "id": "mHkH4ZH281Wx5bnQ",
+                        "onDelete": "cascade"
+                    }
+                }
+            },
+            "img": "icons/sundries/books/book-tooled-blue-yellow.webp",
+            "name": "The Tenets of Good",
+            "sort": 0,
+            "system": {
+                "actionType": {
+                    "value": "passive"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "classfeature",
+                "description": {
+                    "value": "<p>You gain the holy trait and add that trait to any Strikes you make. In addition to your other edicts and anathema, you gain the following:</p>\n<p><strong>Edicts</strong> do not knowingly harm innocents or fail to prevent harm to an innocent if your direct intervention could save them</p>\n<p><strong>Anathema</strong> commit murder, engage in torture</p>"
+                },
+                "level": {
+                    "value": 1
+                },
+                "location": null,
+                "prerequisites": {
+                    "value": []
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": "Pathfinder Core Rulebook"
+                },
+                "rules": [
+                    {
+                        "add": [
+                            "holy"
+                        ],
+                        "key": "ActorTraits",
+                        "predicate": [
+                            "class:champion"
+                        ]
+                    },
+                    {
+                        "key": "AdjustStrike",
+                        "mode": "add",
+                        "predicate": [
+                            "class:champion"
+                        ],
+                        "property": "traits",
+                        "value": "holy"
+                    }
+                ],
+                "slug": "the-tenets-of-good",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "champion"
+                    ]
+                }
+            },
+            "type": "feat"
+        },
+        {
+            "_id": "mkG9YzvaeLmTx0jm",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.feats-srd.Item.jM72TjJ965jocBV8"
+                },
+                "pf2e": {
+                    "grantedBy": {
+                        "id": "uOeAD6XyhvHBpHWF",
+                        "onDelete": "cascade"
+                    }
+                }
+            },
+            "img": "icons/sundries/books/book-red-exclamation.webp",
+            "name": "Shield Block",
+            "sort": 0,
+            "system": {
+                "actionType": {
+                    "value": "reaction"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": "general",
+                "description": {
+                    "value": "<p><strong>Trigger</strong> While you have your shield raised, you would take physical damage (bludgeoning, piercing, or slashing) from an attack.</p>\n<hr />\n<p>You snap your shield in place to ward off a blow. Your shield prevents you from taking an amount of damage up to the shield's Hardness. You and the shield each take any remaining damage, possibly breaking or destroying the shield.</p>"
+                },
+                "level": {
+                    "value": 1
+                },
+                "location": null,
+                "prerequisites": {
+                    "value": []
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "rules": [],
+                "slug": "shield-block",
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "general"
+                    ]
+                }
+            },
+            "type": "feat"
+        },
+        {
+            "_id": "Y5sRGYEiGRElAchE",
+            "flags": {
+                "core": {
+                    "sourceId": "Compendium.pf2e.equipment-srd.Item.xShIDyydOMkGvGNb"
+                }
+            },
+            "img": "systems/pf2e/icons/equipment/adventuring-gear/chalk.webp",
+            "name": "Chalk",
+            "sort": 2300000,
+            "system": {
+                "baseItem": null,
+                "bulk": {
+                    "value": 0
+                },
+                "category": "other",
+                "containerId": "PtzSHcdBxGZq7WCw",
+                "damage": null,
+                "description": {
+                    "value": ""
+                },
+                "equipped": {
+                    "carryType": "worn",
+                    "handsHeld": 0
+                },
+                "hardness": 0,
+                "hp": {
+                    "max": 0,
+                    "value": 0
+                },
+                "level": {
+                    "value": 0
+                },
+                "material": {
+                    "grade": null,
+                    "type": null
+                },
+                "price": {
+                    "per": 10,
+                    "value": {
+                        "cp": 1
+                    }
+                },
+                "publication": {
+                    "license": "ORC",
+                    "remaster": true,
+                    "title": "Pathfinder Player Core"
+                },
+                "quantity": 10,
+                "rules": [],
+                "size": "med",
+                "slug": "chalk",
+                "traits": {
+                    "rarity": "common",
+                    "value": []
+                },
+                "usage": {
+                    "value": "held-in-one-hand"
+                },
+                "uses": {
+                    "autoDestroy": true,
+                    "max": 1,
+                    "value": 1
+                }
+            },
+            "type": "consumable"
+        }
+    ],
+    "name": "Seelah (Level 1)",
+    "prototypeToken": {
+        "name": "Seelah",
+        "texture": {
+            "src": "systems/pf2e/icons/iconics/Seelah.webp"
+        }
+    },
+    "system": {
+        "abilities": null,
+        "attributes": {
+            "bonusbulk": 0,
+            "hp": {
+                "temp": 0,
+                "value": 20
+            },
+            "speed": {
+                "otherSpeeds": [],
+                "value": 25
+            }
+        },
+        "build": {
+            "attributes": {
+                "boosts": {
+                    "1": [
+                        "cha",
+                        "str",
+                        "dex",
+                        "con"
+                    ]
+                }
+            }
+        },
+        "crafting": {
+            "formulas": []
+        },
+        "customModifiers": {},
+        "details": {
+            "age": {
+                "value": ""
+            },
+            "alliance": "party",
+            "ancestry": {
+                "value": ""
+            },
+            "background": {
+                "value": ""
+            },
+            "biography": {
+                "allies": "",
+                "anathema": [],
+                "appearance": "",
+                "attitude": "",
+                "backstory": "<p>Although still viewed by many theologians and traditionalists as a newcomer to the world's faiths, Iomedae the Inheritor seems poised for greatness among the divine. Certainly her numerous orders of paladins have risen swiftly to take on the vaunted role of paragon in many societies. Evangelical in their exuberance to spread word of her wisdom, Iomedae's missionaries were pivotal in the defense during the fabled Siege of Solku. They sacrificed their lives saving the town from gnoll slavers, and although none of them survived the siege, their presence lived on. Particularly in the eyes of young Seelah.</p>\n<p>Seelah's family came to the walled town of Solku as pilgrims fleeing the atrocities of distant Geb to the distant south. Unfortunately, they traded one peril for another, and within months of their settling in Solku, the gnolls of White Canyon began their infamous pillaging. Seelah's parents were slain in the first of these raids, leaving her orphaned at the age of 14 in a strange town. She did what she must to survive on the city streets, pickpocketing and bullying and even hiring herself out as a mercenary. When a group of Iomedae's knights arrived to defend Solku, Seelah was immediately taken with their beautiful, shining armor, and within an hour she had stolen a particularly fine mithral helm with a golden bird upon its brow. Yet then, something strange happened—Seelah became overwhelmed with guilt at her theft. For days, she agonized over the act, trying (and failing) several times to pawn the helm. During the Battle of Red Hail, Seelah realized that one of the bravest knights, a woman named Acemi with hair in long braids, fought the battle without her helm. This was the woman's undoing—in holding Solku's gates, she took a mortal wound to the skull from a gnoll's flail. The woman's heroism carried the day, but that evening she died of her wound.</p>\n<p>Wracked with guilt, Seelah approached Acemi's body as her companions prepared for her pyre. They watched silently as Seelah placed the stolen helm over the dead woman's head, and then climbed onto the pyre aside her to join her in death. The paladins were moved beyond words—they had known from the start that Seelah had stolen the helm, but Acemi had forbidden her brothers and sisters from collecting it, hoping that the helm would bring the desperate orphan enough money to survive for another few months. The knights of Iomedae took Seelah in that night. Although she has come to terms with Acemi's death, Seelah still regrets the theft that ironically brought her into Iomedae's arms. She originally came to Iomedae out of guilt, but in the past several years, that guilt has transformed into a powerful love and faith in the Inheritor.</p>\n<p>The young paladin wears her hair in Acemi's style and is trained in the use of the longsword. In so doing, she hopes to carry on the good work that Acemi might have done had she not fallen at the Battle of Red Hail. It's the least she feels she can do to make up for a death that she allowed to happen.</p>",
+                "beliefs": "",
+                "birthPlace": "",
+                "campaignNotes": "",
+                "catchphrases": "",
+                "dislikes": "",
+                "edicts": [],
+                "enemies": "",
+                "likes": "",
+                "organizations": ""
+            },
+            "class": {
+                "value": ""
+            },
+            "deity": {
+                "image": "systems/pf2e/icons/deity/Iomedae.webp",
+                "value": "Iomedae"
+            },
+            "ethnicity": {
+                "value": ""
+            },
+            "gender": {
+                "value": "F/She/Her"
+            },
+            "height": {
+                "value": ""
+            },
+            "keyability": {
+                "value": "str"
+            },
+            "languages": {
+                "details": "",
+                "value": [
+                    "common",
+                    "osiriani"
+                ]
+            },
+            "level": {
+                "min": 1,
+                "value": 1
+            },
+            "nationality": {
+                "value": ""
+            },
+            "weight": {
+                "value": ""
+            },
+            "xp": {
+                "max": 1000,
+                "min": 0,
+                "pct": 0,
+                "value": 0
+            }
+        },
+        "exploration": [],
+        "initiative": {
+            "statistic": "perception"
+        },
+        "pfs": {
+            "characterNumber": null,
+            "currentFaction": "EA",
+            "levelBump": false,
+            "playerNumber": null,
+            "reputation": {
+                "EA": 0,
+                "GA": 0,
+                "HH": 0,
+                "RO": 0,
+                "VS": 0,
+                "VW": 0
+            },
+            "school": "none"
+        },
+        "resources": {
+            "focus": {
+                "value": 1
+            },
+            "heroPoints": {
+                "max": 3,
+                "value": 1
+            }
+        },
+        "saves": {
+            "fortitude": {
+                "rank": 0,
+                "value": 0
+            },
+            "reflex": {
+                "rank": 0,
+                "value": 0
+            },
+            "will": {
+                "rank": 0,
+                "value": 0
+            }
+        },
+        "skills": {
+            "acr": {
+                "rank": 0
+            },
+            "arc": {
+                "rank": 0
+            },
+            "ath": {
+                "rank": 1
+            },
+            "cra": {
+                "rank": 0
+            },
+            "dec": {
+                "rank": 0
+            },
+            "dip": {
+                "rank": 1
+            },
+            "itm": {
+                "rank": 1
+            },
+            "med": {
+                "rank": 0
+            },
+            "nat": {
+                "rank": 0
+            },
+            "occ": {
+                "rank": 0
+            },
+            "prf": {
+                "rank": 0
+            },
+            "rel": {
+                "rank": 0
+            },
+            "soc": {
+                "rank": 1
+            },
+            "ste": {
+                "rank": 1
+            },
+            "sur": {
+                "rank": 0
+            },
+            "thi": {
+                "rank": 1
+            }
+        }
+    },
+    "type": "character"
+}

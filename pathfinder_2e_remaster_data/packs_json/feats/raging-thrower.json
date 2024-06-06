@@ -1,0 +1,36 @@
+{
+    "_id": "5pGMffGKkBTZKvjw",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Raging Thrower",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>Thrown weapons become especially deadly in your fury. You apply the additional damage from Rage to your thrown weapon attacks. If you have the Brutal Critical feat or the devastator class feature, apply their benefits to thrown weapon attacks.</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Core Rulebook"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "barbarian"
+            ]
+        }
+    },
+    "type": "feat"
+}

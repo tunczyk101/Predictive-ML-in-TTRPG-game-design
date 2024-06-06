@@ -1,0 +1,41 @@
+{
+    "_id": "gxNxfN9OBlQ1icus",
+    "img": "icons/magic/symbols/question-stone-yellow.webp",
+    "name": "Third Doctrine",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>You gain the third benefit of your doctrine:</p>\n<ul>\n<li>@UUID[Compendium.pf2e.classfeatures.Item.Third Doctrine (Cloistered Cleric)]{Cloistered Cleric}</li>\n<li>@UUID[Compendium.pf2e.classfeatures.Item.Third Doctrine (Warpriest)]{Warpriest}</li>\n</ul>"
+        },
+        "level": {
+            "value": 7
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "rules": [
+            {
+                "key": "GrantItem",
+                "uuid": "{actor|flags.pf2e.cleric.thirdDoctrine}"
+            }
+        ],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "cleric"
+            ]
+        }
+    },
+    "type": "feat"
+}

@@ -1,0 +1,50 @@
+{
+    "_id": "i9hF185TRK0cH8B4",
+    "img": "icons/commodities/treasure/token-runed-os-grey.webp",
+    "name": "Demolishing",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>A <em>demolishing</em> weapon is made to destroy constructs. Damage inflicted on a construct with a demolishing weapon continues to spread throughout the creature-cracks form, linkages fail, surfaces erode-and otherwise dismantle its body. When you damage a construct using a <em>demolishing</em> weapon, you deal an extra @Damage[1d6[persistent,force]] damage. On a critical hit, you deal an extra @Damage[1d12[persistent,force]] damage instead</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 6
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 225
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Special: Fumbus!"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "rare",
+            "value": [
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "etched-onto-a-weapon"
+        }
+    },
+    "type": "equipment"
+}

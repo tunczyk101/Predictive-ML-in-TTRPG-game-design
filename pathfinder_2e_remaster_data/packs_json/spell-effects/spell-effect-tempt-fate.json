@@ -1,0 +1,59 @@
+{
+    "_id": "AJkRUIdYLnt4QOOg",
+    "img": "icons/commodities/currency/coin-inset-lightning-green.webp",
+    "name": "Spell Effect: Tempt Fate",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Tempt Fate]</p>\n<p>The target gains a status bonus to the triggering saving throw. If the saving throw's result is a success, it becomes a critical success. If it's a failure, it becomes a critical failure, and the critical failure can't be reduced by abilities that usually reduce critical failure.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "rounds",
+            "value": 1
+        },
+        "level": {
+            "value": 4
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "removeAfterRoll": true,
+                "selector": "saving-throw",
+                "type": "status",
+                "value": "ternary(gte(@item.level,8),2,1)"
+            },
+            {
+                "adjustment": {
+                    "failure": "one-degree-worse",
+                    "success": "one-degree-better"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "selector": "saving-throw"
+            },
+            {
+                "key": "Note",
+                "selector": "saving-throw",
+                "text": "PF2E.SpecificRule.SpellEffectTemptFate.Note",
+                "title": "{item|name}"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

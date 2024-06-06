@@ -1,0 +1,65 @@
+{
+    "_id": "4kz3vhkKPUuXBpxk",
+    "img": "systems/pf2e/icons/equipment/adventuring-gear/crowbar-levered.webp",
+    "name": "Crowbar (Levered)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>When Forcing Open an object that doesn't have an easy grip, a crowbar makes it easier to gain the necessary leverage. Without a crowbar, prying something open takes a -2 item penalty to the Athletics check to Force Open.</p>\n<p>A levered crowbar grants you a +1 item bonus to Athletics checks to Force Open anything that can be pried open.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 3
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 20
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "label": "Levered Crowbar (Force Open)",
+                "predicate": [
+                    "action:force-open"
+                ],
+                "selector": "athletics",
+                "type": "item",
+                "value": 1
+            },
+            {
+                "key": "AdjustModifier",
+                "selector": "athletics",
+                "slug": "no-crowbar",
+                "suppress": true
+            }
+        ],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": []
+        },
+        "usage": {
+            "value": "held-in-two-hands"
+        }
+    },
+    "type": "equipment"
+}

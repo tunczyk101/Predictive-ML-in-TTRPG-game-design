@@ -1,0 +1,50 @@
+{
+    "_id": "mKlUg7SWC5LcOqaj",
+    "img": "systems/pf2e/icons/equipment/runes/armor-property-runes/armor-property-runes.webp",
+    "name": "Aim-Aiding",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>Armor etched with this rune aids in routing ranged attacks aimed at an enemy around you. You don't provide enemies cover against your allies' ranged attacks.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 6
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 225
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "etched-onto-armor"
+        }
+    },
+    "type": "equipment"
+}

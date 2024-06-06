@@ -1,0 +1,48 @@
+{
+    "_id": "Cxa7MdgMCUoMqbKm",
+    "img": "icons/equipment/neck/necklace-hook-brown.webp",
+    "name": "Effect: Bronze Bull Pendant",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.equipment-srd.Item.Bronze Bull Pendant]</p>\n<p>When you activate the pendant, attempt an Athletics check to Shove with a +1 item bonus to check.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "unlimited",
+            "value": -1
+        },
+        "level": {
+            "value": 2
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder GM Core"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "action:shove"
+                ],
+                "removeAfterRoll": true,
+                "selector": "athletics",
+                "type": "item",
+                "value": 1
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

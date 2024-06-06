@@ -1,0 +1,77 @@
+{
+    "_id": "HaquLIE0SFc85vWY",
+    "img": "systems/pf2e/icons/default-icons/weapon.svg",
+    "name": "Shield Pistol",
+    "system": {
+        "baseItem": "shield-pistol",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 1
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d4"
+        },
+        "description": {
+            "value": "<p>These unique firearms are designed to attach to shields while still firing normally. Shield pistols are popular among Firebrands in the Shackles as they allow them to hold a blade and a firearm in each hand without giving up on defense. As is normal with firearms, a character doesn't have access to shield pistols unless they separately have access to firearms.</p>"
+        },
+        "group": "firearm",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 6
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Firebrands"
+        },
+        "quantity": 1,
+        "range": 20,
+        "reload": {
+            "value": "1"
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "attached-to-shield",
+                "concussive",
+                "fatal-d8"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

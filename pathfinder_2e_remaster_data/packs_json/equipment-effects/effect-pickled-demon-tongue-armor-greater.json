@@ -1,0 +1,42 @@
+{
+    "_id": "UPMZe0oKVpUgDaOE",
+    "img": "systems/pf2e/icons/unarmed-attacks/tongue.webp",
+    "name": "Effect: Pickled Demon Tongue - Armor (Greater)",
+    "system": {
+        "description": {
+            "value": "<p>You gain resistance 5 to acid.</p>"
+        },
+        "duration": {
+            "expiry": null,
+            "sustained": false,
+            "unit": "unlimited",
+            "value": -1
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder #188: They Watched the Stars"
+        },
+        "rules": [
+            {
+                "key": "Resistance",
+                "type": "acid",
+                "value": 5
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

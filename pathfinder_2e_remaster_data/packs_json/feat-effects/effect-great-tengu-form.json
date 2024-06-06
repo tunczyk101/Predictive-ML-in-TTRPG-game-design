@@ -1,0 +1,63 @@
+{
+    "_id": "BC92TyFzRCWq8fu0",
+    "img": "icons/creatures/birds/corvid-call-sound-glowing.webp",
+    "name": "Effect: Great Tengu Form",
+    "system": {
+        "description": {
+            "value": "<p>Once per day, as part of using Long-Nosed Form, you also gain the benefits of 4th-rank @UUID[Compendium.pf2e.spells-srd.Item.Enlarge]and @UUID[Compendium.pf2e.spells-srd.Item.Fly].</p>\n<p>This lasts for 5 minutes or until you shift out of your Long-Nosed Form, whichever happens first.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "minutes",
+            "value": 5
+        },
+        "level": {
+            "value": 17
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Ancestry Guide"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "item:melee"
+                ],
+                "selector": "strike-damage",
+                "type": "status",
+                "value": 4
+            },
+            {
+                "key": "CreatureSize",
+                "resizeEquipment": true,
+                "value": "huge"
+            },
+            {
+                "key": "FlatModifier",
+                "selector": "dex-based",
+                "type": "status",
+                "value": -1
+            },
+            {
+                "key": "BaseSpeed",
+                "selector": "fly",
+                "value": "max(20,(@actor.attributes.speed.total))"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

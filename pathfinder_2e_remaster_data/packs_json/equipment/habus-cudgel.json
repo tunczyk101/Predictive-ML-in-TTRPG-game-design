@@ -1,0 +1,92 @@
+{
+    "_id": "zakdImp4CqahnFfc",
+    "img": "icons/weapons/clubs/club-barbed.webp",
+    "name": "Habu's Cudgel",
+    "system": {
+        "baseItem": "club",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 1
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+            "damageType": "bludgeoning",
+            "dice": 1,
+            "die": "d6"
+        },
+        "description": {
+            "value": "<p>Long associated with a notorious crime boss in Nantambu, this stout <em>+1 striking fearsome club</em> is studded with vicious-looking knobs of obsidian and wrapped in cloth for a better grip. It emits a ghastly groan when swung.</p>\n<hr />\n<p><strong>Activate</strong> <span class=\"action-glyph\">2</span> Interact</p>\n<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> You gesture at a square within 40 feet with <em>Habu's Cudgel</em>. The club causes a frightful wail to unleash from that square and casts @UUID[Compendium.pf2e.spells-srd.Item.Fear] (@Check[type:will|dc:24|name:Habu's Cudgel Fear|traits:enchantment,evocation,emotion,fear,mental,unique]) targeting the creature in that square and all adjacent creatures.</p>"
+        },
+        "group": "club",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 8
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 415
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder #170: Spoken on the Song Wind"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": "-"
+        },
+        "rules": [],
+        "runes": {
+            "potency": 1,
+            "property": [
+                "fearsome"
+            ],
+            "striking": 1
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 1,
+                "property": [
+                    "fearsome"
+                ],
+                "striking": 1
+            }
+        },
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "unique",
+            "value": [
+                "magical",
+                "thrown-10"
+            ]
+        },
+        "usage": {
+            "canBeAmmo": false,
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}
