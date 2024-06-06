@@ -1,0 +1,49 @@
+{
+    "_id": "FBjZ1aAE6a4jt8r2",
+    "folder": "e185cDQaLjU3uZ62",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Keen Eyed",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "campaign": "kingmaker",
+        "category": "army-tactic",
+        "description": {
+            "value": "<p>The army includes several spotters and scouts who are particularly keen-eyed. The army gains a +2 status bonus on initiative checks.</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "location": null,
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Kingmaker"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "selector": "initiative",
+                "type": "status",
+                "value": 2
+            }
+        ],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "cavalry",
+                "infantry",
+                "siege",
+                "skirmisher"
+            ]
+        }
+    },
+    "type": "campaignFeature"
+}

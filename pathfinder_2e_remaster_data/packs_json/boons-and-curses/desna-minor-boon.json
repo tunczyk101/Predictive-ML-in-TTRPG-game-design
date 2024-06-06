@@ -1,0 +1,34 @@
+{
+    "_id": "LOlv11WEGUQWYKna",
+    "img": "systems/pf2e/icons/deity/Desna.webp",
+    "name": "Desna - Minor Boon",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "deityboon",
+        "description": {
+            "value": "<p><strong>Minor Boon (Single Use)</strong> For those at the end of a journey, Desna gifts a deep sleep.</p>\n<p>Once, after you rest, you completely recover all Hit Points, remove all negative conditions, and become free of any curses or diseases.</p>"
+        },
+        "level": {
+            "value": 0
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Gods & Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "feat"
+}

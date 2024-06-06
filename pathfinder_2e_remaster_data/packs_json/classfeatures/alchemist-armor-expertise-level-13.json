@@ -1,0 +1,49 @@
+{
+    "_id": "bv3Qel8v9tpoFbw4",
+    "img": "icons/equipment/back/mantle-collared-green.webp",
+    "name": "Alchemist Armor Expertise (Level 13)",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>You've learned how to dodge while wearing medium, light or no armor. Your proficiency ranks for medium armor, light armor and unarmored defense increase to expert.</p>"
+        },
+        "level": {
+            "value": 13
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Core Rulebook"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {
+                "light": {
+                    "rank": 2
+                },
+                "medium": {
+                    "rank": 2
+                },
+                "unarmored": {
+                    "rank": 2
+                }
+            }
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "alchemist"
+            ]
+        }
+    },
+    "type": "feat"
+}

@@ -1,0 +1,41 @@
+{
+    "_id": "N54jx6GEz2NpGobK",
+    "img": "icons/equipment/chest/breastplate-banded-steel-studded.webp",
+    "name": "Effect: Breastplate of the Mountain",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.equipment-srd.Item.Breastplate of the Mountain]</p>\n<p>You gain immunity to poison for 1 minute.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "minutes",
+            "value": 1
+        },
+        "level": {
+            "value": 20
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "rules": [
+            {
+                "key": "Immunity",
+                "type": "poison"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

@@ -1,0 +1,128 @@
+{
+    "_id": "qgpufYE8gHRWUPiQ",
+    "img": "systems/pf2e/icons/equipment/weapons/specific-magic-weapons/glaive-of-the-artist.webp",
+    "name": "Songbird's Brush",
+    "system": {
+        "baseItem": "glaive",
+        "bonus": {
+            "value": 2
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 2
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "slashing",
+            "dice": 1,
+            "die": "d8"
+        },
+        "description": {
+            "value": "<p>The blade of this <em>+2 greater striking holy glaive</em> shimmers with a prismatic sheen, as if faintly reflecting a rainbow. A <em>songbird's brush</em> sheds bright light in a 20-foot radius (and dim light for the next 40 feet). When wielded in combat, the sound of the blade cutting through the air creates a soft, musical trill as if produced by a songbird. Sacred to the faithful of Shelyn, a <em>songbird's brush</em> is so named for the fighting style developed by worshippers of the Eternal Rose, which equates its sweeping swings to painting with a brush. A <em>songbird's brush</em> grants a +2 item bonus to Performance checks made to dance or sing as long as the glaive is held in two hands.</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">2</span> Interact</p>\n<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> You sweep the <em>songbird's brush</em> in an arc before you, casting @UUID[Compendium.pf2e.spells-srd.Item.Prismatic Spray] from the glaive. The spell DC is 34. This <em>prismatic spray</em> does not affect good-aligned creatures in its area.</p>\n<hr />\n<p><strong>Craft Requirements</strong> You are a worshipper of Shelyn.</p>"
+        },
+        "group": "polearm",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 14
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 6000
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Kingmaker"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    {
+                        "or": [
+                            "action:perform:dance",
+                            "action:perform:singing"
+                        ]
+                    }
+                ],
+                "selector": "performance",
+                "type": "item",
+                "value": 2
+            },
+            {
+                "key": "TokenLight",
+                "value": {
+                    "animation": {
+                        "intensity": 4,
+                        "speed": 4,
+                        "type": "rainbowswirl"
+                    },
+                    "attenuation": 0.4,
+                    "bright": 20,
+                    "color": "#787878",
+                    "dim": 40
+                }
+            },
+            {
+                "key": "TokenEffectIcon",
+                "value": "systems/pf2e/icons/equipment/weapons/specific-magic-weapons/glaive-of-the-artist.webp"
+            }
+        ],
+        "runes": {
+            "potency": 2,
+            "property": [
+                "holy"
+            ],
+            "striking": 2
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 2,
+                "property": [
+                    "holy"
+                ],
+                "striking": 2
+            }
+        },
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "rare",
+            "value": [
+                "deadly-d8",
+                "forceful",
+                "good",
+                "holy",
+                "magical",
+                "reach"
+            ]
+        },
+        "usage": {
+            "value": "held-in-two-hands"
+        }
+    },
+    "type": "weapon"
+}

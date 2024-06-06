@@ -1,0 +1,88 @@
+{
+    "_id": "9LHr9SuDLTicdbXs",
+    "img": "icons/magic/earth/volcano-explosion-lava-yellow.webp",
+    "name": "Hellfire Plume",
+    "system": {
+        "area": null,
+        "cost": {
+            "value": ""
+        },
+        "counteraction": false,
+        "damage": {
+            "0": {
+                "applyMod": false,
+                "category": null,
+                "formula": "4d6",
+                "kinds": [
+                    "damage"
+                ],
+                "materials": [],
+                "type": "fire"
+            },
+            "1": {
+                "applyMod": false,
+                "category": null,
+                "formula": "4d6",
+                "kinds": [
+                    "damage"
+                ],
+                "materials": [],
+                "type": "spirit"
+            }
+        },
+        "defense": {
+            "save": {
+                "basic": true,
+                "statistic": "reflex"
+            }
+        },
+        "description": {
+            "value": "<p>You call forth a plume of hellfire that erupts from below, dealing 4d6 fire damage and 4d6 spirit damage.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The fire damage increases by 1d6, and the spirit damage increases by 1d6.</p>"
+        },
+        "duration": {
+            "sustained": false,
+            "value": ""
+        },
+        "heightening": {
+            "damage": {
+                "0": "1d6",
+                "1": "1d6"
+            },
+            "interval": 1,
+            "type": "interval"
+        },
+        "level": {
+            "value": 5
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Core Rulebook"
+        },
+        "range": {
+            "value": "60 feet"
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+            "value": ""
+        },
+        "time": {
+            "value": "2"
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "traditions": [],
+            "value": [
+                "concentrate",
+                "evil",
+                "fire",
+                "focus",
+                "manipulate",
+                "sorcerer",
+                "unholy"
+            ]
+        }
+    },
+    "type": "spell"
+}

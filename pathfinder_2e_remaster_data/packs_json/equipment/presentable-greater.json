@@ -1,0 +1,60 @@
+{
+    "_id": "Mwwgn9WVH9WbrAT0",
+    "img": "icons/commodities/treasure/token-runed-os-grey.webp",
+    "name": "Presentable (Greater)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>A garment with this rune is always clean, as though it had just been affected by @UUID[Compendium.pf2e.spells-srd.Item.Prestidigitation]. You gain a +2 item bonus to @UUID[Compendium.pf2e.actionspf2e.Item.Make an Impression] on those who would be impressed by a particular <em>presentable</em> outfit while wearing this garment.</p>\n<hr />\n<p><strong>Activate</strong> <span class=\"action-glyph\">2</span> envision, Interact</p>\n<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> You cast @UUID[Compendium.pf2e.spells-srd.Item.Suggestion].</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 10
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 900
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: The Grand Bazaar"
+        },
+        "quantity": 1,
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "action:make-an-impression"
+                ],
+                "selector": "diplomacy",
+                "type": "item",
+                "value": 2
+            }
+        ],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "applied-to-any-visible-article-of-clothing"
+        }
+    },
+    "type": "equipment"
+}

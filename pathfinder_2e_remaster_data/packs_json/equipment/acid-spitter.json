@@ -1,0 +1,66 @@
+{
+    "_id": "1Cj3rG1ugNPcWaPA",
+    "img": "systems/pf2e/icons/features/ancestry/sandstrider-lizardfolk.webp",
+    "name": "Acid Spitter",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "category": "snare",
+        "containerId": null,
+        "damage": {
+            "formula": "3d6",
+            "kind": "damage",
+            "type": "acid"
+        },
+        "description": {
+            "value": "<p>This tin clockwork lizard is activated when a creature moves adjacent to it, at which point it spits out a glob of acid. The target must succeed at a @Check[type:reflex|dc:20] saving throw or take @Damage[3d6[acid]] damage.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes full damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and @Damage[5[persistent,acid]] damage.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and @Damage[10[persistent,acid]] damage.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 4
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 15
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Guns & Gears"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "acid",
+                "clockwork",
+                "consumable",
+                "mechanical",
+                "snare",
+                "trap"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

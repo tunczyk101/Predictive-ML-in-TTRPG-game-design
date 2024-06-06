@@ -1,0 +1,71 @@
+{
+    "_id": "jHE4fPwU0sSIAjMo",
+    "img": "systems/pf2e/icons/features/classes/otherworldly-protection.webp",
+    "name": "Otherworldly Protection",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>Just because you use science doesn't mean you can't build your armor with carefully chosen materials and gizmos designed to protect against otherworldly attacks. You gain resistance equal to 3 + half your level to void damage, or to vitality damage if you have void healing (such as if you're a dhampir). You gain the same amount of resistance to any types of alignment damage—good, evil, chaotic, lawful—that can damage you (note that creatures don't take a given type of alignment damage unless they are of the opposing alignment; for instance, you can take spirit damage only if you are good in alignment).</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Guns & Gears"
+        },
+        "rules": [
+            {
+                "key": "Resistance",
+                "predicate": [
+                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    {
+                        "not": "self:negative-healing"
+                    }
+                ],
+                "type": "void",
+                "value": "3 + floor(@actor.level / 2)"
+            },
+            {
+                "key": "Resistance",
+                "predicate": [
+                    "armor:id:{actor|flags.pf2e.innovationId}",
+                    "self:negative-healing"
+                ],
+                "type": "vitality",
+                "value": "3 + floor(@actor.level / 2)"
+            },
+            {
+                "key": "Resistance",
+                "predicate": [
+                    "armor:id:{actor|flags.pf2e.innovationId}"
+                ],
+                "type": [
+                    "holy",
+                    "unholy"
+                ],
+                "value": "3 + floor(@actor.level / 2)"
+            }
+        ],
+        "traits": {
+            "otherTags": [
+                "armor-innovation-modification"
+            ],
+            "rarity": "common",
+            "value": [
+                "inventor"
+            ]
+        }
+    },
+    "type": "feat"
+}

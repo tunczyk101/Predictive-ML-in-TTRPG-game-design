@@ -1,0 +1,37 @@
+{
+    "_id": "wpOtcMUdymzpbtC4",
+    "img": "systems/pf2e/icons/default-icons/effect.svg",
+    "name": "Gruhastha - Minor Boon",
+    "system": {
+        "description": {
+            "value": "<p><strong>Minor Boon:</strong> Books fall open to insightful passages, and memories spring to mind when they are most needed. Once, when you fail a check to Recall Knowledge, you critically succeed instead. Gruhastha typically grants this boon for an extremely consequential attempt to Recall Knowledge, particularly when misinformation would have dire consequences.</p>"
+        },
+        "duration": {
+            "expiry": null,
+            "sustained": false,
+            "unit": "unlimited",
+            "value": -1
+        },
+        "level": {
+            "value": 0
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Gods & Magic"
+        },
+        "rules": [],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": false
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

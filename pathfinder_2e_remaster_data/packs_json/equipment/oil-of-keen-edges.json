@@ -1,0 +1,59 @@
+{
+    "_id": "1DHjXJEdJ7GlGSzg",
+    "img": "systems/pf2e/icons/equipment/consumables/oils/oil-of-keen-edges.webp",
+    "name": "Oil of Keen Edges",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "oil",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> (manipulate)</p>\n<hr />\n<p>When this silvery salve is applied to a melee weapon that deals piercing or slashing damage, the weapon grows sharper and more dangerous for 1 minute, granting it the benefits of the <em>@UUID[Compendium.pf2e.equipment-srd.Item.Keen]</em> rune.</p>\n<p>@UUID[Compendium.pf2e.equipment-effects.Item.Effect: Oil of Keen Edges]</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 11
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 250
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder GM Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "consumable",
+                "magical",
+                "oil"
+            ]
+        },
+        "usage": {
+            "value": "held-in-two-hands"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

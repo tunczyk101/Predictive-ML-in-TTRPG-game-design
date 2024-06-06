@@ -1,0 +1,79 @@
+{
+    "_id": "EvBQcbkiYUusdFKY",
+    "img": "icons/weapons/bows/bow-ornamental-carved-brown.webp",
+    "name": "Phalanx Piercer",
+    "system": {
+        "baseItem": "phalanx-piercer",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 2
+        },
+        "category": "advanced",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d10"
+        },
+        "description": {
+            "value": "<p>This massive bow is made from bone or wood reinforced with flexible metal strips and strung with reinforced cord. Designed by hobgoblin engineers to take down shielded opponents, the phalanx piercer fires heavy, iron-shod bolts.</p>"
+        },
+        "group": "bow",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 1
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 10
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "range": 80,
+        "reload": {
+            "value": "1"
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "concussive",
+                "hobgoblin",
+                "propulsive",
+                "razing",
+                "volley-30"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-plus-hands"
+        }
+    },
+    "type": "weapon"
+}

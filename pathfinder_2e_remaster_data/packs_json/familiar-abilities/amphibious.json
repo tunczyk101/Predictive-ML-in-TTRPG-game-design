@@ -1,0 +1,45 @@
+{
+    "_id": "A0C86V3MUECpX5jd",
+    "img": "systems/pf2e/icons/actions/Passive.webp",
+    "name": "Amphibious",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "familiar",
+        "description": {
+            "value": "<p>It gains the amphibious trait, allowing it to breathe in both air and water, and has both a land Speed and a swim Speed, each equal to its highest land Speed or swim Speed.</p>"
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "land",
+                "value": 25
+            },
+            {
+                "key": "BaseSpeed",
+                "selector": "swim",
+                "value": 25
+            },
+            {
+                "add": [
+                    "amphibious"
+                ],
+                "key": "ActorTraits"
+            }
+        ],
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "action"
+}

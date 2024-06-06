@@ -1,0 +1,59 @@
+{
+    "_id": "wx7WY6YGvgMphDL1",
+    "img": "icons/equipment/chest/breastplate-scale-leather.webp",
+    "name": "Leather Lamellar",
+    "system": {
+        "acBonus": 1,
+        "baseItem": "leather-lamellar",
+        "bulk": {
+            "value": 1
+        },
+        "category": "light",
+        "checkPenalty": -1,
+        "containerId": null,
+        "description": {
+            "value": "<p>Leather lamellar is a composite armor made of small rectangular pieces of lacquered leather laced together with high-quality cord. It's typically worn with an undershirt.</p>"
+        },
+        "dexCap": 4,
+        "group": "composite",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 3
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "resilient": 0
+        },
+        "size": "med",
+        "speedPenalty": 0,
+        "strength": 0,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "laminar"
+            ]
+        }
+    },
+    "type": "armor"
+}

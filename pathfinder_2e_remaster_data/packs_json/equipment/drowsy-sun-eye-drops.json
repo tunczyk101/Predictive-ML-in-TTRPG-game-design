@@ -1,0 +1,61 @@
+{
+    "_id": "aUzX848Ygqicy2qs",
+    "img": "icons/consumables/potions/conical-ornate-purple.webp",
+    "name": "Drowsy Sun Eye Drops",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "other",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p><strong>Activate</strong> @UUID[Compendium.pf2e.actionspf2e.Item.Seek]</p>\n<hr />\n<p>These drops are made from luminescent mushrooms and refined into eye drops, which simulates a creature's natural night vision. When you attempt a Perception check to Seek, you can draw and apply a dose of drowsy sun to your eyes as part of the same action, which grants you darkvision to a range of 30 feet for 1 round. If you do, your Seek action gains the manipulate trait, due to drawing and applying the eye drops.</p>\n<p>@UUID[Compendium.pf2e.equipment-effects.Item.Effect: Drowsy Sun Eye Drops]</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 3
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 9
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Travel Guide"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "otherTags": [
+                "herbal"
+            ],
+            "rarity": "common",
+            "value": [
+                "alchemical",
+                "consumable"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

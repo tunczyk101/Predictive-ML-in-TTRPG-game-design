@@ -1,0 +1,45 @@
+{
+    "_id": "Y6aNYnGVXdAMvL7Y",
+    "img": "systems/pf2e/icons/spells/thermal-stasis.webp",
+    "name": "Spell Effect: Thermal Stasis",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Thermal Stasis]</p>\n<p>The target gains resistance 2 against fire damage and resistance 2 against cold damage.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "rounds",
+            "value": 1
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Dark Archive"
+        },
+        "rules": [
+            {
+                "key": "Resistance",
+                "type": [
+                    "cold",
+                    "fire"
+                ],
+                "value": "@item.level*2"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

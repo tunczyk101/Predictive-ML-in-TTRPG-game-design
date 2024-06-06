@@ -1,0 +1,34 @@
+{
+    "_id": "N29LCwYfRWHtEqrS",
+    "img": "systems/pf2e/icons/deity/Urgathoa.webp",
+    "name": "Urgathoa - Moderate Boon",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "deityboon",
+        "description": {
+            "value": "<p><strong>Moderate Boon</strong> Urgathoa blesses you as one of her children. You gain void healing.</p>"
+        },
+        "level": {
+            "value": 0
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Gods & Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "feat"
+}

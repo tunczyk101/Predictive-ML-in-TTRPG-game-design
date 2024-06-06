@@ -1,0 +1,89 @@
+{
+    "_id": "NzVp3RKhBkAPbe3g",
+    "img": "systems/pf2e/icons/equipment/weapons/gnome-hooked-hammer.webp",
+    "name": "Metronomic Hammer",
+    "system": {
+        "baseItem": "gnome-hooked-hammer",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "bludgeoning",
+            "dice": 1,
+            "die": "d6"
+        },
+        "description": {
+            "value": "<p>A polished brass metronome ticks rhythmically within the haft of this <em>+1 striking gnome hooked hammer</em>. Gnome adherents of Brigh often attempt to reproduce this item as part of a ritual symbolizing methodical problem-solving and thoughtful craftsmanship.</p>\n<hr />\n<p><strong>Activate</strong> <span class=\"action-glyph\">r</span> envision</p>\n<p><strong>Trigger</strong> You attempt to @UUID[Compendium.pf2e.actionspf2e.Item.Trip] a creature with the <em>metronomic hammer</em></p>\n<hr />\n<p><strong>Effect</strong> By timing the sweeping arcs of your Trip attempt to the built-in metronome of a <em>metronomic hammer</em>, you gain a +1 item bonus to your Athletics check to Trip the target. This item bonus increases by 1 with every subsequent Trip attempt you make with the <em>metronomic hammer</em> against the same target this turn, to a maximum of +3 on your third Trip. The bonus resets to +1 if you successfully Trip the target, if you critically fail to Trip the target, or if your turn ends.</p>"
+        },
+        "group": "hammer",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 5
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 160
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder #179: Cradle of Quartz"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 1,
+            "property": [],
+            "striking": 1
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 1,
+                "property": [],
+                "striking": 1
+            }
+        },
+        "splashDamage": {
+            "value": null
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "gnome",
+                "trip",
+                "two-hand-d10",
+                "versatile-p"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

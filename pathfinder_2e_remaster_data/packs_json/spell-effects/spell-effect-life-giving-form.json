@@ -1,0 +1,89 @@
+{
+    "_id": "lIl0yYdS9zojOZhe",
+    "img": "systems/pf2e/icons/spells/life-giving-form.webp",
+    "name": "Spell Effect: Life-Giving Form",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Life-Giving Form]</p>\n<p>Your body exudes bright light like a torch. You gain resistance to precision damage and weakness to void damage, and your unarmed Strikes deal extra vitality damage.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "minutes",
+            "value": 1
+        },
+        "level": {
+            "value": 6
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "rules": [
+            {
+                "key": "TokenLight",
+                "value": {
+                    "alpha": 0.45,
+                    "animation": {
+                        "intensity": 1,
+                        "speed": 2,
+                        "type": "flame"
+                    },
+                    "attenuation": 0.4,
+                    "bright": 20,
+                    "color": "#ffae3d",
+                    "dim": 40,
+                    "shadows": 0.2
+                }
+            },
+            {
+                "damageType": "vitality",
+                "diceNumber": 1,
+                "dieSize": "d4",
+                "key": "DamageDice",
+                "predicate": [
+                    "unarmed"
+                ],
+                "selector": "strike-damage"
+            },
+            {
+                "damageType": "vitality",
+                "key": "FlatModifier",
+                "predicate": [
+                    "unarmed",
+                    {
+                        "gt": [
+                            "{item|level}",
+                            6
+                        ]
+                    }
+                ],
+                "selector": "strike-damage",
+                "value": "@item.level -6"
+            },
+            {
+                "key": "Resistance",
+                "type": "precision",
+                "value": "@item.level -1"
+            },
+            {
+                "key": "Weakness",
+                "type": "void",
+                "value": "@item.level -1"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

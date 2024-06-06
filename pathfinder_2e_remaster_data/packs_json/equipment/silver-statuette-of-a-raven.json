@@ -1,0 +1,45 @@
+{
+    "_id": "5EYlhm8ZbR6dLUHF",
+    "img": "systems/pf2e/icons/equipment/treasure/art-objects/moderate-art-object/silver-statuette-of-a-raven.webp",
+    "name": "Silver statuette of a raven",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": ""
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 25
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Gamemastery Guide"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "treasure"
+}

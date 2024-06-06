@@ -1,0 +1,53 @@
+{
+    "_id": "9WcvCnh6SbIw5Cfw",
+    "img": "icons/equipment/shield/targe-wooden-boss-steel-brown.webp",
+    "name": "Caster's Targe",
+    "system": {
+        "acBonus": 1,
+        "baseItem": "casters-targe",
+        "bulk": {
+            "value": 1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This small shield is made from wood. It features a special panel of parchment along the inside surface that allows for writing.</p>"
+        },
+        "hardness": 3,
+        "hp": {
+            "max": 12,
+            "value": 12
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 2
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "reinforcing": 0
+        },
+        "size": "med",
+        "speedPenalty": 0,
+        "traits": {
+            "integrated": null,
+            "rarity": "common",
+            "value": [
+                "inscribed"
+            ]
+        }
+    },
+    "type": "shield"
+}

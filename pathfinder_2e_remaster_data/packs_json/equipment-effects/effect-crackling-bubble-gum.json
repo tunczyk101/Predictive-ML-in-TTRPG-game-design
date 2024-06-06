@@ -1,0 +1,55 @@
+{
+    "_id": "GUHNFlNYiR38sTDE",
+    "img": "systems/pf2e/icons/equipment/consumables/other-consumables/crackling-bubblegum.webp",
+    "name": "Effect: Crackling Bubble Gum",
+    "system": {
+        "badge": {
+            "type": "counter",
+            "value": 1
+        },
+        "description": {
+            "value": "<p>You have an item bonus to saving throws against auditory and sonic effects equal to the badge value.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "minutes",
+            "value": 10
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    {
+                        "or": [
+                            "item:trait:auditory",
+                            "item:trait:sonic"
+                        ]
+                    }
+                ],
+                "selector": "saving-throw",
+                "value": "@item.badge.value"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

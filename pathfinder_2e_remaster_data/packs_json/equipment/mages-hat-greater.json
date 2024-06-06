@@ -1,0 +1,58 @@
+{
+    "_id": "Hd1AfC08ytBg67Ey",
+    "img": "icons/equipment/head/hat-belted-simple-grey.webp",
+    "name": "Mage's Hat (Greater)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This hat comes in many forms, such as a colorful turban or a pointy hat with a brim, and is adorned with symbols or runes. It grants you a +2 item bonus to Arcana checks and allows you to cast the @UUID[Compendium.pf2e.spells-srd.Item.Prestidigitation] cantrip as an arcane innate cantrip.</p>\n<p>This larger, fancier hat can be activated. Each <em>greater mage's hat</em> has a specific 4th-rank summon spell from the arcane list woven into its fabric, typically @UUID[Compendium.pf2e.spells-srd.Item.Summon Animal] or @UUID[Compendium.pf2e.spells-srd.Item.Summon Elemental]. If you prepare arcane spells, you can change the spell to a different 4th-rank arcane summon spell you know when you invest it.</p>\n<hr />\n<p><strong>Activate—Hat Spell</strong> Cast a Spell</p>\n<p><strong>Frequency</strong> once per day</p>\n<p><strong>Effect</strong> You doff the hat, causing magical energy to pour from it. You cast the spell stored in the hat.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 9
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 650
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder GM Core"
+        },
+        "quantity": 1,
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "selector": "arcana",
+                "type": "item",
+                "value": 2
+            }
+        ],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "arcane",
+                "invested"
+            ]
+        },
+        "usage": {
+            "value": "wornheadwear"
+        }
+    },
+    "type": "equipment"
+}

@@ -1,0 +1,53 @@
+{
+    "_id": "y4dGIbK5wGUJTufR",
+    "img": "icons/commodities/materials/feather-red.webp",
+    "name": "Jyoti's Feather (Major)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>A <em>jyoti's feather</em> is a shimmering red and gold feather, seeming almost metallic, although delicate and flexible to the touch. Though most aren't made from true jyoti feathers, as the reclusive outsiders avoid visitors from the Material Plane, their connection to vitality energy lent the spellhearts their name.</p>\n<ul>\n<li><strong>Armor</strong> You gain a +4 item bonus to saving throws against death effects and void energy.</li>\n<li><strong>Weapon</strong> The weapon has the <em>greater disrupting </em>rune while the <em>feather</em> is affixed.</li>\n</ul>\n<p>@UUID[Compendium.pf2e.equipment-effects.Item.Effect: Jyoti's Feather - Armor (Major)]</p>\n<p>@UUID[Compendium.pf2e.equipment-effects.Item.Effect: Jyoti's Feather - Weapon (Major)]</p>\n<hr />\n<p><strong>Activate</strong> Cast a Spell</p>\n<p><strong>Effect</strong> You cast @UUID[Compendium.pf2e.spells-srd.Item.Stabilize].</p>\n<hr />\n<p><strong>Activate</strong> Cast a Spell</p>\n<p><strong>Frequency</strong> once per day</p>\n<p><strong>Effect</strong> You cast 6th-rank @UUID[Compendium.pf2e.spells-srd.Item.Healing Well].</p>\n<hr />\n<p><strong>Activate</strong> Cast a Spell</p>\n<p><strong>Frequency</strong> once per day</p>\n<p><strong>Effect</strong> You cast @UUID[Compendium.pf2e.spells-srd.Item.Field of Life].</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 16
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 9400
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "healing",
+                "magical",
+                "spellheart",
+                "vitality"
+            ]
+        },
+        "usage": {
+            "value": "affixed-to-armor-or-a-weapon"
+        }
+    },
+    "type": "equipment"
+}

@@ -1,0 +1,59 @@
+{
+    "_id": "TUya8pXhEa70ahAi",
+    "img": "systems/pf2e/icons/default-icons/consumable.svg",
+    "name": "Wind-Up Cart",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 2
+        },
+        "category": "gadget",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> Interact</p>\n<p>This primitive device can be cobbled together from springs, wheels, and scrap and is commonly used to carry rocks or other dead weight forward to trigger traps. It can be loaded with up to 4 Bulk of items. Most creatures aren't small enough to fit on the cart, and even for Tiny creatures, it makes for a choppy ride; while riding the cart, a creature gains two actions at the start of each of its turns, instead of three. Once activated, the cart moves forward at a speed of 30 feet per round on your turn for up to 1 minute. If it strikes an obstruction, it attempts to continue its movement, pushing with an Athletics bonus of +5, once per round. The wind-up cart has AC 15, Hardness 2, 24 Hit Points, and a Break Threshold of 12. After its 1-minute duration completes, the cart collapses back into scrap.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 2
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 6
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Guns & Gears"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "clockwork",
+                "consumable",
+                "gadget"
+            ]
+        },
+        "usage": {
+            "value": "held-in-two-hands"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

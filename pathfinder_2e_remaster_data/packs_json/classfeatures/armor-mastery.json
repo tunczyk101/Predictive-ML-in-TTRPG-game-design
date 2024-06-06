@@ -1,0 +1,50 @@
+{
+    "_id": "CGB1TczFhQhdQxml",
+    "img": "icons/equipment/chest/breastplate-sculpted-grey.webp",
+    "name": "Armor Mastery",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>Your skill with armor improves further. Your proficiency ranks for light, medium, and heavy armor, as well as for unarmored defense, increase to master.</p>"
+        },
+        "level": {
+            "value": 13
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Core Rulebook"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {
+                "heavy": {
+                    "rank": 3
+                },
+                "light": {
+                    "rank": 3
+                },
+                "medium": {
+                    "rank": 3
+                },
+                "unarmored": {
+                    "rank": 3
+                }
+            }
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "feat"
+}

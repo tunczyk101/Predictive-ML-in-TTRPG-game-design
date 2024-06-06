@@ -1,0 +1,63 @@
+{
+    "_id": "70qdCBokXBvKIUIQ",
+    "img": "systems/pf2e/icons/spells/vision-of-weakness.webp",
+    "name": "Spell Effect: Vision of Weakness",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Vision of Weakness]</p>\n<p>You gain a +2 status bonus to your next attack roll (or skill check made as part of an attack action) against that foe before the end of your turn.</p>"
+        },
+        "duration": {
+            "expiry": "turn-end",
+            "sustained": false,
+            "unit": "rounds",
+            "value": 0
+        },
+        "level": {
+            "value": 2
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "rules": [
+            {
+                "key": "TokenMark",
+                "slug": "vision-of-weakness"
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "target:mark:vision-of-weakness",
+                    "attack"
+                ],
+                "removeAfterRoll": "if-enabled",
+                "selector": "skill-check",
+                "type": "status",
+                "value": 2
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "target:mark:vision-of-weakness"
+                ],
+                "removeAfterRoll": "if-enabled",
+                "selector": "attack",
+                "type": "status",
+                "value": 2
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

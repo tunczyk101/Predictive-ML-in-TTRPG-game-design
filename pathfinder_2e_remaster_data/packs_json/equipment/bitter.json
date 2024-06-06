@@ -1,0 +1,51 @@
+{
+    "_id": "nGZPhGpCxM8U1JXv",
+    "img": "systems/pf2e/icons/equipment/runes/armor-property-runes/armor-property-runes.webp",
+    "name": "Bitter",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>While you wear this acrid armor, any creature that Engulfs you or Swallows you Whole is @UUID[Compendium.pf2e.conditionitems.Item.Sickened]{Sickened 1}; if it spends an action retching to reduce the sickened condition, you can attempt to Escape as a reaction.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 9
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 135
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: The Grand Bazaar"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "magical",
+                "poison"
+            ]
+        },
+        "usage": {
+            "value": "etched-onto-armor"
+        }
+    },
+    "type": "equipment"
+}

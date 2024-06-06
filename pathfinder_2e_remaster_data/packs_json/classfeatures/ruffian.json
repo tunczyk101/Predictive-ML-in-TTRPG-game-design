@@ -1,0 +1,156 @@
+{
+    "_id": "3KPZ7svIO6kmmEKH",
+    "img": "icons/skills/melee/strike-dagger-skull-white.webp",
+    "name": "Ruffian",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>You prefer the direct approach: strong-arming or intimidation. You might be an enforcer for organized crime, a highway bandit, or a noble who bullies others with threats of your family's power.</p>\n<p>You use whatever tools you have to get the job done. You can deal sneak attack damage with any weapon, not just the weapons listed in the sneak attack class feature. This benefit doesn't apply to a simple weapon with a damage die greater than d8 or a martial or advanced weapon with a damage die greater than d6. (Apply any abilities that alter the damage die size first.) Critical hits you make with these weapons gain the weapon's critical specialization benefit if the target is @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard] to you.</p>\n<p>You're trained in Intimidation and medium armor. You can choose Strength as your key attribute. When you gain light armor expertise, you also gain expert proficiency in medium armor, and when you gain light armor mastery, you also gain master proficiency in medium armor.</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "rules": [
+            {
+                "category": "precision",
+                "diceNumber": "@actor.flags.pf2e.sneakAttackDamage.number",
+                "dieSize": "d{actor|flags.pf2e.sneakAttackDamage.faces}",
+                "key": "DamageDice",
+                "label": "PF2E.SpecificRule.SneakAttack",
+                "predicate": [
+                    "target:condition:off-guard",
+                    {
+                        "or": [
+                            {
+                                "and": [
+                                    "item:category:simple",
+                                    {
+                                        "lte": [
+                                            "item:damage:die:faces",
+                                            8
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "and": [
+                                    {
+                                        "or": [
+                                            "item:category:martial",
+                                            "item:category:advanced"
+                                        ]
+                                    },
+                                    {
+                                        "lte": [
+                                            "item:damage:die:faces",
+                                            6
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "nor": [
+                            {
+                                "and": [
+                                    "item:ranged",
+                                    {
+                                        "not": "item:thrown-melee"
+                                    }
+                                ]
+                            },
+                            "item:trait:agile",
+                            "item:trait:finesse"
+                        ]
+                    }
+                ],
+                "selector": "strike-damage"
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.skills.itm.rank",
+                "value": 1
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.proficiencies.defenses.medium.rank",
+                "predicate": [
+                    "feature:light-armor-expertise"
+                ],
+                "value": 2
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "upgrade",
+                "path": "system.proficiencies.defenses.medium.rank",
+                "predicate": [
+                    "feature:light-armor-mastery"
+                ],
+                "value": 3
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    "target:condition:off-guard",
+                    "item:category:simple",
+                    {
+                        "lte": [
+                            "item:damage:die:faces",
+                            8
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "CriticalSpecialization",
+                "predicate": [
+                    "target:condition:off-guard",
+                    "item:category:martial",
+                    {
+                        "lte": [
+                            "item:damage:die:faces",
+                            6
+                        ]
+                    }
+                ]
+            }
+        ],
+        "subfeatures": {
+            "keyOptions": [
+                "str"
+            ],
+            "proficiencies": {
+                "medium": {
+                    "rank": 1
+                }
+            }
+        },
+        "traits": {
+            "otherTags": [
+                "rogue-racket"
+            ],
+            "rarity": "common",
+            "value": [
+                "rogue"
+            ]
+        }
+    },
+    "type": "feat"
+}

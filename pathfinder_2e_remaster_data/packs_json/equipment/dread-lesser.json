@@ -1,0 +1,48 @@
+{
+    "_id": "gSSibF07emWGpGKw",
+    "img": "systems/pf2e/icons/equipment/runes/armor-property-runes/armor-property-runes.webp",
+    "name": "Dread (Lesser)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>Eerie symbols cover your armor, inspiring terror in your foes. Frightened enemies within 30 feet that can see you must attempt a @Check[type:will|dc:20|name:Dread Rune|traits:fear|showDC:all] save at the end of their turn; on a failure, the value of their @UUID[Compendium.pf2e.conditionitems.Item.Frightened] condition doesn't decrease below 1 that turn.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 6
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 225
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: The Grand Bazaar"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": []
+        },
+        "usage": {
+            "value": "etched-onto-armor"
+        }
+    },
+    "type": "equipment"
+}

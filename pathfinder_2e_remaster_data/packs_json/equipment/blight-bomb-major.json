@@ -1,0 +1,84 @@
+{
+    "_id": "sJjuv1991SZ7DWWD",
+    "img": "systems/pf2e/icons/equipment/alchemical-items/alchemical-bombs/blight-bomb.webp",
+    "name": "Blight Bomb (Major)",
+    "system": {
+        "baseItem": "alchemical-bomb",
+        "bonus": {
+            "value": 3
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "poison",
+            "dice": 4,
+            "die": "d6",
+            "persistent": {
+                "faces": 4,
+                "number": 4,
+                "type": "poison"
+            }
+        },
+        "description": {
+            "value": "<p><strong>Usage</strong> held in 1 hand</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> Strike</p>\n<p>Blight bombs contain volatile toxic chemicals that rot flesh. A blight bomb deals 4d6 poison damage, 4d4 persistent poison damage, and 4 poison splash damage. You gain a +3 item bonus to attack rolls.</p>"
+        },
+        "group": "bomb",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 17
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 2500
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "quantity": 1,
+        "range": 20,
+        "reload": {
+            "value": "-"
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 4
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "alchemical",
+                "bomb",
+                "consumable",
+                "poison",
+                "splash"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

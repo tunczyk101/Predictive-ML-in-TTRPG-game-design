@@ -1,0 +1,45 @@
+{
+    "_id": "aqhEATP0vu4kx15I",
+    "img": "systems/pf2e/icons/equipment/treasure/art-objects/major-art-object/saints-bone-with-lost-scriptures.webp",
+    "name": "Saint's bone with lost scriptures",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": ""
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 1000
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Gamemastery Guide"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "treasure"
+}

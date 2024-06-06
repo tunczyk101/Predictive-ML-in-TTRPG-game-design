@@ -1,0 +1,54 @@
+{
+    "_id": "BPZPA9Y8kPewVYoW",
+    "img": "icons/equipment/shield/heater-steel-boss-red.webp",
+    "name": "Magnetic Shield",
+    "system": {
+        "acBonus": 2,
+        "baseItem": null,
+        "bulk": {
+            "value": 1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> Interact</p>\n<p>Copper rings spiral around this steel shield. Twin electrical probes near the grip can socket into a jar of moderate (or higher leveled) bottled lightning, which takes 3 Interact actions to install. A loaded magnetic shield can be activated to convert it into an electromagnet. When an activated magnetic shield is raised, the circumstance bonus increases by 1 against attacks made with weapons primarily made of metal. If you use a Shield Block against a creature attacking you with such a weapon, you also gain a +1 item bonus to @UUID[Compendium.pf2e.actionspf2e.Item.Disarm] attempts against that weapon until the end of your next turn. The shield remains charged for 3 rounds, consuming the bottled lightning, and once the reaction has begun it can't be deactivated.</p>"
+        },
+        "hardness": 5,
+        "hp": {
+            "max": 20,
+            "value": 20
+        },
+        "level": {
+            "value": 5
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 130
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "reinforcing": 0
+        },
+        "size": "med",
+        "speedPenalty": 0,
+        "traits": {
+            "integrated": null,
+            "rarity": "common",
+            "value": [
+                "alchemical",
+                "aura"
+            ]
+        }
+    },
+    "type": "shield"
+}

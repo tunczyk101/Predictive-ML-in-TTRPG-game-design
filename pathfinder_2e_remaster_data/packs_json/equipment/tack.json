@@ -1,0 +1,48 @@
+{
+    "_id": "Bu2xT8NfB6xaeTJa",
+    "img": "systems/pf2e/icons/equipment/adventuring-gear/tack.webp",
+    "name": "Tack",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 2
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>Tack includes all the gear required to outfit a riding animal, including a saddle, bit and bridle, and stirrups if necessary. Especially large or oddly shaped animals might require specialty saddles. These can be more expensive or hard to find, as determined by the GM. The Bulk value given is for tack worn by a creature. If carried, the Bulk increases to 2.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 4
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": []
+        },
+        "usage": {
+            "value": "other"
+        }
+    },
+    "type": "equipment"
+}

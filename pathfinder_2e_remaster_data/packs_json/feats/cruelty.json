@@ -1,0 +1,42 @@
+{
+    "_id": "vxA0VRN10OwUkGAr",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Cruelty",
+    "system": {
+        "actionType": {
+            "value": "action"
+        },
+        "actions": {
+            "value": 1
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>The harm you deal with your corrupting touch saps the strength from your enemy's body.</p>\n<p>If your next action is to cast @UUID[Compendium.pf2e.spells-srd.Item.Touch of Corruption] on a living creature, the target is also @UUID[Compendium.pf2e.conditionitems.Item.Enfeebled]{Enfeebled 1} for 1 minute if it fails its save (enfeebled 2 if it critically fails).</p>"
+        },
+        "level": {
+            "value": 4
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "devotion spell (touch of corruption)"
+                }
+            ]
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "champion",
+                "concentrate",
+                "spellshape"
+            ]
+        }
+    },
+    "type": "feat"
+}

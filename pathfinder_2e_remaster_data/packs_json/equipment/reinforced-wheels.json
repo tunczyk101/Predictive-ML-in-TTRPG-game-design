@@ -1,0 +1,77 @@
+{
+    "_id": "pKiuN3wnAxlJCBuK",
+    "img": "systems/pf2e/icons/equipment/other/attached-items/reinforced-wheel.webp",
+    "name": "Reinforced Wheels",
+    "system": {
+        "baseItem": "reinforced-wheels",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+            "damageType": "bludgeoning",
+            "dice": 1,
+            "die": "d4"
+        },
+        "description": {
+            "value": "<p>The chair's wheels have been reinforced with tough, metal rims or a metal cap. While in the chair, you gain a wheel Strike. Your wheel deals 1d4 bludgeoning damage and has the agile, attached, and free-hand traits. A reinforced wheel is a simple melee weapon in the club weapon group. You can etch weapon runes onto reinforced wheels. A wheelchair can only have one attached weapon.</p>"
+        },
+        "group": "club",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "sp": 5
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: The Grand Bazaar"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "agile",
+                "attached",
+                "free-hand"
+            ]
+        },
+        "usage": {
+            "value": "worngloves"
+        }
+    },
+    "type": "weapon"
+}
