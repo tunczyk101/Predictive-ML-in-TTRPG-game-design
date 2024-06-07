@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 DEFAULT_TEST_SIZE: float = 0.25
 """Default value of fraction of the dataset to include in test split."""
 
-PATH_TO_MAPPINGS: str = "../training/books_with_dates.csv"
+PATH_TO_MAPPINGS: str = "training/books_with_dates.csv"
 """Path to CSV file containing mappings between books and their publishing dates."""
 
 

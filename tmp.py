@@ -1,3 +1,5 @@
+from pprint import pprint
+
 from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
 from training.creating_dataset import load_and_preprocess_data
@@ -6,7 +8,7 @@ from training.splitting_dataset import get_date_books_mapping, split_dataframe
 from training.train_and_evaluate_models import train_and_evaluate_models
 
 bestiaries = load_and_preprocess_data(
-    [f"pathfinder_2e_data/{f}" for f in DATASET_FILES], FEATURES
+    [f"pathfinder_2e_remaster_data/{f}" for f in DATASET_FILES], FEATURES
 )
 
 columns = [col for col in bestiaries.columns if col not in ["book", "level"]]
@@ -46,4 +48,4 @@ results = train_and_evaluate_models(
     multiple_thresholds=False,
     graph_thresholds=False,
 )
-print(results)
+pprint(results)

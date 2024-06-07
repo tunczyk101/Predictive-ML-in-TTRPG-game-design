@@ -77,20 +77,8 @@ def get_model_results(
     :param graph_thresholds: Whether to find the graph-based threshold
     :return: Dictionary containing evaluation metrics for different rounding strategies
     """
-    if type(model) != OrderedResultsWrapper:
-        y_pred_train = model.predict(X_train)
-        y_pred_test = model.predict(X_test)
-    else:
-        y_pred_train = (
-            model.predict(X_train)
-            .rename(columns={i + 1: i for i in range(-1, 22)})
-            .idxmax(axis=1)
-        )
-        y_pred_test = (
-            model.predict(X_test)
-            .rename(columns={i + 1: i for i in range(-1, 22)})
-            .idxmax(axis=1)
-        )
+    y_pred_train = model.predict(X_train)
+    y_pred_test = model.predict(X_test)
 
     model_results = {
         "no_rounding": {

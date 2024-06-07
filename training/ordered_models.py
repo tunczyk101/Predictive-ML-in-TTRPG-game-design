@@ -1,3 +1,5 @@
+from typing import Optional
+
 import numpy as np
 from sklearn.base import BaseEstimator, ClassifierMixin
 from statsmodels.miscmodels.ordinal_model import OrderedModel
@@ -16,14 +18,14 @@ class RegularizedOrderedModel(OrderedModel):
 
 
 class LinearOrdinalModel(BaseEstimator, ClassifierMixin):
-    def __init__(self, alpha: float = 0.0):
-        self.alpha = alpha
+    def __init__(self, offset: Optional[float] = None):
+        self.offset = offset
 
     def fit(self, X, y=None):
-        self.model_ = RegularizedOrderedModel(
-            exog=X, endog=y, distr="logit", alpha=self.alpha
+        model = RegularizedOrderedModel(
+            exog=X, endog=y, distr="logit", offset=self.offset
         )
-        self.model_.fit(method="lbfgs")
+        self.model_ = model.fit(method="lbfgs", disp=0)
 
     def predict(self, X):
         return (
