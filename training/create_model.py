@@ -42,6 +42,7 @@ def get_fitted_model(
 
     model = create_model(classifier_name)
     model.fit(X_train, y_train)
+    print(model.best_params_)
 
     return model
 
@@ -188,7 +189,7 @@ def create_model(classifier_name: str):
         case "linear_ordinal_model":
             model = LinearOrdinalModel()
             hyper_params = {
-                "alpha": [0, 1e-2, 1e-1, 1, 10, 100]
+                "offset": [0.75, 1, 1.25]
             }
             model = GridSearchCV(
                 estimator=model,
@@ -196,6 +197,7 @@ def create_model(classifier_name: str):
                 scoring="neg_mean_absolute_error",
                 return_train_score=True,
                 n_jobs=-1,
+                verbose=10,
             )
         case _:
             raise ValueError(f"Classifier {classifier_name} is unsupported")
