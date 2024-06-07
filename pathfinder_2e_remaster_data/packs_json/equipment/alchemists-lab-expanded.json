@@ -1,0 +1,60 @@
+{
+    "_id": "uhka9LHEP3wDKytG",
+    "img": "icons/containers/chest/chest-simple-box-steel-brown.webp",
+    "name": "Alchemist's Lab (Expanded)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 6
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>You need an alchemist's lab to Craft alchemical items during downtime.</p>\n<p>An expanded alchemist's lab gives a +1 item bonus to Crafting checks to create alchemical items.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 3
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 55
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "label": "Alchemist's Lab, Expanded (craft alchemical items)",
+                "predicate": [
+                    "alchemical",
+                    "action:craft"
+                ],
+                "selector": "crafting",
+                "type": "item",
+                "value": 1
+            }
+        ],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": []
+        },
+        "usage": {
+            "value": "held-in-two-hands"
+        }
+    },
+    "type": "equipment"
+}

@@ -1,0 +1,99 @@
+{
+    "_id": "RgVOC3rpptrwENbu",
+    "img": "systems/pf2e/icons/equipment/weapons/dagger.webp",
+    "name": "Little Love",
+    "system": {
+        "baseItem": "dagger",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d4"
+        },
+        "description": {
+            "value": "<p>This steel <em>+1 dagger</em> is chipped and worn but no less deadly for its much-used appearance. When you critically succeed at an attack roll with <em>Little Love</em>, you can activate the dagger to spring away from your foes.</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">F</span> (manipulate)</p>\n<p><strong>Frequency</strong> once per 10 minutes</p>\n<p><strong>Trigger</strong> You critically hit a creature with <em>Little Love</em></p>\n<hr />\n<p><strong>Effect</strong> You @UUID[Compendium.pf2e.actionspf2e.Item.Leap] (or Vault, if you're Spring-Heeled Jack).</p>"
+        },
+        "group": "knife",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 3
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 60
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Monsters of Myth"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": "-"
+        },
+        "rules": [
+            {
+                "key": "Note",
+                "outcome": [
+                    "criticalSuccess"
+                ],
+                "selector": "{item|_id}-damage",
+                "text": "<span class=\"action-glyph\">f</span> Interact; <strong>Frequency</strong> once per 10 minutes; <strong>Effect</strong> You @UUID[Compendium.pf2e.actionspf2e.Item.Leap] (or Vault, if you're Spring-Heeled Jack).",
+                "title": "{item|name}"
+            }
+        ],
+        "runes": {
+            "potency": 1,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 1,
+                "property": [],
+                "striking": 0
+            }
+        },
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "rare",
+            "value": [
+                "agile",
+                "finesse",
+                "thrown-10",
+                "versatile-s"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

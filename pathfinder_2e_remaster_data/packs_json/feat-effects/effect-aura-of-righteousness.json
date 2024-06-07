@@ -1,0 +1,43 @@
+{
+    "_id": "L0hDj8vFk1IWh01L",
+    "img": "systems/pf2e/icons/spells/angelic-wings.webp",
+    "name": "Effect: Aura of Righteousness",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.Aura of Righteousness]</p>\n<p>You and all allies within 15 feet gain resistance 5 to unholy.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "unlimited",
+            "value": -1
+        },
+        "level": {
+            "value": 14
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Core Rulebook"
+        },
+        "rules": [
+            {
+                "key": "Resistance",
+                "type": "unholy",
+                "value": 5
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

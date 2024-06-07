@@ -1,0 +1,70 @@
+{
+    "_id": "rKknk8odXDBpON5l",
+    "img": "systems/pf2e/icons/equipment/consumables/ammunition/explosive-ammunition.webp",
+    "name": "Explosive Ammunition",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "category": "ammo",
+        "containerId": null,
+        "damage": {
+            "formula": "6d6",
+            "kind": "damage",
+            "type": "fire"
+        },
+        "description": {
+            "value": "<p><strong>Ammunition</strong> any</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> (manipulate)</p>\n<hr />\n<p>This piece of ammunition is coated in gritty black soot. When activated <em>explosive ammunition</em> hits a target, the missile explodes in a @Template[type:burst|distance:10], dealing @Damage[6d6[fire]|traits:area-damage] damage to each creature in the area (including the target). Each creature must attempt a @Check[type:reflex|dc:25|basic:true] save.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 9
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 130
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder GM Core"
+        },
+        "quantity": 1,
+        "rules": [
+            {
+                "key": "Note",
+                "selector": "{item|_id}-damage",
+                "text": "PF2E.AmmunitionNotes.ExplosiveAmmunition.Normal.Text",
+                "title": "PF2E.AmmunitionNotes.ExplosiveAmmunition.Normal.Title"
+            }
+        ],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "consumable",
+                "fire",
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

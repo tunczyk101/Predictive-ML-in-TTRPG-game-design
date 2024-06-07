@@ -1,0 +1,125 @@
+{
+    "_id": "aDOL3OAEWf3ka9oT",
+    "img": "icons/skills/wounds/blood-cells-vessel-red-orange.webp",
+    "name": "Spell Effect: Blood Ward",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Blood Ward]</p>\n<p>You gain a +1 status bonus to saving throws and AC against creatures with the trait you select.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": true,
+            "unit": "minutes",
+            "value": 1
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "origin:trait:{item|flags.pf2e.rulesSelections.blood}"
+                ],
+                "selector": [
+                    "ac",
+                    "saving-throw"
+                ],
+                "type": "status",
+                "value": {
+                    "brackets": [
+                        {
+                            "end": 4,
+                            "start": 1,
+                            "value": 1
+                        },
+                        {
+                            "start": 5,
+                            "value": 2
+                        }
+                    ],
+                    "field": "item|system.level.value"
+                }
+            },
+            {
+                "choices": [
+                    {
+                        "label": "PF2E.TraitAberration",
+                        "value": "aberration"
+                    },
+                    {
+                        "label": "PF2E.TraitAnimal",
+                        "value": "animal"
+                    },
+                    {
+                        "label": "PF2E.TraitBeast",
+                        "value": "beast"
+                    },
+                    {
+                        "label": "PF2E.TraitCelestial",
+                        "value": "celestial"
+                    },
+                    {
+                        "label": "PF2E.TraitConstruct",
+                        "value": "construct"
+                    },
+                    {
+                        "label": "PF2E.TraitDragon",
+                        "value": "dragon"
+                    },
+                    {
+                        "label": "PF2E.TraitElemental",
+                        "value": "elemental"
+                    },
+                    {
+                        "label": "PF2E.TraitFey",
+                        "value": "fey"
+                    },
+                    {
+                        "label": "PF2E.TraitFiend",
+                        "value": "fiend"
+                    },
+                    {
+                        "label": "PF2E.TraitFungus",
+                        "value": "fungus"
+                    },
+                    {
+                        "label": "PF2E.TraitMonitor",
+                        "value": "monitor"
+                    },
+                    {
+                        "label": "PF2E.TraitOoze",
+                        "value": "ooze"
+                    },
+                    {
+                        "label": "PF2E.TraitPlant",
+                        "value": "plant"
+                    },
+                    {
+                        "label": "PF2E.TraitUndead",
+                        "value": "undead"
+                    }
+                ],
+                "flag": "blood",
+                "key": "ChoiceSet"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

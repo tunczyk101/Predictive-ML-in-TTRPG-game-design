@@ -1,0 +1,50 @@
+{
+    "_id": "slkvVyRBrUJyZQj8",
+    "img": "icons/commodities/treasure/token-runed-os-grey.webp",
+    "name": "Retaliation (Lesser)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>Shields with a retaliation rune use the impact of weapons to generate blasts of explosive force that counterattack foes.</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">F</span> envision</p>\n<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Trigger</strong> You Shield Block a melee Strike</p>\n<hr />\n<p><strong>Effect</strong> You unleash force damage against the creature that made the triggering attack. This attack deals @Damage[4d4[force]] (@Check[type:reflex|dc:20|basic:true]).</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 6
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 250
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "applied-to-shield"
+        }
+    },
+    "type": "equipment"
+}

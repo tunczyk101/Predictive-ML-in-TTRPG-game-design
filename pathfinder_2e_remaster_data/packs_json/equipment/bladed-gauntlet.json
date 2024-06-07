@@ -1,0 +1,78 @@
+{
+    "_id": "PJboj72eI9JXjtbn",
+    "img": "icons/equipment/hand/gauntlet-tooled-steel.webp",
+    "name": "Bladed Gauntlet",
+    "system": {
+        "baseItem": "bladed-gauntlet",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "slashing",
+            "dice": 1,
+            "die": "d4"
+        },
+        "description": {
+            "value": "<p>A dagger attached to a retractable mechanism is integrated in this gauntlet's dorsum, so a combatant can quickly arm themself with a blade to exploit the weak points in an enemy's armor. Switching configurations on the gauntlet reveals or retracts the contained dagger as appropriate. The dagger isn't removable, and thus can't be wielded or etched with runes separately from the gauntlet.</p>"
+        },
+        "group": "brawling",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 5
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Knights of Lastwall"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "agile",
+                "finesse",
+                "free-hand",
+                "modular"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

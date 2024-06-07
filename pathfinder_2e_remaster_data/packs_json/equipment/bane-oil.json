@@ -1,0 +1,59 @@
+{
+    "_id": "F8jLnpBuvzM0nBp4",
+    "img": "systems/pf2e/icons/default-icons/consumable.svg",
+    "name": "Bane Oil",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "oil",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> Interact</p>\n<p>Bane oil comes in as many forms as the bane weapon property rune. Coating a weapon with the oil gives the weapon the benefit of one type of @UUID[Compendium.pf2e.equipment-srd.Item.Bane] rune for 1 minute. A weapon can be coated in only one type of bane oil at a time. Any new application of this oil supersedes any previous one. If a weapon has the bane rune, this oil has no effect if it's of the same type as the rune.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 3
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 12
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "consumable",
+                "magical",
+                "oil"
+            ]
+        },
+        "usage": {
+            "value": "held-in-two-hands"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

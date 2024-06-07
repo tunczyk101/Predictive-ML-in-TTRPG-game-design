@@ -1,0 +1,77 @@
+{
+    "_id": "XguFCTUBh1yqJXd1",
+    "img": "systems/pf2e/icons/equipment/weapons/spraysling.webp",
+    "name": "Spraysling",
+    "system": {
+        "baseItem": "spraysling",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "bludgeoning",
+            "dice": 1,
+            "die": "d6"
+        },
+        "description": {
+            "value": "<p>A spraysling is similar to a standard sling but with a wider cup fitted with a thin blade affixed to the cup's edges. When used to make an attack with a specially prepared packet of spray pellets, the razor slices open the packet and the weapon launches a cluster of stinging pellets.</p>"
+        },
+        "group": "sling",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 1
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "range": 20,
+        "reload": {
+            "value": "1"
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "halfling",
+                "propulsive",
+                "scatter-5"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

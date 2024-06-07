@@ -1,0 +1,48 @@
+{
+    "_id": "VLtEtfIggBKXuy7S",
+    "img": "systems/pf2e/icons/default-icons/equipment.svg",
+    "name": "Rappelling Kit",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This satchel contains all the basic equipment found in a climbing kit plus the specialized equipment—including a harness, belay device, and locking clips—needed for descents. When Climbing down with a rappelling kit, you move twice as fast as usual based on your check result.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 3
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 30
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Firebrands"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": []
+        },
+        "usage": {
+            "value": "other"
+        }
+    },
+    "type": "equipment"
+}

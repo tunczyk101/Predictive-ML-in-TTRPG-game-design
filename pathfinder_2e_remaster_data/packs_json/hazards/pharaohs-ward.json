@@ -1,0 +1,103 @@
+{
+    "_id": "m4PRYxFq9ojcwesh",
+    "img": "systems/pf2e/icons/default-icons/hazard.svg",
+    "items": [
+        {
+            "_id": "Cc30YjKZ7qSxVjSC",
+            "img": "systems/pf2e/icons/actions/Reaction.webp",
+            "name": "Curse the Intruders",
+            "sort": 100000,
+            "system": {
+                "actionType": {
+                    "value": "reaction"
+                },
+                "actions": {
+                    "value": null
+                },
+                "category": null,
+                "description": {
+                    "value": "<p><strong>Trigger</strong> The seal on the tomb is broken from the outside.</p>\n<hr />\n<p><strong>Effect</strong> Each living creature within 60 feet must succeed at a @Check[type:will|dc:23] save or be subjected to the pharaoh's curse. A cursed creature takes a -2 status penalty to Fortitude saves, and any natural or magical healing it receives is halved. The curse remains until removed by @UUID[Compendium.pf2e.spells-srd.Item.Cleanse Affliction] or similar magic.</p>"
+                },
+                "publication": {
+                    "license": "OGL",
+                    "remaster": false,
+                    "title": ""
+                },
+                "rules": [],
+                "slug": null,
+                "traits": {
+                    "rarity": "common",
+                    "value": [
+                        "curse",
+                        "divine"
+                    ]
+                }
+            },
+            "type": "action"
+        }
+    ],
+    "name": "Pharaoh's Ward",
+    "system": {
+        "attributes": {
+            "ac": {
+                "value": 0
+            },
+            "emitsSound": "encounter",
+            "hardness": 0,
+            "hasHealth": false,
+            "hp": {
+                "details": "",
+                "max": 0,
+                "temp": 0,
+                "tempmax": 0,
+                "value": 0
+            },
+            "stealth": {
+                "details": "<p>(expert)</p>",
+                "value": 15
+            }
+        },
+        "creatureType": "",
+        "details": {
+            "description": "<p>A curse is imbued on an entryway's threshold.</p>",
+            "disable": "<p>@Check[type:thievery|dc:27|name:Remove the Lintel] (master) to painstakingly remove the lintel without triggering the magic, or @UUID[Compendium.pf2e.spells-srd.Item.Dispel Magic] (4th rank; counteract DC 25) to counteract the rune</p>",
+            "isComplex": false,
+            "level": {
+                "value": 7
+            },
+            "publication": {
+                "license": "ORC",
+                "remaster": true,
+                "title": "Pathfinder GM Core"
+            },
+            "reset": "<p>The trap resets when the door is shut.</p>",
+            "routine": ""
+        },
+        "saves": {
+            "fortitude": {
+                "saveDetail": "",
+                "value": 0
+            },
+            "reflex": {
+                "saveDetail": "",
+                "value": 0
+            },
+            "will": {
+                "saveDetail": "",
+                "value": 0
+            }
+        },
+        "statusEffects": [],
+        "traits": {
+            "rarity": "common",
+            "size": {
+                "value": "med"
+            },
+            "value": [
+                "magical",
+                "trap"
+            ]
+        }
+    },
+    "type": "hazard"
+}

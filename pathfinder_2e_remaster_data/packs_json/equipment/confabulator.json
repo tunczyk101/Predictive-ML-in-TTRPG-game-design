@@ -1,0 +1,67 @@
+{
+    "_id": "gSf5aYA9D8MSolc9",
+    "img": "systems/pf2e/icons/default-icons/equipment.svg",
+    "name": "Confabulator",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This device attaches to any non-percussive musical instrument, allowing a non-verbal character to shape the sounds of the instrument into speech. The speech can be any language the character understands, and the sound of the speech resembles the instrument the device is attached to. You also gain a +1 item bonus to Performance checks made with the instrument.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 3
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 55
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "confabstrument"
+                ],
+                "selector": "performance",
+                "type": "item",
+                "value": 1
+            },
+            {
+                "domain": "performance",
+                "key": "RollOption",
+                "label": "Confabulator Instrument",
+                "option": "confabstrument"
+            }
+        ],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "illusion",
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "affixed-to-instrument"
+        }
+    },
+    "type": "equipment"
+}

@@ -1,0 +1,45 @@
+{
+    "_id": "iNrR4WOB1UO9iiNE",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Lifesense",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "ancestry",
+        "description": {
+            "value": "<p>You have a limited ability to sense life force, like your psychopomp forebears.</p>\n<p>You gain lifesense as an imprecise sense with a range of 10 feet. This allows you to sense the life force within living creatures and its counterforce that animates the undead, though you can't distinguish between the two.</p>"
+        },
+        "level": {
+            "value": 5
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "rules": [],
+        "subfeatures": {
+            "senses": {
+                "lifesense": {
+                    "acuity": "imprecise",
+                    "range": 10
+                }
+            }
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "divine",
+                "duskwalker"
+            ]
+        }
+    },
+    "type": "feat"
+}

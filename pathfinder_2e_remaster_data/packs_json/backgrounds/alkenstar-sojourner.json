@@ -1,0 +1,54 @@
+{
+    "_id": "Yuwr2pT3z3WYTX9T",
+    "img": "systems/pf2e/icons/default-icons/background.svg",
+    "name": "Alkenstar Sojourner",
+    "system": {
+        "boosts": {
+            "0": {
+                "value": [
+                    "cha",
+                    "int"
+                ]
+            },
+            "1": {
+                "value": [
+                    "cha",
+                    "con",
+                    "dex",
+                    "int",
+                    "str",
+                    "wis"
+                ]
+            }
+        },
+        "description": {
+            "value": "<p>You came to Alkenstar because you heard they had guns, but you stayed because of the atmosphere. Or the guns. Either way, journalism and scientific curiosity opened the door to a life of adventure. Now you continue to adventure in the Alkenstar area, using your skills to deal with whatever situations present themselves.</p>\n<p>Choose two ability boosts. One must be to <strong>Intelligence</strong> or <strong>Charisma</strong>, and one is a free ability boost.</p>\n<p>You're trained in Society and Engineering Lore. You gain the @UUID[Compendium.pf2e.feats-srd.Item.Streetwise] skill feat.</p>"
+        },
+        "items": {
+            "i6f1u": {
+                "img": "icons/sundries/books/book-red-exclamation.webp",
+                "level": 1,
+                "name": "Streetwise",
+                "uuid": "Compendium.pf2e.feats-srd.Item.Streetwise"
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Guns & Gears"
+        },
+        "rules": [],
+        "trainedLore": "Engineering",
+        "trainedSkills": {
+            "custom": "",
+            "value": [
+                "soc"
+            ]
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "value": []
+        }
+    },
+    "type": "background"
+}

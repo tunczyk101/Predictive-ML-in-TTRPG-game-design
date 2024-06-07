@@ -1,0 +1,48 @@
+{
+    "_id": "A1CDXAP4bNGgntE7",
+    "img": "systems/pf2e/icons/equipment/held-items/ball.webp",
+    "name": "Ball",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>Toy balls come in a variety of shapes, sizes, and compositions, such as with squishy fabric, bouncy rubber, or lightweight wicker, or forms like bean-filled sacks and hard-hide balls.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "cp": 3
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: The Grand Bazaar"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": []
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "equipment"
+}

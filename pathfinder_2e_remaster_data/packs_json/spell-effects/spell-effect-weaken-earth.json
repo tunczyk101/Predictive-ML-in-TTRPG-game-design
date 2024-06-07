@@ -1,0 +1,42 @@
+{
+    "_id": "uD13zIE22foqmFgt",
+    "img": "icons/commodities/stone/clay-grey.webp",
+    "name": "Spell Effect: Weaken Earth",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Weaken Earth]</p>\n<p>The target gains weakness to physical damage.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "minutes",
+            "value": 1
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": true,
+            "title": "Pathfinder Rage of Elements"
+        },
+        "rules": [
+            {
+                "key": "Weakness",
+                "type": "physical",
+                "value": "ceil(@item.level/2)*3"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

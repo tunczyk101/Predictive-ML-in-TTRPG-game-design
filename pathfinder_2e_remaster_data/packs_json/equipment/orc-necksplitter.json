@@ -1,0 +1,77 @@
+{
+    "_id": "J6H5UbLVsSXShoTs",
+    "img": "icons/weapons/axes/axe-battle-heavy-jagged.webp",
+    "name": "Orc Necksplitter",
+    "system": {
+        "baseItem": "orc-necksplitter",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 1
+        },
+        "category": "advanced",
+        "containerId": null,
+        "damage": {
+            "damageType": "slashing",
+            "dice": 1,
+            "die": "d8"
+        },
+        "description": {
+            "value": "<p>This single-bladed bearded axe has a jagged blade that's perfect for separating bone from tendon and cartilage.</p>"
+        },
+        "group": "axe",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 2
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "forceful",
+                "orc",
+                "sweep"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

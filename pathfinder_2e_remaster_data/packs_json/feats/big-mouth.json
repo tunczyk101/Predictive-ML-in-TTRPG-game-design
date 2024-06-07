@@ -1,0 +1,40 @@
+{
+    "_id": "cCv9pgyXzZ0TQmZg",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Big Mouth",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "ancestry",
+        "description": {
+            "value": "<p>Your cheek pouches are especially stretchy. Instead of storing up to four items of Light Bulk in your cheek pouches, you can store up to 1 Bulk worth of items. The maximum size of a given item is unchanged.</p>"
+        },
+        "level": {
+            "value": 9
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "Cheek Pouches"
+                }
+            ]
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "ratfolk"
+            ]
+        }
+    },
+    "type": "feat"
+}

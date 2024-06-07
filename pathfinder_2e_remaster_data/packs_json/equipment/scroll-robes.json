@@ -1,0 +1,59 @@
+{
+    "_id": "VJ4s6ABlkimSyjjZ",
+    "img": "systems/pf2e/icons/equipment/armor/scroll-robes.webp",
+    "name": "Scroll Robes",
+    "system": {
+        "acBonus": 0,
+        "baseItem": "scroll-robes",
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "unarmored",
+        "checkPenalty": 0,
+        "containerId": null,
+        "description": {
+            "value": "<p>Scroll robes are composed of paper alchemically treated for strength and flexibility. A layered structure prevents cutting and tearing, and for the purpose of calculating damage, the robes are considered to be cloth. The paper accepts all sorts of decoration, including magical writing, as detailed in the inscribed trait.</p>"
+        },
+        "dexCap": 5,
+        "group": "cloth",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "sp": 15
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "resilient": 0
+        },
+        "size": "med",
+        "speedPenalty": 0,
+        "strength": null,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "inscribed"
+            ]
+        }
+    },
+    "type": "armor"
+}

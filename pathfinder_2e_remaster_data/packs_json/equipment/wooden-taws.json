@@ -1,0 +1,57 @@
+{
+    "_id": "YrNmw0Rn3MqT0yKP",
+    "img": "systems/pf2e/icons/equipment/weapons/wooden-taws.webp",
+    "name": "Wooden Taws",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "category": "ammo",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p>Wooden Taws to be fired from a Taw launcher.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "per": 10,
+            "value": {
+                "sp": 1
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Ancestry Guide"
+        },
+        "quantity": 10,
+        "rules": [],
+        "size": "med",
+        "stackGroup": "woodenTaws",
+        "traits": {
+            "rarity": "common",
+            "value": []
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

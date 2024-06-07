@@ -1,0 +1,57 @@
+{
+    "_id": "LF7HSNnlGxLJyDZS",
+    "img": "icons/equipment/chest/breastplate-layered-steel.webp",
+    "name": "Hellknight Breastplate",
+    "system": {
+        "acBonus": 4,
+        "baseItem": "hellknight-breastplate",
+        "bulk": {
+            "value": 2
+        },
+        "category": "medium",
+        "checkPenalty": -2,
+        "containerId": null,
+        "description": {
+            "value": "<p>Hellknights wear a variety of armors decorated with designs specific to the order. Hellknight breastplate serves those in the order who lack the training to wear heavy armor.</p>\n<p>A character who is a member of the Hellknights has access to these uncommon armors.</p>"
+        },
+        "dexCap": 1,
+        "group": "plate",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 1
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 10
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "resilient": 0
+        },
+        "size": "med",
+        "speedPenalty": -5,
+        "strength": 3,
+        "traits": {
+            "rarity": "uncommon",
+            "value": []
+        }
+    },
+    "type": "armor"
+}

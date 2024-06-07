@@ -1,0 +1,36 @@
+{
+    "_id": "asRbkgW59DZUpvAq",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Extend Elixir",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>Integrating your own personal energy into the elixirs you create causes them to affect you for longer. When you consume one of your alchemical items that has the elixir and infused traits and a duration of 1 minute or longer, that elixir's duration is doubled.</p>"
+        },
+        "level": {
+            "value": 12
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Core Rulebook"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "alchemist"
+            ]
+        }
+    },
+    "type": "feat"
+}

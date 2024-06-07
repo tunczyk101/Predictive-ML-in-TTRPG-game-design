@@ -1,0 +1,66 @@
+{
+    "_id": "6IsZQpwRJQWIzdGx",
+    "img": "icons/magic/symbols/elements-air-earth-fire-water.webp",
+    "name": "Stance: Masquerade of Seasons Stance",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.Masquerade of Seasons Stance]</p>\n<p>Choose one of the following traits: water, fire, void, or cold. You gain resistance to damage dealt by effects with the chosen trait.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "encounter",
+            "value": -1
+        },
+        "level": {
+            "value": 4
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Impossible Lands"
+        },
+        "rules": [
+            {
+                "choices": [
+                    {
+                        "label": "PF2E.TraitWater",
+                        "value": "water"
+                    },
+                    {
+                        "label": "PF2E.TraitFire",
+                        "value": "fire"
+                    },
+                    {
+                        "label": "PF2E.TraitVoid",
+                        "value": "void"
+                    },
+                    {
+                        "label": "PF2E.TraitCold",
+                        "value": "cold"
+                    }
+                ],
+                "flag": "masqueradeOfSeasons",
+                "key": "ChoiceSet",
+                "prompt": "PF2E.SpecificRule.Prompt.Trait"
+            },
+            {
+                "key": "Resistance",
+                "type": "{item|flags.pf2e.rulesSelections.masqueradeOfSeasons}",
+                "value": "max(5,floor(@actor.level/2))"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

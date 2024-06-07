@@ -1,0 +1,58 @@
+{
+    "_id": "9yzlmYUdvdQshTDF",
+    "img": "icons/tools/instruments/megaphone.webp",
+    "name": "Spell Effect: Bullhorn",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Bullhorn]</p>\n<p>You gain a +1 status bonus to checks to @UUID[Compendium.pf2e.actionspf2e.Item.Coerce] and auditory Performance checks to Perform at a large venue.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "minutes",
+            "value": 10
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Secrets of Magic"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "auditory",
+                    "action:perform",
+                    "terrain:large-venue"
+                ],
+                "selector": "performance",
+                "type": "status",
+                "value": 1
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "action:coerce"
+                ],
+                "selector": "intimidation",
+                "type": "status",
+                "value": 1
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

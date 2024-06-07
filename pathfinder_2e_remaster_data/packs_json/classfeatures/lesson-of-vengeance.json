@@ -1,0 +1,39 @@
+{
+    "_id": "DtmKrCvsmutVLAhH",
+    "img": "systems/pf2e/icons/spells/needle-of-vengeance.webp",
+    "name": "Lesson of Vengeance",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>You gain the @UUID[Compendium.pf2e.spells-srd.Item.Needle of Vengeance] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Phantom Pain].</p>"
+        },
+        "level": {
+            "value": 2
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "rules": [],
+        "traits": {
+            "otherTags": [
+                "witch-lesson"
+            ],
+            "rarity": "common",
+            "value": [
+                "witch"
+            ]
+        }
+    },
+    "type": "feat"
+}

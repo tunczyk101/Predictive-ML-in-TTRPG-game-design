@@ -1,0 +1,94 @@
+{
+    "_id": "B0R1MtLnQvBwnOne",
+    "img": "systems/pf2e/icons/equipment/weapons/specific-magic-weapons/sonic-tuning-mace.webp",
+    "name": "Sonic Tuning Mace",
+    "system": {
+        "baseItem": "light-mace",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+            "damageType": "bludgeoning",
+            "dice": 1,
+            "die": "d4"
+        },
+        "description": {
+            "value": "<p>This <em>+1 striking thundering light mace</em> has twin tips, perfectly spaced to resonate when striking foes.</p>\n<hr />\n<p><strong>Activate</strong> <span class=\"action-glyph\">2</span> command, Interact</p>\n<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> You tap the tuning mace against a nearby surface to cast 4th-rank @UUID[Compendium.pf2e.spells-srd.Item.Noise Blast] with a DC of 25.</p>"
+        },
+        "group": "club",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 9
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 700
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Secrets of Magic"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 1,
+            "property": [
+                "thundering"
+            ],
+            "striking": 1
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 1,
+                "property": [
+                    "thundering"
+                ],
+                "striking": 1
+            }
+        },
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "agile",
+                "finesse",
+                "magical",
+                "shove",
+                "sonic"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

@@ -1,0 +1,39 @@
+{
+    "_id": "KHKe3PmctOFUeh85",
+    "img": "icons/skills/wounds/blood-cells-vessel-red-orange.webp",
+    "name": "Lesson of Protection",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>You gain the @UUID[Compendium.pf2e.spells-srd.Item.Blood Ward] hex; your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Mystic Armor].</p>"
+        },
+        "level": {
+            "value": 2
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "rules": [],
+        "traits": {
+            "otherTags": [
+                "witch-lesson"
+            ],
+            "rarity": "common",
+            "value": [
+                "witch"
+            ]
+        }
+    },
+    "type": "feat"
+}

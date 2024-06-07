@@ -1,0 +1,43 @@
+{
+    "_id": "a6fIKxCViZwwHZLJ",
+    "img": "icons/magic/fire/flame-burning-fist-strike.webp",
+    "name": "Kinetic Mastery",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>The power flowing from you grows even difficult to resist. Your proficiency rank for your kineticist class DC increases to master.</p>"
+        },
+        "level": {
+            "value": 15
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": true,
+            "title": "Pathfinder Rage of Elements"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {
+                "kineticist": {
+                    "rank": 3
+                }
+            }
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "kineticist"
+            ]
+        }
+    },
+    "type": "feat"
+}

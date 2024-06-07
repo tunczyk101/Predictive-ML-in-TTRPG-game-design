@@ -1,0 +1,94 @@
+{
+    "_id": "OOqno1OwqJQBEtXe",
+    "img": "icons/consumables/food/soup-broth-bowl-wooden-yellow.webp",
+    "name": "Tallow Bomb (Lesser)",
+    "system": {
+        "baseItem": "alchemical-bomb",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "fire",
+            "dice": 0,
+            "die": "",
+            "persistent": {
+                "faces": 4,
+                "number": 1,
+                "type": "fire"
+            }
+        },
+        "description": {
+            "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> Strike</p>\n<hr />\n<p>A mixture of rendered animal fat and acids designed to ignite the fat when exposed to air, a tallow bomb creates a splash of burning oil that adheres to skin, clothes, and hair. A tallow bomb deals the listed fire damage, persistent fire damage, and splash damage.</p>\n<p>On a critical hit, a living creature taking persistent fire damage from a tallow bomb is @UUID[Compendium.pf2e.conditionitems.Item.Sickened]{Sickened 1} from the stench of burning fat and can't reduce its sickened value below 1 while the persistent fire damage lasts.</p>\n<p>The bomb deals 1d4 persistent fire damage and 1 fire splash damage.</p>"
+        },
+        "group": "bomb",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 1
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 3
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder #175: Broken Tusk Moon"
+        },
+        "quantity": 1,
+        "range": 20,
+        "reload": {
+            "value": "-"
+        },
+        "rules": [
+            {
+                "key": "Note",
+                "outcome": [
+                    "criticalSuccess"
+                ],
+                "selector": "{item|_id}-damage",
+                "text": "PF2E.BombNotes.TallowBomb.criticalSuccess",
+                "title": "{item|name}"
+            }
+        ],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 1
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "alchemical",
+                "bomb",
+                "consumable",
+                "fire",
+                "splash"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

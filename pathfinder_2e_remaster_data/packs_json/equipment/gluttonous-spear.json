@@ -1,0 +1,103 @@
+{
+    "_id": "2z4GSaKaVX22kzPU",
+    "img": "systems/pf2e/icons/equipment/weapons/specific-magic-weapons/gluttonous-spear.webp",
+    "name": "Gluttonous Spear",
+    "system": {
+        "baseItem": "spear",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 1
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d6"
+        },
+        "description": {
+            "value": "<p>The head of this +1 striking @UUID[Compendium.pf2e.equipment-srd.Item.Returning] spear is wrapped in greasy hide, and its head resembles a thick, clawed finger.</p>\n<p>On a critical hit, the target is @UUID[Compendium.pf2e.conditionitems.Item.Enfeebled]{Enfeebled 1} for 1 minute, and you gain [[/r 1d8]] temporary Hit Points that last for 1 minute.</p>"
+        },
+        "group": "spear",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 6
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 250
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Adventure: The Slithering"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": "-"
+        },
+        "rules": [
+            {
+                "key": "Note",
+                "outcome": [
+                    "criticalSuccess"
+                ],
+                "selector": "{item|_id}-damage",
+                "text": "{item|system.description.value}",
+                "title": "{item|name}"
+            }
+        ],
+        "runes": {
+            "potency": 1,
+            "property": [
+                "returning"
+            ],
+            "striking": 1
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 1,
+                "property": [
+                    "returning"
+                ],
+                "striking": 1
+            }
+        },
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "magical",
+                "monk",
+                "thrown-20"
+            ]
+        },
+        "usage": {
+            "canBeAmmo": false,
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

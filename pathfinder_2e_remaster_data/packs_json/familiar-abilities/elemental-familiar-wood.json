@@ -1,0 +1,36 @@
+{
+    "_id": "XYb2udoNGaE0M11Y",
+    "img": "systems/pf2e/icons/default-icons/action.svg",
+    "name": "Elemental Familiar (Wood)",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "familiar",
+        "description": {
+            "value": "<p>Your familiar gains the wood elemental trait.</p>\n<p>If your familiar remains in bright light for 1 round, it gains fast healing equal to half your level. Once it is out of bright light, this effect ends.</p>"
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": true,
+            "title": "Pathfinder Rage of Elements"
+        },
+        "rules": [
+            {
+                "add": [
+                    "wood"
+                ],
+                "key": "ActorTraits"
+            }
+        ],
+        "traits": {
+            "value": [
+                "wood"
+            ]
+        }
+    },
+    "type": "action"
+}

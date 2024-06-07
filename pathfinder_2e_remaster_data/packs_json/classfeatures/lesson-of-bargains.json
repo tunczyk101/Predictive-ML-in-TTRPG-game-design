@@ -1,0 +1,39 @@
+{
+    "_id": "RcmqV0cuOLcnKQr0",
+    "img": "icons/skills/social/diplomacy-handshake-yellow.webp",
+    "name": "Lesson of Bargains",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>You gain the @UUID[Compendium.pf2e.spells-srd.Item.Over the Coals] hex, and your familiar learns @UUID[Compendium.pf2e.spells-srd.Item.Subconscious Suggestion].</p>"
+        },
+        "level": {
+            "value": 10
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "rules": [],
+        "traits": {
+            "otherTags": [
+                "witch-lesson"
+            ],
+            "rarity": "common",
+            "value": [
+                "witch"
+            ]
+        }
+    },
+    "type": "feat"
+}

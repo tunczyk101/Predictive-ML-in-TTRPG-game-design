@@ -1,0 +1,118 @@
+{
+    "_id": "cgfl9Qr46bKaA59e",
+    "img": "systems/pf2e/icons/spells/electrified-crystal-ward.webp",
+    "name": "Glass Shield",
+    "system": {
+        "area": null,
+        "cost": {
+            "value": ""
+        },
+        "counteraction": false,
+        "damage": {
+            "dtpQLfwMi5qU2XEa": {
+                "applyMod": false,
+                "category": null,
+                "formula": "1d4",
+                "kinds": [
+                    "damage"
+                ],
+                "materials": [],
+                "type": "piercing"
+            }
+        },
+        "defense": {
+            "save": {
+                "basic": true,
+                "statistic": "reflex"
+            }
+        },
+        "description": {
+            "value": "<p>You summon a layer of clear glass to keep you from harm. This cantrip functions as the @UUID[Compendium.pf2e.spells-srd.Item.Shield] spell, except it has Hardness 2 and 4 Hit Points. If this shield breaks, provided the breaker is within 5 feet, they must succeed at a basic Reflex save or take @Damage[1d4[piercing]] damage from the glass shards.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Spell Effect: Glass Shield]</p>\n<hr />\n<p><strong>Heightened (3rd)</strong> The shield has Hardness 4 and 8 Hit Points, and the damage increases to 1d4 + your spellcasting attribute modifier.</p>\n<p><strong>Heightened (5th)</strong> The shield has Hardness 7 and 16 Hit Points, and the damage increases to 2d4 + your spellcasting attribute modifier.</p>\n<p><strong>Heightened (7th)</strong> The shield has Hardness 10 and 24 Hit Points, and the damage increases to 3d4 + your spellcasting attribute modifier.</p>\n<p><strong>Heightened (9th)</strong> The shield has Hardness 12 and 32 Hit Points, and the damage increases to 4d4 + your spellcasting attribute modifier.eld</p>"
+        },
+        "duration": {
+            "sustained": false,
+            "value": "until the start of your next turn"
+        },
+        "heightening": {
+            "levels": {
+                "3": {
+                    "damage": {
+                        "dtpQLfwMi5qU2XEa": {
+                            "applyMod": true,
+                            "category": null,
+                            "formula": "1d4",
+                            "materials": [],
+                            "type": "piercing"
+                        }
+                    }
+                },
+                "5": {
+                    "damage": {
+                        "dtpQLfwMi5qU2XEa": {
+                            "applyMod": true,
+                            "category": null,
+                            "formula": "2d4",
+                            "materials": [],
+                            "type": "piercing"
+                        }
+                    }
+                },
+                "7": {
+                    "damage": {
+                        "dtpQLfwMi5qU2XEa": {
+                            "applyMod": true,
+                            "category": null,
+                            "formula": "3d4",
+                            "materials": [],
+                            "type": "piercing"
+                        }
+                    }
+                },
+                "9": {
+                    "damage": {
+                        "dtpQLfwMi5qU2XEa": {
+                            "applyMod": true,
+                            "category": null,
+                            "formula": "4d4",
+                            "materials": [],
+                            "type": "piercing"
+                        }
+                    }
+                }
+            },
+            "type": "fixed"
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": true,
+            "title": "Pathfinder Rage of Elements"
+        },
+        "range": {
+            "value": ""
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+            "value": ""
+        },
+        "time": {
+            "value": "1"
+        },
+        "traits": {
+            "rarity": "common",
+            "traditions": [
+                "arcane",
+                "primal"
+            ],
+            "value": [
+                "cantrip",
+                "concentrate",
+                "earth"
+            ]
+        }
+    },
+    "type": "spell"
+}

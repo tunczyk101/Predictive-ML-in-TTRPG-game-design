@@ -1,0 +1,58 @@
+{
+    "_id": "8iGmSwTTUdj6gqN5",
+    "img": "systems/pf2e/icons/equipment/consumables/other-consumables/dust-of-apperance.webp",
+    "name": "Dust of Appearance",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "category": "other",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p>Stored in a small reed, this powder looks like a fine metallic dust. When you fling it in the air, it coats all creatures in a @Template[type:burst|distance:10] centered on a point within 5 feet of you. For 1 minute, the coated creatures can't be concealed or invisible, nor can they benefit from @UUID[Compendium.pf2e.spells-srd.Item.Mirror Image] or similar abilities that create illusory duplicates. Any illusions in the area of 3rd level or lower are revealed as such, although this does not end their effect.</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> Interact</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 6
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 50
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Core Rulebook"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "consumable",
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

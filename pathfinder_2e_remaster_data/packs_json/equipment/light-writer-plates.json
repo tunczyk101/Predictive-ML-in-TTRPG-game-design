@@ -1,0 +1,59 @@
+{
+    "_id": "1bLvKfodvgrIG4hp",
+    "img": "systems/pf2e/icons/default-icons/consumable.svg",
+    "name": "Light Writer Plates",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "category": "other",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p>Plates for a Light Writer</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 6
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "per": 10,
+            "value": {
+                "gp": 3
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Guns & Gears"
+        },
+        "quantity": 10,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "rare",
+            "value": [
+                "clockwork",
+                "light"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

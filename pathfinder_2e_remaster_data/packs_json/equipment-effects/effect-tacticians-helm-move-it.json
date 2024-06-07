@@ -1,0 +1,46 @@
+{
+    "_id": "vgsV7eEYQ7W1fHqR",
+    "img": "icons/skills/movement/feet-winged-boots-glowing-yellow.webp",
+    "name": "Effect: Tactician's Helm (Move It!)",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.equipment-srd.Item.Tactician's Helm]</p>\n<p>You gain a +2 status bonus to Acrobatics and Athletics checks.</p>"
+        },
+        "duration": {
+            "expiry": "turn-end",
+            "sustained": false,
+            "unit": "rounds",
+            "value": 1
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "selector": [
+                    "acrobatics",
+                    "athletics"
+                ],
+                "type": "status",
+                "value": 2
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

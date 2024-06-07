@@ -1,0 +1,81 @@
+{
+    "_id": "z2PYQCsDDoBZUwR5",
+    "img": "icons/commodities/wood/log-cut-cherry-brown.webp",
+    "name": "Spell Effect: Wooden Fists",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Wooden Fists]</p>\n<p>Your fists deal more bludgeoning damage, lose the nonlethal trait, and have reach.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "minutes",
+            "value": 1
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": true,
+            "title": "Pathfinder Rage of Elements"
+        },
+        "rules": [
+            {
+                "fist": true,
+                "key": "Strike"
+            },
+            {
+                "itemId": "xxxxxxFISTxxxxxx",
+                "key": "ItemAlteration",
+                "mode": "upgrade",
+                "property": "damage-dice-faces"
+            },
+            {
+                "itemId": "xxxxxxFISTxxxxxx",
+                "key": "ItemAlteration",
+                "mode": "remove",
+                "property": "traits",
+                "value": "nonlethal"
+            },
+            {
+                "itemId": "xxxxxxFISTxxxxxx",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "property": "traits",
+                "value": "reach"
+            },
+            {
+                "itemId": "xxxxxxFISTxxxxxx",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    {
+                        "gte": [
+                            "parent:level",
+                            3
+                        ]
+                    }
+                ],
+                "property": "traits",
+                "value": "magical"
+            },
+            {
+                "key": "Striking",
+                "selector": "xxxxxxFISTxxxxxx-damage",
+                "value": "ternary(gte(@item.level,9),3,ternary(gte(@item.level,7),2,ternary(gte(@item.level,3),1,0)))"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

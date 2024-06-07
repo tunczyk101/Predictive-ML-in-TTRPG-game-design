@@ -1,0 +1,96 @@
+{
+    "_id": "wWXnr3xw5TzDL1M7",
+    "img": "icons/equipment/hand/gauntlet-tooled-steel.webp",
+    "name": "Grasp of Droskar",
+    "system": {
+        "baseItem": "gauntlet",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+            "damageType": "bludgeoning",
+            "dice": 1,
+            "die": "d4"
+        },
+        "description": {
+            "value": "<p>This <em>+1 striking @UUID[Compendium.pf2e.equipment-srd.Item.Gauntlet]</em> appears little more than a dull, soot-stained, metal-plated glove at first glance, but in truth it is an invasive boon granted by Droskar to his most faithful subjects. Placing the glove on your hand causes excruciating pain as your appendage curls into a tight fist and then slowly transforms to a supernaturally hard ball of black stone, fusing to you and preventing you from using this hand for anything other than gauntlet Strikes or the <em>grasp of Droskar</em>'s activated abilities (a <em>grasp of Droskar</em> does not have the free-hand weapon trait). The gauntlet can't be removed without a successful casting of remove curse or a similar spell. The gauntlet reverts to normal (and can be removed with ease) if the curse is removed, the hand is removed from the body, or the wearer dies.</p>\n<hr />\n<p><strong>Activate</strong> <span class=\"action-glyph\">1</span> envision</p>\n<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Effect</strong> You gain a +1 item bonus on all Athletics checks for 1 minute.</p>\n<p>@UUID[Compendium.pf2e.equipment-effects.Item.Effect: Grasp of Droskar]</p>\n<hr />\n<p><strong>Activate</strong> <span class=\"action-glyph\">2</span> envision</p>\n<p><strong>Frequency</strong> once per day</p>\n<p><strong>Effect</strong> You cast @UUID[Compendium.pf2e.spells-srd.Item.Enfeeble] with a spell attack modifier of +10 ([[/r 1d20+10]]{Spell Attack}) and (@Check[type:fortitude|dc:20|traits:necromancy,attack]).</p>"
+        },
+        "group": "brawling",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 5
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 155
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Adventure: Crown of the Kobold King"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 1,
+            "property": [],
+            "striking": 1
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "base": [
+                    {
+                        "thickness": "thin",
+                        "type": "steel"
+                    }
+                ],
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 1,
+                "property": [],
+                "striking": 1
+            }
+        },
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "rare",
+            "value": [
+                "agile",
+                "cursed",
+                "free-hand",
+                "invested",
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}
