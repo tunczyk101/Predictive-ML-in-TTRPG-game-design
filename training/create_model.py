@@ -42,7 +42,6 @@ def get_fitted_model(
 
     model = create_model(classifier_name)
     model.fit(X_train, y_train)
-    print(model.best_params_)
 
     return model
 
@@ -113,7 +112,7 @@ def create_model(classifier_name: str):
                 n_jobs=-1,
             )
         case "knn":
-            clf = KNeighborsRegressor()
+            knn = KNeighborsRegressor()
 
             hyper_params = {
                 "leaf_size": list(range(50, 100, 10)),
@@ -123,7 +122,7 @@ def create_model(classifier_name: str):
             }
 
             model = GridSearchCV(
-                estimator=clf,
+                estimator=knn,
                 param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
                 verbose=2,
@@ -186,19 +185,10 @@ def create_model(classifier_name: str):
                 return_train_score=True,
                 n_jobs=-1,
             )
-        case "linear_ordinal_model":
-            model = LinearOrdinalModel()
-            hyper_params = {
-                "offset": [0.75, 1, 1.25]
-            }
-            model = GridSearchCV(
-                estimator=model,
-                param_grid=hyper_params,
-                scoring="neg_mean_absolute_error",
-                return_train_score=True,
-                n_jobs=-1,
-                verbose=10,
-            )
+        case "linear_ordinal_model_probit":
+            model = create_linear_ordinal_model("probit")
+        case "linear_ordinal_model_logit":
+            model = create_linear_ordinal_model("logit")
         case _:
             raise ValueError(f"Classifier {classifier_name} is unsupported")
 
@@ -235,3 +225,18 @@ def lightgbm_fit(X_train, y_train) -> lightgbm.Booster:
         num_boost_round=10000,
     )
     return lgb_tuned
+
+
+def create_linear_ordinal_model(distr: str) -> GridSearchCV:
+    model = LinearOrdinalModel(distr=distr)
+    hyper_params = {"offset": np.linspace(0.25, 1.25, 11)}
+    model = GridSearchCV(
+        estimator=model,
+        param_grid=hyper_params,
+        scoring="neg_mean_absolute_error",
+        return_train_score=True,
+        n_jobs=-1,
+        verbose=10,
+    )
+
+    return model

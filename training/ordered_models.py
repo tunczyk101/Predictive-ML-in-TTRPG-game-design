@@ -18,18 +18,17 @@ class RegularizedOrderedModel(OrderedModel):
 
 
 class LinearOrdinalModel(BaseEstimator, ClassifierMixin):
-    def __init__(self, offset: Optional[float] = None):
+    def __init__(self, offset: Optional[float] = None, distr: str = "logit"):
         self.offset = offset
+        self.distr = distr
 
     def fit(self, X, y=None):
         model = RegularizedOrderedModel(
-            exog=X, endog=y, distr="logit", offset=self.offset
+            exog=X, endog=y, distr=self.distr, offset=self.offset
         )
-        self.model_ = model.fit(method="lbfgs", disp=0)
+        self.model_ = model.fit(method="bfgs", disp=0)
+
+        return self
 
     def predict(self, X):
-        return (
-            self.model_.predict(X)
-            .rename(columns={i + 1: i for i in range(-1, 22)})
-            .idxmax(axis=1)
-        )
+        return self.model_.predict(X).idxmax(axis=1)
