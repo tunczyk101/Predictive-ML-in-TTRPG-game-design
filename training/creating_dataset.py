@@ -56,6 +56,7 @@ SPECIAL_CHARACTERISTICS = {
     "ranged",
     "spells",
     "aoo",
+    "spell_dc",
 }
 """set of characteristics with specific way of extracting information"""
 
@@ -286,6 +287,18 @@ def get_aoo(items_list: list[dict]):
     return len(reactions)
 
 
+def get_dc_bonus(items_list: list[dict]):
+    reactions = [
+        (i["system"]["spelldc"]["dc"], i["system"]["spelldc"]["value"])
+        for i in items_list
+        if i["type"] == "spellcastingEntry"
+    ]
+    if len(reactions) == 0:
+        return 0, 0
+
+    return reactions[-1]
+
+
 def load_data(paths_to_books: list[str]) -> pd.DataFrame:
     """
     Load and normalize monsters' data from a list of book paths.
@@ -404,6 +417,11 @@ def preprocess_data(bestiary: pd.DataFrame, characteristics: list[str]) -> pd.Da
 
     if "aoo" in characteristics_groups.special_characteristics:
         df["aoo"] = bestiary["items"].apply(lambda x: get_aoo(x))
+
+    if "spell_dc" in characteristics_groups.special_characteristics:
+        df["spell_dc"], df["spell_attack"] = zip(
+            *bestiary["items"].apply(lambda x: get_dc_bonus(x))
+        )
 
     if "focus" in df.columns:
         df["focus"] = df["focus"].fillna(0)
