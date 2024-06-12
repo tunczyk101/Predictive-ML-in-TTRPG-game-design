@@ -151,6 +151,8 @@ ORDERED_CHARACTERISTICS_FULL = [
     "slashing_weakness",
     "splash-damage_weakness",
     "aoo",
+    "spell_dc",
+    "spell_attack",
 ]
 
 THRESHOLD = 0.33
