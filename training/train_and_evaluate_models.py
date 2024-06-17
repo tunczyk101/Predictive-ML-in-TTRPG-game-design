@@ -1,9 +1,10 @@
 import pandas as pd
+from pandas import DataFrame
 from sklearn.metrics import accuracy_score, mean_absolute_error, root_mean_squared_error
 from statsmodels.miscmodels.ordinal_model import OrderedResultsWrapper
 
 from training.create_model import get_fitted_model
-from training.rounging import (
+from training.rounding import (
     find_best_thresholds,
     find_graph_rounding,
     find_single_best_threshold,
@@ -12,44 +13,48 @@ from training.rounging import (
 )
 
 
-def print_results(model_name: str, results: dict):
-    """
-    Prints results and model name summary.
-
-    :param model_name: Model name
-    :param results: Results of a given model
-    """
-    print(f"==== {model_name} ====")
-    for round_type, rounded_results in results.items():
-        if round_type == "model":
-            continue
-        print(f"\t--> {round_type}")
-        for set_name, value in rounded_results.items():
-            print(f"\t\t--> {set_name}")
-            if set_name == "threshold":
-                print(f"\t\t\t--> {value}")
-                continue
-            for measure, m_value in value.items():
-                print(f"\t\t\t--> {measure}: {m_value}")
-    print()
-
-
-def calculate_results(y_true, y_pred, accuracy=True) -> dict[str, float]:
+def calculate_results(y_true, y_pred, include_accuracy=True) -> list[float]:
     """
     Calculates evaluation metrics for predicted values compared to true values.
 
     :param y_true: List of true values
     :param y_pred: List of predicted values
-    :param accuracy: Whether to compute the accuracy score
-    :return: Dictionary containing evaluation metrics
+    :param include_accuracy: Whether to compute the accuracy score.
+    :return: List containing evaluation metrics. If accuracy was not computed the last element equals None.
     """
-    results = {
-        "rmse": root_mean_squared_error(y_true, y_pred),
-        "mae": mean_absolute_error(y_true, y_pred),
-    }
-    if accuracy:
-        results["accuracy"] = accuracy_score(y_true, y_pred)
+    results = [
+        root_mean_squared_error(y_true, y_pred),
+        mean_absolute_error(y_true, y_pred),
+        None,
+    ]
+    if include_accuracy:
+        results[-1] = accuracy_score(y_true, y_pred)
     return results
+
+
+def get_index(thresholds: list[tuple[float, float]]):
+    """
+    Create a pandas MultiIndex based on provided thresholds.
+
+    :param thresholds: A list of tuples, where each tuple contains two float values representing the start and end of a threshold range.
+    :return: A MultiIndex object with headers for no rounded results, classic (0.5) rounding and for each given threshold pair round for single_threshold, multiple_threshold, graph_threshold. For each rounding type there is returned a group metrices.
+    """
+    iterables = [
+        ["no_rounding", "round 0.5"]
+        + [
+            f"{label}{threshold_start:.2f}_{threshold_end:.2f}"
+            for threshold_start, threshold_end in thresholds
+            for label in [
+                "best_single_threshold_",
+                "best_multiple_thresholds_",
+                "best_graph_thresholds_",
+            ]
+        ],
+        ["rmse", "mae", "accuracy"],
+    ]
+    return pd.MultiIndex.from_product(
+        iterables, names=["round type + metrics", "model"]
+    )
 
 
 def get_model_results(
@@ -59,10 +64,7 @@ def get_model_results(
     y_test,
     X_test,
     thresholds,
-    single_threshold,
-    multiple_thresholds,
-    graph_thresholds,
-) -> dict:
+) -> (list[float], list[float]):
     """
     Calculates and compares evaluation metrics for different rounding strategies based on a machine learning model.
 
@@ -71,11 +73,8 @@ def get_model_results(
     :param X_train: Feature matrix for the training set
     :param y_test: True target values for the test set
     :param X_test: Feature matrix for the test set
-    :param thresholds: List of threshold values to consider for rounding
-    :param single_threshold: Whether to find the single best threshold
-    :param multiple_thresholds: Whether to find the multiple thresholds
-    :param graph_thresholds: Whether to find the graph-based threshold
-    :return: Dictionary containing evaluation metrics for different rounding strategies
+    :param thresholds: List of threshold values to consider for rounding=
+    :return: Two lists containing evaluation metrics for different rounding strategies
     """
     if type(model) != OrderedResultsWrapper:
         y_pred_train = model.predict(X_train)
@@ -92,82 +91,69 @@ def get_model_results(
             .idxmax(axis=1)
         )
 
-    model_results = {
-        "no_rounding": {
-            "train": calculate_results(y_train, y_pred_train, False),
-            "test": calculate_results(y_test, y_pred_test, False),
-        },
-        "round 0.5": {
-            "train": calculate_results(
-                y_train, round_single_threshold_results(y_pred_train, 0.5)
-            ),
-            "test": calculate_results(
-                y_test, round_single_threshold_results(y_pred_test, 0.5)
-            ),
-        },
-    }
+    train_results = calculate_results(
+        y_train, y_pred_train, include_accuracy=False
+    ) + calculate_results(
+        y_train, round_single_threshold_results(y_pred_train, threshold=0.5)
+    )
+
+    test_results = calculate_results(
+        y_test, y_pred_test, include_accuracy=False
+    ) + calculate_results(
+        y_test, round_single_threshold_results(y_pred_test, threshold=0.5)
+    )
 
     for threshold_list in thresholds:
         min_threshold = min(threshold_list)
         max_threshold = max(threshold_list)
 
-        if single_threshold:
-            best_single_threshold = find_single_best_threshold(
-                y_pred_train, y_train, threshold_list
-            )[0]
-            model_results[
-                f"best_single_threshold_{min_threshold:.2f}_{max_threshold:.2f}"
-            ] = {
-                "threshold": best_single_threshold,
-                "train": calculate_results(
-                    y_train,
-                    round_single_threshold_results(y_pred_train, best_single_threshold),
-                ),
-                "test": calculate_results(
-                    y_test,
-                    round_single_threshold_results(y_pred_test, best_single_threshold),
-                ),
-            }
+        best_single_threshold = find_single_best_threshold(
+            y_pred_train, y_train, threshold_list
+        )
 
-        if multiple_thresholds:
-            best_thresholds = find_best_thresholds(
-                list(y_pred_train),
-                list(y_train),
-                thresholds=(min_threshold, max_threshold),
-            )
-            model_results[
-                f"best_multiple_thresholds_{min_threshold:.2f}_{max_threshold:.2f}"
-            ] = {
-                "thresholds": best_thresholds,
-                "train": calculate_results(
-                    y_train,
-                    round_results_multiple_threshold(y_pred_train, best_thresholds),
-                ),
-                "test": calculate_results(
-                    y_test,
-                    round_results_multiple_threshold(y_pred_test, best_thresholds),
-                ),
-            }
+        train_results_single_threshold = calculate_results(
+            y_train,
+            round_single_threshold_results(y_pred_train, best_single_threshold),
+        )
+        test_results_single_threshold = calculate_results(
+            y_test,
+            round_single_threshold_results(y_pred_test, best_single_threshold),
+        )
 
-        if graph_thresholds:
-            best_thresholds = find_graph_rounding(
-                list(y_pred_train), list(y_train), threshold_list
-            )
-            model_results[
-                f"best_graph_thresholds_{min_threshold:.2f}_{max_threshold:.2f}"
-            ] = {
-                "thresholds": best_thresholds,
-                "train": calculate_results(
-                    y_train,
-                    round_results_multiple_threshold(y_pred_train, best_thresholds),
-                ),
-                "test": calculate_results(
-                    y_test,
-                    round_results_multiple_threshold(y_pred_test, best_thresholds),
-                ),
-            }
+        train_results += train_results_single_threshold
+        test_results += test_results_single_threshold
 
-    return model_results
+        best_thresholds = find_best_thresholds(
+            list(y_pred_train),
+            list(y_train),
+            thresholds=(min_threshold, max_threshold),
+        )
+
+        train_results_multiple_threshold = calculate_results(
+            y_train, round_results_multiple_threshold(y_pred_train, best_thresholds)
+        )
+        test_results_multiple_threshold = calculate_results(
+            y_test, round_results_multiple_threshold(y_pred_test, best_thresholds)
+        )
+
+        train_results += train_results_multiple_threshold
+        test_results += test_results_multiple_threshold
+
+        best_thresholds = find_graph_rounding(
+            list(y_pred_train), list(y_train), threshold_list
+        )
+
+        train_results_graph = calculate_results(
+            y_train, round_results_multiple_threshold(y_pred_train, best_thresholds)
+        )
+        test_results_graph = calculate_results(
+            y_test, round_results_multiple_threshold(y_pred_test, best_thresholds)
+        )
+
+        train_results += train_results_graph
+        test_results += test_results_graph
+
+    return train_results, test_results
 
 
 def train_and_evaluate_models(
@@ -177,12 +163,7 @@ def train_and_evaluate_models(
     X_test: pd.DataFrame,
     y_test: pd.Series,
     thresholds: list[list[float]],
-    single_threshold: bool = True,
-    multiple_thresholds: bool = True,
-    graph_thresholds: bool = True,
-    print_summary: bool = False,
-    return_models: bool = True,
-) -> dict:
+) -> tuple[DataFrame, DataFrame]:
     """
     Trains and evaluates multiple machine learning models and compares different rounding strategies.
 
@@ -192,85 +173,27 @@ def train_and_evaluate_models(
     :param X_test: Feature matrix for the test set
     :param y_test: True target values for the test set
     :param thresholds: List of threshold values to consider for rounding
-    :param single_threshold: Whether to find the single best threshold
-    :param multiple_thresholds: Whether to find the multiple thresholds
-    :param graph_thresholds: Whether to find the graph-based threshold
-    :param print_summary: Whether to print summary results for each model
-    :param return_models: Whether to return trained models in the results
-    :return: Dictionary containing evaluation metrics for each model and rounding strategy
+    :return: Pandas DataFrames containing evaluation metrics for each model and rounding strategy. One for test results and another one for train results.
     """
-    results = {}
+    all_train_results = []
+    all_test_results = []
 
     for model_name in models:
         model = get_fitted_model(model_name, X_train, y_train)
-
-        results[model_name] = get_model_results(
+        model_train_results, model_test_results = get_model_results(
             model,
             y_train,
             X_train,
             y_test,
             X_test,
             thresholds,
-            single_threshold,
-            multiple_thresholds,
-            graph_thresholds,
         )
 
-        if return_models:
-            results[model_name]["model"] = model
+        all_train_results.append(model_train_results)
+        all_test_results.append(model_test_results)
 
-        if print_summary:
-            print_results(model_name, results[model_name])
+    columns = get_index(thresholds=[(min(th), max(th)) for th in thresholds])
 
-    return results
-
-
-def evaluate_models(
-    models: dict[str],
-    X_train: pd.DataFrame,
-    y_train: pd.Series,
-    X_test: pd.DataFrame,
-    y_test: pd.Series,
-    thresholds: list[float],
-    single_threshold: bool = True,
-    multiple_thresholds: bool = True,
-    graph_thresholds: bool = True,
-    print_summary: bool = False,
-) -> dict:
-    """
-    Evaluates multiple models using different rounding strategies.
-
-    :param models: Dictionary mapping model names to trained models
-    :param X_train: Feature matrix for the training set
-    :param y_train: True target values for the training set
-    :param X_test: Feature matrix for the test set
-    :param y_test: True target values for the test set
-    :param thresholds: List of threshold values to consider for rounding
-    :param single_threshold: Whether to find the single best threshold
-    :param multiple_thresholds: Whether to find the multiple thresholds
-    :param graph_thresholds: Whether to find the graph-based threshold
-    :param print_summary: Whether to print summary results for each model
-    :return: Dictionary containing evaluation metrics for each model and rounding strategy
-    """
-    results = {}
-
-    for model_name, model in models.items():
-
-        results[model_name] = get_model_results(
-            model,
-            y_train,
-            X_train,
-            y_test,
-            X_test,
-            thresholds,
-            single_threshold,
-            multiple_thresholds,
-            graph_thresholds,
-        )
-
-        if print_summary:
-            print_results(model_name, results[model_name])
-
-        results[model_name]["model"] = model
-
-    return results
+    return pd.DataFrame(
+        data=all_test_results, index=models, columns=columns
+    ), pd.DataFrame(data=all_train_results, index=models, columns=columns)

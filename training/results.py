@@ -9,7 +9,7 @@ from sklearn.metrics import (
     mean_absolute_error,
 )
 
-from training.rounging import round_single_threshold_results
+from training.rounding import round_single_threshold_results
 
 
 COLORS = {

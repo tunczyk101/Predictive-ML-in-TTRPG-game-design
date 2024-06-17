@@ -24,14 +24,14 @@ def round_single_threshold_results(
 
 def find_single_best_threshold(
     y_pred: np.ndarray | pd.Series, y_true: pd.Series, thresholds: list[float]
-) -> (float, float):
+) -> float:
     """
     Finds the best threshold for rounding predictions to minimize the mean absolute error (MAE).
 
     :param y_pred: Predicted values
     :param y_true: True values
     :param thresholds:  A list of threshold values to test, each between 0.0 and 1.0
-    :return: A tuple containing the best threshold and the corresponding lowest MAE.
+    :return: The best threshold
     """
     best = (thresholds[0], 21)
 
@@ -47,10 +47,10 @@ def find_single_best_threshold(
         if mae < best[1]:
             best = threshold, mae
 
-    return best
+    return best[0]
 
 
-def round_prediction(predicted: float, threshold: float):
+def round_prediction(predicted: float, threshold: float) -> int:
     """
     Rounds a single predicted value based on a specified threshold.
     Minimum possible rounded value is -1 and maximum possible rounded value is 21.
@@ -69,7 +69,7 @@ def round_prediction(predicted: float, threshold: float):
     return round_val
 
 
-def round_prediction_error(predicted: float, true: float, threshold: float):
+def round_prediction_error(predicted: float, true: float, threshold: float) -> float:
     """
      Calculates the absolute error between the true value and the rounded predicted value based on a specified threshold.
 
@@ -102,7 +102,7 @@ def objective(
     y_true: list[int],
     y_predicted: list[float],
     thresholds: tuple[float, float],
-):
+) -> float:
     """
     Objective function for optimizing thresholds to minimize the mean absolute error.
 
@@ -117,17 +117,16 @@ def objective(
         for i in range(-1, 21)
     }
     n = len(y_true)
-    return (
-        sum(
-            [
-                round_prediction_error(
-                    y_predicted[i], y_true[i], level_thresholds.get(y_predicted[i] // 1)
-                )
-                for i in range(n)
-            ]
-        )
-        / n
+    sum_prediction_error = sum(
+        [
+            round_prediction_error(
+                y_predicted[i], y_true[i], level_thresholds.get(y_predicted[i] // 1)
+            )
+            for i in range(n)
+        ]
     )
+    mean_prediction_error = sum_prediction_error / n
+    return mean_prediction_error
 
 
 def find_best_thresholds(
@@ -152,7 +151,7 @@ def find_best_thresholds(
 
 def get_edges_cost(
     level: int, thresholds: list[float], y_pred: list[float], y_true: list[int]
-):
+) -> list[tuple[float, float]]:
     """
     Calculates the cost for each threshold at a given level.
 
@@ -166,18 +165,11 @@ def get_edges_cost(
     n = len(lvl_pred)
     moves = []
     for threshold in thresholds:
-        moves.append(
-            (
-                threshold,
-                sum(
-                    [
-                        round_prediction_error(y_pred[i], y_true[i], threshold)
-                        for i in lvl_pred
-                    ]
-                )
-                / n,
-            )
+        sum_prediction_error = sum(
+            [round_prediction_error(y_pred[i], y_true[i], threshold) for i in lvl_pred]
         )
+        mean_prediction_error = sum_prediction_error / n
+        moves.append((threshold, mean_prediction_error))
 
     return moves
 
