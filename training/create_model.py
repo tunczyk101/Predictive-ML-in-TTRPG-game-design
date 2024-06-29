@@ -12,7 +12,9 @@ from sklearn.linear_model import (
     RidgeCV,
 )
 from sklearn.model_selection import GridSearchCV, KFold
-from sklearn.svm import LinearSVR
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.svm import SVR, LinearSVR
+from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 from training.constants import RANDOM_STATE
 
@@ -32,6 +34,9 @@ def get_fitted_model(
     """
     if classifier_name == "lightgbm":
         return lightgbm_fit(X_train, y_train)
+
+    if "ordered_model" in classifier_name:
+        return fit_ordered_model(classifier_name, X_train, y_train)
 
     model = create_model(classifier_name)
     model.fit(X_train, y_train)
@@ -92,14 +97,42 @@ def create_model(classifier_name: str):
                 return_train_score=True,
                 n_jobs=-1,
             )
+        case "kernel_svm":
+            svm = SVR(kernel="rbf", max_iter=10000)
+            hyper_params = {"C": np.linspace(1, 10, num=100)}
+
+            model = GridSearchCV(
+                estimator=svm,
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                verbose=2,
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "knn":
+            clf = KNeighborsRegressor()
+
+            hyper_params = {
+                "leaf_size": list(range(50, 100, 10)),
+                "weights": ["uniform", "distance"],
+                "metric": ["minkowski", "manhattan", "euclidean"],
+                "n_neighbors": list(range(1, 51)),
+            }
+
+            model = GridSearchCV(
+                estimator=clf,
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                verbose=2,
+                return_train_score=True,
+                n_jobs=-1,
+            )
         case "random_forest":
             rf = RandomForestRegressor(random_state=RANDOM_STATE, n_jobs=-1)
             hyper_params = {
-                "n_estimators": [
-                    int(x) for x in np.linspace(start=100, stop=800, num=8)
-                ],
-                "max_features": [0.1, 0.2, 0.3, 0.4, 0.5],
-                "max_depth": list(range(10, 111, 10)) + [None],
+                "max_features": [0.3],
+                "n_estimators": [100, 200, 500],
+                "criterion": ["squared_error", "absolute_error", "friedman_mse"],
             }
             model = GridSearchCV(
                 estimator=rf,
@@ -144,3 +177,14 @@ def lightgbm_fit(X_train, y_train) -> lightgbm.Booster:
         num_boost_round=10000,
     )
     return lgb_tuned
+
+
+def fit_ordered_model(
+    model_name: str, X_train: pd.DataFrame, y_train: pd.Series
+) -> OrderedModel:
+    distr = model_name.split("ordered_model_")[1]
+
+    model = OrderedModel(y_train, X_train, distr=distr)
+    model = model.fit(method="bfgs")
+
+    return model

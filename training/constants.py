@@ -150,6 +150,7 @@ ORDERED_CHARACTERISTICS_FULL = [
     "good_weakness",
     "slashing_weakness",
     "splash-damage_weakness",
+    "aoo",
 ]
 
 THRESHOLD = 0.33
