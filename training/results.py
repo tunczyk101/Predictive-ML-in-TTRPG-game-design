@@ -63,39 +63,32 @@ def get_single_plot_bar(
 
 
 def plot_results(
-    results: dict[str, dict[str, float]],
-    sets: list[str],
+    results: pd.DataFrame,
     measure_types: list[str],
     rounding_types,
     figsize=(6, 8),
     hspace=3,
     wspace=1,
 ):
-    models = results.keys()
-    rows = len(sets) * len(measure_types)
-    columns = len(rounding_types)
+    rows = len(rounding_types)
+    columns = len(measure_types)
 
     figure, axis = plt.subplots(nrows=rows, ncols=columns, figsize=figsize)
     plt.subplots_adjust(hspace=hspace, wspace=wspace)
 
-    for i, set_type in enumerate(sets):
-        for r, rounding_type in enumerate(rounding_types):
-            for j, measure_type in enumerate(measure_types):
-                if measure_type == "accuracy" and rounding_type == "no_rounding":
-                    axis[len(measure_types) * i + j][r].axis("off")
-                    continue
-                measure_results = {
-                    m: results[m][rounding_type][set_type][measure_type] for m in models
-                }
-                get_single_plot_bar(
-                    measure_results,
-                    measure_type=measure_type,
-                    axis=axis[len(measure_types) * i + j][r],
-                )
-                title = f"[{set_type}]\n {rounding_type}"
-                axis[len(measure_types) * i + j][r].set_title(
-                    title, fontweight="bold", fontsize=12
-                )
+    for r, rounding_type in enumerate(rounding_types):
+        for j, measure_type in enumerate(measure_types):
+            if measure_type == "accuracy" and rounding_type == "no_rounding":
+                axis[r][j].axis("off")
+                continue
+            measure_results = dict(results[rounding_type][measure_type])
+            get_single_plot_bar(
+                measure_results,
+                measure_type=measure_type,
+                axis=axis[r][j],
+            )
+            title = f"{rounding_type}"
+            axis[r][j].set_title(title, fontweight="bold", fontsize=15)
 
     plt.show()
 
