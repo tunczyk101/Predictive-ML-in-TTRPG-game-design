@@ -7,8 +7,9 @@ from sklearn.metrics import (
     ConfusionMatrixDisplay,
     confusion_matrix,
     mean_absolute_error,
-    mean_squared_error,
 )
+
+from training.rounding import round_single_threshold_results
 
 
 COLORS = {
@@ -18,8 +19,12 @@ COLORS = {
     "lad_regression": mcolors.CSS4_COLORS["yellowgreen"],
     "huber_regression": mcolors.CSS4_COLORS["gold"],
     "linear_svm": mcolors.CSS4_COLORS["paleturquoise"],
+    "kernel_svm": mcolors.CSS4_COLORS["deepskyblue"],
+    "knn": mcolors.CSS4_COLORS["purple"],
     "random_forest": mcolors.CSS4_COLORS["thistle"],
     "lightgbm": mcolors.CSS4_COLORS["turquoise"],
+    "ordered_model_probit": mcolors.CSS4_COLORS["orangered"],
+    "ordered_model_logit": mcolors.CSS4_COLORS["chocolate"],
 }
 
 MODEL_LABEL = {
@@ -29,8 +34,12 @@ MODEL_LABEL = {
     "lad_regression": "LAD regression",
     "huber_regression": "Huber regression",
     "linear_svm": "Linear SVM",
+    "kernel_svm": "Kernel SVM",
+    "knn": "KNeighbours",
     "random_forest": "Random Forest",
     "lightgbm": "LightGBM",
+    "ordered_model_probit": "Ordered Model [probit]",
+    "ordered_model_logit": "Ordered Model [logit]",
 }
 
 
@@ -54,78 +63,34 @@ def get_single_plot_bar(
 
 
 def plot_results(
-    results: dict[str, dict[str, float]],
-    sets: list[str] = ["train", "test"],
-    measure_types: list[str] = ["mae", "mse"],
+    results: pd.DataFrame,
+    measure_types: list[str],
+    rounding_types,
+    figsize=(6, 8),
+    hspace=3,
+    wspace=1,
 ):
-    models = results.keys()
-    rows = len(sets)
+    rows = len(rounding_types)
     columns = len(measure_types)
 
-    figure, axis = plt.subplots(nrows=rows, ncols=columns)
-    plt.subplots_adjust(hspace=0.5 + len(models) * 0.25, wspace=0.7)
+    figure, axis = plt.subplots(nrows=rows, ncols=columns, figsize=figsize)
+    plt.subplots_adjust(hspace=hspace, wspace=wspace)
 
-    for i, set_type in enumerate(sets):
+    for r, rounding_type in enumerate(rounding_types):
         for j, measure_type in enumerate(measure_types):
-            measure_results = {m: results[m][set_type][measure_type] for m in models}
+            if measure_type == "accuracy" and rounding_type == "no_rounding":
+                axis[r][j].axis("off")
+                continue
+            measure_results = dict(results[rounding_type][measure_type])
             get_single_plot_bar(
-                measure_results, measure_type=measure_type, axis=axis[i][j]
+                measure_results,
+                measure_type=measure_type,
+                axis=axis[r][j],
             )
-            axis[i][j].set_title(f"{set_type}", fontweight="bold")
+            title = f"{rounding_type}"
+            axis[r][j].set_title(title, fontweight="bold", fontsize=15)
 
     plt.show()
-
-
-def print_check_predictions(y: pd.Series, y_pred: np.ndarray) -> None:
-    """
-    Calculate and print RMSE for predicted values.
-
-    :param y: True values.
-    :param y_pred: Predicted values from a model.
-    :return: None
-    """
-    print(f"RMSE: {mean_squared_error(y, y_pred, squared=False):.2f}\n")
-
-
-def round_predictions(predict: np.ndarray, threshold: float = 0.5) -> np.ndarray:
-    """
-    Round predicted values based on a specified threshold.
-
-    Values above the threshold are rounded up, and values below are rounded down.
-
-    :param predict: Predicted values to be rounded.
-    :param threshold: A round type threshold as a float between 0 and 1. Default is 0.5.
-    :return: Rounded values with a maximum value of 21.
-    """
-    if threshold > 1 or threshold < 0:
-        raise ValueError(f"Incorrect threshold value: {threshold}")
-    threshold_predict = np.where(
-        (predict % 1) > threshold, np.ceil(predict), np.floor(predict)
-    ).astype("int")
-
-    return np.where(threshold_predict > 20, 21, threshold_predict)
-
-
-def evaluate_round_predictions(
-    round_types: list[float], y: pd.Series, predict: np.ndarray
-) -> None:
-    """
-    Evaluate and print the predictions of a model at different round thresholds,
-    including a normal prediction (no rounding), and for each threshold specified in the 'round_types' list.
-
-    :param round_types: A list of round thresholds specified as a list of floats.
-    :param y: True values.
-    :param predict: Predicted values from the model.
-    :return: None
-    """
-    print("Default:")
-    print_check_predictions(y, predict)
-
-    for threshold in round_types:
-        threshold_predict = round_predictions(predict, threshold)
-
-        print(f"Round type: {threshold}")
-        print_check_predictions(y, threshold_predict)
 
 
 def plot_mae_by_level(
@@ -199,7 +164,7 @@ def plot_confusion_matrix(
     :param export: If true, saves plot to results_diagrams file. Default is False.
     :return: None
     """
-    round_predict = round_predictions(predict, threshold)
+    round_predict = round_single_threshold_results(predict, threshold)
     cm = confusion_matrix(y, round_predict)
 
     # min possible level: -1, max possible level: 21
@@ -239,289 +204,29 @@ def plot_confusion_matrix(
     plt.show()
 
 
-def assess_regression_model(
-    model,
-    X_train: pd.DataFrame,
-    X_test: pd.DataFrame,
-    y_train: pd.Series,
-    y_test: pd.Series,
-    r2: bool = False,
-) -> tuple[float, float]:
-    """
-    Assess the performance of a regression model and print evaluation metrics.
-
-    Calculates and prints evaluation metrics.
-    The metrics include: RMSE for training data, RMSE for testing data, MSE for testing data, and MAE for testing data.
-    Optionally, calculates and prints the R2 coefficient for the training data.
-
-    :param model: A trained regression model.
-    :param X_train: Training data.
-    :param X_test: Testing data.
-    :param y_train: True values for the training data.
-    :param y_test: True values for the testing data.
-    :param r2: If True, calculate and print the R2 coefficient for the training data.
-    :return: Tuple of RMSE and MAE for the test data.
-    """
-
-    # predict for train and test
-    y_pred_test = model.predict(X_test)
-    y_pred_train = model.predict(X_train)
-
-    # calculate train and test RMSE, MSE and MAE
-    rmse_train = mean_squared_error(y_train, y_pred_train, squared=False)
-    rmse_test = mean_squared_error(y_test, y_pred_test, squared=False)
-    mae_test = mean_absolute_error(y_test, y_pred_test)
-
-    if r2:
-        # calculate R2
-        r2 = model.score(X_train, y_train)
-        print(f"R2: {r2:.2f}")
-
-    # print train and test RMSE
-    print(f"RMSE train: {rmse_train:.2f}")
-    print(f"RMSE test: {rmse_test:.2f}")
-    print(f"MAE test: {mae_test:.2f}\n")
-
-    return rmse_test, mae_test
-
-
-def plot_summary(
-    results: pd.DataFrame,
-    measure_type: str,
-    title: str = None,
-    figsize: tuple[int, int] = (20, 8),
-    export: bool = False,
-) -> None:
-    """
-    Plot a summary bar chart of evaluation metrics for different model tuning types and characteristics.
-
-    It displays a bar chart to visualize the performance of models for a specified 'measure_type'
-    under different conditions.
-
-
-    :param results: A DataFrame with evaluation results, including 'Tuning type', 'Split type',
-    'Set of features', and the 'measure_type' of interest.
-    :param measure_type: The evaluation metric to be displayed on the y-axis (e.g., "RMSE", "MSE").
-    :param title: Plot tile.
-    :param figsize: A tuple specifying the figure size (width, height). Default is (20, 8).
-    :param export: If true, saves plot to results_diagrams file. Default is False.
-    :return: None
-    """
-
-    bar_width = 0.25
-    fig, ax = plt.subplots(1, figsize=figsize)
-    ax.grid()
-    fig.autofmt_xdate()
-    plt.grid(axis="y", linestyle="--")
-
-    labels = results.apply(
-        lambda row: row["Tuning type"] + " " + str(row["Set of features"]),
-        axis="columns",
-    )
-    labels = dict.fromkeys(labels).keys()
-    chronological = []
-    random = []
-
-    for i, l in enumerate(labels):
-        t, no = l.split(" ")
-        temp = results[
-            (results["Tuning type"] == t) & (results["Set of features"] == no)
-        ]
-        chronological.append(
-            float(temp[temp["Split type"] == "chronological"][measure_type])
-        )
-        random.append(float(temp[temp["Split type"] == "random"][measure_type]))
-
-    br1 = np.arange(len(chronological))
-    br2 = [x + bar_width for x in br1]
-
-    plt.bar(
-        br1,
-        chronological,
-        color="r",
-        width=bar_width,
-        edgecolor="grey",
-        label="chronological",
-    )
-    plt.bar(br2, random, color="g", width=bar_width, edgecolor="grey", label="random")
-
-    plt.xlabel("Tuning type & set of features", fontweight="bold", fontsize=25)
-    plt.ylabel(measure_type, fontweight="bold", fontsize=25)
-    plt.xticks([r + bar_width for r in range(len(chronological))], labels, fontsize=20)
-
-    plt.setp(ax.get_xticklabels(), rotation=30, horizontalalignment="right")
-    plt.legend(fontsize=20, title="Split type", title_fontsize=20)
-
-    if title is None:
-        plt.title(
-            f"Summary of {measure_type} for Different Model Tuning Types and Characteristics",
-            fontsize=30,
-            fontweight="bold",
-        )
-    else:
-        plt.title(title, fontsize=30, fontweight="bold")
-
-    fig.tight_layout()
-    if export:
-        plt.savefig(f"../results_diagrams/rmse_and_mae/{title}.svg")
-
+def compare_models_thresholds(results: dict, rounding_type: str):
+    for model_name, model_result in results.items():
+        for round_type, rounded_results in model_result.items():
+            if round_type == rounding_type:
+                for set_name, value in rounded_results.items():
+                    if set_name == "thresholds":
+                        plt.plot(value.keys(), value.values(), label=model_name)
+    plt.legend()
     plt.show()
 
 
-def plot_one_type_split(
-    results: pd.DataFrame,
-    split_type: str,
-    measure_type: str,
-    title: str = None,
-    figsize: tuple[int, int] = (20, 8),
-) -> None:
-    """
-    Plot a summary bar chart of evaluation metrics for a specific split type and measure type.
-
-    It displays a bar chart to visualize the performance of models for a specified 'split_type' and
-    'measure_type' under different conditions.
-
-    :param results: A DataFrame with evaluation results, including 'Tuning type', 'Split type',
-    'Set of features', and the 'measure_type' of interest.
-    :param split_type: The type of data split (e.g., "chronological," "random") for which you want to visualize the evaluation metrics.
-    :param measure_type: The evaluation metric to be displayed on the y-axis (e.g., "RMSE", "MSE").
-    :param title: Plot title.
-    :param figsize: A tuple specifying the figure size (width, height). Default is (20, 8).
-    :return: None
-    """
-
-    bar_width = 0.25
-    fig, ax = plt.subplots(figsize=figsize)
-    ax.grid()
-    fig.autofmt_xdate()
-    plt.grid(axis="y", linestyle="--")
-    data = results[results["Split type"] == split_type]
-
-    labels = data.apply(
-        lambda row: row["Tuning type"] + " " + str(row["Set of features"]),
-        axis="columns",
-    )
-    values = []
-
-    for i, l in enumerate(labels):
-        t, no = l.split(" ")
-        temp = data[(data["Tuning type"] == t) & (data["Set of features"] == no)]
-        values.append(float(temp[measure_type]))
-
-    plt.bar(labels, values, width=bar_width)
-
-    plt.xlabel("Tuning type & set of features", fontweight="bold", fontsize=25)
-    plt.ylabel(measure_type, fontweight="bold", fontsize=25)
-    plt.xticks([r + bar_width for r in range(len(values))], labels, fontsize=20)
-
-    if title is None:
-        plt.title(
-            f"Summary of {measure_type} for {split_type} Split Type and Different Model Tuning Types and Characteristics",
-            fontsize=30,
-            fontweight="bold",
-        )
-    else:
-        plt.title(title, fontsize=30, fontweight="bold")
-
-    plt.show()
-
-
-def plot_summary_all_models(
-    results: pd.DataFrame,
-    split_type: str,
-    measure_type: str,
-    title: str = None,
-    figsize: tuple[int, int] = (20, 8),
-    export: bool = False,
-) -> None:
-    """
-    Plot a summary bar chart of evaluation metrics for different models, model tuning types and characteristics.
-
-    It displays a bar chart to visualize the performance of different machine learning models,
-    for a specified 'split_type' and 'measure_type' under different conditions.
-
-
-    :param results: A DataFrame with evaluation results, including 'Tuning type', 'Split type',
-    'Set of features', and the 'measure_type' of interest.
-    :param split_type: The type of data split (e.g., "chronological," "random") for which you want to visualize the evaluation metrics.
-    :param measure_type: The evaluation metric to be displayed on the y-axis (e.g., "RMSE", "MSE").
-    :param title: Plot title.
-    :param figsize: A tuple specifying the figure size (width, height). Default is (20, 8).
-    :param export: If true, saves plot to results_diagrams file. Default is False.
-    :return: None
-    """
-
-    bar_width = 0.25
-    fig, ax = plt.subplots(1, figsize=figsize)
-    ax.grid()
-    fig.autofmt_xdate()
-    plt.grid(axis="y", linestyle="--")
-    data = results[results["Split type"] == split_type]
-
-    labels = data.apply(
-        lambda row: row["Tuning type"] + " " + str(row["Set of features"]),
-        axis="columns",
-    )
-    labels = dict.fromkeys(labels).keys()
-    linear_regression = []
-    random_forest = []
-    lightgbm = []
-
-    for i, l in enumerate(labels):
-        t, no = l.split(" ")
-        temp = data[(data["Tuning type"] == t) & (data["Set of features"] == no)]
-        linear_regression.append(
-            float(temp[temp["Model type"] == "Linear Regression"][measure_type])
-        )
-        random_forest.append(
-            float(temp[temp["Model type"] == "Random Forest"][measure_type])
-        )
-        lightgbm.append(float(temp[temp["Model type"] == "LightGBM"][measure_type]))
-
-    br1 = np.arange(len(linear_regression))
-    br2 = [x + bar_width for x in br1]
-    br3 = [x + bar_width for x in br2]
-
-    plt.bar(
-        br1,
-        linear_regression,
-        color="r",
-        width=bar_width,
-        edgecolor="grey",
-        label="Linear Regression",
-    )
-    plt.bar(
-        br2,
-        random_forest,
-        color="g",
-        width=bar_width,
-        edgecolor="grey",
-        label="Random Forest",
-    )
-    plt.bar(
-        br3, lightgbm, color="b", width=bar_width, edgecolor="grey", label="LightGBM"
-    )
-
-    plt.xlabel("Tuning type & set of features", fontweight="bold", fontsize=25)
-    plt.ylabel(measure_type, fontweight="bold", fontsize=25)
-    plt.xticks(
-        [r + bar_width for r in range(len(linear_regression))], labels, fontsize=20
-    )
-
-    plt.setp(ax.get_xticklabels(), rotation=30, horizontalalignment="right")
-    plt.legend(fontsize=20, title="Model", title_fontsize=20)
-
-    if title is None:
-        plt.title(
-            f"Summary of {measure_type} for {split_type} Split Type and Different Models, Tuning Types, and Characteristics",
-            fontsize=30,
-            fontweight="bold",
-        )
-    else:
-        plt.title(title, fontsize=30, fontweight="bold")
-
-    fig.tight_layout()
-    if export:
-        plt.savefig(f"results_diagrams/rmse_and_mae/summary/{title}.svg")
-
+def compare_different_thresholds(results: dict, moodel_to_compare: str):
+    plt.title(moodel_to_compare)
+    for model_name, model_result in results.items():
+        if model_name == moodel_to_compare:
+            for round_type, rounded_results in model_result.items():
+                if round_type == "model":
+                    continue
+                for set_name, value in rounded_results.items():
+                    if set_name == "thresholds":
+                        plt.plot(value.keys(), value.values(), label=round_type)
+                    elif set_name == "threshold":
+                        levels = [i for i in range(-1, 21)]
+                        plt.plot(levels, [value] * len(levels), label=round_type)
+    plt.legend()
     plt.show()

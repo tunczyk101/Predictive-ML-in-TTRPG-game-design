@@ -4,6 +4,7 @@ from dataclasses import dataclass
 
 import numpy as np
 import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
 
 from training.constants import ORDERED_CHARACTERISTICS_FULL
 
@@ -54,6 +55,7 @@ SPECIAL_CHARACTERISTICS = {
     "melee",
     "ranged",
     "spells",
+    "aoo",
 }
 """set of characteristics with specific way of extracting information"""
 
@@ -278,6 +280,12 @@ def get_max_melee_bonus_damage(
     return max_bonus, damage_expected_value
 
 
+def get_aoo(items_list: list[dict]):
+    reactions = [i["name"] for i in items_list if i["name"] == "Attack of Opportunity"]
+
+    return len(reactions)
+
+
 def load_data(paths_to_books: list[str]) -> pd.DataFrame:
     """
     Load and normalize monsters' data from a list of book paths.
@@ -394,6 +402,9 @@ def preprocess_data(bestiary: pd.DataFrame, characteristics: list[str]) -> pd.Da
             *bestiary["items"].apply(lambda x: get_max_melee_bonus_damage(x, "ranged"))
         )
 
+    if "aoo" in characteristics_groups.special_characteristics:
+        df["aoo"] = bestiary["items"].apply(lambda x: get_aoo(x))
+
     if "focus" in df.columns:
         df["focus"] = df["focus"].fillna(0)
         df["focus"] = df["focus"].astype(int)
@@ -423,3 +434,16 @@ def load_and_preprocess_data(
     bestiary = load_data(paths_to_books)
 
     return preprocess_data(bestiary, characteristics)
+
+
+def min_max_scale_data(df: pd.DataFrame) -> pd.DataFrame:
+    columns = [col for col in df.columns if col not in ["book", "level"]]
+    scaler = MinMaxScaler()
+    min_max_df = pd.DataFrame()
+    min_max_df[columns] = pd.DataFrame(
+        scaler.fit_transform(df[columns]), index=df.index
+    )
+    min_max_df["book"] = df["book"]
+    min_max_df["level"] = df["level"]
+
+    return min_max_df
