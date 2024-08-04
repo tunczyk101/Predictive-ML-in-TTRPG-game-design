@@ -1,0 +1,59 @@
+{
+    "_id": "yiU4osCo6ql28r6M",
+    "img": "icons/equipment/chest/shirt-simple-white.webp",
+    "name": "Gi",
+    "system": {
+        "acBonus": 0,
+        "baseItem": "gi",
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "unarmored",
+        "checkPenalty": 0,
+        "containerId": null,
+        "description": {
+            "value": "<p>Also called martial arts suits or practice clothes, gi are outfits of tough cloth built for comfort and unrestricted movement—ideal for practicing martial arts. They have reinforced stitching resistant to strenuous use.</p>"
+        },
+        "dexCap": 5,
+        "group": "cloth",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "sp": 2
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "resilient": 0
+        },
+        "size": "med",
+        "speedPenalty": 0,
+        "strength": null,
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "comfort"
+            ]
+        }
+    },
+    "type": "armor"
+}

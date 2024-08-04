@@ -1,0 +1,53 @@
+{
+    "_id": "lbAZmrRnV7OZvuol",
+    "img": "systems/pf2e/icons/default-icons/shield.svg",
+    "name": "Swordstealer Shield",
+    "system": {
+        "acBonus": 2,
+        "baseItem": "swordstealer-shield",
+        "bulk": {
+            "value": 1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This specialized steel shield features several wide metal hooks along its surface. These hooks help catch swords and other blades, reducing the impact of their incoming attacks.</p>"
+        },
+        "hardness": 4,
+        "hp": {
+            "max": 20,
+            "value": 20
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 6
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "reinforcing": 0
+        },
+        "size": "med",
+        "speedPenalty": 0,
+        "traits": {
+            "integrated": null,
+            "rarity": "common",
+            "value": [
+                "deflecting-slashing"
+            ]
+        }
+    },
+    "type": "shield"
+}

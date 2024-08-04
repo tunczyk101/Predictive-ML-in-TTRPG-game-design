@@ -1,0 +1,42 @@
+{
+    "_id": "3GPh6O3PJxORytAC",
+    "img": "icons/magic/perception/orb-eye-scrying.webp",
+    "name": "Effect: Shadow Sight",
+    "system": {
+        "description": {
+            "value": "<p>You gain Greater Darkvision for 1 minute.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "minutes",
+            "value": 1
+        },
+        "level": {
+            "value": 9
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Ancestry Guide"
+        },
+        "rules": [
+            {
+                "key": "Sense",
+                "selector": "greater-darkvision"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

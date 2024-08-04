@@ -1,0 +1,46 @@
+{
+    "_id": "dBQQZUXaMhCAFkpY",
+    "img": "systems/pf2e/icons/equipment/treasure/gems/lesser-precious-stones/aquamarine.webp",
+    "name": "Aquamarine",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": ""
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 50
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Gamemastery Guide"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "stackGroup": "gems",
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "treasure"
+}

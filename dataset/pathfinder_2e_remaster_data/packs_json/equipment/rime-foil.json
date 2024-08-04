@@ -1,0 +1,92 @@
+{
+    "_id": "py3PPoO2zMUjOzOI",
+    "img": "systems/pf2e/icons/equipment/weapons/rapier.webp",
+    "name": "Rime Foil",
+    "system": {
+        "baseItem": "rapier",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d6"
+        },
+        "description": {
+            "value": "<p>The steely blue blade of this <em>+2 striking frost rapier</em> emerges from a hilt wrapped in thick leather and trimmed in fur to protect the wielder's hand.</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">2</span> command, Interact</p>\n<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> You hit a creature using the <em>rime foil</em> as your last action</p>\n<hr />\n<p><strong>Effect</strong> You cast 5th-rank @UUID[Compendium.pf2e.spells-srd.Item.Phantom Prison] on the target (@Check[type:will|dc:22|traits:action:disbelieve] to disbelieve). If the target has been damaged by a <em>shattered plan</em> in the last round, the DC is instead @Check[type:will|dc:24|traits:action:disbelieve].</p>\n<hr />\n<p><strong>Special</strong> The rime foil pairs with the <em>shattered plan</em>.</p>"
+        },
+        "group": "sword",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 11
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 1400
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 2,
+            "property": [
+                "frost"
+            ],
+            "striking": 1
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 2,
+                "property": [
+                    "frost"
+                ],
+                "striking": 1
+            }
+        },
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "deadly-d8",
+                "disarm",
+                "finesse"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

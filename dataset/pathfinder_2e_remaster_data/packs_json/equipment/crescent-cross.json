@@ -1,0 +1,88 @@
+{
+    "_id": "KaYvuSNXZaOammij",
+    "img": "systems/pf2e/icons/default-icons/weapon.svg",
+    "name": "Crescent Cross",
+    "system": {
+        "baseItem": "crescent-cross",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d6"
+        },
+        "description": {
+            "value": "<p>A crescent cross combines a small scizore with an arm-mounted crossbow apparatus that can hold up to three bolts at a time.</p>"
+        },
+        "group": "crossbow",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "meleeUsage": {
+            "damage": {
+                "die": "d4",
+                "type": "slashing"
+            },
+            "group": "knife",
+            "traits": [
+                "critical-fusion",
+                "parry"
+            ]
+        },
+        "price": {
+            "value": {
+                "gp": 4
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "range": 30,
+        "reload": {
+            "value": "1"
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "capacity-3",
+                "combination",
+                "parry"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

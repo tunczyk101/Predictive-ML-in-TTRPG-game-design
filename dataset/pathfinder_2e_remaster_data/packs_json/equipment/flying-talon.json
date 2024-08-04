@@ -1,0 +1,82 @@
+{
+    "_id": "ucz1WdBA0Ma34OsS",
+    "img": "systems/pf2e/icons/equipment/weapons/flying-talon.webp",
+    "name": "Flying Talon",
+    "system": {
+        "baseItem": "flying-talon",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 1
+        },
+        "category": "advanced",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d4"
+        },
+        "description": {
+            "value": "<p>This weapon consists of a three-pronged barbed hook attached to a length of chain. It can be used as a melee weapon to stab at foes or hurled as a ranged weapon. Some kobolds are particularly fond of using flying talons, especially as a sort of badge of office above those who serve them.</p>"
+        },
+        "group": "flail",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 1
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 6
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Adventure: Crown of the Kobold King"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "agile",
+                "finesse",
+                "kobold",
+                "ranged-trip",
+                "tethered",
+                "thrown-10",
+                "trip"
+            ]
+        },
+        "usage": {
+            "canBeAmmo": false,
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

@@ -1,0 +1,52 @@
+{
+    "_id": "CF2BYEQnAmSwmPPE",
+    "img": "icons/magic/symbols/arrowhead-green.webp",
+    "name": "Bewitching Bloom (Lilac)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>While dormant, this tattoo appears to be a simple flower bud, but when activated the flower swiftly blossoms, remaining that way until the next time you make your daily preparations. These blooms are colorful, elegant representations of lilac flowers.</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">2</span> envision</p>\n<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> Choose a willing ally you can see within 30 feet. Memories bubble to the surface of your ally's mind. The ally attempts to Recall Knowledge with a +2 status bonus to the check from these vibrant memories.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 2
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 25
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "invested",
+                "magical",
+                "tattoo"
+            ]
+        },
+        "usage": {
+            "value": "tattooed-on-the-body"
+        }
+    },
+    "type": "equipment"
+}

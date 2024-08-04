@@ -1,0 +1,90 @@
+{
+    "_id": "LDHGjtQHRM8bA8ZZ",
+    "img": "systems/pf2e/icons/equipment/weapons/rapier-pistol.webp",
+    "name": "Rapier Pistol",
+    "system": {
+        "baseItem": "rapier-pistol",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d4"
+        },
+        "description": {
+            "value": "<p>This elegant weapon is shaped similarly to a rapier with a pistol down the length of the blade.</p>"
+        },
+        "group": "firearm",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "meleeUsage": {
+            "damage": {
+                "die": "d4",
+                "type": "piercing"
+            },
+            "group": "sword",
+            "traits": [
+                "critical-fusion",
+                "deadly-d8",
+                "disarm",
+                "finesse"
+            ]
+        },
+        "price": {
+            "value": {
+                "gp": 10
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Guns & Gears"
+        },
+        "quantity": 1,
+        "range": 30,
+        "reload": {
+            "value": "1"
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "combination",
+                "concussive",
+                "fatal-d8"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

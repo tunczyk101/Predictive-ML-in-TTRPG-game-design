@@ -1,0 +1,92 @@
+{
+    "_id": "gp5kgCySEOuntQPF",
+    "img": "systems/pf2e/icons/equipment/armor/specific-magic-armor/plate-armor-of-the-deep.webp",
+    "name": "Plate Armor of the Deep",
+    "system": {
+        "acBonus": 6,
+        "baseItem": "full-plate",
+        "bulk": {
+            "value": 4
+        },
+        "category": "heavy",
+        "checkPenalty": -3,
+        "containerId": null,
+        "description": {
+            "value": "<p>This suit of +2 greater resilient full plate is decorated with swirling, ornate motifs of waves and fish scales.</p>\n<p>While wearing it, you take no Speed reduction or check penalty from armor when Swimming, gain a +2 item bonus to Athletics checks to Swim, can breathe underwater, and can speak Thalassic.</p>"
+        },
+        "dexCap": 0,
+        "group": "plate",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 15
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 6500
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Core Rulebook"
+        },
+        "quantity": 1,
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "label": "Plate Armor of the Deep (Swim)",
+                "predicate": [
+                    "action:swim"
+                ],
+                "selector": "athletics",
+                "type": "item",
+                "value": 2
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "add",
+                "path": "system.build.languages.granted",
+                "value": {
+                    "slug": "thalassic",
+                    "source": "{item|name}"
+                }
+            }
+        ],
+        "runes": {
+            "potency": 2,
+            "property": [],
+            "resilient": 2
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 2,
+                "property": [],
+                "resilient": 2
+            }
+        },
+        "speedPenalty": -10,
+        "strength": 4,
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "bulwark",
+                "invested",
+                "magical"
+            ]
+        }
+    },
+    "type": "armor"
+}

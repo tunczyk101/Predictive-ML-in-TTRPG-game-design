@@ -87,12 +87,12 @@ def get_model_results(
             model.predict(X_train)
             .rename(columns={i + 1: i for i in range(-1, 22)})
             .idxmax(axis=1)
-        )
+        ) - 1
         y_pred_test = (
             model.predict(X_test)
             .rename(columns={i + 1: i for i in range(-1, 22)})
             .idxmax(axis=1)
-        )
+        ) - 1
 
     train_results = calculate_results(
         y_train, y_pred_train, include_accuracy=False
@@ -166,6 +166,7 @@ def train_and_evaluate_models(
     X_test: pd.DataFrame,
     y_test: pd.Series,
     thresholds: list[list[float]],
+    save_files: tuple[str, str],
 ) -> tuple[DataFrame, DataFrame]:
     """
     Trains and evaluates multiple machine learning models and compares different rounding strategies.
@@ -181,8 +182,10 @@ def train_and_evaluate_models(
     """
     all_train_results = []
     all_test_results = []
+    train_results_file, test_results_file = save_files
+    columns = get_index(thresholds=[(min(th), max(th)) for th in thresholds])
 
-    for model_name in models:
+    for i, model_name in enumerate(models):
         model = get_fitted_model(model_name, X_train, y_train)
         model_train_results, model_test_results = get_model_results(
             model,
@@ -196,7 +199,13 @@ def train_and_evaluate_models(
         all_train_results.append(model_train_results)
         all_test_results.append(model_test_results)
 
-    columns = get_index(thresholds=[(min(th), max(th)) for th in thresholds])
+        columns = get_index(thresholds=[(min(th), max(th)) for th in thresholds])
+        pd.DataFrame(
+            data=all_train_results, index=models[: i + 1], columns=columns
+        ).to_csv(train_results_file)
+        pd.DataFrame(
+            data=all_test_results, index=models[: i + 1], columns=columns
+        ).to_csv(test_results_file)
 
     return pd.DataFrame(
         data=all_test_results, index=models, columns=columns

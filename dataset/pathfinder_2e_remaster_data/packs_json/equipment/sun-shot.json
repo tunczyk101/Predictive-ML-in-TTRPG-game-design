@@ -1,0 +1,57 @@
+{
+    "_id": "DKsfWwWZ23PHPIa1",
+    "img": "systems/pf2e/icons/default-icons/consumable.svg",
+    "name": "Sun Shot",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "ammo",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p>Sun slings use small metal bullets covered in sharp spikes known as sun shots. A bundle of 10 sun shots has light bulk and costs 1 sp.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "per": 10,
+            "value": {
+                "sp": 1
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder #172: Secrets of the Temple-City"
+        },
+        "quantity": 10,
+        "rules": [],
+        "size": "med",
+        "stackGroup": "slingBullets",
+        "traits": {
+            "rarity": "uncommon",
+            "value": []
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

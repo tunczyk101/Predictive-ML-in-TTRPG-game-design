@@ -1,0 +1,42 @@
+{
+    "_id": "8H72RC7QI1i8wjJ1",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Warren Digger",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "ancestry",
+        "description": {
+            "value": "<p>You've learned to put your sturdy claws to work digging through the earth. You gain a @UUID[Compendium.pf2e.actionspf2e.Item.Burrow] Speed of 15 feet.</p>"
+        },
+        "level": {
+            "value": 13
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "rules": [
+            {
+                "key": "BaseSpeed",
+                "selector": "burrow",
+                "value": 15
+            }
+        ],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "ratfolk"
+            ]
+        }
+    },
+    "type": "feat"
+}

@@ -1,0 +1,72 @@
+{
+    "_id": "3xsQ1AA4dyMHLxpw",
+    "img": "systems/pf2e/icons/equipment/armor/specific-magic-armor/dragonplate.webp",
+    "name": "Dragonplate",
+    "system": {
+        "acBonus": 6,
+        "baseItem": "full-plate",
+        "bulk": {
+            "value": 4
+        },
+        "category": "heavy",
+        "checkPenalty": -3,
+        "containerId": null,
+        "description": {
+            "value": "<p>This suit of +2 greater resilient dragonhide full plate makes you look like a fearsome dragon. The armor comes in 10 varieties corresponding to the 10 common dragon types, though other varieties undoubtedly exist.</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">2</span> Interact</p>\n<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> You unleash a bout of dragon breath with a shape, damage type, and saving throw corresponding to the type of dragon used to make the armor (shown on the table below). The breath weapon deals 14d6 damage; each creature in the area must attempt a DC 36 basic saving throw.</p>\n<hr />\n<p><strong>Craft Requirements</strong> The initial raw materials must include 1,250 gp of dragonhide.</p>"
+        },
+        "dexCap": 0,
+        "group": "plate",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 16
+        },
+        "material": {
+            "grade": "standard",
+            "type": "dragonhide"
+        },
+        "price": {
+            "value": {
+                "gp": 10000
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Core Rulebook"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "potency": 2,
+            "property": [],
+            "resilient": 2
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": "standard",
+                "type": "dragonhide"
+            },
+            "runes": {
+                "potency": 2,
+                "property": [],
+                "resilient": 2
+            }
+        },
+        "speedPenalty": -10,
+        "strength": 4,
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "bulwark",
+                "invested",
+                "magical"
+            ]
+        }
+    },
+    "type": "armor"
+}

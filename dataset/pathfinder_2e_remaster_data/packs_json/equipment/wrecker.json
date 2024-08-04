@@ -1,0 +1,90 @@
+{
+    "_id": "fZxI5GkBFfAUUf1z",
+    "img": "systems/pf2e/icons/equipment/weapons/wrecker.webp",
+    "name": "Wrecker",
+    "system": {
+        "baseItem": "wrecker",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 2
+        },
+        "category": "advanced",
+        "containerId": null,
+        "damage": {
+            "damageType": "bludgeoning",
+            "dice": 1,
+            "die": "d6"
+        },
+        "description": {
+            "value": "<p>The wrecker combines a dwarven dorn-dergar with a heavy, gear-reinforced arm cover that allows it to be fired like an oversized sling, then retrieved and reloaded by manually activating a clockwork spool. A wrecker must be loaded to be switched from its ranged configuration to its melee configuration.</p>"
+        },
+        "group": "sling",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "meleeUsage": {
+            "damage": {
+                "die": "d8",
+                "type": "bludgeoning"
+            },
+            "group": "flail",
+            "traits": [
+                "dwarf",
+                "razing",
+                "reach"
+            ]
+        },
+        "price": {
+            "value": {
+                "gp": 8
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "range": 20,
+        "reload": {
+            "value": "1"
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "combination",
+                "dwarf",
+                "ranged-trip",
+                "razing"
+            ]
+        },
+        "usage": {
+            "value": "held-in-two-hands"
+        }
+    },
+    "type": "weapon"
+}

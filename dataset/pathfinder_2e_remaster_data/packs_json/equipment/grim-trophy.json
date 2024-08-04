@@ -1,0 +1,59 @@
+{
+    "_id": "eEIWjTvZyKsKhYaz",
+    "img": "icons/commodities/bones/skull-hollow-worn-white.webp",
+    "name": "Grim Trophy",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "category": "talisman",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p><strong>Activate</strong> <span class=\"action-glyph\">A</span> (concentrate)</p>\n<hr />\n<p>This talisman comes in many forms, most often a severed piece of a humanoid creature displayed in some gruesome manner. When you activate the trophy, make an Intimidate check to @UUID[Compendium.pf2e.actionspf2e.Item.Demoralize] up to two targets, comparing your Intimidation check result to both of their DCs.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 7
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 55
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder GM Core"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "consumable",
+                "magical",
+                "talisman"
+            ]
+        },
+        "usage": {
+            "value": "affixed-to-armor"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

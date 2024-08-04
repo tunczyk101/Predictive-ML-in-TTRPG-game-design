@@ -1,0 +1,77 @@
+{
+    "_id": "vkPNIDJPt2RHpS6T",
+    "img": "systems/pf2e/icons/default-icons/shield.svg",
+    "name": "Sanguine Klar (Greater)",
+    "system": {
+        "acBonus": 1,
+        "baseItem": "klar",
+        "bulk": {
+            "value": 1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This <em>+2 greater striking wounding klar</em> (Hardness 13, HP 100, BT 50) is built with spikes made of beasts' fangs.</p>\n<p><strong>Activate</strong> <span class=\"action-glyph\">f</span> envision</p>\n<p><strong>Frequency</strong> once per round</p>\n<p><strong>Trigger</strong> You or a creature within 30 feet of you suffers bleed damage</p>\n<hr />\n<p><strong>Effect</strong> The sanguine klar regains a number of Hit Points equal to the bleed damage, up to an amount equal to its Hardness.</p>"
+        },
+        "hardness": 13,
+        "hp": {
+            "max": 100,
+            "value": 100
+        },
+        "level": {
+            "value": 14
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 3700
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "reinforcing": 0
+        },
+        "size": "med",
+        "specific": {
+            "integrated": {
+                "runes": {
+                    "potency": 0,
+                    "property": [],
+                    "striking": 0
+                }
+            },
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "reinforcing": 0
+            }
+        },
+        "speedPenalty": 0,
+        "traits": {
+            "integrated": {
+                "runes": {
+                    "potency": 0,
+                    "property": [],
+                    "striking": 0
+                },
+                "versatile": null
+            },
+            "rarity": "common",
+            "value": [
+                "integrated-1d6-s-versatile-p",
+                "magical"
+            ]
+        }
+    },
+    "type": "shield"
+}

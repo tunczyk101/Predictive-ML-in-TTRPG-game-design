@@ -1,0 +1,59 @@
+{
+    "_id": "zlSNbMDIlTOpcO8R",
+    "img": "systems/pf2e/icons/equipment/alchemical-items/alchemical-tools/skinitch-salve.webp",
+    "name": "Effect: Skinstitch Salve",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.equipment-srd.Item.Skinstitch Salve]</p>\n<hr />\n<p>You gain a +2 item bonus to medicine checks and if you roll a success on Treat Wounds or Battle Medicine you get a critical success instead</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "rounds",
+            "value": 1
+        },
+        "level": {
+            "value": 7
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "selector": "medicine",
+                "type": "item",
+                "value": 2
+            },
+            {
+                "adjustment": {
+                    "success": "one-degree-better"
+                },
+                "key": "AdjustDegreeOfSuccess",
+                "predicate": [
+                    {
+                        "or": [
+                            "action:treat-wounds",
+                            "action:battle-medicine"
+                        ]
+                    }
+                ],
+                "selector": "medicine"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

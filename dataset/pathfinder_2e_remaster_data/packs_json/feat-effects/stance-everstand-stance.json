@@ -1,0 +1,63 @@
+{
+    "_id": "GGebXpRPyONZB3eS",
+    "img": "systems/pf2e/icons/equipment/shields/specific-shields/spellguard-shield.webp",
+    "name": "Stance: Everstand Stance",
+    "system": {
+        "description": {
+            "value": "<p>When in this stance, you wield the shield with both hands. When wielding a shield this way, increase the weapon damage die of the shield's boss or spikes by one step, and increase the shield's Hardness by 2 when using the @UUID[Compendium.pf2e.feats-srd.Item.Shield Block] reaction.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "encounter",
+            "value": -1
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Character Guide"
+        },
+        "rules": [
+            {
+                "itemType": "shield",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:hands-held:2"
+                ],
+                "property": "hardness",
+                "value": 2
+            },
+            {
+                "itemType": "weapon",
+                "key": "ItemAlteration",
+                "mode": "upgrade",
+                "predicate": [
+                    "item:hands-held:2",
+                    {
+                        "or": [
+                            "item:base:shield-boss",
+                            "item:base:shield-spikes"
+                        ]
+                    }
+                ],
+                "property": "damage-dice-faces"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

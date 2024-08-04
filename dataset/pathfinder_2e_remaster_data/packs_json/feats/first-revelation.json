@@ -1,0 +1,56 @@
+{
+    "_id": "HdhnAm9SNfDqxRSN",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "First Revelation",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>You gain your mystery's initial revelation spell. Casting this spell progresses your @UUID[Compendium.pf2e.classfeatures.Item.Oracular Curse]. Use the minor curse from your mystery, but when you progress it again, instead of your mystery's moderate curse effect, you become @UUID[Compendium.pf2e.conditionitems.Item.Off-Guard] in addition to the effects of the minor curse.</p>\n<p>If you don't have one, you gain a focus pool of 1 Focus Point. You can @UUID[Compendium.pf2e.actionspf2e.Item.Refocus] by reconciling the conflicting nature of your mystery, which also reduces your curse to minor.</p>"
+        },
+        "level": {
+            "value": 4
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "Oracle Dedication"
+                }
+            ]
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "rules": [
+            {
+                "itemType": "spell",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "item:trait:cursebound",
+                    "oracular-curse:stage:1"
+                ],
+                "property": "description",
+                "value": [
+                    {
+                        "text": "PF2E.SpecificRule.Oracle.CurseSeverity.MinorToOffGuard"
+                    }
+                ]
+            }
+        ],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "archetype"
+            ]
+        }
+    },
+    "type": "feat"
+}

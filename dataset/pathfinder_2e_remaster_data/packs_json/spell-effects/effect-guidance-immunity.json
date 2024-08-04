@@ -1,0 +1,37 @@
+{
+    "_id": "3LyOkV25p7wA181H",
+    "img": "systems/pf2e/icons/spells/guidance-immune.webp",
+    "name": "Effect: Guidance Immunity",
+    "system": {
+        "description": {
+            "value": "<p>Granted when someone uses @UUID[Compendium.pf2e.spells-srd.Item.Guidance] on you, rendering you immune to the effect of the spell for the duration.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "hours",
+            "value": 1
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "rules": [],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

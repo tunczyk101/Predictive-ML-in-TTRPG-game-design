@@ -1,0 +1,42 @@
+{
+    "_id": "IXS15IQXYCZ8vsmX",
+    "img": "systems/pf2e/icons/spells/darkvision.webp",
+    "name": "Spell Effect: Darkvision",
+    "system": {
+        "description": {
+            "value": "<p>You grant yourself supernatural sight in areas of darkness. You gain darkvision.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "hours",
+            "value": 1
+        },
+        "level": {
+            "value": 2
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Core Rulebook"
+        },
+        "rules": [
+            {
+                "key": "Sense",
+                "selector": "darkvision"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

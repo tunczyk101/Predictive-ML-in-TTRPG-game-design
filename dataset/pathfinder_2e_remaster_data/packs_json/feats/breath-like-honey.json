@@ -1,0 +1,50 @@
+{
+    "_id": "FZZXgmVMAmvKHWIo",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Breath Like Honey",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "ancestry",
+        "description": {
+            "value": "<p>You smell of honey and savory things. You can cast @UUID[Compendium.pf2e.spells-srd.Item.Enthrall] as a 3rd-rank occult innate spell once per day, except the spell has a range of 30 feet and the inhaled trait instead of the auditory trait. Targets don't gain any circumstance bonus for disagreeing with you. Your circumstance bonus to checks to Make an Impression if the target can smell your breath increases to +2.</p>"
+        },
+        "level": {
+            "value": 9
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "Sweetbreath Gnoll Heritage"
+                }
+            ]
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: The Mwangi Expanse"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "action:make-an-impression"
+                ],
+                "selector": "diplomacy",
+                "type": "circumstance",
+                "value": 2
+            }
+        ],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "gnoll"
+            ]
+        }
+    },
+    "type": "feat"
+}

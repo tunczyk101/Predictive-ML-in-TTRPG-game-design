@@ -1,0 +1,51 @@
+{
+    "_id": "nemThuhp3praALY6",
+    "img": "systems/pf2e/icons/spells/zealous-conviction.webp",
+    "name": "Spell Effect: Zealous Conviction",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Zealous Conviction]</p>\n<p>The targets each gain temporary Hit Points and a status bonus to Will saves against mental effects.</p>"
+        },
+        "duration": {
+            "expiry": "turn-end",
+            "sustained": false,
+            "unit": "minutes",
+            "value": 10
+        },
+        "level": {
+            "value": 6
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "mental"
+                ],
+                "selector": "will",
+                "type": "status",
+                "value": "ternary(gte(@item.level,9),3,2)"
+            },
+            {
+                "key": "TempHP",
+                "value": "ternary(gte(@item.level,9),18,12)"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

@@ -1,0 +1,76 @@
+{
+    "_id": "ssDxSpQTYORoeCFA",
+    "img": "systems/pf2e/icons/equipment/weapons/frying-pan.webp",
+    "name": "Frying Pan",
+    "system": {
+        "baseItem": "frying-pan",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "simple",
+        "containerId": null,
+        "damage": {
+            "damageType": "bludgeoning",
+            "dice": 1,
+            "die": "d4"
+        },
+        "description": {
+            "value": "<p>The cast-iron frying pan is an essential tool for adventuring halflings, gold panners, and remote tavern owners. Characters with the @UUID[Compendium.pf2e.feats-srd.Item.Halfling Weapon Familiarity] ancestry feat are trained in the frying pan.</p>"
+        },
+        "group": "club",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "sp": 1
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "fatal-d8",
+                "halfling"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}

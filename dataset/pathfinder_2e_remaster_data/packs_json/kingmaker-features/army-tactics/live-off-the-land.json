@@ -1,0 +1,59 @@
+{
+    "_id": "sdwSrVfu9yG1uwio",
+    "folder": "e185cDQaLjU3uZ62",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Live off the Land",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "campaign": "kingmaker",
+        "category": "army-tactic",
+        "description": {
+            "value": "<p>The army is trained to be self-sufficient and sustains itself via hunting and gathering when they're in the wild. If during a Kingdom turn's Upkeep phase this army is located in a hex that doesn't include a settlement, and if the army is not garrisoned, it reduces its Consumption by 1.</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "location": null,
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Kingmaker"
+        },
+        "rules": [
+            {
+                "key": "RollOption",
+                "label": "PF2E.Kingmaker.Army.Toggles.LiveOffTheLand",
+                "option": "live-off-the-land",
+                "priority": 1,
+                "toggleable": true,
+                "value": true
+            },
+            {
+                "key": "ActiveEffectLike",
+                "mode": "add",
+                "path": "system.consumption",
+                "predicate": [
+                    "live-off-the-land"
+                ],
+                "value": -1
+            }
+        ],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "cavalry",
+                "infantry",
+                "skirmisher"
+            ]
+        }
+    },
+    "type": "campaignFeature"
+}

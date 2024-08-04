@@ -1,0 +1,48 @@
+{
+    "_id": "KekfZ6eRzoZVRemw",
+    "img": "icons/commodities/materials/feather-blue.webp",
+    "name": "Tengu Feather Fan",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p><strong>Activate</strong> Interact</p>\n<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> You cast one of the spells contained in your t<em>engu feather fan</em>. Activating the fan takes the spell's normal number of actions. You can also Activate the fan to cast a cantrip you've gained from a heritage or ancestry feat; this activation doesn't count against the fan's uses per day.</p>\n<p>The DC for spells you cast with your <em>tengu feather fan</em> is your class DC or spell DC, whichever is higher.</p>\n<p>You can cast the 1st-rank @UUID[Compendium.pf2e.spells-srd.Item.Gust of Wind] spell by activating your <em>tengu feather fan</em>. @Check[type:fortitude|dc:resolve(@actor.attributes.classOrSpellDC.value)|traits:air]{Fortitude saving throw}</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 5
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {}
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Ancestry Guide"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "unique",
+            "value": [
+                "primal"
+            ]
+        },
+        "usage": {
+            "value": "other"
+        }
+    },
+    "type": "equipment"
+}

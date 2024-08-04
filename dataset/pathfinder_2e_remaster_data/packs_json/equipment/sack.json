@@ -1,0 +1,53 @@
+{
+    "_id": "DujblC14ytJEZMaz",
+    "img": "icons/containers/bags/sack-simple-leather-brown.webp",
+    "name": "Sack",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "capacity": 8,
+            "heldOrStowed": 0.1,
+            "ignored": 0,
+            "value": 0.1
+        },
+        "collapsed": false,
+        "containerId": null,
+        "description": {
+            "value": "<p>A sack can hold up to 8 Bulk worth of items. A sack containing 2 Bulk or less can be worn on the body, usually tucked into a belt. You can carry a sack with one hand, but must use two hands to transfer items in and out.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "cp": 1
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "quantity": 5,
+        "rules": [],
+        "size": "med",
+        "stowing": false,
+        "traits": {
+            "rarity": "common",
+            "value": []
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "backpack"
+}

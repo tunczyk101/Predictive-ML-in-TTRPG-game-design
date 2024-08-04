@@ -1,0 +1,59 @@
+{
+    "_id": "N3jcmW5XzEJZQVtJ",
+    "img": "systems/pf2e/icons/equipment/consumables/potions/silver-dragons-breath-potion.webp",
+    "name": "Antivenom Potion",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "potion",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p>This cloudy, white liquid helps protect against poisons. When you drink an antivenom potion, you can immediately attempt a @Check[type:flat|dc:10] to end any persistent poison damage you're taking. In addition, for 1 minute after drinking the potion, you gain a +1 bonus to Fortitude saving throws to avoid taking persistent poison damage.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 2
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 6
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Adventure: Troubles in Otari"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "consumable",
+                "magical",
+                "potion"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

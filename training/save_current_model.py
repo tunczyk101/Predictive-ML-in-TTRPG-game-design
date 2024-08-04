@@ -2,8 +2,7 @@ import pathlib
 
 import joblib
 
-from training.constants import ORDERED_CHARACTERISTICS_FULL
-from training.constants import FEATURES
+from dataset.constants import FEATURES, ORDERED_CHARACTERISTICS_FULL
 from training.create_model import get_fitted_model
 from training.creating_dataset import load_and_preprocess_data
 

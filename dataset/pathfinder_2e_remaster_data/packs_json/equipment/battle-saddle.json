@@ -1,0 +1,77 @@
+{
+    "_id": "7mXZyzL5v3K6Buu2",
+    "img": "icons/containers/bags/pack-leather-tan.webp",
+    "name": "Battle Saddle",
+    "system": {
+        "baseItem": "battle-saddle",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 2
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "slashing",
+            "dice": 1,
+            "die": "d8"
+        },
+        "description": {
+            "value": "<p>The battle saddle is a special saddle for a mount that has two large, winglike blades. These blades normally lie flat alongside the saddle, providing additional protection for the rider, but they can be deployed with a tug on the reins to slash at enemies adjacent to the mount. When using a battle saddle to parry, you can decide whether the circumstance bonus to AC applies to you or to your mount.</p>"
+        },
+        "group": "axe",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 0
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 6
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Treasure Vault"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": ""
+        },
+        "rules": [],
+        "runes": {
+            "potency": 0,
+            "property": [],
+            "striking": 0
+        },
+        "size": "med",
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "parry",
+                "sweep",
+                "vehicular"
+            ]
+        },
+        "usage": {
+            "value": "held-in-two-hands"
+        }
+    },
+    "type": "weapon"
+}

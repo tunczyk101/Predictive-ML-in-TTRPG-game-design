@@ -1,0 +1,41 @@
+{
+    "_id": "f0faBEUPtspdutKx",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Acrobatic Performer",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "skill",
+        "description": {
+            "value": "<p>You're an incredible acrobat, evoking wonder and enrapturing audiences with your prowess. It's almost a performance!</p>\n<p>You can roll an Acrobatics check instead of a Performance check when using the @UUID[Compendium.pf2e.actionspf2e.Item.Perform] action.</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "trained in Acrobatics"
+                }
+            ]
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Advanced Player's Guide"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "general",
+                "skill"
+            ]
+        }
+    },
+    "type": "feat"
+}

@@ -1,0 +1,57 @@
+{
+    "_id": "4c1c6eNzU1PFGkAy",
+    "img": "icons/skills/wounds/injury-face-impact-orange.webp",
+    "name": "Endure",
+    "system": {
+        "area": null,
+        "cost": {
+            "value": ""
+        },
+        "counteraction": false,
+        "damage": {},
+        "defense": null,
+        "description": {
+            "value": "<p>You invigorate the touched creature's mind and urge it to press on. You grant the touched creature 5 temporary Hit Points.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> Increase the temporary Hit Points by 5.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Spell Effect: Endure]</p>"
+        },
+        "duration": {
+            "sustained": false,
+            "value": "1 round"
+        },
+        "heightening": {
+            "damage": {},
+            "interval": 1,
+            "type": "interval"
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Gods & Magic"
+        },
+        "range": {
+            "value": "touch"
+        },
+        "requirements": "",
+        "rules": [],
+        "target": {
+            "value": "1 creature"
+        },
+        "time": {
+            "value": "1"
+        },
+        "traits": {
+            "rarity": "common",
+            "traditions": [
+                "arcane",
+                "occult"
+            ],
+            "value": [
+                "manipulate",
+                "mental"
+            ]
+        }
+    },
+    "type": "spell"
+}

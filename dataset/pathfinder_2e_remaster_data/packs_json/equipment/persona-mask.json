@@ -1,0 +1,70 @@
+{
+    "_id": "MKupH1T018JubYJW",
+    "img": "systems/pf2e/icons/equipment/worn-items/other-worn-items/persona-mask.webp",
+    "name": "Persona Mask",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>Despite covering the entire face, this alabaster mask does not hinder vision or other senses. Wearing the mask grants a +1 item bonus to Performance checks while acting, orating, performing comedy, or singing.</p>\n<p><strong>Activate—Assume Role</strong> <span class=\"action-glyph\">A</span> (concentrate)</p>\n<hr />\n<p><strong>Effect</strong> You change the mask's appearance into an artistic rendition of a dramatic character of your choice.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 3
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 50
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder GM Core"
+        },
+        "quantity": 1,
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "label": "Persona Mask (acting, orating, comedy, singing)",
+                "predicate": [
+                    {
+                        "or": [
+                            "acting",
+                            "orating",
+                            "performing-comedy",
+                            "singing"
+                        ]
+                    }
+                ],
+                "selector": "performance",
+                "type": "item",
+                "value": 1
+            }
+        ],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "fortune",
+                "invested",
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "wornmask"
+        }
+    },
+    "type": "equipment"
+}

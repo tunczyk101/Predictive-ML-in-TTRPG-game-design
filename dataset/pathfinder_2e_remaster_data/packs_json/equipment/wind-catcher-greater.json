@@ -1,0 +1,50 @@
+{
+    "_id": "wbCw7hNyQZSuy4QL",
+    "img": "icons/commodities/treasure/token-runed-os-grey.webp",
+    "name": "Wind-Catcher (Greater)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This rune is invested by the captain or pilot of the vehicle. The vehicle gains a +10-foot item bonus to its Speed. If lack of wind prevents the vehicle from moving, it can still move at a Speed of 10 feet.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 14
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 4250
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: The Grand Bazaar"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": [
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "applied-to-a-wind-powered-vehicle"
+        }
+    },
+    "type": "equipment"
+}

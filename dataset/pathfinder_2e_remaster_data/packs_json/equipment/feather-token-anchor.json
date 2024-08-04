@@ -1,0 +1,58 @@
+{
+    "_id": "VvljzRwthKMgqUR3",
+    "img": "icons/commodities/materials/feather-blue.webp",
+    "name": "Feather Token (Anchor)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "category": "other",
+        "containerId": null,
+        "damage": null,
+        "description": {
+            "value": "<p>This feather can be activated only on a boat. When activated, this feather transforms into a massive anchor that causes the boat to immediately stop. After 1 day, the anchor vanishes and the boat can move as normal. The anchor is attached to the boat by a magical chain of force, but the chain can be removed by @UUID[Compendium.pf2e.spells-srd.Item.Dispel Magic] or destroyed (Hardness 30, HP 40).</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 7
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 55
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Core Rulebook"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "consumable",
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        },
+        "uses": {
+            "autoDestroy": true,
+            "max": 1,
+            "value": 1
+        }
+    },
+    "type": "consumable"
+}

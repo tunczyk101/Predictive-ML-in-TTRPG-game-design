@@ -1,0 +1,52 @@
+{
+    "_id": "7nbKDBGvwSx9T27G",
+    "img": "icons/magic/symbols/question-stone-yellow.webp",
+    "name": "Arcane School",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "classfeature",
+        "description": {
+            "value": "<p>Most wizards acquire their knowledge of spells from a formal educational institution, such as the Arcanamirium or the Magaambya. At 1st level, you choose your arcane school, which grants you magical abilities.</p>\n<p>You gain additional spells and spell slots from the curriculum taught at the school you attended. Arcane schools are described in detail on page 198. Some wizards follow the school of unified magical theory, which attempts to forge a new school by studying independently and drawing information from a multitude of texts and tutors. Though a wizard with this approach lacks the focus of formal training, they have greater flexibility.</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core"
+        },
+        "rules": [
+            {
+                "adjustName": false,
+                "choices": {
+                    "filter": [
+                        "item:tag:wizard-arcane-school"
+                    ]
+                },
+                "flag": "arcaneSchool",
+                "key": "ChoiceSet",
+                "prompt": "PF2E.SpecificRule.Wizard.ArcaneSchool.Prompt"
+            },
+            {
+                "key": "GrantItem",
+                "uuid": "{item|flags.pf2e.rulesSelections.arcaneSchool}"
+            }
+        ],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "wizard"
+            ]
+        }
+    },
+    "type": "feat"
+}

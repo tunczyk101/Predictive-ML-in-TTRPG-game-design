@@ -1,0 +1,58 @@
+{
+    "_id": "Dc2DRXybi5dCxmqP",
+    "img": "icons/containers/bags/pack-leather-embossed-brown.webp",
+    "name": "Knight's Maintenance Kit",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This set of gear contains a repair kit, cloth rolls for storing or covering equipment, and specialized mixtures developed by the Knights of Lastwall to clean and treat armaments for continued use. This kit gives you a +1 item bonus to checks to Repair weapons, shields, and armor using the Crafting skill, and you restore an additional 5 Hit Points when you successfully Repair such items using it.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 5
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 50
+            }
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Lost Omens: Knights of Lastwall"
+        },
+        "quantity": 1,
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "knights-repair"
+                ],
+                "selector": "crafting",
+                "type": "item",
+                "value": 1
+            }
+        ],
+        "size": "med",
+        "traits": {
+            "rarity": "uncommon",
+            "value": []
+        },
+        "usage": {
+            "value": "held-in-two-hands"
+        }
+    },
+    "type": "equipment"
+}
