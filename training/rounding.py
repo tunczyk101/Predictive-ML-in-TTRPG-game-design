@@ -192,12 +192,12 @@ def find_graph_rounding(
     """
     q = PriorityQueue()
     final_thresholds = {}
-    q.put((0, -1))
+    q.put((0, 0))
 
     while not q.empty():
         cost, level = q.get()
 
-        if level == 21:
+        if level == 22:
             return final_thresholds
 
         edges_cost = get_edges_cost(level, thresholds, y_pred, y_true)

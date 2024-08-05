@@ -83,16 +83,8 @@ def get_model_results(
         y_pred_train = model.predict(X_train)
         y_pred_test = model.predict(X_test)
     else:
-        y_pred_train = (
-            model.predict(X_train)
-            .rename(columns={i + 1: i for i in range(-1, 22)})
-            .idxmax(axis=1)
-        ) - 1
-        y_pred_test = (
-            model.predict(X_test)
-            .rename(columns={i + 1: i for i in range(-1, 22)})
-            .idxmax(axis=1)
-        ) - 1
+        y_pred_train = model.predict(X_train).idxmax(axis=1)
+        y_pred_test = model.predict(X_test).idxmax(axis=1)
 
     train_results = calculate_results(
         y_train, y_pred_train, include_accuracy=False
@@ -184,6 +176,10 @@ def train_and_evaluate_models(
     all_test_results = []
     train_results_file, test_results_file = save_files
     columns = get_index(thresholds=[(min(th), max(th)) for th in thresholds])
+
+    # there are models that require the level to be non-negative
+    y_train += 1
+    y_test += 1
 
     for i, model_name in enumerate(models):
         model = get_fitted_model(model_name, X_train, y_train)
