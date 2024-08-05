@@ -2,4 +2,4 @@
 .ipynb_checkpoints
 .idea/
 __pycache__/
-/pathfinder_2e_remaster_data/
+/dataset/pathfinder_2e_remaster_data/

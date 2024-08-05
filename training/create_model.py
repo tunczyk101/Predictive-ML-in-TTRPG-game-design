@@ -23,7 +23,7 @@ def get_fitted_model(
     classifier_name: str,
     X_train: pd.DataFrame,
     y_train: pd.Series,
-) -> RidgeCV | GridSearchCV | lightgbm.Booster:
+) -> RidgeCV | GridSearchCV | lightgbm.Booster | OrderedModel:
     """
     Creates chosen model, performs tuning and fits\n
     :param X_train: train set with features to use during fitting
@@ -182,9 +182,10 @@ def lightgbm_fit(X_train, y_train) -> lightgbm.Booster:
 def fit_ordered_model(
     model_name: str, X_train: pd.DataFrame, y_train: pd.Series
 ) -> OrderedModel:
-    distr = model_name.split("ordered_model_")[1]
+    model_params = model_name.split("ordered_model_")[1]
+    distr, method = model_params.split("_")
 
     model = OrderedModel(y_train, X_train, distr=distr)
-    model = model.fit(method="bfgs")
+    model = model.fit(method=method)
 
     return model
