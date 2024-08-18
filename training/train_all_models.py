@@ -16,7 +16,7 @@ TRAIN_RESULT_FILE = os.path.join("results", "results_train_scenarios.csv")
 
 
 if __name__ == "__main__":
-    bestiaries = pd.read_csv(PATH_TO_DATASET)
+    bestiaries = pd.read_csv(PATH_TO_DATASET, index_col=0)
     bestiaries = min_max_scale_data(bestiaries)
 
     X_train, X_test, y_train, y_test = split_dataframe(bestiaries)
@@ -35,6 +35,7 @@ if __name__ == "__main__":
             "lightgbm",
             "ordered_model_probit_bfgs",
             "ordered_model_logit_bfgs",
+            "ordered_random_forest",
         ],
         X_train,
         y_train,

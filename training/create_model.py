@@ -3,6 +3,7 @@ import numpy as np
 import optuna.integration.lightgbm as opt_lgb
 import pandas as pd
 from lightgbm import early_stopping, log_evaluation
+from orf import OrderedForest
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import (
     HuberRegressor,
@@ -133,6 +134,22 @@ def create_model(classifier_name: str):
                 "max_features": [0.3],
                 "n_estimators": [100, 200, 500],
                 "criterion": ["squared_error", "absolute_error", "friedman_mse"],
+            }
+            model = GridSearchCV(
+                estimator=rf,
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "ordered_random_forest":
+            rf = OrderedForest(random_state=RANDOM_STATE, n_jobs=-1)
+            hyper_params = {
+                "max_features": [0.3],
+                "min_samples_leaf": [i for i in range(2, 8)],
+                "n_estimators": [100, 200, 500],
+                # "honesty": [False],
+                # "replace": [True]
             }
             model = GridSearchCV(
                 estimator=rf,

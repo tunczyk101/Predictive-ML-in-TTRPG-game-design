@@ -1,6 +1,7 @@
 import pandas as pd
+from orf import OrderedForest
 from pandas import DataFrame
-from sklearn.metrics import accuracy_score, mean_absolute_error, root_mean_squared_error
+from sklearn.metrics import accuracy_score, mean_absolute_error, mean_squared_error
 from statsmodels.miscmodels.ordinal_model import OrderedResultsWrapper
 
 from training.create_model import get_fitted_model
@@ -11,6 +12,10 @@ from training.rounding import (
     round_results_multiple_threshold,
     round_single_threshold_results,
 )
+
+
+def root_mean_squared_error(y_true, y_pred):
+    return mean_squared_error(y_true, y_pred, squared=False)
 
 
 def calculate_results(y_true, y_pred, include_accuracy=True) -> list[float]:
@@ -28,6 +33,7 @@ def calculate_results(y_true, y_pred, include_accuracy=True) -> list[float]:
         None,
     ]
     if include_accuracy:
+        y_pred = [int(i) for i in y_pred]
         results[-1] = accuracy_score(y_true, y_pred)
     return results
 
@@ -79,12 +85,18 @@ def get_model_results(
     :param thresholds: List of threshold values to consider for rounding=
     :return: Two lists containing evaluation metrics for different rounding strategies
     """
-    if type(model) != OrderedResultsWrapper:
-        y_pred_train = model.predict(X_train)
-        y_pred_test = model.predict(X_test)
-    else:
+    print(type(model), type(type(model)))
+    if type(model) == OrderedResultsWrapper:
         y_pred_train = model.predict(X_train).idxmax(axis=1)
         y_pred_test = model.predict(X_test).idxmax(axis=1)
+    elif type(model) == OrderedForest:
+        y_pred_train = pd.DataFrame(model.predict(X_train)["predictions"]).idxmax(
+            axis=1
+        )
+        y_pred_test = pd.DataFrame(model.predict(X_test)["predictions"]).idxmax(axis=1)
+    else:
+        y_pred_train = model.predict(X_train)
+        y_pred_test = model.predict(X_test)
 
     train_results = calculate_results(
         y_train, y_pred_train, include_accuracy=False
@@ -183,6 +195,7 @@ def train_and_evaluate_models(
 
     for i, model_name in enumerate(models):
         model = get_fitted_model(model_name, X_train, y_train)
+        print("GOT model")
         model_train_results, model_test_results = get_model_results(
             model,
             y_train,
