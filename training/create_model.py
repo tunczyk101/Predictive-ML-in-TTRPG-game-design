@@ -3,7 +3,7 @@ import numpy as np
 import optuna.integration.lightgbm as opt_lgb
 import pandas as pd
 from lightgbm import early_stopping, log_evaluation
-from mord import LogisticAT
+from mord import LogisticAT, LogisticIT
 from orf import OrderedForest
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import (
@@ -112,7 +112,7 @@ def create_model(classifier_name: str):
                 n_jobs=-1,
             )
         case "knn":
-            clf = KNeighborsRegressor()
+            logistic_model = KNeighborsRegressor()
 
             hyper_params = {
                 "leaf_size": list(range(50, 100, 10)),
@@ -122,7 +122,7 @@ def create_model(classifier_name: str):
             }
 
             model = GridSearchCV(
-                estimator=clf,
+                estimator=logistic_model,
                 param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
                 verbose=2,
@@ -162,10 +162,23 @@ def create_model(classifier_name: str):
         case "logisticAT":
             hyper_params = [{"alpha": np.linspace(0.0, 1e-3, 100)}]
 
-            clf = LogisticAT()
+            logistic_model = LogisticAT()
 
             model = GridSearchCV(
-                estimator=clf,
+                estimator=logistic_model,
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                verbose=2,
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "logisticIT":
+            hyper_params = [{"alpha": np.linspace(0.0, 1e-3, 100)}]
+
+            logistic_model = LogisticIT()
+
+            model = GridSearchCV(
+                estimator=logistic_model,
                 param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
                 verbose=2,
