@@ -1748,6 +1748,17 @@ lint = ["black (>=23.1.0)", "ruff"]
 test = ["pytest-cov"]
 
 [[package]]
+name = "mord"
+version = "0.7"
+description = "Ordinal regression models"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "mord-0.7.tar.gz", hash = "sha256:b60002734e33ca7fad9f94999c70b27fe038eb069cbd0fb08d6027c3d34a7bb3"},
+]
+
+[[package]]
 name = "nbclient"
 version = "0.10.0"
 description = "A client library for executing notebooks. Formerly nbconvert's ExecutePreprocessor."
@@ -3610,4 +3621,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "3.10.*"
-content-hash = "43d9e9ca1d94c6ce4cb8834243e87acb4851d89d19601217462a5be732f85443"
+content-hash = "3a03073b25320c97065bd346d52bb300398ebb4ea461ec12dc9bfc9243070d79"

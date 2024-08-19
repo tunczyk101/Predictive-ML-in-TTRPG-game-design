@@ -3,6 +3,7 @@ import numpy as np
 import optuna.integration.lightgbm as opt_lgb
 import pandas as pd
 from lightgbm import early_stopping, log_evaluation
+from mord import LogisticAT
 from orf import OrderedForest
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import (
@@ -155,6 +156,19 @@ def create_model(classifier_name: str):
                 estimator=rf,
                 param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "logisticAT":
+            hyper_params = [{"alpha": np.linspace(0.0, 1e-3, 100)}]
+
+            clf = LogisticAT()
+
+            model = GridSearchCV(
+                estimator=clf,
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                verbose=2,
                 return_train_score=True,
                 n_jobs=-1,
             )

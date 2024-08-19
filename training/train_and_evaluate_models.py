@@ -195,7 +195,6 @@ def train_and_evaluate_models(
 
     for i, model_name in enumerate(models):
         model = get_fitted_model(model_name, X_train, y_train)
-        print("GOT model")
         model_train_results, model_test_results = get_model_results(
             model,
             y_train,
@@ -211,10 +210,10 @@ def train_and_evaluate_models(
         columns = get_index(thresholds=[(min(th), max(th)) for th in thresholds])
         pd.DataFrame(
             data=all_train_results, index=models[: i + 1], columns=columns
-        ).to_csv(train_results_file)
+        ).to_excel(train_results_file)
         pd.DataFrame(
             data=all_test_results, index=models[: i + 1], columns=columns
-        ).to_csv(test_results_file)
+        ).to_excel(test_results_file)
 
     return pd.DataFrame(
         data=all_test_results, index=models, columns=columns
