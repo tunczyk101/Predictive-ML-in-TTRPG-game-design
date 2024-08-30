@@ -13,12 +13,14 @@ from sklearn.linear_model import (
     QuantileRegressor,
     RidgeCV,
 )
+from sklearn.metrics import make_scorer
 from sklearn.model_selection import GridSearchCV, KFold
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.svm import SVR, LinearSVR
 from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 from training.constants import RANDOM_STATE
+from training.score_functions import orf_mean_absolute_error
 
 
 def get_fitted_model(
@@ -149,13 +151,13 @@ def create_model(classifier_name: str):
                 "max_features": [0.3],
                 "min_samples_leaf": [i for i in range(2, 8)],
                 "n_estimators": [100, 200, 500],
-                # "honesty": [False],
-                # "replace": [True]
+                "honesty": [False],
+                "replace": [True],
             }
             model = GridSearchCV(
                 estimator=rf,
                 param_grid=hyper_params,
-                scoring="neg_mean_absolute_error",
+                scoring=make_scorer(orf_mean_absolute_error, greater_is_better=False),
                 return_train_score=True,
                 n_jobs=-1,
             )
