@@ -2,6 +2,7 @@ import pandas as pd
 from orf import OrderedForest
 from pandas import DataFrame
 from sklearn.metrics import accuracy_score, mean_absolute_error, mean_squared_error
+from sklearn.model_selection import GridSearchCV
 from statsmodels.miscmodels.ordinal_model import OrderedResultsWrapper
 
 from training.create_model import get_fitted_model
@@ -85,11 +86,10 @@ def get_model_results(
     :param thresholds: List of threshold values to consider for rounding=
     :return: Two lists containing evaluation metrics for different rounding strategies
     """
-    print(type(model), type(type(model)))
     if type(model) == OrderedResultsWrapper:
         y_pred_train = model.predict(X_train).idxmax(axis=1)
         y_pred_test = model.predict(X_test).idxmax(axis=1)
-    elif type(model) == OrderedForest:
+    elif type(model) == GridSearchCV and type(model.best_estimator_) == OrderedForest:
         y_pred_train = pd.DataFrame(model.predict(X_train)["predictions"]).idxmax(
             axis=1
         )
