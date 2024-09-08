@@ -4,8 +4,9 @@ import optuna.integration.lightgbm as opt_lgb
 import pandas as pd
 from lightgbm import early_stopping, log_evaluation
 from mord import LogisticAT, LogisticIT
+from Ordinal_Classifier import Ordinal_Classifier as OC
 from orf import OrderedForest
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.linear_model import (
     HuberRegressor,
     LassoCV,
@@ -186,6 +187,10 @@ def create_model(classifier_name: str):
                 verbose=2,
                 return_train_score=True,
                 n_jobs=-1,
+            )
+        case "simple_or":
+            model = OC.OrdinalClassifier(
+                RandomForestClassifier(random_state=42, n_jobs=-1)
             )
         case _:
             raise ValueError(f"Classifier {classifier_name} is unsupported")
