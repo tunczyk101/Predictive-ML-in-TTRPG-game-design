@@ -4,7 +4,6 @@ import optuna.integration.lightgbm as opt_lgb
 import pandas as pd
 from lightgbm import early_stopping, log_evaluation
 from mord import LogisticAT, LogisticIT
-from Ordinal_Classifier import Ordinal_Classifier as OC
 from orf import OrderedForest
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.linear_model import (
@@ -21,6 +20,7 @@ from sklearn.svm import SVR, LinearSVR
 from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 from training.constants import RANDOM_STATE
+from training.models.simple_ordinal_classification import SimpleOrdinalClassification
 from training.score_functions import orf_mean_absolute_error
 
 
@@ -189,8 +189,17 @@ def create_model(classifier_name: str):
                 n_jobs=-1,
             )
         case "simple_or":
-            model = OC.OrdinalClassifier(
-                RandomForestClassifier(random_state=42, n_jobs=-1)
+            hyper_params = {
+                "max_features": [0.3],
+                "n_estimators": [100, 200, 500],
+                "criterion": ["gini", "entropy", "log_loss"],
+            }
+            model = GridSearchCV(
+                estimator=SimpleOrdinalClassification(),
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
             )
         case _:
             raise ValueError(f"Classifier {classifier_name} is unsupported")
