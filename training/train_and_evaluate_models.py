@@ -1,6 +1,8 @@
 import pandas as pd
+from orf import OrderedForest
 from pandas import DataFrame
-from sklearn.metrics import accuracy_score, mean_absolute_error, root_mean_squared_error
+from sklearn.metrics import accuracy_score, mean_absolute_error, mean_squared_error
+from sklearn.model_selection import GridSearchCV
 from statsmodels.miscmodels.ordinal_model import OrderedResultsWrapper
 
 from training.create_model import get_fitted_model
@@ -11,6 +13,10 @@ from training.rounding import (
     round_results_multiple_threshold,
     round_single_threshold_results,
 )
+
+
+def root_mean_squared_error(y_true, y_pred):
+    return mean_squared_error(y_true, y_pred, squared=False)
 
 
 def calculate_results(y_true, y_pred, include_accuracy=True) -> list[float]:
@@ -28,6 +34,7 @@ def calculate_results(y_true, y_pred, include_accuracy=True) -> list[float]:
         None,
     ]
     if include_accuracy:
+        y_pred = [int(i) for i in y_pred]
         results[-1] = accuracy_score(y_true, y_pred)
     return results
 
@@ -36,8 +43,11 @@ def get_index(thresholds: list[tuple[float, float]]):
     """
     Create a pandas MultiIndex based on provided thresholds.
 
-    :param thresholds: A list of tuples, where each tuple contains two float values representing the start and end of a threshold range.
-    :return: A MultiIndex object with headers for no rounded results, classic (0.5) rounding and for each given threshold pair round for single_threshold, multiple_threshold, graph_threshold. For each rounding type there is returned a group metrices.
+    :param thresholds: A list of tuples, where each tuple contains two float values representing the start
+                        and end of a threshold range.
+    :return: A MultiIndex object with headers for no rounded results, classic (0.5) rounding
+                and for each given threshold pair round for single_threshold, multiple_threshold, graph_threshold.
+                For each rounding type there is returned a group metrices.
     """
     iterables = [
         ["no_rounding", "round 0.5"]
@@ -76,20 +86,19 @@ def get_model_results(
     :param thresholds: List of threshold values to consider for rounding=
     :return: Two lists containing evaluation metrics for different rounding strategies
     """
-    if type(model) != OrderedResultsWrapper:
+    if isinstance(model, OrderedResultsWrapper):
+        y_pred_train = model.predict(X_train).idxmax(axis=1)
+        y_pred_test = model.predict(X_test).idxmax(axis=1)
+    elif isinstance(model, GridSearchCV) and isinstance(
+        model.best_estimator_, OrderedForest
+    ):
+        y_pred_train = pd.DataFrame(model.predict(X_train)["predictions"]).idxmax(
+            axis=1
+        )
+        y_pred_test = pd.DataFrame(model.predict(X_test)["predictions"]).idxmax(axis=1)
+    else:
         y_pred_train = model.predict(X_train)
         y_pred_test = model.predict(X_test)
-    else:
-        y_pred_train = (
-            model.predict(X_train)
-            .rename(columns={i + 1: i for i in range(-1, 22)})
-            .idxmax(axis=1)
-        )
-        y_pred_test = (
-            model.predict(X_test)
-            .rename(columns={i + 1: i for i in range(-1, 22)})
-            .idxmax(axis=1)
-        )
 
     train_results = calculate_results(
         y_train, y_pred_train, include_accuracy=False
@@ -163,6 +172,7 @@ def train_and_evaluate_models(
     X_test: pd.DataFrame,
     y_test: pd.Series,
     thresholds: list[list[float]],
+    save_files: tuple[str, str],
 ) -> tuple[DataFrame, DataFrame]:
     """
     Trains and evaluates multiple machine learning models and compares different rounding strategies.
@@ -173,12 +183,19 @@ def train_and_evaluate_models(
     :param X_test: Feature matrix for the test set
     :param y_test: True target values for the test set
     :param thresholds: List of threshold values to consider for rounding
-    :return: Pandas DataFrames containing evaluation metrics for each model and rounding strategy. One for test results and another one for train results.
+    :return: Pandas DataFrames containing evaluation metrics for each model and rounding strategy.
+                One for test results and another one for train results.
     """
     all_train_results = []
     all_test_results = []
+    train_results_file, test_results_file = save_files
+    columns = get_index(thresholds=[(min(th), max(th)) for th in thresholds])
 
-    for model_name in models:
+    # there are models that require the level to be non-negative
+    y_train += 1
+    y_test += 1
+
+    for i, model_name in enumerate(models):
         model = get_fitted_model(model_name, X_train, y_train)
         model_train_results, model_test_results = get_model_results(
             model,
@@ -192,7 +209,13 @@ def train_and_evaluate_models(
         all_train_results.append(model_train_results)
         all_test_results.append(model_test_results)
 
-    columns = get_index(thresholds=[(min(th), max(th)) for th in thresholds])
+        columns = get_index(thresholds=[(min(th), max(th)) for th in thresholds])
+        pd.DataFrame(
+            data=all_train_results, index=models[: i + 1], columns=columns
+        ).to_excel(train_results_file)
+        pd.DataFrame(
+            data=all_test_results, index=models[: i + 1], columns=columns
+        ).to_excel(test_results_file)
 
     return pd.DataFrame(
         data=all_test_results, index=models, columns=columns

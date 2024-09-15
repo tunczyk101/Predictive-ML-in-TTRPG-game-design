@@ -3,7 +3,10 @@ from queue import PriorityQueue
 import numpy as np
 import optuna
 import pandas as pd
+from optuna.samplers import TPESampler
 from sklearn.metrics import mean_absolute_error
+
+from dataset.constants import RANDOM_STATE
 
 
 def round_single_threshold_results(
@@ -142,7 +145,8 @@ def find_best_thresholds(
     :param thresholds: Tuple containing the lower and upper bounds for the thresholds
     :return: Dictionary mapping level to their optimized thresholds.
     """
-    study = optuna.create_study(direction="minimize")
+    sampler = TPESampler(seed=RANDOM_STATE)
+    study = optuna.create_study(direction="minimize", sampler=sampler)
     study.optimize(
         lambda trial: objective(trial, y_true, y_predicted, thresholds), n_trials=100
     )
@@ -164,6 +168,9 @@ def get_edges_cost(
     lvl_pred = [pred for pred in range(len(y_pred)) if y_pred[pred] // 1 == level]
     n = len(lvl_pred)
     moves = []
+    if n == 0:
+        # if there are no predictions with a given value then use "classic" rounding
+        return [(0.5, 0)]
     for threshold in thresholds:
         sum_prediction_error = sum(
             [round_prediction_error(y_pred[i], y_true[i], threshold) for i in lvl_pred]
@@ -177,6 +184,7 @@ def get_edges_cost(
 def find_graph_rounding(
     y_pred: list[float], y_true: list[int], thresholds: list[float]
 ) -> dict[int, float]:
+    print("Graph thresholds")
     """
      Finds the best thresholds for rounding using a graph-based approach.
 
@@ -187,12 +195,12 @@ def find_graph_rounding(
     """
     q = PriorityQueue()
     final_thresholds = {}
-    q.put((0, -1))
+    q.put((0, 0))
 
     while not q.empty():
         cost, level = q.get()
 
-        if level == 21:
+        if level == 22:
             return final_thresholds
 
         edges_cost = get_edges_cost(level, thresholds, y_pred, y_true)

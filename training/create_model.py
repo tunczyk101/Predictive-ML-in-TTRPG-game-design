@@ -3,6 +3,8 @@ import numpy as np
 import optuna.integration.lightgbm as opt_lgb
 import pandas as pd
 from lightgbm import early_stopping, log_evaluation
+from mord import LogisticAT, LogisticIT
+from orf import OrderedForest
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import (
     HuberRegressor,
@@ -11,19 +13,21 @@ from sklearn.linear_model import (
     QuantileRegressor,
     RidgeCV,
 )
+from sklearn.metrics import make_scorer
 from sklearn.model_selection import GridSearchCV, KFold
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.svm import SVR, LinearSVR
 from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 from training.constants import RANDOM_STATE
+from training.score_functions import orf_mean_absolute_error
 
 
 def get_fitted_model(
     classifier_name: str,
     X_train: pd.DataFrame,
     y_train: pd.Series,
-) -> RidgeCV | GridSearchCV | lightgbm.Booster:
+) -> RidgeCV | GridSearchCV | lightgbm.Booster | OrderedModel:
     """
     Creates chosen model, performs tuning and fits\n
     :param X_train: train set with features to use during fitting
@@ -110,7 +114,7 @@ def create_model(classifier_name: str):
                 n_jobs=-1,
             )
         case "knn":
-            clf = KNeighborsRegressor()
+            logistic_model = KNeighborsRegressor()
 
             hyper_params = {
                 "leaf_size": list(range(50, 100, 10)),
@@ -120,7 +124,7 @@ def create_model(classifier_name: str):
             }
 
             model = GridSearchCV(
-                estimator=clf,
+                estimator=logistic_model,
                 param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
                 verbose=2,
@@ -138,6 +142,48 @@ def create_model(classifier_name: str):
                 estimator=rf,
                 param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "ordered_random_forest":
+            rf = OrderedForest(random_state=RANDOM_STATE, n_jobs=-1)
+            hyper_params = {
+                "max_features": [0.3],
+                "min_samples_leaf": [i for i in range(2, 8)],
+                "n_estimators": [100, 200, 500],
+                "honesty": [False],
+                "replace": [True],
+            }
+            model = GridSearchCV(
+                estimator=rf,
+                param_grid=hyper_params,
+                scoring=make_scorer(orf_mean_absolute_error, greater_is_better=False),
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "logisticAT":
+            hyper_params = [{"alpha": np.linspace(0.0, 1e-3, 100)}]
+
+            logistic_model = LogisticAT()
+
+            model = GridSearchCV(
+                estimator=logistic_model,
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                verbose=2,
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "logisticIT":
+            hyper_params = [{"alpha": np.linspace(0.0, 1e-3, 100)}]
+
+            logistic_model = LogisticIT()
+
+            model = GridSearchCV(
+                estimator=logistic_model,
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                verbose=2,
                 return_train_score=True,
                 n_jobs=-1,
             )
@@ -182,9 +228,10 @@ def lightgbm_fit(X_train, y_train) -> lightgbm.Booster:
 def fit_ordered_model(
     model_name: str, X_train: pd.DataFrame, y_train: pd.Series
 ) -> OrderedModel:
-    distr = model_name.split("ordered_model_")[1]
+    model_params = model_name.split("ordered_model_")[1]
+    distr, method = model_params.split("_")
 
     model = OrderedModel(y_train, X_train, distr=distr)
-    model = model.fit(method="bfgs")
+    model = model.fit(method=method)
 
     return model
