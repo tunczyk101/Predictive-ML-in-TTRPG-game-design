@@ -168,6 +168,8 @@ def get_edges_cost(
     lvl_pred = [pred for pred in range(len(y_pred)) if y_pred[pred] // 1 == level]
     n = len(lvl_pred)
     moves = []
+    if n == 0:
+        return [(0, 0)]
     for threshold in thresholds:
         sum_prediction_error = sum(
             [round_prediction_error(y_pred[i], y_true[i], threshold) for i in lvl_pred]
