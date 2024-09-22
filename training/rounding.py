@@ -169,9 +169,8 @@ def get_edges_cost(
     n = len(lvl_pred)
     moves = []
 
-    if (
-        n == 0
-    ):  # no predictions for a given range, return classic math rounding threshold
+    if n == 0:
+        # no predictions for a given range, return classic math rounding threshold
         return [(0.5, 0)]
 
     for threshold in thresholds:

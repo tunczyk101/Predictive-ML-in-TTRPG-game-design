@@ -86,10 +86,12 @@ def get_model_results(
     :param thresholds: List of threshold values to consider for rounding=
     :return: Two lists containing evaluation metrics for different rounding strategies
     """
-    if type(model) == OrderedResultsWrapper:
+    if isinstance(model, OrderedResultsWrapper):
         y_pred_train = model.predict(X_train).idxmax(axis=1)
         y_pred_test = model.predict(X_test).idxmax(axis=1)
-    elif type(model) == GridSearchCV and type(model.best_estimator_) == OrderedForest:
+    elif isinstance(model, GridSearchCV) and isinstance(
+        model.best_estimator_, OrderedForest
+    ):
         y_pred_train = pd.DataFrame(model.predict(X_train)["predictions"]).idxmax(
             axis=1
         )
