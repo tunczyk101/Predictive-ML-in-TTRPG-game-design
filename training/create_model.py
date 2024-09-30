@@ -20,6 +20,7 @@ from sklearn.svm import SVR, LinearSVR
 from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 from training.constants import RANDOM_STATE
+from training.models.gpor import GPOR
 from training.models.simple_ordinal_classification import SimpleOrdinalClassification
 from training.score_functions import orf_mean_absolute_error
 
@@ -201,6 +202,8 @@ def create_model(classifier_name: str):
                 return_train_score=True,
                 n_jobs=-1,
             )
+        case "gpor":
+            model = GPOR()
         case _:
             raise ValueError(f"Classifier {classifier_name} is unsupported")
 
