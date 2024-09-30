@@ -22,6 +22,7 @@ from statsmodels.miscmodels.ordinal_model import OrderedModel
 from training.constants import RANDOM_STATE
 from training.models.gpor import GPOR
 from training.models.simple_ordinal_classification import SimpleOrdinalClassification
+from training.ordered_models import LinearOrdinalModel
 from training.score_functions import orf_mean_absolute_error
 
 
@@ -40,9 +41,6 @@ def get_fitted_model(
     """
     if classifier_name == "lightgbm":
         return lightgbm_fit(X_train, y_train)
-
-    if "ordered_model" in classifier_name:
-        return fit_ordered_model(classifier_name, X_train, y_train)
 
     model = create_model(classifier_name)
     model.fit(X_train, y_train)
@@ -116,7 +114,7 @@ def create_model(classifier_name: str):
                 n_jobs=-1,
             )
         case "knn":
-            logistic_model = KNeighborsRegressor()
+            knn = KNeighborsRegressor()
 
             hyper_params = {
                 "leaf_size": list(range(50, 100, 10)),
@@ -126,7 +124,7 @@ def create_model(classifier_name: str):
             }
 
             model = GridSearchCV(
-                estimator=logistic_model,
+                estimator=knn,
                 param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
                 verbose=2,
@@ -189,6 +187,11 @@ def create_model(classifier_name: str):
                 return_train_score=True,
                 n_jobs=-1,
             )
+        
+        case "linear_ordinal_model_probit":
+            model = create_linear_ordinal_model("probit")
+        case "linear_ordinal_model_logit":
+            model = create_linear_ordinal_model("logit")
         case "simple_or":
             hyper_params = {
                 "max_features": [0.3],
@@ -242,13 +245,16 @@ def lightgbm_fit(X_train, y_train) -> lightgbm.Booster:
     return lgb_tuned
 
 
-def fit_ordered_model(
-    model_name: str, X_train: pd.DataFrame, y_train: pd.Series
-) -> OrderedModel:
-    model_params = model_name.split("ordered_model_")[1]
-    distr, method = model_params.split("_")
-
-    model = OrderedModel(y_train, X_train, distr=distr)
-    model = model.fit(method=method)
+def create_linear_ordinal_model(distr: str) -> GridSearchCV:
+    model = LinearOrdinalModel(distr=distr)
+    hyper_params = {"offset": np.linspace(0.25, 1.25, 11)}
+    model = GridSearchCV(
+        estimator=model,
+        param_grid=hyper_params,
+        scoring="neg_mean_absolute_error",
+        return_train_score=True,
+        n_jobs=-1,
+        verbose=10,
+    )
 
     return model

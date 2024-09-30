@@ -282,13 +282,13 @@ def get_max_melee_bonus_damage(
     return max_bonus, damage_expected_value
 
 
-def get_aoo(items_list: list[dict]):
+def get_aoo(items_list: list[dict]) -> int:
     reactions = [i["name"] for i in items_list if i["name"] == "Attack of Opportunity"]
 
     return len(reactions)
 
 
-def get_dc_bonus(items_list: list[dict]):
+def get_dc_bonus(items_list: list[dict]) -> tuple[int, int]:
     reactions = [
         (i["system"]["spelldc"]["dc"], i["system"]["spelldc"]["value"])
         for i in items_list
@@ -334,7 +334,7 @@ def sort_preprocessed_data(bestiary: pd.DataFrame) -> pd.DataFrame:
     return bestiary
 
 
-def remove_older_monsters_duplicates(df: pd.DataFrame):
+def remove_older_monsters_duplicates(df: pd.DataFrame) -> pd.DataFrame:
     df["system.details.publication.title"] = pd.Categorical(
         df["system.details.publication.title"],
         list(load_csv_mapping_file().sort_values(by=["date"], ascending=False)["book"]),
