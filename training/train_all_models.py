@@ -35,6 +35,8 @@ if __name__ == "__main__":
             "ordered_random_forest",
             "logisticAT",
             "logisticIT",
+            "simple_or",
+            "gpor",
         ],
         X_train,
         y_train,

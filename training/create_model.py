@@ -20,7 +20,9 @@ from sklearn.svm import SVR, LinearSVR
 from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 from training.constants import RANDOM_STATE
-from training.ordered_models import LinearOrdinalModel
+from training.models.gpor import GPOR
+from training.models.ordered_models import LinearOrdinalModel
+from training.models.simple_ordinal_classification import SimpleOrdinalClassification
 from training.score_functions import orf_mean_absolute_error
 
 
@@ -189,6 +191,21 @@ def create_model(classifier_name: str):
             model = create_linear_ordinal_model("probit")
         case "linear_ordinal_model_logit":
             model = create_linear_ordinal_model("logit")
+        case "simple_or":
+            hyper_params = {
+                "max_features": [0.3],
+                "n_estimators": [100, 200, 500],
+                "criterion": ["gini", "entropy", "log_loss"],
+            }
+            model = GridSearchCV(
+                estimator=SimpleOrdinalClassification(),
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "gpor":
+            model = GPOR()
         case _:
             raise ValueError(f"Classifier {classifier_name} is unsupported")
 
