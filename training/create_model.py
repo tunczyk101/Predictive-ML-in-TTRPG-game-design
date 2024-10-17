@@ -23,6 +23,8 @@ from training.constants import RANDOM_STATE
 from training.ordered_models import LinearOrdinalModel
 from training.score_functions import orf_mean_absolute_error
 
+from training.models.baseline import BaselineModel
+
 
 def get_fitted_model(
     classifier_name: str,
@@ -54,6 +56,8 @@ def create_model(classifier_name: str):
     :return: chosen classifier
     """
     match classifier_name:
+        case "baseline":
+            model = BaselineModel()
         case "linear_regression":
             model = LinearRegression()
         case "linear_regression_ridge":
