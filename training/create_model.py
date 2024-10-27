@@ -1,3 +1,4 @@
+import gpflow
 import lightgbm as lightgbm
 import numpy as np
 import optuna.integration.lightgbm as opt_lgb
@@ -20,6 +21,7 @@ from sklearn.svm import SVR, LinearSVR
 from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 from training.constants import RANDOM_STATE
+from training.models.coral_corn import Coral
 from training.models.gpor import GPOR
 from training.models.ordered_models import LinearOrdinalModel
 from training.models.simple_ordinal_classification import SimpleOrdinalClassification
@@ -134,7 +136,7 @@ def create_model(classifier_name: str):
         case "random_forest":
             rf = RandomForestRegressor(random_state=RANDOM_STATE, n_jobs=-1)
             hyper_params = {
-                "max_features": [0.3],
+                "max_features": ["sqrt", 0.3],
                 "n_estimators": [100, 200, 500],
                 "criterion": ["squared_error", "absolute_error", "friedman_mse"],
             }
@@ -193,9 +195,9 @@ def create_model(classifier_name: str):
             model = create_linear_ordinal_model("logit")
         case "simple_or":
             hyper_params = {
-                "max_features": [0.3],
+                "max_features": ["sqrt", 0.3],
                 "n_estimators": [100, 200, 500],
-                "criterion": ["gini", "entropy", "log_loss"],
+                "criterion": ["gini", "entropy"],
             }
             model = GridSearchCV(
                 estimator=SimpleOrdinalClassification(),
@@ -205,7 +207,17 @@ def create_model(classifier_name: str):
                 n_jobs=-1,
             )
         case "gpor":
-            model = GPOR()
+            hyper_params = {
+                "maxiter": [100],
+                "kernel": [gpflow.kernels.ArcCosine()],
+            }
+            model = GridSearchCV(
+                estimator=GPOR(),
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
+            )
         case _:
             raise ValueError(f"Classifier {classifier_name} is unsupported")
 

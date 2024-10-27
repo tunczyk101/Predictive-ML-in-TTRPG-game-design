@@ -7,7 +7,7 @@ from dataset.splitting_dataset import split_dataframe
 from training.train_and_evaluate_models import train_and_evaluate_models
 
 
-PATH_TO_DATASET = os.path.join("..", "preprocessed_bestiaries", "bestiaries_basic.csv")
+PATH_TO_DATASET = os.path.join("..", "preprocessed_bestiaries", "bestiaries_full.csv")
 TEST_RESULT_FILE = os.path.join("results", "results_test_scenarios.xlsx")
 TRAIN_RESULT_FILE = os.path.join("results", "results_train_scenarios.xlsx")
 
