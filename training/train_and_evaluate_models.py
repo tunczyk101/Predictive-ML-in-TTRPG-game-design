@@ -5,6 +5,13 @@ from sklearn.metrics import accuracy_score, mean_absolute_error, mean_squared_er
 from sklearn.model_selection import GridSearchCV
 from statsmodels.miscmodels.ordinal_model import OrderedResultsWrapper
 
+from metrics import (
+    accuracy_at_k,
+    mae_macroaveraged,
+    mse_macroaveraged,
+    rmse_macroaveraged,
+    somers_d
+)
 from training.create_model import get_fitted_model
 from training.rounding import (
     find_best_thresholds,
@@ -30,12 +37,18 @@ def calculate_results(y_true, y_pred, include_accuracy=True) -> list[float]:
     """
     results = [
         root_mean_squared_error(y_true, y_pred),
+        rmse_macroaveraged(y_true, y_pred),
         mean_absolute_error(y_true, y_pred),
+        mae_macroaveraged(y_true, y_pred),
+        mse_macroaveraged(y_true, y_pred),
+        somers_d(y_true, y_pred),
         None,
+        None
     ]
     if include_accuracy:
-        y_pred = [int(i) for i in y_pred]
-        results[-1] = accuracy_score(y_true, y_pred)
+        y_pred_rounded = [int(i) for i in y_pred]
+        results[-2] = accuracy_score(y_true, y_pred_rounded)
+        results[-1] = accuracy_at_k(y_true, y_pred, k=2),
     return results
 
 
@@ -60,7 +73,7 @@ def get_index(thresholds: list[tuple[float, float]]):
                 "best_graph_thresholds_",
             ]
         ],
-        ["rmse", "mae", "accuracy"],
+        ["rmse", "rmse_macroaveraged", "mae", "mae_macroaveraged", "mse_macroaveraged", "somers_d", "accuracy", "accuracy2"],
     ]
     return pd.MultiIndex.from_product(
         iterables, names=["round type + metrics", "model"]
