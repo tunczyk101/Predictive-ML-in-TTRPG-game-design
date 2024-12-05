@@ -20,6 +20,7 @@ if __name__ == "__main__":
 
     results_test, results_train = train_and_evaluate_models(
         [
+            "baseline",
             "linear_regression",
             "linear_regression_ridge",
             "linear_regression_lasso",
