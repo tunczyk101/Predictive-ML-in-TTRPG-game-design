@@ -190,13 +190,15 @@ def train_and_evaluate_models(
     all_test_results = []
     train_results_file, test_results_file = save_files
     columns = get_index(thresholds=[(min(th), max(th)) for th in thresholds])
+    n_features = X_train.shape[1]
 
     # there are models that require the level to be non-negative
     y_train += 1
     y_test += 1
 
     for i, model_name in enumerate(models):
-        model = get_fitted_model(model_name, X_train, y_train)
+        print(model_name)
+        model = get_fitted_model(model_name, X_train, y_train, n_features)
         model_train_results, model_test_results = get_model_results(
             model,
             y_train,

@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 import torch
 from coral_pytorch.dataset import (
     corn_label_from_logits,
@@ -15,7 +14,7 @@ from torch.utils.data import DataLoader, Dataset
 from training.constants import RANDOM_STATE
 
 
-NUM_CLASSES = 23
+NUM_CLASSES = 53
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 torch.manual_seed(RANDOM_STATE)
 

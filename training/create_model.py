@@ -32,7 +32,7 @@ def get_fitted_model(
     classifier_name: str,
     X_train: pd.DataFrame,
     y_train: pd.Series,
-    n_features: int = 31,
+    n_features: int = 53,
 ) -> RidgeCV | GridSearchCV | lightgbm.Booster | OrderedModel:
     """
     Creates chosen model, performs tuning and fits\n
