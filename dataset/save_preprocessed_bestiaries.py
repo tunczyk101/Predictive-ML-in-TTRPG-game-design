@@ -6,6 +6,7 @@ from dataset.constants import (
     ORDERED_CHARACTERISTICS_BASIC,
     ORDERED_CHARACTERISTICS_EXPANDED,
     ORDERED_CHARACTERISTICS_FULL,
+    ORDERED_CHARACTERISTICS_REDUCED,
 )
 from dataset.creating_dataset import load_and_preprocess_data
 
@@ -18,16 +19,19 @@ BASIC_COLUMNS = ["book", "level"]
 
 
 if __name__ == "__main__":
-    df = load_and_preprocess_data(
+    all_features_df = load_and_preprocess_data(
         DATASET_FILES_PATHS,
         characteristics=FEATURES,
     )
 
-    df = df[ORDERED_CHARACTERISTICS_FULL + BASIC_COLUMNS]
+    df = all_features_df[ORDERED_CHARACTERISTICS_FULL + BASIC_COLUMNS]
     df.to_csv("../preprocessed_bestiaries/bestiaries_full.csv")
 
-    df = df[ORDERED_CHARACTERISTICS_EXPANDED + BASIC_COLUMNS]
+    df = all_features_df[ORDERED_CHARACTERISTICS_EXPANDED + BASIC_COLUMNS]
     df.to_csv("../preprocessed_bestiaries/bestiaries_expanded.csv")
 
-    df = df[ORDERED_CHARACTERISTICS_BASIC + BASIC_COLUMNS]
+    df = all_features_df[ORDERED_CHARACTERISTICS_BASIC + BASIC_COLUMNS]
     df.to_csv("../preprocessed_bestiaries/bestiaries_basic.csv")
+
+    df = all_features_df[ORDERED_CHARACTERISTICS_REDUCED + BASIC_COLUMNS]
+    df.to_csv("../preprocessed_bestiaries/bestiaries_reduced.csv")
