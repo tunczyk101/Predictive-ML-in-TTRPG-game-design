@@ -7,9 +7,11 @@ from dataset.splitting_dataset import split_dataframe
 from training.train_and_evaluate_models import train_and_evaluate_models
 
 
-PATH_TO_DATASET = os.path.join("..", "preprocessed_bestiaries", "bestiaries_full.csv")
-TEST_RESULT_FILE = os.path.join("results", "results_test_scenarios.xlsx")
-TRAIN_RESULT_FILE = os.path.join("results", "results_train_scenarios.xlsx")
+PATH_TO_DATASET = os.path.join(
+    "..", "preprocessed_bestiaries", "bestiaries_reduced.csv"
+)
+TEST_RESULT_FILE = os.path.join("results", "results_test.xlsx")
+TRAIN_RESULT_FILE = os.path.join("results", "results_train.xlsx")
 
 
 if __name__ == "__main__":
@@ -37,6 +39,8 @@ if __name__ == "__main__":
             "logisticIT",
             "simple_or",
             "gpor",
+            "coral",
+            "corn",
         ],
         X_train,
         y_train,
