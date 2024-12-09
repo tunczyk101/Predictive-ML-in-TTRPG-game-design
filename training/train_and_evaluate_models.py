@@ -48,7 +48,7 @@ def calculate_results(y_true, y_pred, include_accuracy=True) -> list[float]:
     if include_accuracy:
         y_pred_rounded = [int(i) for i in y_pred]
         results[-2] = accuracy_score(y_true, y_pred_rounded)
-        results[-1] = accuracy_at_k(y_true, y_pred, k=2),
+        results[-1] = accuracy_at_k(y_true, y_pred, k=1),
     return results
 
 
@@ -73,7 +73,7 @@ def get_index(thresholds: list[tuple[float, float]]):
                 "best_graph_thresholds_",
             ]
         ],
-        ["rmse", "rmse_macroaveraged", "mae", "mae_macroaveraged", "mse_macroaveraged", "somers_d", "accuracy", "accuracy2"],
+        ["rmse", "rmse_macroaveraged", "mae", "mae_macroaveraged", "mse_macroaveraged", "somers_d", "accuracy", "accuracy1"],
     ]
     return pd.MultiIndex.from_product(
         iterables, names=["round type + metrics", "model"]
