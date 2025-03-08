@@ -8,7 +8,11 @@ from coral_pytorch.dataset import (
 from coral_pytorch.layers import CoralLayer
 from coral_pytorch.losses import coral_loss, corn_loss
 from sklearn.base import BaseEstimator, ClassifierMixin
+from skorch import NeuralNet
+from skorch.dataset import Dataset as SkorchDataset
 from torch import nn, sigmoid
+from torch.nn import CrossEntropyLoss
+from torch.optim import Optimizer
 from torch.utils.data import DataLoader, Dataset
 
 from training.constants import RANDOM_STATE
@@ -37,12 +41,13 @@ class CORAL_MLP(nn.Module):
     def __init__(self, input_size: int, num_classes: int):
         super().__init__()
         self.network = nn.Sequential(
-            nn.Linear(input_size, 100),
+            nn.Linear(input_size, 128),
             nn.ReLU(),
-            nn.Linear(100, 50),
+            nn.Linear(128, 64),
             nn.ReLU(),
         )
-        self.fc = CoralLayer(size_in=50, num_classes=num_classes)
+        self.num_classes = num_classes
+        self.fc = CoralLayer(size_in=64, num_classes=num_classes)
 
     def forward(self, x):
         x = self.network(x)
@@ -57,20 +62,19 @@ class CORAL_MLP(nn.Module):
 
     def predict(self, x, threshold: float = 0.5):
         y_pred_score = self.predict_proba(x)
-        return (y_pred_score > threshold).to(torch.int32)
+        return (y_pred_score >= threshold).to(torch.int32)
 
 
 class Coral(BaseEstimator, ClassifierMixin):
     def __init__(
         self,
-        input_size=53,
-        num_classes=NUM_CLASSES,
-        lambda_reg=0.01,
-        learning_rate=0.05,
-        num_epochs=100,
-        batch_size=128,
+        input_size: int = 53,
+        num_classes: int = NUM_CLASSES,
+        lambda_reg: float = 0.01,
+        learning_rate: float = 0.05,
+        num_epochs: int = 100,
+        batch_size: int = 128,
     ):
-        torch.manual_seed(RANDOM_STATE)
         self.input_size = input_size
         self.lambda_reg = lambda_reg
         self.learning_rate = learning_rate
@@ -89,8 +93,8 @@ class Coral(BaseEstimator, ClassifierMixin):
             dataset=train_dataset,
             batch_size=self.batch_size,
             shuffle=True,  # want to shuffle the dataset
-            num_workers=0,
-        )  # number processes/CPUs to use
+            num_workers=0,  # number processes/CPUs to use
+        )
 
         for epoch in range(self.num_epochs):
 
@@ -127,35 +131,75 @@ class Coral(BaseEstimator, ClassifierMixin):
         return predicted_labels.numpy()
 
 
+class SkorchCORAL(NeuralNet):
+    def __init__(
+        self,
+        input_size: int = 30,
+        num_classes: int = NUM_CLASSES,
+        optimizer__weight_decay: float = 0.01,
+        optimizer__lr: float = 0.05,
+        optimizer: Optimizer = torch.optim.AdamW,
+        *args,
+        **kwargs
+    ):
+        if "module" not in kwargs:
+            kwargs["module"] = CORAL_MLP(input_size=input_size, num_classes=num_classes)
+        # not in use but GridSearch pass it and it has to be passed for NeuralNet
+        if "criterion" not in kwargs:
+            kwargs["criterion"] = CrossEntropyLoss
+        super().__init__(
+            *args,
+            optimizer__lr=optimizer__lr,
+            optimizer__weight_decay=optimizer__weight_decay,
+            optimizer=optimizer,
+            **kwargs
+        )
+
+    def get_loss(self, y_pred, y_true, X=None, training=False):
+        levels = levels_from_labelbatch(y_true, num_classes=self.module_.num_classes)
+        logits, _ = y_pred
+        return coral_loss(logits, levels.to(DEVICE))
+
+    def fit(self, X, y=None, **fit_params):
+        train_dataset = SkorchDataset(X.to_numpy().astype(np.float32), y.to_numpy())
+        super().fit(train_dataset.X, train_dataset.y, **fit_params)
+
+    def predict(self, X):
+        features = torch.from_numpy(X.values).float()
+        features = features.to(DEVICE)
+
+        logits, probas = self.module_(features)
+        predicted_labels = proba_to_label(probas).float()
+
+        return predicted_labels.numpy()
+
+
 class CORN_MLP(nn.Module):
     def __init__(self, input_size: int, num_classes: int):
         super().__init__()
         self.network = nn.Sequential(
-            nn.Linear(input_size, 100),
+            nn.Linear(input_size, 128),
             nn.ReLU(),
-            nn.Linear(100, 50),
+            nn.Linear(128, 64),
             nn.ReLU(),
             ### Specify CORN layer
             torch.nn.Linear(50, (num_classes - 1)),
         )
 
     def forward(self, x):
-        logits = self.network(x)
-
-        return logits
+        return self.network(x)
 
 
 class Corn(BaseEstimator, ClassifierMixin):
     def __init__(
         self,
-        input_size=53,
-        num_classes=NUM_CLASSES,
-        lambda_reg=0.01,
-        learning_rate=0.05,
-        num_epochs=100,
-        batch_size=128,
+        input_size: int = 53,
+        num_classes: int = NUM_CLASSES,
+        lambda_reg: float = 0.01,
+        learning_rate: float = 0.05,
+        num_epochs: int = 100,
+        batch_size: int = 128,
     ):
-        torch.manual_seed(RANDOM_STATE)
         self.learning_rate = learning_rate
         self.input_size = input_size
         self.lambda_reg = lambda_reg
@@ -169,26 +213,24 @@ class Corn(BaseEstimator, ClassifierMixin):
         )
 
     def fit(self, X, y):
+        torch.manual_seed(RANDOM_STATE)
         train_dataset = OrdinalDataset(X.to_numpy(), y.to_numpy())
         train_loader = DataLoader(
             dataset=train_dataset,
             batch_size=self.batch_size,
             shuffle=True,  # want to shuffle the dataset
-            num_workers=0,
-        )  # number processes/CPUs to use
+            num_workers=0,  # number processes/CPUs to use
+        )
 
         for epoch in range(self.num_epochs):
 
             self.model = self.model.train()
             for batch_idx, (features, class_labels) in enumerate(train_loader):
-
                 class_labels = class_labels.to(DEVICE)
                 features = features.to(DEVICE)
                 logits = self.model(features)
 
-                #### CORN loss
                 loss = corn_loss(logits, class_labels, self.num_classes)
-                ###--------------------------------------------------------------------###
 
                 self.optimizer.zero_grad()
                 loss.backward()

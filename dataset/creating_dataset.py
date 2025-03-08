@@ -183,7 +183,7 @@ def extract_and_assign_chars(
         df[char] = bestiary[path_to_char].apply(get_value)
 
 
-def get_max_spell_level(items_list: list[dict]):
+def get_max_spell_level(items_list: list[dict]) -> int:
     spells = [
         i["system"]["level"]["value"]
         for i in items_list
