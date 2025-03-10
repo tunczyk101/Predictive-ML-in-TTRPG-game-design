@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 from sklearn.neighbors import KNeighborsRegressor, KNeighborsClassifier
@@ -24,18 +25,20 @@ BASIC_STATS = ABILITIES + [
     "spell_attack",
 ]
 
-mental_attributes = {
+MENTAL_ATTRIBUTES = {
     "Extreme": {SPELLCASTER, SKILL_PARAGON},
     "High": {SPELLCASTER, MAGICAL_STRIKER, SKILL_PARAGON},
     "Moderate": {MAGICAL_STRIKER},
     "Low": {BRUTE},
 }
-attack_bonus = {
+
+ATTACK_BONUS = {
     "High": {MAGICAL_STRIKER, BRUTE, SOLDIER, SNIPER},
     "Moderate": {BRUTE},
     "Low": {SPELLCASTER},
 }
-damage = {
+
+DAMAGE = {
     "Extreme": {BRUTE},
     "High": {BRUTE},
     "Moderate": {MAGICAL_STRIKER},
@@ -56,9 +59,9 @@ ATTRIBUTES = {
         "High": {SKIRMISHER, SNIPER, SKILL_PARAGON},
         "Low": {BRUTE},
     },
-    "int": mental_attributes,
-    "wis": mental_attributes,
-    "cha": mental_attributes,
+    "int": MENTAL_ATTRIBUTES,
+    "wis": MENTAL_ATTRIBUTES,
+    "cha": MENTAL_ATTRIBUTES,
     "perception": {
         "High": {SNIPER},
         "Low": {BRUTE},
@@ -86,19 +89,19 @@ ATTRIBUTES = {
         "Moderate": {SNIPER},
         "Low": {SNIPER, SPELLCASTER},
     },
-    "spell_attack": attack_bonus,
-    "melee_max_bonus": attack_bonus,
-    "ranged_max_bonus": attack_bonus,
+    "spell_attack": ATTACK_BONUS,
+    "melee_max_bonus": ATTACK_BONUS,
+    "ranged_max_bonus": ATTACK_BONUS,
     "spell_dc": {
         "Extreme": {SPELLCASTER},
         "High": {MAGICAL_STRIKER, SPELLCASTER},
         "Moderate": {MAGICAL_STRIKER},
     },
-    "avg_melee_dmg": damage,
-    "avg_ranged_dmg": damage,
+    "avg_melee_dmg": DAMAGE,
+    "avg_ranged_dmg": DAMAGE,
 }
 
-archetypes = [
+ARCHETYPES = [
     BRUTE,
     MAGICAL_STRIKER,
     SKILL_PARAGON,
@@ -108,14 +111,14 @@ archetypes = [
     SPELLCASTER,
 ]
 
-max_scores_per_archetype = {
-    "brute": 17,
-    "magical_striker": 9,
-    "skill_paragon": 7,
-    "skirmisher": 3,
-    "sniper": 8,
-    "soldier": 6,
-    "spellcaster": 12,
+MAX_SCORES_PER_ARCHETYPE = {
+    BRUTE: 17,
+    MAGICAL_STRIKER: 9,
+    SKILL_PARAGON: 7,
+    SKIRMISHER: 3,
+    SNIPER: 8,
+    SOLDIER: 6,
+    SPELLCASTER: 12,
 }
 
 
@@ -151,39 +154,50 @@ class BaselineModel:
 
         # create knn for all bestiaries
         self.knn = KNeighborsClassifier(n_neighbors=3, n_jobs=-1, metric="manhattan")
-        self.knn.fit(self.bestiary[BASIC_STATS], self.bestiary["level"])
+        self.knn.fit(X[BASIC_STATS], y)
 
     def predict(self, X):
         return self.filtered_knn(X)
 
     def __init__(self):
         # load stat distributions
+        directory = os.path.dirname(__file__)
         self.ability_dist = pd.read_csv(
-            "../dataset/attribute_distributions/modifiers.csv", index_col="Level"
+            directory + "/../../dataset/attribute_distributions/modifiers.csv",
+            index_col="Level",
         )
         self.ac_dist = pd.read_csv(
-            "../dataset/attribute_distributions/ac.csv", index_col="Level"
+            directory + "/../../dataset/attribute_distributions/ac.csv",
+            index_col="Level",
         )
         self.hp_dist = pd.read_csv(
-            "../dataset/attribute_distributions/hp.csv", index_col="Level"
+            directory + "/../../dataset/attribute_distributions/hp.csv",
+            index_col="Level",
         )
         self.perception_dist = pd.read_csv(
-            "../dataset/attribute_distributions/perception.csv", index_col="Level"
+            directory + "/../../dataset/attribute_distributions/perception.csv",
+            index_col="Level",
         )
         self.saving_throws_dist = pd.read_csv(
-            "../dataset/attribute_distributions/saving_throws.csv", index_col="Level"
+            directory + "/../../dataset/attribute_distributions/saving_throws.csv",
+            index_col="Level",
         )
         self.spell_attack_dist = pd.read_csv(
-            "../dataset/attribute_distributions/spell_attack_bonus.csv", index_col="Level"
+            directory + "/../../dataset/attribute_distributions/spell_attack_bonus.csv",
+            index_col="Level",
         )
         self.spell_dc_dist = pd.read_csv(
-            "../dataset/attribute_distributions/spell_save_dc.csv", index_col="Level"
+            directory + "/../../dataset/attribute_distributions/spell_save_dc.csv",
+            index_col="Level",
         )
         self.strike_attack_dist = pd.read_csv(
-            "../dataset/attribute_distributions/strike_attack_bonus.csv", index_col="Level"
+            directory
+            + "/../../dataset/attribute_distributions/strike_attack_bonus.csv",
+            index_col="Level",
         )
         self.strike_damage_dist = pd.read_csv(
-            "../dataset/attribute_distributions/strike_damage.csv", index_col="Level"
+            directory + "/../../dataset/attribute_distributions/strike_damage.csv",
+            index_col="Level",
         )
 
         self.modifier_distributions = {
@@ -223,22 +237,22 @@ class BaselineModel:
         max_modifier = max(row[ABILITIES])
 
         for level in range(-1, 22):
-            extreme = modifiers.iloc[level]["Extreme"]
+            extreme = modifiers.loc[level]["Extreme"]
             if max_modifier <= extreme:
                 min_lvl = level
                 break
 
-        for level in range(21, 1, -1):
-            moderate = modifiers.iloc[level]["Moderate"]
+        for level in range(21, -2, -1):
+            moderate = modifiers.loc[level]["Moderate"]
             if max_modifier >= moderate:
                 max_lvl = level
                 break
 
-        return (min_lvl, max_lvl)
+        return min_lvl, max_lvl
 
     def find_spellcaster_lvl(self, row):
         max_spell_lvl = 0
-        for spell_lvl in range(9, 0, -1):
+        for spell_lvl in range(1, 10):
             if row["spells_nr_lvl_" + str(spell_lvl)] > 0:
                 max_spell_lvl = spell_lvl
 
@@ -248,7 +262,7 @@ class BaselineModel:
     def assess_stat_height(self, stat_val, stat_name, assumed_lvl):
         # get stat distribution at assumed level
         stat_distribution = self.modifier_distributions[stat_name]
-        stat_distribution = stat_distribution.iloc[assumed_lvl].to_frame().T
+        stat_distribution = stat_distribution.loc[assumed_lvl].to_frame().T
 
         # calculate how far the stat is from being extreme, high, moderate or low at assumed level
         dist_diff = stat_distribution - stat_val
@@ -306,7 +320,7 @@ class BaselineModel:
                     archetype_probabilities[archetype] += 1
 
         for archetype in possible_archetypes:
-            archetype_probabilities[archetype] /= max_scores_per_archetype[archetype]
+            archetype_probabilities[archetype] /= MAX_SCORES_PER_ARCHETYPE[archetype]
 
         best_archetype = max(archetype_probabilities, key=archetype_probabilities.get)
 
@@ -316,7 +330,7 @@ class BaselineModel:
         # predict archetypes for each row
         predicted_archetypes = [
             self.classify_creatures_archetype(row, use_lvl=False)
-            for index, row in X_test.iterrows()
+            for _, row in X_test.iterrows()
         ]
 
         # predict levels for each row based on archetype
@@ -324,10 +338,10 @@ class BaselineModel:
         for i, (_, row) in enumerate(X_test.iterrows()):
             archetype = predicted_archetypes[i]
             knn_for_archetype = self.filtered_knns[archetype]
-            if knn_for_archetype is None:
+            if knn_for_archetype is not None:
+                prediction = knn_for_archetype.predict([row[BASIC_STATS]])[0]
+            else:
                 prediction = self.knn.predict([row[BASIC_STATS]])[0]
-
-            prediction = knn_for_archetype.predict([row[BASIC_STATS]])[0]
 
             results.append(prediction)
 
