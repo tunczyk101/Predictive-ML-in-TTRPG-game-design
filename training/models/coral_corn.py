@@ -15,10 +15,9 @@ from torch.nn import CrossEntropyLoss
 from torch.optim import Optimizer
 from torch.utils.data import DataLoader, Dataset
 
-from training.constants import RANDOM_STATE
+from training.constants import NUM_CLASSES, RANDOM_STATE
 
 
-NUM_CLASSES = 53
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 torch.manual_seed(RANDOM_STATE)
 
@@ -183,7 +182,7 @@ class CORN_MLP(nn.Module):
             nn.Linear(128, 64),
             nn.ReLU(),
             ### Specify CORN layer
-            torch.nn.Linear(50, (num_classes - 1)),
+            torch.nn.Linear(64, num_classes - 1),
         )
 
     def forward(self, x):
