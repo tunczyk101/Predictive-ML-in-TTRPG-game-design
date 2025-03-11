@@ -3,6 +3,7 @@ import lightgbm as lightgbm
 import numpy as np
 import optuna.integration.lightgbm as opt_lgb
 import pandas as pd
+import torch
 from lightgbm import early_stopping, log_evaluation
 from mord import LogisticAT, LogisticIT
 from orf import OrderedForest
@@ -21,7 +22,7 @@ from sklearn.svm import SVR, LinearSVR
 from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 from training.constants import RANDOM_STATE
-from training.models.coral_corn import Coral
+from training.models.coral_corn import CORAL_MLP, DEVICE, Coral, Corn, SkorchCORAL
 from training.models.gpor import GPOR
 from training.models.ordered_models import LinearOrdinalModel
 from training.models.simple_ordinal_classification import SimpleOrdinalClassification
@@ -32,6 +33,7 @@ def get_fitted_model(
     classifier_name: str,
     X_train: pd.DataFrame,
     y_train: pd.Series,
+    n_features: int = 53,
 ) -> RidgeCV | GridSearchCV | lightgbm.Booster | OrderedModel:
     """
     Creates chosen model, performs tuning and fits\n
@@ -44,13 +46,13 @@ def get_fitted_model(
     if classifier_name == "lightgbm":
         return lightgbm_fit(X_train, y_train)
 
-    model = create_model(classifier_name)
+    model = create_model(classifier_name, n_features)
     model.fit(X_train, y_train)
 
     return model
 
 
-def create_model(classifier_name: str):
+def create_model(classifier_name: str, n_features: int):
     """
     Creates chosen model\n
     :param classifier_name: name of a chosen classifier:
@@ -213,6 +215,40 @@ def create_model(classifier_name: str):
             }
             model = GridSearchCV(
                 estimator=GPOR(),
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "coral":
+            hyper_params = {
+                # "lambda_reg": [1e-3, 1e-2, 1e-1, 1],
+                "lr": [1e-3, 1e-2, 1e-1],
+            }
+            model = GridSearchCV(
+                estimator=SkorchCORAL(
+                    module=CORAL_MLP,
+                    module__input_size=n_features,
+                    module__num_classes=23,
+                    max_epochs=50,
+                    lr=0.05,
+                    optimizer=torch.optim.AdamW,
+                    iterator_train__shuffle=True,
+                    device=DEVICE,
+                ),
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "corn":
+            hyper_params = {
+                "lambda_reg": [1e-3, 1e-2, 1e-1, 1],
+                "learning_rate": [1e-3, 1e-2, 1e-1],
+                # "input_size": [53]
+            }
+            model = GridSearchCV(
+                estimator=Corn(input_size=n_features),
                 param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
                 return_train_score=True,

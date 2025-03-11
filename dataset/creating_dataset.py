@@ -56,6 +56,7 @@ SPECIAL_CHARACTERISTICS = {
     "melee",
     "ranged",
     "spells",
+    "max_spell",
     "aoo",
     "spell_dc",
 }
@@ -182,6 +183,18 @@ def extract_and_assign_chars(
         df[char] = bestiary[path_to_char].apply(get_value)
 
 
+def get_max_spell_level(items_list: list[dict]) -> int:
+    spells = [
+        i["system"]["level"]["value"]
+        for i in items_list
+        if i["type"] == "spell"
+        # skip cantrip spells
+        and "cantrip" not in i["system"]["traits"]["value"]
+    ]
+
+    return 0 if len(spells) == 0 else max(spells)
+
+
 def get_nr_of_spells_with_lvl(items_list: list[dict], spell_level: int) -> int:
     """
     Function used for pd.Series.apply()\n
@@ -266,7 +279,9 @@ def get_max_melee_bonus_damage(
     melee = [
         i["system"]
         for i in items_list
-        if i["type"] == "melee" and i["system"]["weaponType"]["value"] == weapon_type
+        if i["type"] == "melee"
+        and i["system"].get("weaponType") is not None
+        and i["system"]["weaponType"]["value"] == weapon_type
     ]
 
     if not melee:
@@ -327,7 +342,9 @@ def sort_preprocessed_data(bestiary: pd.DataFrame) -> pd.DataFrame:
     bestiary = bestiary[
         [
             col
-            for col in ["level", "book"] + ORDERED_CHARACTERISTICS_FULL
+            for col in ["level", "book"]
+            + ORDERED_CHARACTERISTICS_FULL
+            + ["max_spell_lvl"]
             if col in bestiary.columns
         ]
     ]
@@ -417,6 +434,9 @@ def preprocess_data(bestiary: pd.DataFrame, characteristics: list[str]) -> pd.Da
             df[f"spells_nr_lvl_{i}"] = bestiary["items"].apply(
                 lambda x: get_nr_of_spells_with_lvl(x, i)
             )
+
+    if "max_spell" in characteristics_groups.special_characteristics:
+        df["max_spell_lvl"] = bestiary["items"].apply(get_max_spell_level)
 
     if "melee" in characteristics_groups.special_characteristics:
         df["melee_max_bonus"], df["avg_melee_dmg"] = zip(
