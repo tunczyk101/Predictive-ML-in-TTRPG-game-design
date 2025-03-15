@@ -279,6 +279,7 @@ def create_model(classifier_name: str, n_features: int):
                 criterion=CumulativeLinkLoss,
                 optimizer=torch.optim.AdamW,
                 device=DEVICE,
+                max_epochs=100,
                 callbacks=[
                     ("ascension", AscensionCallback()),
                 ],
