@@ -1,5 +1,6 @@
 import os
 
+import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
@@ -139,7 +140,7 @@ def split_dataframe(
     test_size: float = DEFAULT_TEST_SIZE,
     chronological_split: bool = True,
     drop_book_column: bool = True,
-) -> tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
+) -> tuple[pd.DataFrame, pd.DataFrame, np.array, np.array]:
     """
     Splits dataframe to dataframes allowing training and testing of ML models. Requires "level" column to be
     present in initial dataframe - it is used to split dataframe to feature matrix and label vector.\n
@@ -167,4 +168,4 @@ def split_dataframe(
         X_train = X_train.drop(columns=["book"])
         X_test = X_test.drop(columns=["book"])
 
-    return X_train, X_test, y_train, y_test
+    return X_train, X_test, y_train.to_numpy(), y_test.to_numpy()
