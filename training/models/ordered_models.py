@@ -31,4 +31,4 @@ class LinearOrdinalModel(BaseEstimator, ClassifierMixin):
         return self
 
     def predict(self, X):
-        return self.model_.predict(X).idxmax(axis=1)
+        return self.model_.predict(X).idxmax(axis=1).to_numpy()

@@ -87,7 +87,7 @@ class Coral(BaseEstimator, ClassifierMixin):
         )
 
     def fit(self, X, y):
-        train_dataset = OrdinalDataset(X.to_numpy(), y.to_numpy())
+        train_dataset = OrdinalDataset(X.to_numpy(), y)
         train_loader = DataLoader(
             dataset=train_dataset,
             batch_size=self.batch_size,
@@ -160,7 +160,7 @@ class SkorchCORAL(NeuralNet):
         return coral_loss(logits, levels.to(DEVICE))
 
     def fit(self, X, y=None, **fit_params):
-        train_dataset = SkorchDataset(X.to_numpy().astype(np.float32), y.to_numpy())
+        train_dataset = SkorchDataset(X.to_numpy().astype(np.float32), y)
         super().fit(train_dataset.X, train_dataset.y, **fit_params)
 
     def predict(self, X):
@@ -213,7 +213,7 @@ class Corn(BaseEstimator, ClassifierMixin):
 
     def fit(self, X, y):
         torch.manual_seed(RANDOM_STATE)
-        train_dataset = OrdinalDataset(X.to_numpy(), y.to_numpy())
+        train_dataset = OrdinalDataset(X.to_numpy(), y)
         train_loader = DataLoader(
             dataset=train_dataset,
             batch_size=self.batch_size,

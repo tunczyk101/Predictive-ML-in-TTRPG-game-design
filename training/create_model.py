@@ -81,7 +81,7 @@ def create_model(classifier_name: str, n_features: int):
             )
         case "huber_regression":
             huber = HuberRegressor(max_iter=1000)
-            hyper_params = {"alpha": np.linspace(1e-3, 1, 10000)}
+            hyper_params = {"alpha": np.linspace(1e-3, 1, 1000)}
 
             model = GridSearchCV(
                 estimator=huber,
