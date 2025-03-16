@@ -49,4 +49,4 @@ def somers_d(y_true: np.ndarray, y_predicted: np.ndarray) -> float:
 def accuracy_at_k(y_true: np.ndarray, y_predicted: np.ndarray, k: int = 0) -> float:
     """Calculates accuracy of prediction, allowing error of at most `k` classes."""
     result = np.sum(np.abs(y_true - y_predicted) <= k) / len(y_true)
-    return result[0]
+    return result

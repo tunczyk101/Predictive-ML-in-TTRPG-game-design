@@ -1,4 +1,5 @@
 import os
+import warnings
 
 import pandas as pd
 
@@ -6,6 +7,8 @@ from dataset.creating_dataset import min_max_scale_data
 from dataset.splitting_dataset import split_dataframe
 from training.train_and_evaluate_models import train_and_evaluate_models
 
+
+warnings.simplefilter("ignore")
 
 PATH_TO_DATASET = os.path.join(
     "..", "preprocessed_bestiaries", "bestiaries_reduced.csv"
@@ -41,6 +44,7 @@ if __name__ == "__main__":
             "gpor",
             "coral",
             "corn",
+            "spacecutter",
         ],
         X_train,
         y_train,

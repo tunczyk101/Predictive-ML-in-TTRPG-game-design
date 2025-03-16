@@ -16,3 +16,7 @@ def orf_mean_absolute_error(y_true, y_pred) -> float:
     y_pred = pd.DataFrame(y_pred["predictions"]).idxmax(axis=1)
 
     return mean_absolute_error(y_true, y_pred)
+
+
+def spacecutter_mean_absolute_error(y_true, y_pred):
+    return mean_absolute_error(y_true, y_pred.argmax(axis=1))

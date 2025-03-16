@@ -2,9 +2,6 @@
 name = "Predictive-ML-in-TTRPG-game-design"
 version = "0.1.0"
 description = "Project: Application of predictive machine learning in pen & paper RPG game design"
-authors = [
-    "Jolanta Śliwa <>"
-]
 
 [tool.poetry.dependencies]
 python = "3.10.*"

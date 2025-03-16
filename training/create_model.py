@@ -19,14 +19,25 @@ from sklearn.metrics import make_scorer
 from sklearn.model_selection import GridSearchCV, KFold
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.svm import SVR, LinearSVR
+from skorch import NeuralNet
+from spacecutter.callbacks import AscensionCallback
+from spacecutter.models import OrdinalLogisticModel
 from statsmodels.miscmodels.ordinal_model import OrderedModel
 
-from training.constants import RANDOM_STATE
-from training.models.coral_corn import CORAL_MLP, DEVICE, Coral, Corn, SkorchCORAL
+from training.constants import NUM_CLASSES, RANDOM_STATE
+from training.models.coral_corn import CORAL_MLP, DEVICE, Corn, SkorchCORAL
 from training.models.gpor import GPOR
 from training.models.ordered_models import LinearOrdinalModel
 from training.models.simple_ordinal_classification import SimpleOrdinalClassification
-from training.score_functions import orf_mean_absolute_error
+from training.models.spacecutter.losses import CumulativeLinkLoss
+from training.models.spacecutter.models import (
+    SpacecutterGridSearchCV,
+    get_spacecutter_predictor,
+)
+from training.score_functions import (
+    orf_mean_absolute_error,
+    spacecutter_mean_absolute_error,
+)
 
 
 def get_fitted_model(
@@ -222,7 +233,7 @@ def create_model(classifier_name: str, n_features: int):
             )
         case "coral":
             hyper_params = {
-                # "lambda_reg": [1e-3, 1e-2, 1e-1, 1],
+                "lambda_reg": [1e-3, 1e-2, 1e-1, 1],
                 "lr": [1e-3, 1e-2, 1e-1],
             }
             model = GridSearchCV(
@@ -243,7 +254,7 @@ def create_model(classifier_name: str, n_features: int):
             )
         case "corn":
             hyper_params = {
-                "lambda_reg": [1e-3, 1e-2, 1e-1, 1],
+                "lambda_reg": [1e-3, 1e-2, 1e-1],
                 "learning_rate": [1e-3, 1e-2, 1e-1],
                 # "input_size": [53]
             }
@@ -251,6 +262,37 @@ def create_model(classifier_name: str, n_features: int):
                 estimator=Corn(input_size=n_features),
                 param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "spacecutter":
+            hyper_params = {
+                "lr": [1e-3, 1e-2, 1e-1, 1],
+                "optimizer__weight_decay": [1e-3, 1e-2, 1e-1, 1],
+            }
+            predictor = get_spacecutter_predictor(n_features)
+
+            estimator = NeuralNet(
+                module=OrdinalLogisticModel,
+                module__predictor=predictor,
+                module__num_classes=NUM_CLASSES,
+                criterion=CumulativeLinkLoss,
+                optimizer=torch.optim.AdamW,
+                device=DEVICE,
+                max_epochs=100,
+                callbacks=[
+                    ("ascension", AscensionCallback()),
+                ],
+            )
+
+            model = SpacecutterGridSearchCV(
+                estimator=estimator,
+                param_grid=hyper_params,
+                scoring=make_scorer(
+                    spacecutter_mean_absolute_error,
+                    greater_is_better=False,
+                    needs_proba=True,
+                ),
                 return_train_score=True,
                 n_jobs=-1,
             )
