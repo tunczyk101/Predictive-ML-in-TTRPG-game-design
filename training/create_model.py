@@ -39,6 +39,8 @@ from training.score_functions import (
     spacecutter_mean_absolute_error,
 )
 
+from training.models.baseline import BaselineModel
+
 
 def get_fitted_model(
     classifier_name: str,
@@ -71,6 +73,8 @@ def create_model(classifier_name: str, n_features: int):
     :return: chosen classifier
     """
     match classifier_name:
+        case "baseline":
+            model = BaselineModel()
         case "linear_regression":
             model = LinearRegression()
         case "linear_regression_ridge":
