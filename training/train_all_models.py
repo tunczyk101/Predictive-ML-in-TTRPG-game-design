@@ -47,6 +47,7 @@ if __name__ == "__main__":
             "corn",
             "spacecutter",
             "nn_rank",
+            "condor",
         ],
         X_train,
         y_train,
