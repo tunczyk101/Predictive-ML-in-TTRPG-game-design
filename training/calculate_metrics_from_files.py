@@ -5,7 +5,7 @@ import pandas as pd
 
 from dataset.creating_dataset import min_max_scale_data
 from dataset.splitting_dataset import split_dataframe
-from training.train_and_evaluate_models import train_and_evaluate_models
+from training.train_and_evaluate_models import calculate_results_from_files
 
 
 warnings.simplefilter("ignore")
@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     X_train, X_test, y_train, y_test = split_dataframe(bestiaries)
 
-    results_test, results_train = train_and_evaluate_models(
+    results_test, results_train = calculate_results_from_files(
         [
             # "baseline",
             "linear_regression",
@@ -48,9 +48,7 @@ if __name__ == "__main__":
             "spacecutter",
             "nn_rank",
         ],
-        X_train,
         y_train,
-        X_test,
         y_test,
         thresholds=[[0.05 * i for i in range(1, 20)], [0.05 * i for i in range(5, 16)]],
         save_files=(TRAIN_RESULT_FILE, TEST_RESULT_FILE),
