@@ -500,6 +500,18 @@ traitlets = ">=4"
 test = ["pytest"]
 
 [[package]]
+name = "condor-pytorch"
+version = "1.1.0"
+description = "A pytorch implementation of Conditionals for Ordinal Regression"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "condor_pytorch-1.1.0-py3-none-any.whl", hash = "sha256:785f6994c911d10a5a9b8dccea691a43d26ea9b38057ff4b7e015bc5be915c08"},
+    {file = "condor_pytorch-1.1.0.tar.gz", hash = "sha256:dd76af6bb3bd4cf850af05713d7c0ebf97ae4756375c9b4fd8e2bb6907612a2c"},
+]
+
+[[package]]
 name = "cycler"
 version = "0.12.1"
 description = "Composable style cycles"
@@ -3621,4 +3633,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "3.10.*"
-content-hash = "3a03073b25320c97065bd346d52bb300398ebb4ea461ec12dc9bfc9243070d79"
+content-hash = "0278c8abb7d708b2503047a4ac566eb3287b8ba13d7ec34ab0ceecfe06a7f688"

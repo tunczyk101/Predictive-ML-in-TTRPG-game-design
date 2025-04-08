@@ -1,5 +1,11 @@
 import pandas as pd
+import torch
+from condor_pytorch import condor_negloglikeloss
+from coral_pytorch.dataset import levels_from_labelbatch
 from sklearn.metrics import mean_absolute_error
+from torch import nn
+
+from training.constants import NUM_CLASSES
 
 
 def orf_mean_absolute_error(y_true, y_pred) -> float:
@@ -20,3 +26,12 @@ def orf_mean_absolute_error(y_true, y_pred) -> float:
 
 def spacecutter_mean_absolute_error(y_true, y_pred):
     return mean_absolute_error(y_true, y_pred.argmax(axis=1))
+
+
+class CondorLoss(nn.Module):
+    def __init__(self):
+        super().__init__()
+
+    def forward(self, logits: torch.tensor, labels: torch.tensor):
+        levels = levels_from_labelbatch(labels, NUM_CLASSES)
+        return condor_negloglikeloss(logits, levels)

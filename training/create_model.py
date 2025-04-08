@@ -26,6 +26,7 @@ from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 from training.constants import NUM_CLASSES, RANDOM_STATE
 from training.models.baseline import BaselineModel
+from training.models.condor import Condor, CondorNeuralNet
 from training.models.coral_corn import CORAL_MLP, DEVICE, Corn, SkorchCORAL
 from training.models.gpor import GPOR
 from training.models.nn_rank import NeuralNetNNRank, NNRank
@@ -37,6 +38,7 @@ from training.models.spacecutter.models import (
     get_spacecutter_predictor,
 )
 from training.score_functions import (
+    CondorLoss,
     orf_mean_absolute_error,
     spacecutter_mean_absolute_error,
 )
@@ -310,6 +312,25 @@ def create_model(classifier_name: str, n_features: int):
                     module=NNRank,
                     module__input_size=n_features,
                     criterion=torch.nn.BCELoss,
+                    optimizer=torch.optim.AdamW,
+                    device=DEVICE,
+                    max_epochs=100,
+                ),
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "condor":
+            hyper_params = {
+                "optimizer__weight_decay": [1e-3, 1e-2, 1e-1, 1],
+                "optimizer__lr": [1e-3, 1e-2, 1e-1],
+            }
+            model = GridSearchCV(
+                estimator=CondorNeuralNet(
+                    module=Condor,
+                    module__input_size=n_features,
+                    criterion=CondorLoss,
                     optimizer=torch.optim.AdamW,
                     device=DEVICE,
                     max_epochs=100,
