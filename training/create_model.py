@@ -25,11 +25,14 @@ from spacecutter.models import OrdinalLogisticModel
 from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 from training.constants import NUM_CLASSES, RANDOM_STATE
+from training.losses import CondorLoss, LogLoss, WeightedBCELoss
 from training.models.baseline import BaselineModel
 from training.models.condor import Condor, CondorNeuralNet
 from training.models.coral_corn import CORAL_MLP, DEVICE, Corn, SkorchCORAL
 from training.models.gpor import GPOR
+from training.models.log import LogLossModule, LogLossNeuralNet
 from training.models.nn_rank import NeuralNetNNRank, NNRank
+from training.models.or_cnn import ORCNN, NeuralNetORCNN
 from training.models.ordered_models import LinearOrdinalModel
 from training.models.simple_ordinal_classification import SimpleOrdinalClassification
 from training.models.spacecutter.losses import CumulativeLinkLoss
@@ -38,7 +41,6 @@ from training.models.spacecutter.models import (
     get_spacecutter_predictor,
 )
 from training.score_functions import (
-    CondorLoss,
     orf_mean_absolute_error,
     spacecutter_mean_absolute_error,
 )
@@ -61,13 +63,13 @@ def get_fitted_model(
     if classifier_name == "lightgbm":
         return lightgbm_fit(X_train, y_train)
 
-    model = create_model(classifier_name, n_features)
+    model = create_model(classifier_name, n_features, y_train)
     model.fit(X_train, y_train)
 
     return model
 
 
-def create_model(classifier_name: str, n_features: int):
+def create_model(classifier_name: str, n_features: int, y_train: np.ndarray):
     """
     Creates chosen model\n
     :param classifier_name: name of a chosen classifier:
@@ -334,6 +336,46 @@ def create_model(classifier_name: str, n_features: int):
                     optimizer=torch.optim.AdamW,
                     device=DEVICE,
                     max_epochs=100,
+                ),
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "or_cnn":
+            hyper_params = {
+                "optimizer__weight_decay": [1e-3, 1e-2, 1e-1, 1],
+                "optimizer__lr": [1e-3, 1e-2, 1e-1],
+            }
+            model = GridSearchCV(
+                estimator=NeuralNetORCNN(
+                    module=ORCNN,
+                    module__input_size=n_features,
+                    criterion__y_train=y_train,
+                    criterion=WeightedBCELoss,
+                    optimizer=torch.optim.AdamW,
+                    device=DEVICE,
+                    max_epochs=100,
+                ),
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "log_loss":
+            hyper_params = {
+                "optimizer__weight_decay": [1e-3, 1e-2, 1e-1, 1],
+                "optimizer__lr": [1e-3, 1e-2, 1e-1],
+                "criterion__alpha": [0.5, 1, 1.5, 2, 3, 4],
+            }
+            model = GridSearchCV(
+                estimator=LogLossNeuralNet(
+                    module=LogLossModule,
+                    module__input_size=n_features,
+                    criterion=LogLoss,
+                    optimizer=torch.optim.AdamW,
+                    device=DEVICE,
+                    max_epochs=200,
                 ),
                 param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",
