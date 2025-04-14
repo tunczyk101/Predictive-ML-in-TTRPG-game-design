@@ -35,3 +35,17 @@ class WeightedBCELoss(nn.Module):
         bce = F.binary_cross_entropy(logits, labels, reduction="none")
         weighted_bce = bce * self.weights
         return weighted_bce.mean()
+
+
+class LogLoss(nn.Module):
+    def __init__(self, alpha: float):
+        super().__init__()
+        self.alpha = alpha
+
+    def forward(self, logits: torch.tensor, labels: torch.tensor):
+        probs = F.softmax(logits, dim=1)
+
+        levels = torch.arange(NUM_CLASSES, device=logits.device, dtype=torch.float32)
+        d = torch.abs(levels.view(1, -1) - labels.view(-1, 1))
+
+        return -(torch.log(1 - probs + 1e-6) * d.pow(self.alpha)).sum(dim=1).mean()

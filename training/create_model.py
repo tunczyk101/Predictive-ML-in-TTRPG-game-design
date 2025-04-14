@@ -25,11 +25,12 @@ from spacecutter.models import OrdinalLogisticModel
 from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 from training.constants import NUM_CLASSES, RANDOM_STATE
-from training.losses import CondorLoss, WeightedBCELoss
+from training.losses import CondorLoss, LogLoss, WeightedBCELoss
 from training.models.baseline import BaselineModel
 from training.models.condor import Condor, CondorNeuralNet
 from training.models.coral_corn import CORAL_MLP, DEVICE, Corn, SkorchCORAL
 from training.models.gpor import GPOR
+from training.models.log import LogLossModule, LogLossNeuralNet
 from training.models.nn_rank import NeuralNetNNRank, NNRank
 from training.models.or_cnn import ORCNN, NeuralNetORCNN
 from training.models.ordered_models import LinearOrdinalModel
@@ -355,6 +356,26 @@ def create_model(classifier_name: str, n_features: int, y_train: np.ndarray):
                     optimizer=torch.optim.AdamW,
                     device=DEVICE,
                     max_epochs=100,
+                ),
+                param_grid=hyper_params,
+                scoring="neg_mean_absolute_error",
+                return_train_score=True,
+                n_jobs=-1,
+            )
+        case "log_loss":
+            hyper_params = {
+                "optimizer__weight_decay": [1e-3, 1e-2, 1e-1, 1],
+                "optimizer__lr": [1e-3, 1e-2, 1e-1],
+                "criterion__alpha": [0.5, 1, 1.5, 2, 3, 4],
+            }
+            model = GridSearchCV(
+                estimator=LogLossNeuralNet(
+                    module=LogLossModule,
+                    module__input_size=n_features,
+                    criterion=LogLoss,
+                    optimizer=torch.optim.AdamW,
+                    device=DEVICE,
+                    max_epochs=200,
                 ),
                 param_grid=hyper_params,
                 scoring="neg_mean_absolute_error",

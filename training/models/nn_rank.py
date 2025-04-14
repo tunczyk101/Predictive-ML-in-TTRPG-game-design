@@ -5,22 +5,16 @@ from skorch import NeuralNet
 from torch import nn
 
 from training.constants import MIN_LVL, NUM_CLASSES
+from training.models.log import LogLossModule
 
 
-class NNRank(nn.Module):
+class NNRank(LogLossModule):
     def __init__(self, input_size: int):
-        super().__init__()
+        super().__init__(input_size)
         self.network = nn.Sequential(
-            nn.Linear(input_size, 128),
-            nn.ReLU(),
-            nn.Linear(128, 64),
-            nn.ReLU(),
-            nn.Linear(64, NUM_CLASSES),
+            self.network,
             nn.Sigmoid(),
         )
-
-    def forward(self, x) -> torch.Tensor:
-        return self.network(x)
 
 
 class NeuralNetNNRank(NeuralNet):
