@@ -169,3 +169,26 @@ def split_dataframe(
         X_test = X_test.drop(columns=["book"])
 
     return X_train, X_test, y_train.to_numpy(), y_test.to_numpy()
+
+
+def get_time_series_split_dataframe(
+    df: pd.DataFrame, min_rows_number: int, start_min_rows_number: int | None = None
+) -> list[pd.DataFrame]:
+    books_per_year = get_date_books_mapping()
+    filtered_df = pd.DataFrame(columns=df.columns)
+    dtypes_dict = df.dtypes.to_dict()
+    filtered_df = filtered_df.astype(dtypes_dict)
+    remaining_rows_num = (
+        min_rows_number if not start_min_rows_number else start_min_rows_number
+    )
+    result = []
+    for index, row in books_per_year.iterrows():
+        book_df = df.loc[df["book"].isin(row["books"])]
+        filtered_df = pd.concat([filtered_df, book_df])
+        remaining_rows_num -= book_df.shape[0]
+        if remaining_rows_num <= 0:
+            remaining_rows_num = min_rows_number
+            result.append(filtered_df)
+            filtered_df = pd.DataFrame(columns=df.columns).astype(dtypes_dict)
+
+    return result
