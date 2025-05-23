@@ -125,12 +125,12 @@ def calculate_all_results_types(
     :param thresholds: List of thresholds
     :return: List containing evaluation metrics.
     """
-    if model_name in ORDINAL_MODELS:
+    if model_name in ORDINAL_MODELS or model_name.rsplit("_", 1)[0]:
         # number of possible rounding types for regression models
         n = 2 + 3 * len(thresholds)
         train_results = n * calculate_results(y_train, y_pred_train)
-
         test_results = n * calculate_results(y_test, y_pred_test)
+
         return train_results, test_results
 
     train_results = calculate_results(
