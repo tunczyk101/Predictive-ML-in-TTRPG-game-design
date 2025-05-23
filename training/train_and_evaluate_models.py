@@ -1,4 +1,5 @@
 import os
+import re
 from collections import defaultdict
 
 import numpy as np
@@ -111,6 +112,16 @@ def get_index(thresholds: list[tuple[float, float]]):
     )
 
 
+def is_ordinal_model(model_name) -> bool:
+    if model_name in ORDINAL_MODELS:
+        return True
+    # in case of expanding window each model_name has also number at the end (e.g. linear_regression_0)
+    name = re.match("(.*)_\d+$", model_name)
+    if name and name in ORDINAL_MODELS:
+        return True
+    return False
+
+
 def calculate_all_results_types(
     y_train, y_pred_train, y_test, y_pred_test, thresholds, model_name: str
 ) -> tuple[list, list]:
@@ -125,7 +136,7 @@ def calculate_all_results_types(
     :param thresholds: List of thresholds
     :return: List containing evaluation metrics.
     """
-    if model_name in ORDINAL_MODELS or model_name.rsplit("_", 1)[0]:
+    if is_ordinal_model(model_name):
         # number of possible rounding types for regression models
         n = 2 + 3 * len(thresholds)
         train_results = n * calculate_results(y_train, y_pred_train)
