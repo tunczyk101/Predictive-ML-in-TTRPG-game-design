@@ -1,6 +1,8 @@
 import math
+from collections import defaultdict
 
 import numpy as np
+import pandas as pd
 from scipy.stats import somersd
 
 
@@ -50,3 +52,29 @@ def accuracy_at_k(y_true: np.ndarray, y_predicted: np.ndarray, k: int = 0) -> fl
     """Calculates accuracy of prediction, allowing error of at most `k` classes."""
     result = np.sum(np.abs(y_true - y_predicted) <= k) / len(y_true)
     return result
+
+
+def calculate_average_and_std(
+    models_results: dict["str", list[list[float | None]]],
+    columns: pd.MultiIndex,
+    models: list[str],
+):
+    final_results = defaultdict(list)
+    final_columns = [[], []]
+    for column in columns:
+        final_columns[0] += [column[0], f"{column[1]}_avg"]
+        final_columns[1] += [column[1], f"{column[1]}_std"]
+
+    for model, results in models_results.items():
+        for i in range(len(results[0])):
+            if results[0][i] is None:
+                final_results[model] += [None, None]
+                continue
+            metric_results = np.array([r[i] for r in results])
+            final_results[model] += [metric_results.mean(), metric_results.std()]
+
+    return pd.DataFrame(
+        data=list(final_results.values()),
+        index=models,
+        columns=pd.MultiIndex.from_arrays(final_columns, names=columns.names),
+    )

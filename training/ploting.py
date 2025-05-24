@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 
 
 MODEL_LABEL = {
+    "baseline": "Baseline",
     "linear_regression": "Linear regression",
     "linear_regression_ridge": "Ridge regression",
     "linear_regression_lasso": "Lasso regression",
@@ -22,8 +23,12 @@ MODEL_LABEL = {
     "logisticIT": "Logistic IT",
     "simple_or": "Simple OR RF",
     "gpor": "GPOR",
-    "coral": "Coral",
-    "corn": "Corn",
+    "coral": "CORAL",
+    "corn": "CORN",
+    "spacecutter": "Spacecutter",
+    "nn_rank": "NNRank",
+    "condor": "CONDOR",
+    "or_cnn": "OR-CNN",
 }
 
 MODEL_TO_FUNC = {
@@ -66,7 +71,7 @@ def plot_results(
     metric_name: str,
     filename: str | None,
     legend_labels: list[str],
-    figsize: tuple[float, float] = (15, 6),
+    figsize: tuple[float, float] = (15, 8),
 ):
     labels = list(metric_dict.keys())
     values = list(metric_dict.values())
@@ -88,6 +93,7 @@ def plot_results(
     plt.title(f"Model Results Comparison: {metric_name.upper()}", fontsize=30)
     plt.xticks(x + width * (num_bars - 1) / 2, labels, rotation=45)
     plt.legend()
+    plt.tight_layout()
     if filename is not None:
         plt.savefig(filename)
     else:

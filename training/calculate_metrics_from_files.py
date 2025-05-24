@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     results_test, results_train = calculate_results_from_files(
         [
-            # "baseline",
+            "baseline",
             "linear_regression",
             "linear_regression_ridge",
             "linear_regression_lasso",
